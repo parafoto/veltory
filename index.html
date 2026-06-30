@@ -10,339 +10,322 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
---ds:#03030a;--ds2:#060812;--surf:#0a0d1a;--cr:#0e1224;--crh:#131838;--el:#161c3a;
+--cr:#f5f0e6;--cr2:#ece5d8;--cr3:#e2dace;--nv:#0d1b2a;--nv2:#1b2d45;--nv3:#253d5b;--trr:#c4956a;--trrl:#d9b08c;--trrd:#a07850;--rst:#c05e3c;--sky:#6b9ec4;--tx:#1a1a2e;--tx2:#3a3a52;--tx3:#7a7a92;--w:#fdfbf7;
 --gold:#c4956a;--goldw:#d4a87a;--goldd:#8a6a45;--goldg:rgba(196,149,106,.08);
 --cream:#f5f0e6;--navy:#0d1b2a;--terra:#c4956a;
 --t:#d4d8e8;--tb:#8890a8;--tm:#4a5068;--td:#252a3a;
---b:#161c30;--bl:#1e2440;
+
 --g:#4ecb71;--r:#e05555;--blu:#6ba0d0;
 --fd:'Space Grotesk',sans-serif;--fb:'Cormorant Garamond',serif;--fm:'JetBrains Mono',monospace;
 --rad:8px;--radl:14px;--radxl:20px;
---shc:0 4px 30px rgba(0,0,0,.4);
+--shc:0 4px 30px rgba(13,27,42,.08);
 --tr:.35s cubic-bezier(.4,0,.2,1);--trs:.55s cubic-bezier(.4,0,.2,1);
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--fb);background:var(--ds);color:var(--tb);line-height:1.7;overflow-x:hidden}
-.sky{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.star{position:absolute;border-radius:50%;background:#fff}
-.star.t1{width:1px;height:1px;opacity:.6}.star.t2{width:1.5px;height:1.5px;opacity:.8;background:#dde4ff}
-.star.t3{width:2px;height:2px;opacity:.5;background:#b8c8ff;box-shadow:0 0 4px rgba(184,200,255,.4)}
-.moon{position:fixed;width:clamp(200px,22vw,380px);height:clamp(200px,22vw,380px);border-radius:50%;right:-3%;top:5%;z-index:0;pointer-events:none;background:radial-gradient(circle at 38% 35%,#222842 0%,#141828 25%,#0c0f1c 50%,#070912 75%,var(--ds) 100%);border:1px solid rgba(196,149,106,.03);box-shadow:inset -25px -20px 50px rgba(0,0,0,.7),inset 8px 6px 25px rgba(196,149,106,.04),0 0 120px rgba(196,149,106,.04),0 0 60px rgba(196,149,106,.02);animation:moonDrift 30s ease-in-out infinite}
-.crater{position:absolute;border-radius:50%;background:radial-gradient(circle,#080a14,#0c0f1c);box-shadow:inset 1px 1px 6px rgba(0,0,0,.6)}
-.crater.c1{width:35px;height:35px;top:22%;left:18%}.crater.c2{width:18px;height:18px;top:50%;left:62%}.crater.c3{width:12px;height:12px;top:35%;left:70%}.crater.c4{width:24px;height:24px;top:65%;left:25%}.crater.c5{width:8px;height:8px;top:15%;left:55%}
-@keyframes moonDrift{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.earth-glow{position:fixed;width:160px;height:160px;border-radius:50%;right:22%;top:28%;z-index:0;pointer-events:none;background:radial-gradient(circle,rgba(196,149,106,.06),transparent 70%);animation:earthP 6s ease-in-out infinite}
-@keyframes earthP{0%,100%{opacity:.4}50%{opacity:.8}}
-body::after{content:'';position:fixed;inset:0;z-index:99999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.015;pointer-events:none}
-h1,h2,h3,h4{font-family:var(--fd);color:var(--t);letter-spacing:.02em;line-height:1.08;font-weight:300}
+body{font-family:var(--fb);background:var(--cr);color:var(--tx);line-height:1.7;overflow-x:hidden}
 h1{font-size:clamp(2.8rem,7vw,5.5rem)}h2{font-size:clamp(1.8rem,4.5vw,3.5rem)}h3{font-size:clamp(1.1rem,2.5vw,1.5rem)}
-a{color:var(--gold);text-decoration:none;transition:color var(--tr)}a:hover{color:var(--goldw)}
-::selection{background:var(--gold);color:var(--ds)}
-::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--ds)}::-webkit-scrollbar-thumb{background:var(--b);border-radius:3px}
+a{color:var(--trr);text-decoration:none;transition:color var(--tr)}a:hover{color:var(--trrl)}
+::selection{background:var(--nv);color:var(--cr)}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--cr2)}::-webkit-scrollbar-thumb{background:var(--cr3);border-radius:3px}
 .mono{font-family:var(--fm)}.ctr{max-width:1440px;margin:0 auto;padding:0 clamp(1rem,3vw,3.5rem);position:relative;z-index:2}
 .text-c{text-align:center}
-.label{font-family:var(--fm);font-size:.65rem;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);display:flex;align-items:center;gap:.6rem}
-.label::before{content:'';width:24px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.label{font-family:var(--fm);font-size:.65rem;text-transform:uppercase;letter-spacing:.25em;color:var(--trr);display:flex;align-items:center;gap:.6rem}
+.label::before{content:'';width:24px;height:1px;background:linear-gradient(90deg,transparent,var(--trr))}
 .label-c{justify-content:center}.label-c::before{display:none}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--fd);font-size:.78rem;font-weight:500;letter-spacing:.08em;padding:.72rem 1.8rem;border-radius:40px;border:1px solid transparent;cursor:pointer;transition:all var(--tr);white-space:nowrap;text-decoration:none}
-.btn-g{background:linear-gradient(135deg,var(--gold),var(--goldw));color:var(--ds);border-color:var(--gold)}
-.btn-g:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(196,149,106,.3);color:var(--ds)}
-.btn-o{background:transparent;color:var(--t);border-color:var(--bl)}
-.btn-o:hover{border-color:var(--gold);color:var(--gold)}
+.btn-g{background:var(--nv);color:var(--cr);border-color:var(--nv)}
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(13,27,42,.15);background:var(--trr)}
+.btn-o{background:transparent;color:var(--nv);border-color:var(--cr3)}
+.btn-o:hover{border-color:var(--trr);color:var(--trr)}
 .btn-sm{padding:.52rem 1.2rem;font-size:.72rem}.btn-xs{padding:.38rem .85rem;font-size:.65rem}.btn-bl{width:100%}
 .badge{font-family:var(--fm);font-size:.56rem;text-transform:uppercase;letter-spacing:.15em;padding:.22rem .65rem;border-radius:20px;display:inline-block}
 .badge-g{color:var(--g);background:rgba(78,203,113,.08);border:1px solid rgba(78,203,113,.18)}
 .badge-r{color:var(--r);background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.18)}
-.badge-gold{color:var(--gold);background:var(--goldg);border:1px solid rgba(196,149,106,.18)}
+.badge-gold{color:var(--nv);background:var(--cr2);border:1px solid var(--cr3)}
 .badge-eu{color:var(--blu);background:rgba(107,160,208,.08);border:1px solid rgba(107,160,208,.18)}
-.topbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.5rem 0;background:rgba(3,3,10,.85);backdrop-filter:blur(30px);border-bottom:1px solid rgba(22,28,48,.5)}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.5rem 0;background:rgba(245,240,230,.88);backdrop-filter:blur(24px);border-bottom:1px solid var(--cr3)}
 .topbar .ctr{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--fd);font-size:1.35rem;letter-spacing:.12em;color:var(--t);display:flex;align-items:center;gap:.5rem;cursor:pointer;font-weight:300}
-.logo-m{width:26px;height:26px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.55rem;color:var(--gold);position:relative}
-.logo-m::after{content:'';position:absolute;width:4px;height:4px;background:var(--gold);border-radius:50%;top:3px;right:4px;opacity:.4}
-.logo-sub{font-family:var(--fm);font-size:.48rem;letter-spacing:.2em;color:var(--tm);text-transform:uppercase}
+.logo{font-family:var(--fd);font-size:1.35rem;letter-spacing:.12em;color:var(--nv);display:flex;align-items:center;gap:.5rem;cursor:pointer;font-weight:600}
+.logo-m{width:26px;height:26px;border:2px solid var(--nv);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.55rem;color:var(--cr);position:relative}
+.logo-m::after{content:'';position:absolute;width:4px;height:4px;background:var(--trr);border-radius:50%;top:3px;right:4px;opacity:.4}
+.logo-sub{font-family:var(--fm);font-size:.48rem;letter-spacing:.2em;color:var(--tx3);text-transform:uppercase}
 .nav-tabs{display:flex;gap:.1rem;list-style:none;flex-wrap:wrap;justify-content:center}
-.nav-tab{font-family:var(--fd);font-size:.72rem;letter-spacing:.06em;padding:.42rem .8rem;border-radius:30px;cursor:pointer;color:var(--tm);border:1px solid transparent;transition:all var(--tr);background:none;white-space:nowrap;font-weight:400}
-.nav-tab:hover{color:var(--tb)}.nav-tab.active{color:var(--gold);border-color:var(--b);background:var(--goldg)}
+.nav-tab{font-family:var(--fd);font-size:.72rem;letter-spacing:.06em;padding:.42rem .8rem;border-radius:30px;cursor:pointer;color:var(--tx3);border:1px solid transparent;transition:all var(--tr);background:none;white-space:nowrap;font-weight:400}
+.nav-tab:hover{color:var(--nv)}.nav-tab.active{color:var(--cr);border-color:var(--nv);background:var(--nv)}
 .nav-r{display:flex;align-items:center;gap:.5rem}
-.nav-ph{font-family:var(--fm);font-size:.68rem;color:var(--tm)}.nav-ph a{color:var(--tm)}.nav-ph a:hover{color:var(--gold)}
-.lang-sw{display:flex;gap:2px;background:var(--surf);border:1px solid var(--b);border-radius:6px;padding:2px}
-.lang-btn{font-family:var(--fm);font-size:.55rem;letter-spacing:.1em;padding:3px 8px;border:none;border-radius:4px;cursor:pointer;background:transparent;color:var(--tm);transition:all var(--tr)}
-.lang-btn.active{background:var(--gold);color:var(--ds)}
+.nav-ph{font-family:var(--fm);font-size:.68rem;color:var(--tx3)}.nav-ph a{color:var(--tx3)}.nav-ph a:hover{color:var(--trr)}
+.lang-sw{display:flex;gap:2px;background:var(--cr2);border:1px solid var(--cr3);border-radius:6px;padding:2px}
+.lang-btn{font-family:var(--fm);font-size:.55rem;letter-spacing:.1em;padding:3px 8px;border:none;border-radius:4px;cursor:pointer;background:transparent;color:var(--tx3);transition:all var(--tr)}
+.lang-btn.active{background:var(--nv);color:var(--cr)}
 .btn-mob{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:4px}
-.btn-mob span{width:18px;height:1.5px;background:var(--t);border-radius:1px}
+.btn-mob span{width:18px;height:1.5px;background:var(--nv);border-radius:1px}
 .page{display:none;padding-top:64px;min-height:100vh;animation:pgIn .4s ease;position:relative;z-index:2}
 .page.active{display:block}
 @keyframes pgIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.ph{padding:3rem 0 2rem;border-bottom:1px solid var(--b);margin-bottom:2.5rem}
-.ph h1{margin:.4rem 0 .3rem}.ph p{color:var(--tm);max-width:620px;font-size:.95rem}
+.ph{padding:3rem 0 2rem;border-bottom:1px solid var(--cr3);margin-bottom:2.5rem}
+.ph h1{margin:.4rem 0 .3rem}.ph p{color:var(--tx3);max-width:620px;font-size:.95rem}
 section{padding:clamp(3rem,8vw,6rem) 0}
 .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:1.25rem}
 .grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1.25rem}
 .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:clamp(1.5rem,3vw,3rem);align-items:center}
-.card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:1.5rem;transition:all var(--tr);overflow:hidden}
-.card:hover{border-color:var(--goldd);transform:translateY(-3px);box-shadow:var(--shc)}
-.card-ic{width:48px;height:48px;background:var(--surf);border:1px solid var(--b);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem;opacity:.15}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.5rem;transition:all var(--tr);overflow:hidden}
+.card:hover{border-color:var(--trr);transform:translateY(-3px);box-shadow:0 16px 48px rgba(13,27,42,.08)}
+.card-ic{width:48px;height:48px;background:var(--cr2);border:1px solid var(--cr3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem;opacity:.15}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
 .reveal.vis{opacity:1;transform:translateY(0)}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:64px}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 85%,rgba(196,149,106,.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 15%,rgba(196,149,106,.03) 0%,transparent 40%),linear-gradient(180deg,var(--ds) 0%,var(--ds2) 100%)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 85%,rgba(196,149,106,.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 15%,rgba(196,149,106,.03) 0%,transparent 40%),linear-gradient(180deg,var(--cr) 0%,var(--cr2) 100%)}
 .hero-c{position:relative;z-index:2;max-width:820px}
-.hero-sub{font-family:var(--fm);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:0;animation:fadeUp .7s .2s ease forwards}
-.hero h1{margin-bottom:1.5rem;opacity:0;animation:fadeUp .7s .35s ease forwards}.hero h1 em{font-style:normal;color:var(--gold);font-weight:400}
-.hero-desc{font-size:1.12rem;color:var(--tb);max-width:540px;margin-bottom:2.2rem;opacity:0;animation:fadeUp .7s .5s ease forwards}
+.hero-sub{font-family:var(--fm);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--trr);margin-bottom:1.5rem;opacity:0;animation:fadeUp .7s .2s ease forwards}
+.hero h1{margin-bottom:1.5rem;opacity:0;animation:fadeUp .7s .35s ease forwards}.hero h1 em{font-style:normal;color:var(--trr);font-weight:400}
+.hero-desc{font-size:1.12rem;color:var(--tx2);max-width:540px;margin-bottom:2.2rem;opacity:0;animation:fadeUp .7s .5s ease forwards}
 .hero-acts{display:flex;gap:.8rem;flex-wrap:wrap;opacity:0;animation:fadeUp .7s .65s ease forwards}
-.hero-stats{display:flex;gap:2.5rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--b);opacity:0;animation:fadeUp .7s .8s ease forwards}
-.st-n{font-family:var(--fd);font-size:2.4rem;color:var(--gold);line-height:1;font-weight:300}
-.st-l{font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm);margin-top:.3rem}
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-.eng-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);overflow:hidden;transition:all var(--tr)}
-.eng-card:hover{border-color:var(--goldd);box-shadow:var(--shc)}
-.eng-vis{height:200px;background:linear-gradient(180deg,var(--surf),var(--cr));border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:center;position:relative}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--cr3);opacity:0;animation:fadeUp .7s .8s ease forwards}
+.st-n{font-family:var(--fd);font-size:2.4rem;color:var(--nv);line-height:1;font-weight:300}
+.st-l{font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tx3);margin-top:.3rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.eng-card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;overflow:hidden;transition:all var(--tr)}
+.eng-card:hover{border-color:var(--trr);box-shadow:0 16px 48px rgba(13,27,42,.08)}
+.eng-vis{height:200px;background:linear-gradient(180deg,var(--cr2),var(--cr));border-bottom:1px solid var(--cr3);display:flex;align-items:center;justify-content:center;position:relative}
 .eng-vis::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 80%,rgba(196,149,106,.04),transparent 60%)}
 .eng-vis-i{font-size:3rem;opacity:.06}
 .eng-body{padding:1.8rem}.eng-body h3{margin:.5rem 0 .3rem}
-.eng-body .desc{font-size:.9rem;color:var(--tm);margin-bottom:1.2rem;line-height:1.5}
+.eng-body .desc{font-size:.9rem;color:var(--tx3);margin-bottom:1.2rem;line-height:1.5}
 .eng-specs{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1.5rem;margin-bottom:1.3rem}
 .eng-spec{display:flex;flex-direction:column}
-.eng-spec-k{font-family:var(--fm);font-size:.54rem;text-transform:uppercase;letter-spacing:.2em;color:var(--td)}
-.eng-spec-v{font-size:.95rem;color:var(--t);margin-top:.08rem}
+.eng-spec-k{font-family:var(--fm);font-size:.54rem;text-transform:uppercase;letter-spacing:.2em;color:var(--tx3)}
+.eng-spec-v{font-size:.95rem;color:var(--nv);margin-top:.08rem}
 .eng-acts{display:flex;gap:.5rem}
 .cfg-layout{display:grid;grid-template-columns:250px 1fr;gap:2rem;align-items:start}
 .sb{position:sticky;top:76px}
 .sb-sec{margin-bottom:1.5rem}
-.sb-t{font-family:var(--fm);font-size:.58rem;text-transform:uppercase;letter-spacing:.22em;color:var(--td);margin-bottom:.5rem;padding-bottom:.35rem;border-bottom:1px solid var(--b)}
+.sb-t{font-family:var(--fm);font-size:.58rem;text-transform:uppercase;letter-spacing:.22em;color:var(--tx3);margin-bottom:.5rem;padding-bottom:.35rem;border-bottom:1px solid var(--cr3)}
 .eng-sel{display:flex;flex-direction:column;gap:.2rem}
-.eng-opt{display:flex;align-items:center;gap:.5rem;padding:.48rem .6rem;border-radius:30px;cursor:pointer;border:1px solid transparent;transition:all var(--tr);background:none;color:var(--tb);font-family:var(--fb);font-size:.85rem;text-align:left;width:100%}
-.eng-opt:hover{background:rgba(255,255,255,.015);color:var(--t)}
-.eng-opt.active{background:var(--goldg);border-color:rgba(196,149,106,.15);color:var(--gold)}
-.eng-dot{width:6px;height:6px;border-radius:50%;border:1.5px solid var(--b);flex-shrink:0;transition:var(--tr)}
-.eng-opt.active .eng-dot{border-color:var(--gold);background:var(--gold)}
+.eng-opt{display:flex;align-items:center;gap:.5rem;padding:.48rem .6rem;border-radius:30px;cursor:pointer;border:1px solid transparent;transition:all var(--tr);background:none;color:var(--tx2);font-family:var(--fb);font-size:.85rem;text-align:left;width:100%}
+.eng-opt:hover{background:rgba(255,255,255,.015);color:var(--nv)}
+.eng-opt.active{background:var(--cr2);border-color:rgba(196,149,106,.15);color:var(--trr)}
+.eng-dot{width:6px;height:6px;border-radius:50%;border:1.5px solid var(--cr3);flex-shrink:0;transition:var(--tr)}
+.eng-opt.active .eng-dot{border-color:var(--trr);background:var(--trr)}
 .cat-f{display:flex;flex-direction:column;gap:.12rem}
-.cat-o{font-family:var(--fm);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;padding:.38rem .55rem;border-radius:30px;cursor:pointer;border:none;background:none;color:var(--tm);text-align:left;transition:all var(--tr)}
-.cat-o:hover{color:var(--tb);background:rgba(255,255,255,.015)}
-.cat-o.active{color:var(--gold);background:var(--goldg)}
-.cat-cnt{float:right;color:var(--td);font-size:.52rem}
+.cat-o{font-family:var(--fm);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;padding:.38rem .55rem;border-radius:30px;cursor:pointer;border:none;background:none;color:var(--tx3);text-align:left;transition:all var(--tr)}
+.cat-o:hover{color:var(--tx2);background:rgba(255,255,255,.015)}
+.cat-o.active{color:var(--trr);background:var(--cr2)}
+.cat-cnt{float:right;color:var(--tx3);font-size:.52rem}
 .p-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;flex-wrap:wrap;gap:.8rem}
-.p-cnt{font-family:var(--fm);font-size:.68rem;color:var(--tm);letter-spacing:.12em}
-.p-search{display:flex;align-items:center;gap:.4rem;padding:.42rem .7rem;background:var(--surf);border:1px solid var(--b);border-radius:30px;width:270px;transition:border-color var(--tr)}
-.p-search:focus-within{border-color:var(--goldd)}
-.p-search input{background:none;border:none;color:var(--t);font-family:var(--fm);font-size:.75rem;width:100%;outline:none}
-.p-search input::placeholder{color:var(--td)}
+.p-cnt{font-family:var(--fm);font-size:.68rem;color:var(--tx3);letter-spacing:.12em}
+.p-search{display:flex;align-items:center;gap:.4rem;padding:.42rem .7rem;background:var(--cr2);border:1px solid var(--cr3);border-radius:30px;width:270px;transition:border-color var(--tr)}
+.p-search:focus-within{border-color:var(--trr)}
+.p-search input{background:none;border:none;color:var(--nv);font-family:var(--fm);font-size:.75rem;width:100%;outline:none}
+.p-search input::placeholder{color:var(--tx3)}
 .p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,275px),1fr));gap:1rem}
-.p-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);overflow:hidden;transition:all var(--tr);cursor:pointer}
-.p-card:hover{border-color:var(--goldd);transform:translateY(-3px);box-shadow:0 8px 40px rgba(0,0,0,.3)}
-.p-img{aspect-ratio:16/10;background:linear-gradient(135deg,var(--surf),var(--cr));display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--b);position:relative}
+.p-card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;overflow:hidden;transition:all var(--tr);cursor:pointer}
+.p-card:hover{border-color:var(--trr);transform:translateY(-3px);box-shadow:0 8px 40px rgba(13,27,42,.06)}
+.p-img{aspect-ratio:16/10;background:linear-gradient(135deg,var(--cr2),var(--cr));display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--cr3);position:relative}
 .p-img-i{font-size:1.8rem;opacity:.06}
 .p-img .badge{position:absolute;top:.5rem;right:.5rem}
 .p-body{padding:1rem 1.1rem}
-.p-sku{font-family:var(--fm);font-size:.56rem;color:var(--td);letter-spacing:.18em;margin-bottom:.2rem}
-.p-name{font-family:var(--fd);font-size:1rem;letter-spacing:.03em;color:var(--t);margin-bottom:.25rem;font-weight:400}
-.p-compat{font-family:var(--fm);font-size:.58rem;color:var(--tm);letter-spacing:.1em;margin-bottom:.6rem}
-.p-foot{display:flex;justify-content:space-between;align-items:center;padding-top:.6rem;border-top:1px solid var(--b)}
-.p-price{font-family:var(--fd);font-size:1.3rem;color:var(--gold);font-weight:300}
-.p-price small{font-family:var(--fm);font-size:.52rem;color:var(--td);letter-spacing:.1em}
+.p-sku{font-family:var(--fm);font-size:.56rem;color:var(--tx3);letter-spacing:.18em;margin-bottom:.2rem}
+.p-name{font-family:var(--fd);font-size:1rem;letter-spacing:.03em;color:var(--nv);margin-bottom:.25rem;font-weight:400}
+.p-compat{font-family:var(--fm);font-size:.58rem;color:var(--tx3);letter-spacing:.1em;margin-bottom:.6rem}
+.p-foot{display:flex;justify-content:space-between;align-items:center;padding-top:.6rem;border-top:1px solid var(--cr3)}
+.p-price{font-family:var(--fd);font-size:1.3rem;color:var(--trr);font-weight:300}
+.p-price small{font-family:var(--fm);font-size:.52rem;color:var(--tx3);letter-spacing:.1em}
 .exploded-wrap{position:relative;width:100%;max-width:600px;margin:2rem auto}
 .exploded-svg{width:100%;height:auto}
 .exploded-dot{cursor:pointer;transition:all var(--tr)}
 .exploded-dot:hover{filter:brightness(1.4)}
-.exploded-tooltip{position:absolute;background:var(--cr);border:1px solid var(--gold);border-radius:var(--rad);padding:.8rem 1rem;pointer-events:none;opacity:0;transition:opacity .2s;z-index:10;min-width:180px}
+.exploded-tooltip{position:absolute;background:var(--cr);border:2px solid var(--trr);border-radius:var(--rad);padding:.8rem 1rem;pointer-events:none;opacity:0;transition:opacity .2s;z-index:10;min-width:180px}
 .exploded-tooltip.show{opacity:1}
-.exploded-tooltip .tt-name{font-family:var(--fd);font-size:.85rem;color:var(--t);margin-bottom:.2rem}
-.exploded-tooltip .tt-sku{font-family:var(--fm);font-size:.55rem;color:var(--td);letter-spacing:.12em;margin-bottom:.3rem}
-.exploded-tooltip .tt-price{font-family:var(--fd);font-size:1rem;color:var(--gold)}
+.exploded-tooltip .tt-name{font-family:var(--fd);font-size:.85rem;color:var(--nv);margin-bottom:.2rem}
+.exploded-tooltip .tt-sku{font-family:var(--fm);font-size:.55rem;color:var(--tx3);letter-spacing:.12em;margin-bottom:.3rem}
+.exploded-tooltip .tt-price{font-family:var(--fd);font-size:1rem;color:var(--trr)}
 .exploded-tooltip .tt-btn{margin-top:.4rem}
-.q-panel{position:fixed;right:-420px;top:0;bottom:0;width:400px;background:var(--surf);border-left:1px solid var(--b);z-index:1001;transition:right var(--trs);overflow-y:auto;padding:1.5rem}
+.q-panel{position:fixed;right:-420px;top:0;bottom:0;width:400px;background:var(--w);border-left:1px solid var(--cr3);z-index:1001;transition:right var(--trs);overflow-y:auto;padding:1.5rem}
 .q-panel.open{right:0}
-.q-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;opacity:0;pointer-events:none;transition:opacity var(--tr)}.q-ov.open{opacity:1;pointer-events:all}
-.q-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:.8rem;border-bottom:1px solid var(--b);margin-bottom:1rem}
-.q-close{background:none;border:none;color:var(--tm);cursor:pointer;font-size:1rem;transition:color var(--tr)}.q-close:hover{color:var(--t)}
+.q-ov{position:fixed;inset:0;background:rgba(13,27,42,.3);z-index:1000;opacity:0;pointer-events:none;transition:opacity var(--tr)}.q-ov.open{opacity:1;pointer-events:all}
+.q-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:.8rem;border-bottom:1px solid var(--cr3);margin-bottom:1rem}
+.q-close{background:none;border:none;color:var(--tx3);cursor:pointer;font-size:1rem;transition:color var(--tr)}.q-close:hover{color:var(--nv)}
 .q-items{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem}
-.q-item{display:flex;gap:.6rem;align-items:center;padding:.6rem;background:var(--cr);border-radius:var(--rad);border:1px solid var(--b)}
-.q-item-img{width:36px;height:36px;background:var(--ds);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;opacity:.15}
-.q-item-info{flex:1;min-width:0}.q-item-name{font-family:var(--fd);font-size:.8rem;color:var(--t)}.q-item-sku{font-family:var(--fm);font-size:.5rem;color:var(--td);letter-spacing:.15em}
-.q-item-price{font-family:var(--fm);font-size:.7rem;color:var(--gold);flex-shrink:0}
-.q-item-rm{background:none;border:none;color:var(--td);cursor:pointer;font-size:.7rem;padding:2px;transition:color var(--tr)}.q-item-rm:hover{color:var(--r)}
-.q-total{display:flex;justify-content:space-between;align-items:center;padding:.85rem;background:var(--cr);border-radius:var(--rad);border:1px solid var(--b);margin-bottom:.8rem}
-.q-total-l{font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm)}
-.q-total-v{font-family:var(--fd);font-size:1.6rem;color:var(--gold);font-weight:300}
-.q-empty{text-align:center;padding:2.5rem 1rem;color:var(--td);font-family:var(--fm);font-size:.7rem;letter-spacing:.1em}
-.q-trig{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--goldw));color:var(--ds);display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;font-size:1rem;box-shadow:0 4px 25px rgba(196,149,106,.3);transition:all var(--tr)}
+.q-item{display:flex;gap:.6rem;align-items:center;padding:.6rem;background:var(--cr2);border-radius:var(--rad);border:1px solid var(--cr3)}
+.q-item-img{width:36px;height:36px;background:var(--cr2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;opacity:.15}
+.q-item-info{flex:1;min-width:0}.q-item-name{font-family:var(--fd);font-size:.8rem;color:var(--nv)}.q-item-sku{font-family:var(--fm);font-size:.5rem;color:var(--tx3);letter-spacing:.15em}
+.q-item-price{font-family:var(--fm);font-size:.7rem;color:var(--trr);flex-shrink:0}
+.q-item-rm{background:none;border:none;color:var(--tx3);cursor:pointer;font-size:.7rem;padding:2px;transition:color var(--tr)}.q-item-rm:hover{color:var(--r)}
+.q-total{display:flex;justify-content:space-between;align-items:center;padding:.85rem;background:var(--cr2);border-radius:var(--rad);border:1px solid var(--cr3);margin-bottom:.8rem}
+.q-total-l{font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tx3)}
+.q-total-v{font-family:var(--fd);font-size:1.6rem;color:var(--trr);font-weight:300}
+.q-empty{text-align:center;padding:2.5rem 1rem;color:var(--tx3);font-family:var(--fm);font-size:.7rem;letter-spacing:.1em}
+.q-trig{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;width:52px;height:52px;border-radius:50%;background:var(--nv);color:var(--cr);display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;font-size:1rem;box-shadow:0 4px 25px rgba(13,27,42,.15);transition:all var(--tr)}
 .q-trig:hover{transform:scale(1.1)}.q-trig .qc{position:absolute;top:-3px;right:-3px;width:18px;height:18px;border-radius:50%;background:var(--r);color:#fff;font-size:.48rem;font-family:var(--fm);display:flex;align-items:center;justify-content:center}.q-trig .qc:empty{display:none}
 .bld-steps{display:flex;gap:.35rem;margin-bottom:2rem;overflow-x:auto;padding-bottom:.4rem}
-.bld-step{display:flex;align-items:center;gap:.35rem;padding:.42rem .8rem;border-radius:30px;font-family:var(--fd);font-size:.7rem;letter-spacing:.06em;color:var(--td);border:1px solid transparent;white-space:nowrap;transition:all var(--tr);cursor:pointer;background:none}
-.bld-n{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:.52rem;transition:all var(--tr)}
-.bld-step.active{color:var(--gold);border-color:rgba(196,149,106,.12);background:var(--goldg)}
-.bld-step.active .bld-n{border-color:var(--gold);background:var(--gold);color:var(--ds)}
-.bld-step.done{color:var(--g)}.bld-step.done .bld-n{border-color:var(--g);background:var(--g);color:var(--ds)}
-.bld-div{width:16px;height:1px;background:var(--b);flex-shrink:0}
+.bld-step{display:flex;align-items:center;gap:.35rem;padding:.42rem .8rem;border-radius:30px;font-family:var(--fd);font-size:.7rem;letter-spacing:.06em;color:var(--tx3);border:1px solid transparent;white-space:nowrap;transition:all var(--tr);cursor:pointer;background:none}
+.bld-n{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--cr3);display:flex;align-items:center;justify-content:center;font-size:.52rem;transition:all var(--tr)}
+.bld-step.active{color:var(--trr);border-color:rgba(196,149,106,.12);background:var(--cr2)}
+.bld-step.active .bld-n{border-color:var(--trr);background:var(--nv);color:var(--cr)}
+.bld-step.done{color:var(--g)}.bld-step.done .bld-n{border-color:var(--g);background:var(--g);color:var(--nv)}
+.bld-div{width:16px;height:1px;background:var(--cr3);flex-shrink:0}
 .bld-panel{display:none;animation:pgIn .4s ease}.bld-panel.active{display:block}
 .bld-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:1rem}
-.bld-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:1.4rem;cursor:pointer;transition:all var(--tr);position:relative}
-.bld-card:hover{border-color:var(--goldd);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.2)}
-.bld-card.sel{border-color:var(--gold);background:var(--goldg)}
-.bld-card.sel::after{content:'\2713';position:absolute;top:.7rem;right:.7rem;width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--ds);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:600;animation:checkPop .3s ease}
+.bld-card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.4rem;cursor:pointer;transition:all var(--tr);position:relative}
+.bld-card:hover{border-color:var(--trr);transform:translateY(-2px);box-shadow:0 4px 20px rgba(13,27,42,.05)}
+.bld-card.sel{border-color:var(--trr);background:var(--cr2)}
+.bld-card.sel::after{content:'\2713';position:absolute;top:.7rem;right:.7rem;width:22px;height:22px;border-radius:50%;background:var(--nv);color:var(--cr);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:600;animation:checkPop .3s ease}
 @keyframes checkPop{from{transform:scale(0)}to{transform:scale(1)}}
 .bld-card h4{font-size:1rem;margin-bottom:.2rem;font-weight:400}
-.bld-card .desc{font-size:.82rem;color:var(--tm);margin-bottom:.7rem;line-height:1.45}
+.bld-card .desc{font-size:.82rem;color:var(--tx3);margin-bottom:.7rem;line-height:1.45}
 .bld-card-specs{display:flex;flex-direction:column;gap:.15rem;margin-bottom:.7rem}
-.bld-card-spec{font-family:var(--fm);font-size:.58rem;color:var(--td);letter-spacing:.1em;display:flex;justify-content:space-between}.bld-card-spec span:last-child{color:var(--tm)}
-.bld-card-price{font-family:var(--fd);font-size:1.4rem;color:var(--gold);font-weight:300}
-.bld-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--b)}
-.bld-sum{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:2rem;margin-top:2rem}
+.bld-card-spec{font-family:var(--fm);font-size:.58rem;color:var(--tx3);letter-spacing:.1em;display:flex;justify-content:space-between}.bld-card-spec span:last-child{color:var(--tx3)}
+.bld-card-price{font-family:var(--fd);font-size:1.4rem;color:var(--trr);font-weight:300}
+.bld-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--cr3)}
+.bld-sum{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:2rem;margin-top:2rem}
 .bld-sum h3{margin-bottom:1.2rem}
 .bld-sum-items{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.2rem}
-.bld-sum-item{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px solid var(--b)}.bld-sum-item:last-child{border:none}
-.bld-sum-l{font-family:var(--fm);font-size:.62rem;color:var(--tm);letter-spacing:.12em;text-transform:uppercase}
-.bld-sum-v{font-size:.88rem;color:var(--t)}
-.bld-sum-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:1rem;border-top:2px solid var(--b)}
-.bld-sum-total-l{font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm)}
-.bld-sum-total-v{font-family:var(--fd);font-size:2.4rem;color:var(--gold);font-weight:300}
+.bld-sum-item{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px solid var(--cr3)}.bld-sum-item:last-child{border:none}
+.bld-sum-l{font-family:var(--fm);font-size:.62rem;color:var(--tx3);letter-spacing:.12em;text-transform:uppercase}
+.bld-sum-v{font-size:.88rem;color:var(--tx)}
+.bld-sum-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:1rem;border-top:2px solid var(--cr3)}
+.bld-sum-total-l{font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tx3)}
+.bld-sum-total-v{font-family:var(--fd);font-size:2.4rem;color:var(--nv);font-weight:300}
 /* Installment */
-.instal-card{background:linear-gradient(135deg,var(--cr),var(--surf));border:1px solid var(--gold);border-radius:var(--radxl);padding:2rem;margin-top:1.5rem;position:relative;overflow:hidden}
-.instal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--goldw),var(--gold))}
+.instal-card{background:linear-gradient(135deg,var(--w),var(--cr2));border:2px solid var(--trr);border-radius:var(--radxl);padding:2rem;margin-top:1.5rem;position:relative;overflow:hidden}
+.instal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--trr),var(--trrl),var(--trr))}
 .instal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-top:1rem}
-.instal-item{text-align:center;padding:1rem;background:var(--surf);border-radius:var(--rad);border:1px solid var(--b)}
-.instal-item-v{font-family:var(--fd);font-size:1.6rem;color:var(--gold);font-weight:300}
-.instal-item-l{font-family:var(--fm);font-size:.55rem;text-transform:uppercase;letter-spacing:.15em;color:var(--td);margin-top:.2rem}
+.instal-item{text-align:center;padding:1rem;background:var(--cr2);border-radius:12px;border:1px solid var(--cr3)}
+.instal-item-v{font-family:var(--fd);font-size:1.6rem;color:var(--trr);font-weight:300}
+.instal-item-l{font-family:var(--fm);font-size:.55rem;text-transform:uppercase;letter-spacing:.15em;color:var(--tx3);margin-top:.2rem}
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:1.25rem}
-.svc-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:2rem;transition:all var(--tr);position:relative;overflow:hidden}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform var(--tr)}
-.svc-card:hover{border-color:var(--goldd);transform:translateY(-3px)}.svc-card:hover::before{transform:scaleX(1)}
-.svc-ic{width:52px;height:52px;background:var(--goldg);border:1px solid rgba(196,149,106,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1.2rem}
-.svc-card h4{margin-bottom:.35rem;font-weight:400}.svc-card p{font-size:.88rem;color:var(--tm);margin-bottom:1rem;line-height:1.5}
-.svc-card .pn{font-family:var(--fm);font-size:.68rem;color:var(--td);letter-spacing:.1em;border-top:1px solid var(--b);padding-top:.8rem}
-.svc-book{background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);padding:2.5rem;margin-top:2.5rem}
+.svc-card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:2rem;transition:all var(--tr);position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cr3),transparent);transform:scaleX(0);transition:transform var(--tr)}
+.svc-card:hover{border-color:var(--trr);transform:translateY(-3px)}.svc-card:hover::before{transform:scaleX(1)}
+.svc-ic{width:52px;height:52px;background:var(--cr2);border:1px solid var(--cr3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1.2rem}
+.svc-card h4{margin-bottom:.35rem;font-weight:400}.svc-card p{font-size:.88rem;color:var(--tx3);margin-bottom:1rem;line-height:1.5}
+.svc-card .pn{font-family:var(--fm);font-size:.68rem;color:var(--tx3);letter-spacing:.1em;border-top:1px solid var(--cr3);padding-top:.8rem}
+.svc-book{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:2.5rem;margin-top:2.5rem}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.fg{margin-bottom:1rem}.fg label{display:block;font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm);margin-bottom:.35rem}
-.fg input,.fg select,.fg textarea{width:100%;padding:.72rem .9rem;background:var(--surf);border:1px solid var(--b);border-radius:30px;color:var(--t);font-family:var(--fb);font-size:.9rem;transition:border-color var(--tr);outline:none}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}.fg textarea{resize:vertical;min-height:80px;border-radius:var(--radl)}
-.calc-wrap{background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);padding:2.5rem;margin-top:2.5rem}
+.fg{margin-bottom:1rem}.fg label{display:block;font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tx3);margin-bottom:.35rem}
+.fg input,.fg select,.fg textarea{width:100%;padding:.72rem .9rem;background:var(--cr2);border:1px solid var(--cr3);border-radius:30px;color:var(--nv);font-family:var(--fb);font-size:.9rem;transition:border-color var(--tr);outline:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--trr)}.fg textarea{resize:vertical;min-height:80px;border-radius:var(--radl)}
+.calc-wrap{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:2.5rem;margin-top:2.5rem}
 .calc-input{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.calc-input label{font-family:var(--fm);font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm)}
-.calc-input input{width:120px;padding:.6rem .8rem;background:var(--surf);border:1px solid var(--b);border-radius:var(--rad);color:var(--t);font-family:var(--fd);font-size:1.2rem;text-align:center;outline:none;transition:border-color var(--tr)}
-.calc-input input:focus{border-color:var(--gold)}
+.calc-input label{font-family:var(--fm);font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tx3)}
+.calc-input input{width:120px;padding:.6rem .8rem;background:var(--cr2);border:1px solid var(--cr3);border-radius:var(--rad);color:var(--nv);font-family:var(--fd);font-size:1.2rem;text-align:center;outline:none;transition:border-color var(--tr)}
+.calc-input input:focus{border-color:var(--trr)}
 .calc-result{margin-top:1rem}
-.calc-item{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px solid var(--b)}
+.calc-item{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px solid var(--cr3)}
 .calc-item:last-child{border:none}
-.calc-item-name{font-size:.9rem;color:var(--t)}
-.calc-item-cost{font-family:var(--fd);font-size:.95rem;color:var(--gold)}
-.calc-item.due{color:var(--gold)}
+.calc-item-name{font-size:.9rem;color:var(--tx)}
+.calc-item-cost{font-family:var(--fd);font-size:.95rem;color:var(--trr)}
+.calc-item.due{color:var(--trr)}
 .calc-item.overdue{color:var(--r)}
 .calc-item.done{color:var(--g);opacity:.5}
-.calc-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:1rem;margin-top:.5rem;border-top:2px solid var(--b)}
-.calc-total-l{font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm)}
-.calc-total-v{font-family:var(--fd);font-size:1.8rem;color:var(--gold);font-weight:300}
+.calc-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:1rem;margin-top:.5rem;border-top:2px solid var(--cr3)}
+.calc-total-l{font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tx3)}
+.calc-total-v{font-family:var(--fd);font-size:1.8rem;color:var(--trr);font-weight:300}
 .calc-progress{margin-top:1.5rem}
-.calc-progress-bar{height:6px;background:var(--b);border-radius:3px;overflow:hidden;margin-top:.4rem}
-.calc-progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--goldw));border-radius:3px;transition:width .5s ease}
-.calc-progress-label{font-family:var(--fm);font-size:.6rem;color:var(--tm);letter-spacing:.1em;display:flex;justify-content:space-between}
+.calc-progress-bar{height:6px;background:var(--cr3);border-radius:3px;overflow:hidden;margin-top:.4rem}
+.calc-progress-fill{height:100%;background:linear-gradient(90deg,var(--trr),var(--trrl));border-radius:3px;transition:width .5s ease}
+.calc-progress-label{font-family:var(--fm);font-size:.6rem;color:var(--tx3);letter-spacing:.1em;display:flex;justify-content:space-between}
 .calc-warn{background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.2);border-radius:var(--rad);padding:.8rem 1rem;margin-top:1rem;color:var(--r);font-size:.85rem;display:none}
 .calc-warn.show{display:block}
 .cmp-checks{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
-.cmp-chk{display:flex;align-items:center;gap:.4rem;padding:.4rem .8rem;border-radius:30px;border:1px solid var(--b);cursor:pointer;transition:all var(--tr);font-family:var(--fd);font-size:.72rem;color:var(--tm)}
-.cmp-chk:hover{border-color:var(--goldd)}
-.cmp-chk.active{border-color:var(--gold);color:var(--gold);background:var(--goldg)}
+.cmp-chk{display:flex;align-items:center;gap:.4rem;padding:.4rem .8rem;border-radius:30px;border:1px solid var(--cr3);cursor:pointer;transition:all var(--tr);font-family:var(--fd);font-size:.72rem;color:var(--tx3)}
+.cmp-chk:hover{border-color:var(--trr)}
+.cmp-chk.active{border-color:var(--trr);color:var(--trr);background:var(--cr2)}
 .cmp-chk input{display:none}
 .cmp-table{width:100%;border-collapse:collapse}
-.cmp-table th{font-family:var(--fm);font-size:.55rem;text-transform:uppercase;letter-spacing:.15em;color:var(--td);text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--b)}
-.cmp-table td{padding:.6rem .8rem;border-bottom:1px solid var(--b);font-size:.85rem;color:var(--tb)}
-.cmp-table td.best{color:var(--gold);font-weight:500}
+.cmp-table th{font-family:var(--fm);font-size:.55rem;text-transform:uppercase;letter-spacing:.15em;color:var(--tx3);text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--cr3)}
+.cmp-table td{padding:.6rem .8rem;border-bottom:1px solid var(--cr3);font-size:.85rem;color:var(--tx2)}
+.cmp-table td.best{color:var(--trr);font-weight:500}
 .cmp-table tr:hover td{background:rgba(196,149,106,.03)}
 .dash-search{max-width:600px;margin:0 auto 2.5rem;text-align:center}
 .dash-sb{display:flex;gap:.5rem;margin-top:.8rem}
-.dash-sb input{flex:1;padding:.72rem .9rem;background:var(--surf);border:1px solid var(--b);border-radius:30px;color:var(--t);font-family:var(--fm);font-size:.82rem;letter-spacing:.06em;outline:none;transition:border-color var(--tr)}.dash-sb input:focus{border-color:var(--gold)}
+.dash-sb input{flex:1;padding:.72rem .9rem;background:var(--cr2);border:1px solid var(--cr3);border-radius:30px;color:var(--nv);font-family:var(--fm);font-size:.82rem;letter-spacing:.06em;outline:none;transition:border-color var(--tr)}.dash-sb input:focus{border-color:var(--trr)}
 .dash-c{display:none;animation:pgIn .35s ease}.dash-c.vis{display:block}
 .dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1rem;margin-bottom:2rem}
-.dash-stat{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:1.3rem}
-.dash-stat-l{font-family:var(--fm);font-size:.55rem;text-transform:uppercase;letter-spacing:.22em;color:var(--td);margin-bottom:.35rem}
-.dash-stat-v{font-family:var(--fd);font-size:1.9rem;color:var(--t);letter-spacing:.02em;font-weight:300}
-.dash-stat-s{font-family:var(--fm);font-size:.58rem;color:var(--tm);margin-top:.1rem;letter-spacing:.06em}
+.dash-stat{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.3rem}
+.dash-stat-l{font-family:var(--fm);font-size:.55rem;text-transform:uppercase;letter-spacing:.22em;color:var(--tx3);margin-bottom:.35rem}
+.dash-stat-v{font-family:var(--fd);font-size:1.9rem;color:var(--nv);letter-spacing:.02em;font-weight:300}
+.dash-stat-s{font-family:var(--fm);font-size:.58rem;color:var(--tx3);margin-top:.1rem;letter-spacing:.06em}
 .dash-sec{margin-bottom:2rem}
-.dash-sec-t{font-family:var(--fd);font-size:1.3rem;letter-spacing:.03em;margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--b);font-weight:300}
-.eng-hero{display:grid;grid-template-columns:auto 1fr;gap:2rem;padding:2rem;background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);margin-bottom:2rem;align-items:center}
-.eng-vis2{width:160px;height:160px;background:var(--surf);border-radius:50%;border:1px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:.06}
+.dash-sec-t{font-family:var(--fd);font-size:1.3rem;letter-spacing:.03em;margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--cr3);font-weight:300}
+.eng-hero{display:grid;grid-template-columns:auto 1fr;gap:2rem;padding:2rem;background:var(--w);border:1px solid var(--cr3);border-radius:16px;margin-bottom:2rem;align-items:center}
+.eng-vis2{width:160px;height:160px;background:var(--cr2);border-radius:50%;border:1px solid var(--cr3);display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:.06}
 .eng-meta{display:grid;grid-template-columns:1fr 1fr;gap:.35rem 1.5rem;margin-top:.8rem}
 .eng-meta-i{display:flex;flex-direction:column}
-.eng-meta-l{font-family:var(--fm);font-size:.52rem;text-transform:uppercase;letter-spacing:.2em;color:var(--td)}
-.eng-meta-v{font-size:.88rem;color:var(--t);margin-top:.08rem}
+.eng-meta-l{font-family:var(--fm);font-size:.52rem;text-transform:uppercase;letter-spacing:.2em;color:var(--tx3)}
+.eng-meta-v{font-size:.88rem;color:var(--nv);margin-top:.08rem}
 .dash-table{width:100%;border-collapse:collapse}
-.dash-table th{font-family:var(--fm);font-size:.52rem;text-transform:uppercase;letter-spacing:.18em;color:var(--td);text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--b)}
-.dash-table td{padding:.55rem .6rem;border-bottom:1px solid var(--b);font-size:.82rem}
-.dash-table .mc{font-family:var(--fm);font-size:.72rem;color:var(--tm);letter-spacing:.06em}
+.dash-table th{font-family:var(--fm);font-size:.52rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tx3);text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--cr3)}
+.dash-table td{padding:.55rem .6rem;border-bottom:1px solid var(--cr3);font-size:.82rem}
+.dash-table .mc{font-family:var(--fm);font-size:.72rem;color:var(--tx3);letter-spacing:.06em}
 .dash-docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:.8rem}
-.dash-doc{background:var(--cr);border:1px solid var(--b);border-radius:var(--rad);padding:1rem;display:flex;align-items:center;gap:.6rem;cursor:pointer;transition:all var(--tr)}.dash-doc:hover{border-color:var(--goldd)}
-.dash-doc-ic{width:36px;height:36px;background:var(--surf);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;border:1px solid var(--b)}
-.dash-doc h5{font-family:var(--fd);font-size:.82rem;color:var(--t);font-weight:400}.dash-doc p{font-family:var(--fm);font-size:.52rem;color:var(--td);letter-spacing:.12em}
-.passport{background:var(--cr);border:1px solid var(--gold);border-radius:var(--radxl);padding:2rem;margin-top:1.5rem;position:relative;overflow:hidden}
-.passport::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--goldw),var(--gold))}
+.dash-doc{background:var(--w);border:1px solid var(--cr3);border-radius:12px;padding:1rem;display:flex;align-items:center;gap:.6rem;cursor:pointer;transition:all var(--tr)}.dash-doc:hover{border-color:var(--trr)}
+.dash-doc-ic{width:36px;height:36px;background:var(--cr2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;border:1px solid var(--cr3)}
+.dash-doc h5{font-family:var(--fd);font-size:.82rem;color:var(--nv);font-weight:400}.dash-doc p{font-family:var(--fm);font-size:.52rem;color:var(--tx3);letter-spacing:.12em}
+.passport{background:var(--cr);border:2px solid var(--trr);border-radius:var(--radxl);padding:2rem;margin-top:1.5rem;position:relative;overflow:hidden}
+.passport::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--trr),var(--trrl),var(--trr))}
 .passport-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
-.passport-qr{width:80px;height:80px;background:#fff;border-radius:var(--rad);padding:4px;flex-shrink:0}
+.passport-qr{width:80px;height:80px;background:var(--w);border-radius:var(--rad);padding:4px;flex-shrink:0}
 .passport-qr svg{width:100%;height:100%}
-.passport-title{font-family:var(--fd);font-size:.6rem;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);margin-bottom:.3rem}
-.passport-sn{font-family:var(--fm);font-size:.72rem;color:var(--td);letter-spacing:.1em}
+.passport-title{font-family:var(--fd);font-size:.6rem;text-transform:uppercase;letter-spacing:.25em;color:var(--trr);margin-bottom:.3rem}
+.passport-sn{font-family:var(--fm);font-size:.72rem;color:var(--tx3);letter-spacing:.1em}
 .passport-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:.8rem;margin-bottom:1.5rem}
-.passport-field{padding:.6rem;background:var(--surf);border-radius:var(--rad);border:1px solid var(--b)}
-.passport-field-l{font-family:var(--fm);font-size:.5rem;text-transform:uppercase;letter-spacing:.2em;color:var(--td);margin-bottom:.15rem}
-.passport-field-v{font-size:.88rem;color:var(--t)}
-.dealer-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:1.2rem;display:flex;gap:1rem;align-items:flex-start;transition:all var(--tr)}
-.dealer-card:hover{border-color:var(--goldd);transform:translateY(-2px)}
-.dealer-ic{width:40px;height:40px;background:var(--goldg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;border:1px solid rgba(196,149,106,.12)}
+.passport-field{padding:.6rem;background:var(--cr2);border-radius:12px;border:1px solid var(--cr3)}
+.passport-field-l{font-family:var(--fm);font-size:.5rem;text-transform:uppercase;letter-spacing:.2em;color:var(--tx3);margin-bottom:.15rem}
+.passport-field-v{font-size:.88rem;color:var(--tx)}
+.dealer-card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.2rem;display:flex;gap:1rem;align-items:flex-start;transition:all var(--tr)}
+.dealer-card:hover{border-color:var(--trr);transform:translateY(-2px)}
+.dealer-ic{width:40px;height:40px;background:var(--cr2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;border:1px solid var(--cr3)}
 .dealer-info{flex:1}
-.dealer-name{font-family:var(--fd);font-size:.9rem;color:var(--t);margin-bottom:.15rem}
-.dealer-addr{font-size:.8rem;color:var(--tm);margin-bottom:.2rem}
-.dealer-phone{font-family:var(--fm);font-size:.72rem;color:var(--gold)}
+.dealer-name{font-family:var(--fd);font-size:.9rem;color:var(--nv);margin-bottom:.15rem}
+.dealer-addr{font-size:.8rem;color:var(--tx3);margin-bottom:.2rem}
+.dealer-phone{font-family:var(--fm);font-size:.72rem;color:var(--trr)}
 .dealer-tags{display:flex;gap:.3rem;margin-top:.3rem}
-.dealer-tag{font-family:var(--fm);font-size:.5rem;text-transform:uppercase;letter-spacing:.1em;padding:.15rem .4rem;border-radius:10px;border:1px solid var(--b);color:var(--tm)}
-.dealer-tag.sales{border-color:rgba(196,149,106,.2);color:var(--gold);background:var(--goldg)}
+.dealer-tag{font-family:var(--fm);font-size:.5rem;text-transform:uppercase;letter-spacing:.1em;padding:.15rem .4rem;border-radius:10px;border:1px solid var(--cr3);color:var(--tx3)}
+.dealer-tag.sales{border-color:rgba(196,149,106,.2);color:var(--trr);background:var(--cr2)}
 .dealer-tag.service{border-color:rgba(78,203,113,.2);color:var(--g);background:rgba(78,203,113,.08)}
 .dealer-tag.training{border-color:rgba(107,160,208,.2);color:var(--blu);background:rgba(107,160,208,.08)}
 .dealer-filters{display:flex;gap:.4rem;margin-bottom:1.5rem;flex-wrap:wrap}
-.dealer-filter{font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;padding:.35rem .7rem;border-radius:20px;border:1px solid var(--b);background:none;color:var(--tm);cursor:pointer;transition:all var(--tr)}
-.dealer-filter:hover{color:var(--tb);background:rgba(255,255,255,.015)}
-.dealer-filter.active{color:var(--gold);background:var(--goldg);border-color:rgba(196,149,106,.15)}
+.dealer-filter{font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;padding:.35rem .7rem;border-radius:20px;border:1px solid var(--cr3);background:none;color:var(--tx3);cursor:pointer;transition:all var(--tr)}
+.dealer-filter:hover{color:var(--tx2);background:rgba(255,255,255,.015)}
+.dealer-filter.active{color:var(--cr);background:var(--nv);border-color:var(--nv)}
 .ah-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.5rem}
-.ah-item{display:flex;align-items:flex-start;gap:.6rem;padding:.85rem;background:var(--cr);border-radius:var(--rad);border:1px solid var(--b)}
-.ah-ic{width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--goldg);border-radius:50%;flex-shrink:0;font-size:.85rem}
-.ah-item h4{font-size:.9rem;letter-spacing:.03em;font-weight:400}.ah-item p{font-size:.8rem;color:var(--tm);margin:.08rem 0 0}
-.tl{position:relative;padding-left:3rem}.tl::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--gold),var(--b))}
-.tl-item{position:relative;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(22,28,48,.5)}.tl-item:last-child{border:none;margin-bottom:0;padding-bottom:0}
-.tl-dot{position:absolute;left:-3rem;top:.2rem;width:20px;height:20px;border-radius:50%;border:2px solid var(--gold);background:var(--ds);display:flex;align-items:center;justify-content:center;z-index:1}
-.tl-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold)}
-.tl-year{font-family:var(--fd);font-size:2rem;color:var(--gold);letter-spacing:.04em;margin-bottom:.2rem;font-weight:300}
+.ah-item{display:flex;align-items:flex-start;gap:.6rem;padding:.85rem;background:var(--cr2);border-radius:var(--rad);border:1px solid var(--cr3)}
+.ah-ic{width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--cr2);border-radius:50%;flex-shrink:0;font-size:.85rem}
+.ah-item h4{font-size:.9rem;letter-spacing:.03em;font-weight:400}.ah-item p{font-size:.8rem;color:var(--tx3);margin:.08rem 0 0}
+.tl{position:relative;padding-left:3rem}.tl::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--trr),var(--cr3))}
+.tl-item{position:relative;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(13,27,42,.1)}.tl-item:last-child{border:none;margin-bottom:0;padding-bottom:0}
+.tl-dot{position:absolute;left:-3rem;top:.2rem;width:20px;height:20px;border-radius:50%;border:2px solid var(--trr);background:var(--cr2);display:flex;align-items:center;justify-content:center;z-index:1}
+.tl-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--trr)}
+.tl-year{font-family:var(--fd);font-size:2rem;color:var(--trr);letter-spacing:.04em;margin-bottom:.2rem;font-weight:300}
 .tl-title{font-family:var(--fd);font-size:1.2rem;letter-spacing:.03em;margin-bottom:.25rem;font-weight:400}
-.tl-desc{color:var(--tm);font-size:.92rem;max-width:560px}
+.tl-desc{color:var(--tx3);font-size:.92rem;max-width:560px}
 .atl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,370px),1fr));gap:1.25rem}
-.atl-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);overflow:hidden;transition:all var(--tr)}.atl-card:hover{border-color:var(--goldd);transform:translateY(-3px)}
-.atl-img{height:240px;background:linear-gradient(135deg,var(--surf),var(--cr));border-bottom:1px solid var(--b);position:relative;display:flex;align-items:center;justify-content:center}
+.atl-card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;overflow:hidden;transition:all var(--tr)}.atl-card:hover{border-color:var(--trr);transform:translateY(-3px)}
+.atl-img{height:240px;background:linear-gradient(135deg,var(--cr2),var(--cr));border-bottom:1px solid var(--cr3);position:relative;display:flex;align-items:center;justify-content:center}
 .atl-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,var(--cr))}
 .atl-img-i{font-size:2.5rem;opacity:.05}.atl-tag{position:absolute;top:1rem;left:1rem;z-index:1}
-.atl-body{padding:1.5rem}.atl-body h3{margin-bottom:.25rem;font-weight:400}.atl-body .desc{font-size:.88rem;color:var(--tm);margin-bottom:1rem;line-height:1.5}
+.atl-body{padding:1.5rem}.atl-body h3{margin-bottom:.25rem;font-weight:400}.atl-body .desc{font-size:.88rem;color:var(--tx3);margin-bottom:1rem;line-height:1.5}
 .atl-specs{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
-.atl-spec{font-family:var(--fm);font-size:.58rem;color:var(--td);letter-spacing:.12em}.atl-spec span{color:var(--tm)}
+.atl-spec{font-family:var(--fm);font-size:.58rem;color:var(--tx3);letter-spacing:.12em}.atl-spec span{color:var(--tx3)}
 .lib-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:1rem}
-.lib-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:1.5rem;transition:all var(--tr);cursor:pointer}.lib-card:hover{border-color:var(--goldd);transform:translateY(-2px)}
-.lib-ic{width:44px;height:44px;background:var(--goldg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1rem}
-.lib-card h4{margin-bottom:.25rem;font-size:1.02rem;font-weight:400}.lib-card .desc{font-size:.82rem;color:var(--tm);margin-bottom:.7rem}
-.lib-meta{display:flex;gap:1rem}.lib-meta span{font-family:var(--fm);font-size:.56rem;color:var(--td);letter-spacing:.12em}
+.lib-card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.5rem;transition:all var(--tr);cursor:pointer}.lib-card:hover{border-color:var(--trr);transform:translateY(-2px)}
+.lib-ic{width:44px;height:44px;background:var(--cr2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1rem}
+.lib-card h4{margin-bottom:.25rem;font-size:1.02rem;font-weight:400}.lib-card .desc{font-size:.82rem;color:var(--tx3);margin-bottom:.7rem}
+.lib-meta{display:flex;gap:1rem}.lib-meta span{font-family:var(--fm);font-size:.56rem;color:var(--tx3);letter-spacing:.12em}
 .con-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,350px),1fr));gap:2.5rem}
-.con-card{display:flex;align-items:flex-start;gap:.8rem;padding:1rem;background:var(--cr);border:1px solid var(--b);border-radius:var(--rad);margin-bottom:.7rem}
-.con-ic{width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:var(--goldg);border-radius:50%;flex-shrink:0;font-size:.95rem}
-.con-card h4{font-size:.82rem;letter-spacing:.05em;margin-bottom:.1rem;font-weight:400}.con-card p{font-size:.85rem;color:var(--tm)}
-.con-form{background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);padding:2rem}
-footer{border-top:1px solid var(--b);padding:2.5rem 0;margin-top:2rem;position:relative;z-index:2}
+.con-card{display:flex;align-items:flex-start;gap:.8rem;padding:1rem;background:var(--w);border:1px solid var(--cr3);border-radius:12px;margin-bottom:.7rem}
+.con-ic{width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:var(--cr2);border-radius:50%;flex-shrink:0;font-size:.95rem}
+.con-card h4{font-size:.82rem;letter-spacing:.05em;margin-bottom:.1rem;font-weight:400}.con-card p{font-size:.85rem;color:var(--tx3)}
+.con-form{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:2rem}
+footer{border-top:1px solid var(--cr3);padding:2.5rem 0;margin-top:2rem;position:relative;z-index:2}
 .foot-c{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem}
-.foot-brand{font-family:var(--fd);font-size:1.15rem;color:var(--t);letter-spacing:.08em;display:flex;align-items:center;gap:.4rem;font-weight:300}
-.foot-links{display:flex;gap:1.2rem;list-style:none}.foot-links a{font-family:var(--fd);font-size:.72rem;letter-spacing:.06em;color:var(--tm);cursor:pointer}
-.foot-copy{width:100%;text-align:center;font-family:var(--fm);font-size:.58rem;color:var(--td);margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--b)}
-@media(max-width:900px){.cfg-layout{grid-template-columns:1fr}.sb{position:static;display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.nav-tabs{display:none;position:fixed;inset:0;background:rgba(3,3,10,.97);flex-direction:column;align-items:center;justify-content:center;gap:1rem;z-index:999}.nav-tabs.open{display:flex}.nav-tabs .nav-tab{font-size:.95rem;padding:.65rem 1.5rem}.btn-mob{display:flex;z-index:1001}.q-panel{width:100%;right:-100%}.eng-hero{grid-template-columns:1fr}.eng-vis2{width:100%;height:120px}.f-row{grid-template-columns:1fr}.ah-grid{grid-template-columns:1fr}.moon{display:none}.passport-head{flex-direction:column;align-items:center}.passport-qr{margin:0 auto}}
-@media(max-width:520px){.sb{grid-template-columns:1fr}.hero-stats{gap:1.5rem;flex-wrap:wrap}.dash-sb{flex-direction:column}.p-search{width:100%}.foot-c{flex-direction:column;text-align:center}.foot-links{justify-content:center}.cmp-table{font-size:.75rem}.cmp-table th,.cmp-table td{padding:.4rem}}
+.foot-brand{font-family:var(--fd);font-size:1.15rem;color:var(--nv);letter-spacing:.08em;display:flex;align-items:center;gap:.4rem;font-weight:300}
+.foot-links{display:flex;gap:1.2rem;list-style:none}.foot-links a{font-family:var(--fd);font-size:.72rem;letter-spacing:.06em;color:var(--tx3);cursor:pointer}
+.foot-copy{width:100%;text-align:center;font-family:var(--fm);font-size:.58rem;color:var(--tx3);margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--cr3)}
 </style>
 </head>
 <body>
-<div class="sky" id="sky"></div>
-<div class="moon"><div class="crater c1"></div><div class="crater c2"></div><div class="crater c3"></div><div class="crater c4"></div><div class="crater c5"></div></div>
-<div class="earth-glow"></div>
 <header class="topbar"><div class="ctr">
 <a class="logo" onclick="switchPage('home')"><div class="logo-m">V</div>VELTORY<span class="logo-sub">HE Paramotores</span></a>
 <ul class="nav-tabs" id="navTabs">
@@ -375,10 +358,10 @@ footer{border-top:1px solid var(--b);padding:2.5rem 0;margin-top:2rem;position:r
 <div class="hero-stats"><div><div class="st-n">330+</div><div class="st-l" data-i18n="stat_parts">запчастей</div></div><div><div class="st-n">5</div><div class="st-l" data-i18n="stat_models">моделей</div></div><div><div class="st-n">DDP</div><div class="st-l" data-i18n="stat_ddp">Москва</div></div><div><div class="st-n">HE</div><div class="st-l" data-i18n="stat_he">Paramotores</div></div></div>
 </div></div></section>
 <section style="padding:3rem 0"><div class="ctr"><div class="grid-4">
-<div class="card" style="cursor:pointer" onclick="switchPage('parts')"><div class="card-ic">&#9881;</div><h4 data-i18n="card_catalog">Каталог запчастей</h4><p style="font-size:.85rem;color:var(--tm)" data-i18n="card_catalog_d">330+ позиций HE Paramotores</p></div>
-<div class="card" style="cursor:pointer" onclick="switchPage('build')"><div class="card-ic">&#9670;</div><h4 data-i18n="card_config">Конфигуратор</h4><p style="font-size:.85rem;color:var(--tm)" data-i18n="card_config_d">Соберите парамотор за 5 шагов</p></div>
-<div class="card" style="cursor:pointer" onclick="switchPage('service')"><div class="card-ic">&#128295;</div><h4 data-i18n="card_service">Сервис-центр</h4><p style="font-size:.85rem;color:var(--tm)" data-i18n="card_service_d">Диагностика, ТО, капремонт</p></div>
-<div class="card" style="cursor:pointer" onclick="switchPage('dash')"><div class="card-ic">&#128203;</div><h4 data-i18n="card_dash">Кабинет владельца</h4><p style="font-size:.85rem;color:var(--tm)" data-i18n="card_dash_d">Паспорт, история, документы</p></div>
+<div class="card" style="cursor:pointer" onclick="switchPage('parts')"><div class="card-ic">&#9881;</div><h4 data-i18n="card_catalog">Каталог запчастей</h4><p style="font-size:.85rem;color:var(--tx3)" data-i18n="card_catalog_d">330+ позиций HE Paramotores</p></div>
+<div class="card" style="cursor:pointer" onclick="switchPage('build')"><div class="card-ic">&#9670;</div><h4 data-i18n="card_config">Конфигуратор</h4><p style="font-size:.85rem;color:var(--tx3)" data-i18n="card_config_d">Соберите парамотор за 5 шагов</p></div>
+<div class="card" style="cursor:pointer" onclick="switchPage('service')"><div class="card-ic">&#128295;</div><h4 data-i18n="card_service">Сервис-центр</h4><p style="font-size:.85rem;color:var(--tx3)" data-i18n="card_service_d">Диагностика, ТО, капремонт</p></div>
+<div class="card" style="cursor:pointer" onclick="switchPage('dash')"><div class="card-ic">&#128203;</div><h4 data-i18n="card_dash">Кабинет владельца</h4><p style="font-size:.85rem;color:var(--tx3)" data-i18n="card_dash_d">Паспорт, история, документы</p></div>
 </div></div></section></div>
 
 <!-- ABOUT -->
@@ -386,14 +369,14 @@ footer{border-top:1px solid var(--b);padding:2.5rem 0;margin-top:2rem;position:r
 <div class="ph"><div class="label">About Us</div><h1 data-i18n="about_h1">О КОМПАНИИ</h1><p data-i18n="about_sub">VELTORY — инженерная платформа, официальный партнёр HE Paramotores.</p></div>
 <div class="grid-2" style="margin-bottom:4rem"><div>
 <div class="label reveal" style="margin-bottom:1rem" data-i18n="about_mission">Миссия</div><h2 class="reveal" style="margin-bottom:1rem" data-i18n="about_mission_h">СДЕЛАТЬ ПОЛЁТ<br>ДОСТУПНЫМ И БЕЗОПАСНЫМ</h2>
-<p class="reveal" style="color:var(--tm);margin-bottom:1rem" data-i18n="about_mission_d">Оригинальные запчасти HE Paramotores с доставкой DDP Москва.</p>
+<p class="reveal" style="color:var(--tx3);margin-bottom:1rem" data-i18n="about_mission_d">Оригинальные запчасти HE Paramotores с доставкой DDP Москва.</p>
 <div class="ah-grid reveal">
 <div class="ah-item"><div class="ah-ic">&#127981;</div><div><h4>HE Paramotores</h4><p data-i18n="about_he">Оригинальные запчасти</p></div></div>
 <div class="ah-item"><div class="ah-ic">&#128230;</div><div><h4>DDP Moscow</h4><p data-i18n="about_ddp">Доставка включена</p></div></div>
 <div class="ah-item"><div class="ah-ic">&#128269;</div><div><h4 data-i18n="about_search_t">Поиск по коду</h4><p data-i18n="about_search_d">Артикулы HE</p></div></div>
 <div class="ah-item"><div class="ah-ic">&#128737;</div><div><h4 data-i18n="about_warr_t">Гарантия</h4><p data-i18n="about_warr_d">Оригинальное качество</p></div></div>
 </div></div>
-<div class="reveal" style="background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center"><span style="font-size:4rem;opacity:.04">&#9670;</span></div></div>
+<div class="reveal" style="background:var(--w);border:1px solid var(--cr3);border-radius:16px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center"><span style="font-size:4rem;opacity:.04">&#9670;</span></div></div>
 <div class="label reveal" style="margin-bottom:1.5rem" data-i18n="about_history">История</div><h2 class="reveal" style="margin-bottom:2.5rem">TIMELINE</h2>
 <div class="tl">
 <div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-year">2014</div><div class="tl-title">Основание HE Paramotores</div><div class="tl-desc" data-i18n="tl_2014">Создание компании и первого двигателя.</div></div>
@@ -426,7 +409,7 @@ footer{border-top:1px solid var(--b);padding:2.5rem 0;margin-top:2rem;position:r
 <div class="sb-sec"><div class="sb-t" data-i18n="sb_engine">Двигатель</div><div class="eng-sel" id="engSel"></div></div>
 <div class="sb-sec"><div class="sb-t" data-i18n="sb_group">Группа</div><div class="cat-f" id="catFil"></div></div>
 </aside>
-<div><div class="p-top"><div class="p-cnt"><span id="pShown">0</span> <span data-i18n="p_positions">позиций</span></div><div class="p-search"><span style="color:var(--td)">&#8981;</span><input type="text" placeholder="HE-MV1-RF-067" id="pSearch" oninput="renderParts()"></div></div>
+<div><div class="p-top"><div class="p-cnt"><span id="pShown">0</span> <span data-i18n="p_positions">позиций</span></div><div class="p-search"><span style="color:var(--tx3)">&#8981;</span><input type="text" placeholder="HE-MV1-RF-067" id="pSearch" oninput="renderParts()"></div></div>
 <div class="p-grid" id="pGrid"></div></div></div></div></div>
 
 <!-- BUILD -->
@@ -436,12 +419,12 @@ footer{border-top:1px solid var(--b);padding:2.5rem 0;margin-top:2rem;position:r
 
 <!-- VELTORY INDIVIDUAL -->
 <div class="page" id="page-individual"><div class="ctr">
-<div class="ph"><div class="label">VELTORY Individual</div><h1>VELTORY <em style="color:var(--gold);font-weight:300">INDIVIDUAL</em></h1><p data-i18n="ind_sub">Персональная сборка парамотора под ваши задачи.</p></div>
+<div class="ph"><div class="label">VELTORY Individual</div><h1>VELTORY <em style="color:var(--trr);font-weight:300">INDIVIDUAL</em></h1><p data-i18n="ind_sub">Персональная сборка парамотора под ваши задачи.</p></div>
 <div class="grid-2" style="margin-bottom:3rem">
 <div>
 <div class="label reveal" style="margin-bottom:1rem" data-i18n="ind_concept">Концепция</div>
 <h2 class="reveal" style="margin-bottom:1rem" data-i18n="ind_concept_h">ВАШ ПАРАМОТОР.<br>ВАШИ ПРАВИЛА.</h2>
-<p class="reveal" style="color:var(--tm);margin-bottom:1.5rem" data-i18n="ind_concept_d">Каждый VELTORY Individual собирается вручную под конкретного пилота. Выбор двигателя, рамы, подвески, винта и аксессуаров — без компромиссов.</p>
+<p class="reveal" style="color:var(--tx3);margin-bottom:1.5rem" data-i18n="ind_concept_d">Каждый VELTORY Individual собирается вручную под конкретного пилота. Выбор двигателя, рамы, подвески, винта и аксессуаров — без компромиссов.</p>
 <div class="ah-grid reveal">
 <div class="ah-item"><div class="ah-ic">&#127919;</div><div><h4 data-i18n="ind_select_t">Выбор компонентов</h4><p data-i18n="ind_select_d">5 двигателей, 3 рамы, 2 подвески</p></div></div>
 <div class="ah-item"><div class="ah-ic">&#128736;</div><div><h4 data-i18n="ind_assembly_t">Ручная сборка</h4><p data-i18n="ind_assembly_d">Каждый узел — контроль качества</p></div></div>
@@ -449,17 +432,17 @@ footer{border-top:1px solid var(--b);padding:2.5rem 0;margin-top:2rem;position:r
 <div class="ah-item"><div class="ah-ic">&#128196;</div><div><h4 data-i18n="ind_passport_t">Цифровой паспорт</h4><p data-i18n="ind_passport_d">QR-код, история, гарантия</p></div></div>
 </div>
 </div>
-<div class="reveal" style="background:var(--cr);border:1px solid var(--gold);border-radius:var(--radxl);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+<div class="reveal" style="background:var(--cr);border:2px solid var(--trr);border-radius:var(--radxl);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
 <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(196,149,106,.08),transparent 60%)"></div>
 <span style="font-size:5rem;opacity:.06;position:relative">V</span>
-<span style="position:absolute;bottom:1.5rem;right:1.5rem;font-family:var(--fm);font-size:.55rem;letter-spacing:.2em;color:var(--td);text-transform:uppercase">Individual Build</span>
+<span style="position:absolute;bottom:1.5rem;right:1.5rem;font-family:var(--fm);font-size:.55rem;letter-spacing:.2em;color:var(--tx3);text-transform:uppercase">Individual Build</span>
 </div>
 </div>
 <!-- Installment -->
 <div class="instal-card reveal">
 <div class="label" style="margin-bottom:.8rem" data-i18n="instal_label">Installment Plan</div>
 <h3 style="margin-bottom:.5rem" data-i18n="instal_h3">РАССРОЧКА</h3>
-<p style="color:var(--tm);font-size:.9rem;margin-bottom:1rem" data-i18n="instal_desc">Рассрочка на парамоторы и компоненты VELTORY Individual. Без переплат.</p>
+<p style="color:var(--tx3);font-size:.9rem;margin-bottom:1rem" data-i18n="instal_desc">Рассрочка на парамоторы и компоненты VELTORY Individual. Без переплат.</p>
 <div class="instal-grid">
 <div class="instal-item"><div class="instal-item-v">0%</div><div class="instal-item-l" data-i18n="instal_pct">Переплата</div></div>
 <div class="instal-item"><div class="instal-item-v">3-12</div><div class="instal-item-l" data-i18n="instal_months">Месяцев</div></div>
@@ -501,7 +484,7 @@ footer{border-top:1px solid var(--b);padding:2.5rem 0;margin-top:2rem;position:r
 <div class="page" id="page-dash"><div class="ctr">
 <div class="ph text-c" style="border:none;margin-bottom:1rem"><div class="label label-c">Owner Dashboard</div><h1 data-i18n="dash_h1">КАБИНЕТ ВЛАДЕЛЬЦА</h1></div>
 <div class="dash-search"><div class="dash-sb"><input placeholder="HE-2024-MV1-00487" id="serIn" onkeydown="if(event.key==='Enter')lookup()"><button class="btn btn-g" onclick="lookup()" data-i18n="btn_find">Найти</button></div>
-<p class="mono" style="font-size:.58rem;color:var(--td);margin-top:.5rem;letter-spacing:.12em">HE-2024-MV1-00487 &middot; HE-2023-RS206-00112</p></div>
+<p class="mono" style="font-size:.58rem;color:var(--tx3);margin-top:.5rem;letter-spacing:.12em">HE-2024-MV1-00487 &middot; HE-2023-RS206-00112</p></div>
 <div class="dash-c" id="dashC"></div></div></div>
 
 <!-- DEALERS -->
@@ -533,58 +516,192 @@ footer{border-top:1px solid var(--b);padding:2.5rem 0;margin-top:2rem;position:r
 <ul class="foot-links"><li><a onclick="switchPage('engines')" data-i18n="nav_engines">Двигатели</a></li><li><a onclick="switchPage('parts')" data-i18n="nav_parts">Запчасти</a></li><li><a onclick="switchPage('service')" data-i18n="nav_service">Сервис</a></li><li><a onclick="switchPage('contact')" data-i18n="nav_contact">Контакты</a></li></ul>
 <p class="foot-copy">&copy; 2025 VELTORY Engineering &middot; HE Paramotores DDP Moscow</p></div></div></footer>
 <script>
-// VELTORY Engineering Platform - HE Paramotores
-(function(){const sky=document.getElementById('sky');for(let i=0;i<120;i++){const s=document.createElement('div');s.className='star '+(Math.random()>.8?'t3':Math.random()>.5?'t2':'t1');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*8+'s';sky.appendChild(s)}})();
-const I18N={ru:{nav_home:'Главная',nav_about:'О компании',nav_engines:'Двигатели',nav_compare:'Сравнение',nav_parts:'Запчасти',nav_build:'Конфигуратор',nav_individual:'INDIVIDUAL',nav_service:'Сервис',nav_dash:'Кабинет',nav_dealers:'Дилеры',nav_contact:'Контакты',hero_sub:'Engineering Atelier & Service Center',hero_h1:'ПРОЕКТИРУЕМ.<br>ПРОИЗВОДИМ.<br><em>ОБСЛУЖИВАЕМ.</em>',hero_desc:'VELTORY \u2014 инженерная платформа для парамоторных двигателей HE Paramotores. Оригинальные запчасти, реальные цены DDP Москва.',hero_engines:'Двигатели',hero_parts:'Каталог запчастей',stat_parts:'запчастей',stat_models:'моделей',stat_ddp:'Москва',stat_he:'Paramotores',card_catalog:'Каталог запчастей',card_catalog_d:'330+ позиций HE Paramotores',card_config:'Конфигуратор',card_config_d:'Соберите парамотор за 5 шагов',card_service:'Сервис-центр',card_service_d:'Диагностика, ТО, капремонт',card_dash:'Кабинет владельца',card_dash_d:'Паспорт, история, документы',about_h1:'О КОМПАНИИ',about_sub:'VELTORY \u2014 инженерная платформа, официальный партнёр HE Paramotores.',about_mission:'Миссия',about_mission_h:'СДЕЛАТЬ ПОЛЁТ<br>ДОСТУПНЫМ И БЕЗОПАСНЫМ',about_mission_d:'Оригинальные запчасти HE Paramotores с доставкой DDP Москва.',about_he:'Оригинальные запчасти',about_ddp:'Доставка включена',about_search_t:'Поиск по коду',about_search_d:'Артикулы HE',about_warr_t:'Гарантия',about_warr_d:'Оригинальное качество',about_history:'История',tl_2014:'Создание компании и первого двигателя.',tl_2016:'Запуск серийного производства RS-185.',tl_2018:'Расширение линейки: RS-206 и MV1 184.70cc.',tl_2020:'Двухцилиндровый MV2 и компактный MVL.',tl_2024:'Запуск инженерной платформы VELTORY.',engines_h1:'ДВИГАТЕЛИ HE PARAMOTORES',engines_sub:'Five models: MVL 125cc, MV1 184.70cc, MV2 200cc, RS-185, RS-206. All dural Nikasil, Walbro, Poly V Belt. 90% in-house. HE Paramotores S.L. Madrid.',compare_h1:'СРАВНЕНИЕ МОДЕЛЕЙ',compare_sub:'Выберите модели для сравнения характеристик.',parts_h1:'КАТАЛОГ ЗАПЧАСТЕЙ',parts_sub:'Оригинальные запчасти HE. Цены DDP Москва.',sb_engine:'Двигатель',sb_group:'Группа',p_positions:'позиций',btn_add_quote:'В запрос',build_h1:'КОНФИГУРАТОР',build_sub:'Соберите парамотор за 5 шагов.',ind_sub:'Персональная сборка парамотора под ваши задачи.',ind_concept:'Концепция',ind_concept_h:'ВАШ ПАРАМОТОР.<br>ВАШИ ПРАВИЛА.',ind_concept_d:'Каждый VELTORY Individual собирается вручную под конкретного пилота.',ind_select_t:'Выбор компонентов',ind_select_d:'5 двигателей, 3 рамы, 2 подвески',ind_assembly_t:'Ручная сборка',ind_assembly_d:'Каждый узел \u2014 контроль качества',ind_test_t:'Стендовые испытания',ind_test_d:'Динамометр, вибрация, ресурс',ind_passport_t:'Цифровой паспорт',ind_passport_d:'QR-код, история, гарантия',instal_label:'Installment Plan',instal_h3:'РАССРОЧКА',instal_desc:'Рассрочка на парамоторы и компоненты VELTORY Individual. Без переплат.',instal_pct:'Переплата',instal_months:'Месяцев',instal_first:'Первый взнос',instal_approval:'Одобрение',instal_apply:'Оставить заявку',service_h1:'СЕРВИС-ЦЕНТР',service_sub:'Обслуживание с оригинальными запчастями HE Paramotores.',svc_diag:'Диагностика',svc_diag_d:'Компьютерная диагностика двигателя.',svc_to:'Плановое ТО',svc_to_d:'Расходники HE по моточасам.',svc_cap:'Капремонт',svc_cap_d:'Полная разборка, замена, стенд.',calc_label:'Maintenance Calculator',calc_h3:'КАЛЬКУЛЯТОР ТО',calc_hours:'Моточасы:',calc_warn:'ТО просрочено! Запишитесь на обслуживание.',calc_current:'Текущая наработка',calc_next:'Следующее ТО',calc_book:'Записаться на ТО',book_h3:'ЗАПИСЬ НА ОБСЛУЖИВАНИЕ',f_name:'Имя',f_phone:'Телефон',f_engine:'Двигатель',f_desc:'Описание',f_message:'Сообщение',btn_submit:'Отправить',dash_h1:'КАБИНЕТ ВЛАДЕЛЬЦА',btn_find:'Найти',dealers_h1:'ДИЛЕРСКАЯ СЕТЬ',dealers_sub:'Авторизованные партнёры VELTORY по России и СНГ.',contact_h1:'КОНТАКТЫ',contact_phone:'Телефон',contact_form_h:'НАПИСАТЬ НАМ',q_title:'ЗАПРОС ПРЕДЛОЖЕНИЯ',btn_send:'Отправить',btn_back:'Назад',btn_next:'Далее',btn_summary:'Итого',btn_details:'Детали',btn_view:'Подробнее'},en:{nav_home:'Home',nav_about:'About',nav_engines:'Engines',nav_compare:'Compare',nav_parts:'Parts',nav_build:'Configurator',nav_individual:'INDIVIDUAL',nav_service:'Service',nav_dash:'Dashboard',nav_dealers:'Dealers',nav_contact:'Contact',hero_sub:'Engineering Atelier & Service Center',hero_h1:'WE ENGINEER.<br>WE BUILD.<br><em>WE SERVICE.</em>',hero_desc:'VELTORY \u2014 engineering platform for HE Paramotores engines. Original parts, real DDP prices Moscow.',hero_engines:'Engines',hero_parts:'Parts Catalog',stat_parts:'parts',stat_models:'models',stat_ddp:'Moscow',stat_he:'Paramotores',card_catalog:'Parts Catalog',card_catalog_d:'330+ HE Paramotores positions',card_config:'Configurator',card_config_d:'Build your paramotor in 5 steps',card_service:'Service Center',card_service_d:'Diagnostics, maintenance, overhaul',card_dash:'Owner Dashboard',card_dash_d:'Passport, history, documents',about_h1:'ABOUT US',about_sub:'VELTORY \u2014 engineering platform, official HE Paramotores partner.',about_mission:'Mission',about_mission_h:'MAKING FLIGHT<br>ACCESSIBLE AND SAFE',about_mission_d:'Original HE Paramotores parts with DDP delivery Moscow.',about_he:'Original parts',about_ddp:'Delivery included',about_search_t:'Search by code',about_search_d:'HE part numbers',about_warr_t:'Warranty',about_warr_d:'Original quality',about_history:'History',tl_2014:'Company founding and first engine.',tl_2016:'RS-185 serial production launch.',tl_2018:'Lineup expansion: RS-206 and MV1 184.70cc.',tl_2020:'Twin-cylinder MV2 and compact MVL.',tl_2024:'VELTORY Engineering Platform launch.',engines_h1:'HE PARAMOTORES ENGINES',engines_sub:'Five models: MVL 125cc, MV1 184.70cc, MV2 200cc, RS-185, RS-206. All dural Nikasil, Walbro, Poly V Belt. 90% in-house. HE Paramotores S.L. Madrid.',compare_h1:'MODEL COMPARISON',compare_sub:'Select models to compare specifications.',parts_h1:'PARTS CATALOG',parts_sub:'Original HE parts. DDP Moscow prices.',sb_engine:'Engine',sb_group:'Group',p_positions:'positions',btn_add_quote:'Add to quote',build_h1:'CONFIGURATOR',build_sub:'Build your paramotor in 5 steps.',ind_sub:'Personal paramotor assembly for your needs.',ind_concept:'Concept',ind_concept_h:'YOUR PARAMOTOR.<br>YOUR RULES.',ind_concept_d:'Every VELTORY Individual is hand-built for a specific pilot.',ind_select_t:'Component Selection',ind_select_d:'5 engines, 3 frames, 2 harnesses',ind_assembly_t:'Hand Assembly',ind_assembly_d:'Every unit \u2014 quality control',ind_test_t:'Dyno Testing',ind_test_d:'Dynamometer, vibration, endurance',ind_passport_t:'Digital Passport',ind_passport_d:'QR code, history, warranty',instal_label:'Installment Plan',instal_h3:'INSTALLMENTS',instal_desc:'Installment plan for VELTORY Individual paramotors and components. No overpayment.',instal_pct:'Overpayment',instal_months:'Months',instal_first:'Down payment',instal_approval:'Approval',instal_apply:'Apply now',service_h1:'SERVICE CENTER',service_sub:'Maintenance with original HE Paramotores parts.',svc_diag:'Diagnostics',svc_diag_d:'Computer engine diagnostics.',svc_to:'Scheduled Maintenance',svc_to_d:'HE consumables by hours.',svc_cap:'Overhaul',svc_cap_d:'Full teardown, replacement, dyno.',calc_label:'Maintenance Calculator',calc_h3:'MAINTENANCE CALCULATOR',calc_hours:'Engine hours:',calc_warn:'Maintenance overdue! Book a service.',calc_current:'Current hours',calc_next:'Next service',calc_book:'Book Service',book_h3:'SERVICE BOOKING',f_name:'Name',f_phone:'Phone',f_engine:'Engine',f_desc:'Description',f_message:'Message',btn_submit:'Submit',dash_h1:'OWNER DASHBOARD',btn_find:'Search',dealers_h1:'DEALER NETWORK',dealers_sub:'Authorized VELTORY partners across Russia and CIS.',contact_h1:'CONTACTS',contact_phone:'Phone',contact_form_h:'WRITE TO US',q_title:'QUOTE REQUEST',btn_send:'Send',btn_back:'Back',btn_next:'Next',btn_summary:'Total',btn_details:'Details',btn_view:'Details'}};
+// ═══════════════════════════════════════════════════════
+// VELTORY Engineering Platform — HE Paramotores
+// ═══════════════════════════════════════════════════════
+
+
+// ── i18n ──
+const I18N={
+ru:{
+nav_home:'Главная',nav_about:'О компании',nav_engines:'Двигатели',nav_compare:'Сравнение',nav_parts:'Запчасти',nav_build:'Конфигуратор',nav_individual:'INDIVIDUAL',nav_service:'Сервис',nav_dash:'Кабинет',nav_dealers:'Дилеры',nav_contact:'Контакты',
+hero_sub:'Engineering Atelier & Service Center',hero_h1:'ПРОЕКТИРУЕМ.<br>ПРОИЗВОДИМ.<br><em>ОБСЛУЖИВАЕМ.</em>',hero_desc:'VELTORY — инженерная платформа для парамоторных двигателей HE Paramotores. Оригинальные запчасти, реальные цены DDP Москва.',hero_engines:'Двигатели',hero_parts:'Каталог запчастей',
+stat_parts:'запчастей',stat_models:'моделей',stat_ddp:'Москва',stat_he:'Paramotores',
+card_catalog:'Каталог запчастей',card_catalog_d:'330+ позиций HE Paramotores',card_config:'Конфигуратор',card_config_d:'Соберите парамотор за 5 шагов',card_service:'Сервис-центр',card_service_d:'Диагностика, ТО, капремонт',card_dash:'Кабинет владельца',card_dash_d:'Паспорт, история, документы',
+about_h1:'О КОМПАНИИ',about_sub:'VELTORY — инженерная платформа, официальный партнёр HE Paramotores.',about_mission:'Миссия',about_mission_h:'СДЕЛАТЬ ПОЛЁТ<br>ДОСТУПНЫМ И БЕЗОПАСНЫМ',about_mission_d:'Оригинальные запчасти HE Paramotores с доставкой DDP Москва.',about_he:'Оригинальные запчасти',about_ddp:'Доставка включена',about_search_t:'Поиск по коду',about_search_d:'Артикулы HE',about_warr_t:'Гарантия',about_warr_d:'Оригинальное качество',about_history:'История',
+tl_2014:'Создание компании и первого двигателя.',tl_2016:'Запуск серийного производства RS-185.',tl_2018:'Расширение линейки: RS-206 и MV1 100cc.',tl_2020:'Двухцилиндровый MV2 и компактный MVL.',tl_2024:'Запуск инженерной платформы VELTORY.',
+engines_h1:'ДВИГАТЕЛИ HE PARAMOTORES',engines_sub:'Пять моделей: MVL 80cc, MV1 100cc, MV2 130cc, RS-185, RS-206.',
+compare_h1:'СРАВНЕНИЕ МОДЕЛЕЙ',compare_sub:'Выберите модели для сравнения характеристик.',
+parts_h1:'КАТАЛОГ ЗАПЧАСТЕЙ',parts_sub:'Оригинальные запчасти HE. Цены DDP Москва.',sb_engine:'Двигатель',sb_group:'Группа',p_positions:'позиций',btn_add_quote:'В запрос',
+build_h1:'КОНФИГУРАТОР',build_sub:'Соберите парамотор за 5 шагов.',
+ind_sub:'Персональная сборка парамотора под ваши задачи.',ind_concept:'Концепция',ind_concept_h:'ВАШ ПАРАМОТОР.<br>ВАШИ ПРАВИЛА.',ind_concept_d:'Каждый VELTORY Individual собирается вручную под конкретного пилота.',ind_select_t:'Выбор компонентов',ind_select_d:'5 двигателей, 3 рамы, 2 подвески',ind_assembly_t:'Ручная сборка',ind_assembly_d:'Каждый узел — контроль качества',ind_test_t:'Стендовые испытания',ind_test_d:'Динамометр, вибрация, ресурс',ind_passport_t:'Цифровой паспорт',ind_passport_d:'QR-код, история, гарантия',
+instal_label:'Installment Plan',instal_h3:'РАССРОЧКА',instal_desc:'Рассрочка на парамоторы и компоненты VELTORY Individual. Без переплат.',instal_pct:'Переплата',instal_months:'Месяцев',instal_first:'Первый взнос',instal_approval:'Одобрение',instal_apply:'Оставить заявку',
+service_h1:'СЕРВИС-ЦЕНТР',service_sub:'Обслуживание с оригинальными запчастями HE Paramotores.',svc_diag:'Диагностика',svc_diag_d:'Компьютерная диагностика двигателя.',svc_to:'Плановое ТО',svc_to_d:'Расходники HE по моточасам.',svc_cap:'Капремонт',svc_cap_d:'Полная разборка, замена, стенд.',
+calc_label:'Maintenance Calculator',calc_h3:'КАЛЬКУЛЯТОР ТО',calc_hours:'Моточасы:',calc_warn:'ТО просрочено! Запишитесь на обслуживание.',calc_current:'Текущая наработка',calc_next:'Следующее ТО',calc_book:'Записаться на ТО',
+book_h3:'ЗАПИСЬ НА ОБСЛУЖИВАНИЕ',f_name:'Имя',f_phone:'Телефон',f_engine:'Двигатель',f_desc:'Описание',f_message:'Сообщение',btn_submit:'Отправить',
+dash_h1:'КАБИНЕТ ВЛАДЕЛЬЦА',btn_find:'Найти',
+dealers_h1:'ДИЛЕРСКАЯ СЕТЬ',dealers_sub:'Авторизованные партнёры VELTORY по России и СНГ.',
+contact_h1:'КОНТАКТЫ',contact_phone:'Телефон',contact_form_h:'НАПИСАТЬ НАМ',
+q_title:'ЗАПРОС ПРЕДЛОЖЕНИЯ',btn_send:'Отправить',
+btn_back:'Назад',btn_next:'Далее',btn_summary:'Итого',btn_details:'Детали',btn_view:'Подробнее'
+},
+en:{
+nav_home:'Home',nav_about:'About',nav_engines:'Engines',nav_compare:'Compare',nav_parts:'Parts',nav_build:'Configurator',nav_individual:'INDIVIDUAL',nav_service:'Service',nav_dash:'Dashboard',nav_dealers:'Dealers',nav_contact:'Contact',
+hero_sub:'Engineering Atelier & Service Center',hero_h1:'WE ENGINEER.<br>WE BUILD.<br><em>WE SERVICE.</em>',hero_desc:'VELTORY — engineering platform for HE Paramotores engines. Original parts, real DDP prices Moscow.',hero_engines:'Engines',hero_parts:'Parts Catalog',
+stat_parts:'parts',stat_models:'models',stat_ddp:'Moscow',stat_he:'Paramotores',
+card_catalog:'Parts Catalog',card_catalog_d:'330+ HE Paramotores positions',card_config:'Configurator',card_config_d:'Build your paramotor in 5 steps',card_service:'Service Center',card_service_d:'Diagnostics, maintenance, overhaul',card_dash:'Owner Dashboard',card_dash_d:'Passport, history, documents',
+about_h1:'ABOUT US',about_sub:'VELTORY — engineering platform, official HE Paramotores partner.',about_mission:'Mission',about_mission_h:'MAKING FLIGHT<br>ACCESSIBLE AND SAFE',about_mission_d:'Original HE Paramotores parts with DDP delivery Moscow.',about_he:'Original parts',about_ddp:'Delivery included',about_search_t:'Search by code',about_search_d:'HE part numbers',about_warr_t:'Warranty',about_warr_d:'Original quality',about_history:'History',
+tl_2014:'Company founding and first engine.',tl_2016:'RS-185 serial production launch.',tl_2018:'Lineup expansion: RS-206 and MV1 100cc.',tl_2020:'Twin-cylinder MV2 and compact MVL.',tl_2024:'VELTORY Engineering Platform launch.',
+engines_h1:'HE PARAMOTORES ENGINES',engines_sub:'Five models: MVL 80cc, MV1 100cc, MV2 130cc, RS-185, RS-206.',
+compare_h1:'MODEL COMPARISON',compare_sub:'Select models to compare specifications.',
+parts_h1:'PARTS CATALOG',parts_sub:'Original HE parts. DDP Moscow prices.',sb_engine:'Engine',sb_group:'Group',p_positions:'positions',btn_add_quote:'Add to quote',
+build_h1:'CONFIGURATOR',build_sub:'Build your paramotor in 5 steps.',
+ind_sub:'Personal paramotor assembly for your needs.',ind_concept:'Concept',ind_concept_h:'YOUR PARAMOTOR.<br>YOUR RULES.',ind_concept_d:'Every VELTORY Individual is hand-built for a specific pilot.',ind_select_t:'Component Selection',ind_select_d:'5 engines, 3 frames, 2 harnesses',ind_assembly_t:'Hand Assembly',ind_assembly_d:'Every unit — quality control',ind_test_t:'Dyno Testing',ind_test_d:'Dynamometer, vibration, endurance',ind_passport_t:'Digital Passport',ind_passport_d:'QR code, history, warranty',
+instal_label:'Installment Plan',instal_h3:'INSTALLMENTS',instal_desc:'Installment plan for VELTORY Individual paramotors and components. No overpayment.',instal_pct:'Overpayment',instal_months:'Months',instal_first:'Down payment',instal_approval:'Approval',instal_apply:'Apply now',
+service_h1:'SERVICE CENTER',service_sub:'Maintenance with original HE Paramotores parts.',svc_diag:'Diagnostics',svc_diag_d:'Computer engine diagnostics.',svc_to:'Scheduled Maintenance',svc_to_d:'HE consumables by hours.',svc_cap:'Overhaul',svc_cap_d:'Full teardown, replacement, dyno.',
+calc_label:'Maintenance Calculator',calc_h3:'MAINTENANCE CALCULATOR',calc_hours:'Engine hours:',calc_warn:'Maintenance overdue! Book a service.',calc_current:'Current hours',calc_next:'Next service',calc_book:'Book Service',
+book_h3:'SERVICE BOOKING',f_name:'Name',f_phone:'Phone',f_engine:'Engine',f_desc:'Description',f_message:'Message',btn_submit:'Submit',
+dash_h1:'OWNER DASHBOARD',btn_find:'Search',
+dealers_h1:'DEALER NETWORK',dealers_sub:'Authorized VELTORY partners across Russia and CIS.',
+contact_h1:'CONTACTS',contact_phone:'Phone',contact_form_h:'WRITE TO US',
+q_title:'QUOTE REQUEST',btn_send:'Send',
+btn_back:'Back',btn_next:'Next',btn_summary:'Total',btn_details:'Details',btn_view:'Details'
+}
+};
 let currentLang='ru';
 function t(key){return(I18N[currentLang]&&I18N[currentLang][key])||key}
 function setLang(lang){currentLang=lang;document.querySelectorAll('.lang-btn').forEach(b=>{b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang)});document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(el.tagName==='INPUT'||el.tagName==='TEXTAREA')el.placeholder=t(k);else el.innerHTML=t(k)});document.documentElement.lang=lang}
+
+// ── Data ──
 const EUR2RUB=100;
-const ENGINES=[{id:'mvl',name:'MVL 125cc',desc:'The Everyday Wonder. Daily flights.',badge:'Light',specs:{Displacement:'125cc',Technology:'Dural Nikasil',Start:'Manual'},cmp:{volume:125,power:23,weight:null,carb:'Walbro',trans:'Poly V Belt',start:'Manual',use:'Training'}},{id:'mv1',name:'MV1 184.70cc',desc:'The Powerful Performer. Foot + trike.',badge:'Bestseller',specs:{Displacement:'184.70cc',Technology:'Dural Nikasil',Start:'Manual/Electric'},cmp:{volume:184,power:25,weight:null,carb:'Walbro',trans:'Poly V Belt',start:'Manual/Electric',use:'All-round'}},{id:'mv2',name:'MV2 200cc',desc:'The Monster of the Skies. Twin start, tandem.',badge:'2-cyl.',specs:{Displacement:'200cc',Technology:'Dural Nikasil',Start:'Electric'},cmp:{volume:200,power:29,weight:null,carb:'Walbro',trans:'Poly V Belt',start:'Electric',use:'Tandem/Heavy'}},{id:'rs185',name:'RS-185',desc:'New RS. Reliable series.',badge:'Proven',specs:{Displacement:'185 cc',Weight:'15.2 kg',Consumption:'5.0 l/h',Thrust:'72 kg'},cmp:{volume:185,power:26,weight:15.2,carb:'Walbro',trans:'Poly V Belt',start:'Manual',use:'Touring'}},{id:'rs206',name:'RS-206',desc:'New RS. Flagship model.',badge:'Sport',specs:{Displacement:'206 cc',Weight:'16.5 kg',Consumption:'5.5 l/h',Thrust:'78 kg'},cmp:{volume:206,power:29,weight:16.5,carb:'Walbro',trans:'Poly V Belt',start:'Electric',use:'Sport/Route'}}];
+const ENGINES=[
+{id:'mvl',name:'MVL 80cc',desc:'Light. Ideal up to 80 kg.',badge:'Light',specs:{Displacement:'80 cc',Weight:'11.2 kg',Consumption:'3.8 l/h',Thrust:'55 kg'},cmp:{volume:80,power:26,weight:11.2,carb:'Walbro',trans:'Direct',start:'Manual',use:'Training'}},
+{id:'mv1',name:'MV1 100cc',desc:'Bestseller. Power and weight balance.',badge:'Bestseller',specs:{Displacement:'100 cc',Weight:'13.5 kg',Consumption:'4.5 l/h',Thrust:'68 kg'},cmp:{volume:100,power:32,weight:13.5,carb:'Walbro WT-637',trans:'Belt',start:'Manual/Electric',use:'All-round'}},
+{id:'mv2',name:'MV2 130cc',desc:'Twin-cylinder. Heavy and tandem.',badge:'2-cyl.',specs:{Displacement:'130 cc',Weight:'18.8 kg',Consumption:'6.2 l/h',Thrust:'85 kg'},cmp:{volume:130,power:42,weight:18.8,carb:'Walbro WT-985',trans:'Belt',start:'Electric',use:'Tandem/Heavy'}},
+{id:'rs185',name:'RS-185',desc:'Reliable workhorse. Proven design.',badge:'Proven',specs:{Displacement:'185 cc',Weight:'15.2 kg',Consumption:'5.0 l/h',Thrust:'72 kg'},cmp:{volume:185,power:35,weight:15.2,carb:'Walbro',trans:'Belt',start:'Manual',use:'Touring'}},
+{id:'rs206',name:'RS-206',desc:'High-performance single cylinder.',badge:'Sport',specs:{Displacement:'206 cc',Weight:'16.5 kg',Consumption:'5.5 l/h',Thrust:'78 kg'},cmp:{volume:206,power:38,weight:16.5,carb:'Walbro WT-985',trans:'Belt',start:'Electric',use:'Sport/Route'}}
+];
 const CMP_LABELS={volume:'Displacement',power:'Power (hp)',weight:'Weight (kg)',carb:'Carburetor',trans:'Transmission',start:'Starter',use:'Use case'};
-const TPL=[{n:'Starter assembly',i:'RF-001',c:'starter',eur:231},{n:'Rear panel',i:'RF-002',c:'crankcase',eur:58.56},{n:'Bolt M8',i:'RF-003',c:'fastener',eur:0.73},{n:'Bolt avell. M6X25',i:'RF-004',c:'fastener',eur:0.73},{n:'Female silentblock',i:'RF-005',c:'misc',eur:4.88},{n:'Bolt M8X10',i:'RF-006',c:'fastener',eur:0.73},{n:'Bolt avell. M6x25 (2)',i:'RF-007',c:'fastener',eur:15},{n:'Mixed silentblock',i:'RF-008',c:'misc',eur:4.88},{n:'Bolt M6X20 ISO',i:'RF-009',c:'fastener',eur:0.61},{n:'Wedge washer M6',i:'RF-010',c:'fastener',eur:0.3},{n:'Crankshaft nut M10',i:'RF-011',c:'fastener',eur:0.79},{n:'Crankshaft washer M10',i:'RF-012',c:'fastener',eur:0.41},{n:'Start plate',i:'RF-013',c:'starter',eur:6.78},{n:'Start disc washer',i:'RF-014',c:'starter',eur:2.19},{n:'Magnetic plate',i:'RF-015',c:'ignition',eur:92},{n:'Coil bolt M5X20',i:'RF-016',c:'ignition',eur:0.61},{n:'Ignition coil',i:'RF-018',c:'ignition',eur:54},{n:'Coil plate',i:'RF-020',c:'ignition',eur:59},{n:'Pulley nut M6',i:'RF-021',c:'drive',eur:0.3},{n:'Crankcase mount',i:'RF-022',c:'crankcase',eur:2},{n:'Carb rubber boot',i:'RF-023',c:'carb',eur:2},{n:'Crankcase side A',i:'RF-024',c:'crankcase',eur:198},{n:'Bearing 6204',i:'RF-026',c:'bearing',eur:11},{n:'Needle bearing',i:'RF-027',c:'bearing',eur:14},{n:'Crankshaft',i:'RF-028',c:'crankcase',eur:256},{n:'Crankcase side B',i:'RF-030',c:'crankcase',eur:198},{n:'Pulley plate bolt',i:'RF-032',c:'drive',eur:2},{n:'Pulley wedge M8',i:'RF-033',c:'drive',eur:1.3},{n:'Pulley plate',i:'RF-035',c:'drive',eur:23},{n:'Small pulley set',i:'RF-040',c:'drive',eur:85},{n:'Large pulley set',i:'RF-041',c:'drive',eur:147},{n:'Belt',i:'RF-042',c:'drive',eur:41},{n:'Reed box',i:'RF-047',c:'reed',eur:31.4},{n:'Reed box cover',i:'RF-049',c:'reed',eur:10.45},{n:'Carburetor',i:'RF-054',c:'carb',eur:1.7},{n:'Carb clamp plate',i:'RF-057',c:'carb',eur:3.84},{n:'Rubber filter',i:'RF-062',c:'fuel',eur:5.36},{n:'Air filter',i:'RF-063',c:'fuel',eur:30.74},{n:'Piston pin',i:'RF-066',c:'piston',eur:6.24},{n:'Piston',i:'RF-067',c:'piston',eur:103},{n:'Piston rings',i:'RF-068',c:'piston',eur:29},{n:'Cylinder gasket',i:'RF-069',c:'piston',eur:3},{n:'Cylinder',i:'RF-071',c:'piston',eur:317},{n:'Cylinder head',i:'RF-073',c:'piston',eur:146},{n:'Spark plug',i:'RF-075',c:'ignition',eur:5.36},{n:'Plug cap',i:'RF-076',c:'ignition',eur:10},{n:'Starter housing',i:'RF-094',c:'starter',eur:25.5},{n:'Eccentric',i:'RF-100',c:'drive',eur:23},{n:'Bearing 6004',i:'RF-102',c:'bearing',eur:10.98},{n:'Large alu pulley',i:'RF-105',c:'drive',eur:85.4},{n:'Clutch base',i:'RF-106',c:'drive',eur:49},{n:'Clutch pads',i:'RF-108',c:'drive',eur:11},{n:'Bearing 6002',i:'RF-113',c:'bearing',eur:11},{n:'Small reducer pulley',i:'RF-114',c:'drive',eur:55},{n:'Ball joint',i:'RF-121',c:'exhaust',eur:3.84},{n:'Exhaust ball support',i:'RF-122',c:'exhaust',eur:21.9},{n:'Curved pipe',i:'RF-127',c:'exhaust',eur:55},{n:'Exhaust pipe',i:'RF-132',c:'exhaust',eur:146},{n:'Silencer',i:'RF-135',c:'exhaust',eur:91.5},{n:'Silencer clamp',i:'RF-139',c:'exhaust',eur:7.8}];
+
+const TPL=[
+{n:'Starter assembly',i:'RF-001',c:'starter',eur:231},{n:'Rear panel',i:'RF-002',c:'crankcase',eur:58.56},
+{n:'Bolt M8',i:'RF-003',c:'fastener',eur:0.73},{n:'Bolt avell. M6X25',i:'RF-004',c:'fastener',eur:0.73},
+{n:'Female silentblock',i:'RF-005',c:'misc',eur:4.88},{n:'Bolt M8X10',i:'RF-006',c:'fastener',eur:0.73},
+{n:'Bolt avell. M6x25 (2)',i:'RF-007',c:'fastener',eur:15},{n:'Mixed silentblock',i:'RF-008',c:'misc',eur:4.88},
+{n:'Bolt M6X20 ISO',i:'RF-009',c:'fastener',eur:0.61},{n:'Wedge washer M6',i:'RF-010',c:'fastener',eur:0.3},
+{n:'Crankshaft nut M10',i:'RF-011',c:'fastener',eur:0.79},{n:'Crankshaft washer M10',i:'RF-012',c:'fastener',eur:0.41},
+{n:'Start plate',i:'RF-013',c:'starter',eur:6.78},{n:'Start disc washer',i:'RF-014',c:'starter',eur:2.19},
+{n:'Magnetic plate',i:'RF-015',c:'ignition',eur:92},{n:'Coil bolt M5X20',i:'RF-016',c:'ignition',eur:0.61},
+{n:'Ignition coil',i:'RF-018',c:'ignition',eur:54},{n:'Coil plate',i:'RF-020',c:'ignition',eur:59},
+{n:'Pulley nut M6',i:'RF-021',c:'drive',eur:0.3},{n:'Crankcase mount',i:'RF-022',c:'crankcase',eur:2},
+{n:'Carb rubber boot',i:'RF-023',c:'carb',eur:2},{n:'Crankcase side A',i:'RF-024',c:'crankcase',eur:198},
+{n:'Bearing 6204',i:'RF-026',c:'bearing',eur:11},{n:'Needle bearing',i:'RF-027',c:'bearing',eur:14},
+{n:'Crankshaft',i:'RF-028',c:'crankcase',eur:256},{n:'Crankcase side B',i:'RF-030',c:'crankcase',eur:198},
+{n:'Pulley plate bolt',i:'RF-032',c:'drive',eur:2},{n:'Pulley wedge M8',i:'RF-033',c:'drive',eur:1.3},
+{n:'Pulley plate',i:'RF-035',c:'drive',eur:23},{n:'Small pulley set',i:'RF-040',c:'drive',eur:85},
+{n:'Large pulley set',i:'RF-041',c:'drive',eur:147},{n:'Belt',i:'RF-042',c:'drive',eur:41},
+{n:'Reed box',i:'RF-047',c:'reed',eur:31.4},{n:'Reed box cover',i:'RF-049',c:'reed',eur:10.45},
+{n:'Carburetor',i:'RF-054',c:'carb',eur:1.7},{n:'Carb clamp plate',i:'RF-057',c:'carb',eur:3.84},
+{n:'Rubber filter',i:'RF-062',c:'fuel',eur:5.36},{n:'Air filter',i:'RF-063',c:'fuel',eur:30.74},
+{n:'Piston pin',i:'RF-066',c:'piston',eur:6.24},{n:'Piston',i:'RF-067',c:'piston',eur:103},
+{n:'Piston rings',i:'RF-068',c:'piston',eur:29},{n:'Cylinder gasket',i:'RF-069',c:'piston',eur:3},
+{n:'Cylinder',i:'RF-071',c:'piston',eur:317},{n:'Cylinder head',i:'RF-073',c:'piston',eur:146},
+{n:'Spark plug',i:'RF-075',c:'ignition',eur:5.36},{n:'Plug cap',i:'RF-076',c:'ignition',eur:10},
+{n:'Starter housing',i:'RF-094',c:'starter',eur:25.5},{n:'Eccentric',i:'RF-100',c:'drive',eur:23},
+{n:'Bearing 6004',i:'RF-102',c:'bearing',eur:10.98},{n:'Large alu pulley',i:'RF-105',c:'drive',eur:85.4},
+{n:'Clutch base',i:'RF-106',c:'drive',eur:49},{n:'Clutch pads',i:'RF-108',c:'drive',eur:11},
+{n:'Bearing 6002',i:'RF-113',c:'bearing',eur:11},{n:'Small reducer pulley',i:'RF-114',c:'drive',eur:55},
+{n:'Ball joint',i:'RF-121',c:'exhaust',eur:3.84},{n:'Exhaust ball support',i:'RF-122',c:'exhaust',eur:21.9},
+{n:'Curved pipe',i:'RF-127',c:'exhaust',eur:55},{n:'Exhaust pipe',i:'RF-132',c:'exhaust',eur:146},
+{n:'Silencer',i:'RF-135',c:'exhaust',eur:91.5},{n:'Silencer clamp',i:'RF-139',c:'exhaust',eur:7.8}
+];
 const MV2_OVR={'RF-062':13.76};
+
 let PARTS=[];let _id=1;
 ['mv1','mv2','mvl','rs185','rs206'].forEach(eng=>{TPL.forEach(t=>{let eur=t.eur;if(eng==='mv2'&&MV2_OVR[t.i])eur=MV2_OVR[t.i];PARTS.push({id:_id++,sku:eng.toUpperCase()+'-'+t.i,name:t.n,cat:t.c,eng:[eng],price:Math.round(eur*EUR2RUB),eur:eur,stock:eur>0?1:0})})});
+
 const CATS={all:'All',piston:'Piston',crankcase:'Crankcase',carb:'Carburetor',fuel:'Filters',ignition:'Ignition',exhaust:'Exhaust',starter:'Starter',drive:'Drive',reed:'Reed valve',bearing:'Bearings',fastener:'Fasteners',misc:'Misc'};
 const CATO=['all','piston','crankcase','carb','fuel','ignition','exhaust','starter','drive','reed','bearing','fastener','misc'];
-const BUILD=[{key:'engine',title:'Engine',options:[{id:'mvl',name:'MVL 125cc',desc:'125cc everyday.',price:145000,specs:{Power:'23 hp',Displacement:'125cc'}},{id:'mv1',name:'MV1 184.70cc',desc:'184.70cc performer.',price:185000,specs:{Power:'25 hp',Displacement:'184.70cc'}},{id:'mv2',name:'MV2 200cc',desc:'200cc tandem monster.',price:265000,specs:{Power:'29 hp',Displacement:'200cc'}},{id:'rs185',name:'RS-185',desc:'185cc RS series.',price:165000,specs:{Power:'26 hp',Weight:'15.2 kg'}},{id:'rs206',name:'RS-206',desc:'206cc RS flagship.',price:195000,specs:{Power:'29 hp',Weight:'16.5 kg'}}]},{key:'frame',title:'Frame',options:[{id:'f1',name:'Classic',price:38000,specs:{Material:'Steel'}},{id:'f2',name:'Aero',price:58000,specs:{Material:'Al 7075'}},{id:'f3',name:'Titan',price:125000,specs:{Material:'Ti Gr.5'}}]},{key:'harness',title:'Harness',options:[{id:'h1',name:'Standard',price:18000,specs:{Protection:'Foam'}},{id:'h2',name:'Air',price:32000,specs:{Protection:'Airbag'}}]},{key:'prop',title:'Propeller',options:[{id:'p1',name:'Dural 2L',price:14000,specs:{Material:'Dural'}},{id:'p2',name:'Carbon 2L',price:28000,specs:{Material:'Carbon'}}]},{key:'acc',title:'Accessories',options:[{id:'a1',name:'Tank 12L',price:4500,specs:{Volume:'12L'}},{id:'a2',name:'Tank 18L',price:6200,specs:{Volume:'18L'}}]}];
-const EDB={'HE-2024-MV1-00487':{model:'MV1 184.70cc',year:2024,serial:'HE-2024-MV1-00487',status:'Under warranty',owner:'Sergey M.',reg:'15.03.2024',warr:'14.03.2026',hours:87,lastTO:'45 h',nextTO:'100 h',history:[{d:'12.09.2024',t:'TO-45',desc:'Spark plug, air filter, gasket.',cost:'4 200 RUB',tech:'Ivanov A.V.'},{d:'15.03.2024',t:'Entry',desc:'Registration.',cost:'--',tech:'Sabitov R.R.'}],docs:[{n:'Passport',t:'PDF'},{n:'MV1 Manual',t:'PDF'},{n:'Warranty card',t:'PDF'},{n:'HE catalog',t:'PDF'}]},'HE-2023-RS206-00112':{model:'RS-206',year:2023,serial:'HE-2023-RS206-00112',status:'Warranty expired',owner:'Andrey K.',reg:'08.07.2023',warr:'07.07.2025',hours:312,lastTO:'300 h',nextTO:'350 h',history:[{d:'03.04.2025',t:'TO-300',desc:'Rings, bearings, seals. Overhaul.',cost:'28 400 RUB',tech:'Sabitov R.R.'},{d:'15.09.2023',t:'TO-100',desc:'Plugs, filter, rope.',cost:'3 800 RUB',tech:'Ivanov A.V.'}],docs:[{n:'Passport',t:'PDF'},{n:'RS206 Manual',t:'PDF'},{n:'HE catalog',t:'PDF'}]}};
-const DEALERS=[{name:'VELTORY Moscow',city:'Moscow',addr:'ul. Aviatorov 12, bld.3',phone:'+7 495 123-45-67',tags:['sales','service']},{name:'HE Centr SPb',city:'Saint Petersburg',addr:'Liteyny pr. 48',phone:'+7 812 234-56-78',tags:['sales','training']},{name:'Kazan Paramotor',city:'Kazan',addr:'ul. Baumana 32',phone:'+7 843 345-67-89',tags:['sales']},{name:'Sochi Fly Club',city:'Sochi',addr:'Kurortny pr. 76',phone:'+7 862 456-78-90',tags:['service','training']},{name:'Minsk Aero',city:'Minsk',addr:'pr. Nezavisimosti 110',phone:'+375 17 567-89-01',tags:['sales','service']}];
+
+const BUILD=[
+{key:'engine',title:'Engine',options:[{id:'mvl',name:'MVL 80cc',desc:'Up to 80 kg.',price:145000,specs:{Power:'26 hp',Weight:'11.2 kg'}},{id:'mv1',name:'MV1 100cc',desc:'Balanced.',price:185000,specs:{Power:'32 hp',Weight:'13.5 kg'}},{id:'mv2',name:'MV2 130cc',desc:'Heavy pilots.',price:265000,specs:{Power:'42 hp',Weight:'18.8 kg'}},{id:'rs185',name:'RS-185',desc:'Reliable.',price:165000,specs:{Power:'35 hp',Weight:'15.2 kg'}},{id:'rs206',name:'RS-206',desc:'Sport.',price:195000,specs:{Power:'38 hp',Weight:'16.5 kg'}}]},
+{key:'frame',title:'Frame',options:[{id:'f1',name:'Classic',price:38000,specs:{Material:'Steel'}},{id:'f2',name:'Aero',price:58000,specs:{Material:'Al 7075'}},{id:'f3',name:'Titan',price:125000,specs:{Material:'Ti Gr.5'}}]},
+{key:'harness',title:'Harness',options:[{id:'h1',name:'Standard',price:18000,specs:{Protection:'Foam'}},{id:'h2',name:'Air',price:32000,specs:{Protection:'Airbag'}}]},
+{key:'prop',title:'Propeller',options:[{id:'p1',name:'Dural 2L',price:14000,specs:{Material:'Dural'}},{id:'p2',name:'Carbon 2L',price:28000,specs:{Material:'Carbon'}}]},
+{key:'acc',title:'Accessories',options:[{id:'a1',name:'Tank 12L',price:4500,specs:{Volume:'12L'}},{id:'a2',name:'Tank 18L',price:6200,specs:{Volume:'18L'}}]}
+];
+
+const EDB={'HE-2024-MV1-00487':{model:'MV1 100cc',year:2024,serial:'HE-2024-MV1-00487',status:'Under warranty',owner:'Sergey M.',reg:'15.03.2024',warr:'14.03.2026',hours:87,lastTO:'45 h',nextTO:'100 h',history:[{d:'12.09.2024',t:'TO-45',desc:'Spark plug, air filter, gasket.',cost:'4 200 RUB',tech:'Ivanov A.V.'},{d:'15.03.2024',t:'Entry',desc:'Registration.',cost:'--',tech:'Sabitov R.R.'}],docs:[{n:'Passport',t:'PDF'},{n:'MV1 Manual',t:'PDF'},{n:'Warranty card',t:'PDF'},{n:'HE catalog',t:'PDF'}]},
+'HE-2023-RS206-00112':{model:'RS-206',year:2023,serial:'HE-2023-RS206-00112',status:'Warranty expired',owner:'Andrey K.',reg:'08.07.2023',warr:'07.07.2025',hours:312,lastTO:'300 h',nextTO:'350 h',history:[{d:'03.04.2025',t:'TO-300',desc:'Rings, bearings, seals. Overhaul.',cost:'28 400 RUB',tech:'Sabitov R.R.'},{d:'15.09.2023',t:'TO-100',desc:'Plugs, filter, rope.',cost:'3 800 RUB',tech:'Ivanov A.V.'}],docs:[{n:'Passport',t:'PDF'},{n:'RS206 Manual',t:'PDF'},{n:'HE catalog',t:'PDF'}]}};
+
+const DEALERS=[
+{name:'VELTORY Moscow',city:'Moscow',addr:'ul. Aviatorov 12, bld.3',phone:'+7 495 123-45-67',tags:['sales','service']},
+{name:'HE Centr SPb',city:'Saint Petersburg',addr:'Liteyny pr. 48',phone:'+7 812 234-56-78',tags:['sales','training']},
+{name:'Kazan Paramotor',city:'Kazan',addr:'ul. Baumana 32',phone:'+7 843 345-67-89',tags:['sales']},
+{name:'Sochi Fly Club',city:'Sochi',addr:'Kurortny pr. 76',phone:'+7 862 456-78-90',tags:['service','training']},
+{name:'Minsk Aero',city:'Minsk',addr:'pr. Nezavisimosti 110',phone:'+375 17 567-89-01',tags:['sales','service']}
+];
+
+// ── State ──
 let curEng='all',curCat='all',quote=[],buildSel={},cmpSel=['mv1','mv2'];
-function switchPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.nav-tab').forEach(x=>x.classList.remove('active'));const el=document.getElementById('page-'+p);if(el)el.classList.add('active');const nav=document.querySelector('.nav-tab[data-p="'+p+'"]');if(nav)nav.classList.add('active');document.getElementById('navTabs').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>{document.querySelectorAll('.page.active .reveal').forEach(el=>el.classList.add('vis'))},100)}
-function renderEngines(){document.getElementById('engGrid').innerHTML=ENGINES.map(e=>'<div class="eng-card reveal"><div class="eng-vis"><span class="eng-vis-i">&#9670;</span></div><div class="eng-body"><span class="badge badge-gold">'+e.badge+'</span><h3 style="margin-top:.5rem">'+e.name+'</h3><p class="desc">'+e.desc+'</p><div class="eng-specs">'+Object.entries(e.specs).map(([k,v])=>'<div class="eng-spec"><span class="eng-spec-k">'+k+'</span><span class="eng-spec-v">'+v+'</span></div>').join('')+'</div><div class="eng-acts"><button class="btn btn-g btn-sm" onclick="switchPage(\'parts\')">'+t('btn_view')+'</button><button class="btn btn-o btn-sm" onclick="switchPage(\'contact\')">'+t('btn_send')+'</button></div></div></div>').join('')}
-function renderCmp(){document.getElementById('cmpChecks').innerHTML=ENGINES.map(e=>'<label class="cmp-chk '+(cmpSel.includes(e.id)?'active':'')+'" onclick="toggleCmp(\''+e.id+'\')"><input type="checkbox" '+(cmpSel.includes(e.id)?'checked':'')+'>'+e.name+'</label>').join('');const rows=Object.keys(CMP_LABELS);const cols=ENGINES.filter(e=>cmpSel.includes(e.id));let h='<thead><tr><th></th>'+cols.map(e=>'<th>'+e.name+'</th>').join('')+'</tr></thead><tbody>';rows.forEach(r=>{const vals=cols.map(e=>e.cmp[r]);const isNum=typeof vals[0]==='number';const best=isNum?Math.max(...vals):null;h+='<tr><td style="color:var(--td);font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em">'+CMP_LABELS[r]+'</td>';cols.forEach(e=>{const v=e.cmp[r];h+='<td class="'+(isNum&&v===best?'best':'')+'">'+v+'</td>'});h+='</tr>'});h+='</tbody>';document.getElementById('cmpTable').innerHTML=h}
+
+// ── Navigation ──
+function switchPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.nav-tab').forEach(x=>x.classList.remove('active'));document.getElementById('page-'+p)?.classList.add('active');document.querySelector(`.nav-tab[data-p="${p}"]`)?.classList.add('active');document.getElementById('navTabs').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>{document.querySelectorAll('.page.active .reveal').forEach(el=>el.classList.add('vis'))},100)}
+
+// ── Engines ──
+function renderEngines(){document.getElementById('engGrid').innerHTML=ENGINES.map(e=>`<div class="eng-card reveal"><div class="eng-vis"><span class="eng-vis-i">&#9670;</span></div><div class="eng-body"><span class="badge badge-gold">${e.badge}</span><h3 style="margin-top:.5rem">${e.name}</h3><p class="desc">${e.desc}</p><div class="eng-specs">${Object.entries(e.specs).map(([k,v])=>`<div class="eng-spec"><span class="eng-spec-k">${k}</span><span class="eng-spec-v">${v}</span></div>`).join('')}</div><div class="eng-acts"><button class="btn btn-g btn-sm" onclick="switchPage('parts')">${t('btn_view')}</button><button class="btn btn-o btn-sm" onclick="switchPage('contact')">${t('btn_send')}</button></div></div></div>`).join('')}
+
+// ── Comparison ──
+function renderCmp(){document.getElementById('cmpChecks').innerHTML=ENGINES.map(e=>`<label class="cmp-chk ${cmpSel.includes(e.id)?'active':''}" onclick="toggleCmp('${e.id}')"><input type="checkbox" ${cmpSel.includes(e.id)?'checked':''}> ${e.name}</label>`).join('');const rows=Object.keys(CMP_LABELS);const cols=ENGINES.filter(e=>cmpSel.includes(e.id));let h='<thead><tr><th></th>'+cols.map(e=>`<th>${e.name}</th>`).join('')+'</tr></thead><tbody>';rows.forEach(r=>{const vals=cols.map(e=>e.cmp[r]);const isNum=typeof vals[0]==='number';const best=isNum?Math.max(...vals):null;h+=`<tr><td style="color:var(--td);font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em">${CMP_LABELS[r]}</td>`;cols.forEach(e=>{const v=e.cmp[r];h+=`<td class="${isNum&&v===best?'best':''}">${v}</td>`});h+='</tr>'});h+='</tbody>';document.getElementById('cmpTable').innerHTML=h}
 function toggleCmp(id){if(cmpSel.includes(id)){if(cmpSel.length>1)cmpSel=cmpSel.filter(x=>x!==id)}else{if(cmpSel.length<3)cmpSel.push(id)}renderCmp()}
-function renderEngSel(){document.getElementById('engSel').innerHTML=[{id:'all',l:'All'}].concat(ENGINES.map(e=>({id:e.id,l:e.name}))).map(e=>'<button class="eng-opt '+(e.id===curEng?'active':'')+'" onclick="filterEng(\''+e.id+'\',this)"><span class="eng-dot"></span>'+e.l+'</button>').join('')}
-function renderCatFil(){const base=curEng!=='all'?PARTS.filter(p=>p.eng.includes(curEng)):PARTS;document.getElementById('catFil').innerHTML=CATO.map(c=>'<button class="cat-o '+(c===curCat?'active':'')+'" onclick="filterCat(\''+c+'\',this)">'+CATS[c]+' <span class="cat-cnt">'+(c==='all'?base.length:base.filter(p=>p.cat===c).length)+'</span></button>').join('')}
+
+// ── Parts ──
+function renderEngSel(){document.getElementById('engSel').innerHTML=[{id:'all',l:'All'}].concat(ENGINES.map(e=>({id:e.id,l:e.name}))).map(e=>`<button class="eng-opt${e.id===curEng?' active':''}" onclick="filterEng('${e.id}',this)"><span class="eng-dot"></span>${e.l}</button>`).join('')}
+function renderCatFil(){const base=curEng!=='all'?PARTS.filter(p=>p.eng.includes(curEng)):PARTS;document.getElementById('catFil').innerHTML=CATO.map(c=>`<button class="cat-o${c===curCat?' active':''}" onclick="filterCat('${c}',this)">${CATS[c]} <span class="cat-cnt">${c==='all'?base.length:base.filter(p=>p.cat===c).length}</span></button>`).join('')}
 function filterEng(e,el){curEng=e;document.querySelectorAll('.eng-opt').forEach(x=>x.classList.remove('active'));el.classList.add('active');renderCatFil();renderParts();renderExploded()}
 function filterCat(c,el){curCat=c;document.querySelectorAll('.cat-o').forEach(x=>x.classList.remove('active'));el.classList.add('active');renderParts()}
 function getParts(){let p=PARTS;if(curEng!=='all')p=p.filter(x=>x.eng.includes(curEng));if(curCat!=='all')p=p.filter(x=>x.cat===curCat);const q=(document.getElementById('pSearch')?.value||'').toLowerCase();if(q)p=p.filter(x=>x.name.toLowerCase().includes(q)||x.sku.toLowerCase().includes(q));return p}
-function renderParts(){const parts=getParts();document.getElementById('pShown').textContent=parts.length;document.getElementById('pGrid').innerHTML=parts.map(p=>'<div class="p-card" onclick="addQ('+p.id+')"><div class="p-img"><span class="p-img-i">&#9881;</span><span class="badge '+(p.stock?'badge-g':'badge-r')+'">'+(p.stock?'In stock':'Order')+'</span></div><div class="p-body"><div class="p-sku">'+p.sku+'</div><div class="p-name">'+p.name+'</div><div class="p-compat">'+p.eng.map(e=>e.toUpperCase()).join(' / ')+'</div><div class="p-foot"><div class="p-price">'+(p.price>0?p.price.toLocaleString()+' RUB':'')+(p.price>0?' <small>EUR '+p.eur.toFixed(2)+'</small>':'')+'</div><button class="btn btn-o btn-xs">+</button></div></div></div>').join('')}
-function renderExploded(){const svg=document.getElementById('explodedSvg');const keyParts=curEng!=='all'?PARTS.filter(p=>p.eng.includes(curEng)&&['piston','crankcase','carb','fuel','ignition','exhaust','starter','drive','bearing'].includes(p.cat)).slice(0,12):[];const pts=[[250,40],[250,80],[200,110],[300,110],[180,150],[320,150],[250,150],[220,190],[280,190],[250,220],[200,250],[300,250]];let s='<rect x="140" y="20" width="220" height="260" rx="20" fill="none" stroke="#161c30" stroke-width="1"/>';s+='<text x="250" y="15" text-anchor="middle" fill="#252a3a" font-family="JetBrains Mono" font-size="8" letter-spacing="2">ENGINE OVERVIEW</text>';keyParts.forEach((p,i)=>{const[cx,cy]=pts[i]||[250,150];s+='<circle class="exploded-dot" cx="'+cx+'" cy="'+cy+'" r="8" fill="#c4956a" opacity="0.15" stroke="#c4956a" stroke-width="1" data-id="'+p.id+'" data-name="'+p.name+'" data-sku="'+p.sku+'" data-price="'+p.eur+'" onmouseenter="showExplodedTip(event,this)" onmouseleave="hideExplodedTip()" onclick="addQ('+p.id+')"/>';s+='<text x="'+cx+'" y="'+(cy+3)+'" text-anchor="middle" fill="#c4956a" font-family="JetBrains Mono" font-size="7" pointer-events="none">'+p.sku.split('-').pop()+'</text>'});if(!keyParts.length)s+='<text x="250" y="150" text-anchor="middle" fill="#252a3a" font-family="JetBrains Mono" font-size="10">Select an engine to view diagram</text>';svg.innerHTML=s}
+function renderParts(){const parts=getParts();document.getElementById('pShown').textContent=parts.length;document.getElementById('pGrid').innerHTML=parts.map(p=>`<div class="p-card" onclick="addQ(${p.id})"><div class="p-img"><span class="p-img-i">&#9881;</span><span class="badge ${p.stock?'badge-g':'badge-r'}">${p.stock?'In stock':'Order'}</span></div><div class="p-body"><div class="p-sku">${p.sku}</div><div class="p-name">${p.name}</div><div class="p-compat">${p.eng.map(e=>e.toUpperCase()).join(' / ')}</div><div class="p-foot"><div class="p-price">${p.price>0?p.price.toLocaleString()+' RUB':''} ${p.price>0?'<small>EUR '+p.eur.toFixed(2)+'</small>':''}</div><button class="btn btn-o btn-xs">+</button></div></div></div>`).join('')}
+
+// ── Exploded diagram ──
+function renderExploded(){const svg=document.getElementById('explodedSvg');const keyParts=curEng!=='all'?PARTS.filter(p=>p.eng.includes(curEng)&&['piston','crankcase','carb','fuel','ignition','exhaust','starter','drive','bearing'].includes(p.cat)).slice(0,12):[];const pts=[[250,40],[250,80],[200,110],[300,110],[180,150],[320,150],[250,150],[220,190],[280,190],[250,220],[200,250],[300,250]];let s='<rect x="140" y="20" width="220" height="260" rx="20" fill="none" stroke="#161c30" stroke-width="1"/>';s+='<text x="250" y="15" text-anchor="middle" fill="#252a3a" font-family="JetBrains Mono" font-size="8" letter-spacing="2">ENGINE OVERVIEW</text>';keyParts.forEach((p,i)=>{const[cx,cy]=pts[i]||[250,150];s+=`<circle class="exploded-dot" cx="${cx}" cy="${cy}" r="8" fill="#c4956a" opacity="0.15" stroke="#c4956a" stroke-width="1" data-id="${p.id}" data-name="${p.name}" data-sku="${p.sku}" data-price="${p.eur}" onmouseenter="showExplodedTip(event,this)" onmouseleave="hideExplodedTip()" onclick="addQ(${p.id})"/>`;s+=`<text x="${cx}" y="${cy+3}" text-anchor="middle" fill="#c4956a" font-family="JetBrains Mono" font-size="7" pointer-events="none">${p.sku.split('-').pop()}</text>`});if(!keyParts.length)s+='<text x="250" y="150" text-anchor="middle" fill="#252a3a" font-family="JetBrains Mono" font-size="10">Select an engine to view diagram</text>';svg.innerHTML=s}
 function showExplodedTip(e,el){const tip=document.getElementById('explodedTip');const wrap=document.getElementById('explodedWrap');const r=wrap.getBoundingClientRect();tip.querySelector('.tt-name').textContent=el.dataset.name;tip.querySelector('.tt-sku').textContent=el.dataset.sku;tip.querySelector('.tt-price').textContent='EUR '+parseFloat(el.dataset.price).toFixed(2);tip.style.left=(e.clientX-r.left+10)+'px';tip.style.top=(e.clientY-r.top-60)+'px';tip.classList.add('show')}
 function hideExplodedTip(){document.getElementById('explodedTip').classList.remove('show')}
+
+// ── Quote ──
 function addQ(id){if(!quote.find(q=>q.id===id)){quote.push(PARTS.find(p=>p.id===id));renderQuote();if(!document.getElementById('qPan').classList.contains('open'))toggleQ()}}
 function rmQ(id){quote=quote.filter(q=>q.id!==id);renderQuote()}
-function renderQuote(){const items=document.getElementById('qItems'),total=document.getElementById('qTotal'),cnt=document.getElementById('qCnt');cnt.textContent=quote.length||'';if(!quote.length){items.innerHTML='<div class="q-empty">Add parts to quote</div>';total.innerHTML='';return}items.innerHTML=quote.map(q=>'<div class="q-item"><div class="q-item-img">&#9881;</div><div class="q-item-info"><div class="q-item-name">'+q.name+'</div><div class="q-item-sku">'+q.sku+'</div></div><div class="q-item-price">EUR '+q.eur.toFixed(2)+'</div><button class="q-item-rm" onclick="rmQ('+q.id+')">&#10005;</button></div>').join('');const sum=quote.reduce((s,q)=>s+q.price,0);total.innerHTML='<div class="q-total"><div class="q-total-l">'+t('btn_summary')+'</div><div class="q-total-v">'+sum.toLocaleString()+' RUB</div></div>'}
+function renderQuote(){const items=document.getElementById('qItems'),total=document.getElementById('qTotal'),cnt=document.getElementById('qCnt');cnt.textContent=quote.length||'';if(!quote.length){items.innerHTML='<div class="q-empty">Add parts to quote</div>';total.innerHTML='';return}items.innerHTML=quote.map(q=>`<div class="q-item"><div class="q-item-img">&#9881;</div><div class="q-item-info"><div class="q-item-name">${q.name}</div><div class="q-item-sku">${q.sku}</div></div><div class="q-item-price">EUR ${q.eur.toFixed(2)}</div><button class="q-item-rm" onclick="rmQ(${q.id})">&#10005;</button></div>`).join('');const sum=quote.reduce((s,q)=>s+q.price,0);total.innerHTML=`<div class="q-total"><div class="q-total-l">${t('btn_summary')}</div><div class="q-total-v">${sum.toLocaleString()} RUB</div></div>`}
 function toggleQ(){document.getElementById('qPan').classList.toggle('open');document.getElementById('qOv').classList.toggle('open')}
 function submitQ(){if(!quote.length)return;const b=document.querySelector('.q-panel .btn-g');b.textContent='SENT \u2713';b.style.background='var(--g)';b.style.borderColor='var(--g)';setTimeout(()=>{b.textContent=t('btn_send');b.style.background='';b.style.borderColor='';quote=[];renderQuote();toggleQ()},2500)}
-function initBuild(){document.getElementById('bldSteps').innerHTML=BUILD.map((s,i)=>'<button class="bld-step '+(i===0?'active':'')+'" data-s="'+i+'" onclick="goBld('+i+')"><span class="bld-n">'+(i+1)+'</span> '+s.title+'</button>'+(i<BUILD.length-1?'<div class="bld-div"></div>':'')).join('');const c=document.getElementById('bldPanels');c.innerHTML=BUILD.map((s,i)=>'<div class="bld-panel '+(i===0?'active':'')+'" data-s="'+i+'"><div class="label">'+s.title+'</div><h2 style="margin:.4rem 0 1.2rem">'+s.title.toUpperCase()+'</h2><div class="bld-opts">'+s.options.map(o=>'<div class="bld-card" data-step="'+s.key+'" data-id="'+o.id+'" onclick="selBld(\''+s.key+'\',\''+o.id+'\',this)"><h4>'+o.name+'</h4><p class="desc">'+(o.desc||'')+'</p><div class="bld-card-specs">'+Object.entries(o.specs).map(([k,v])=>'<div class="bld-card-spec"><span>'+k+'</span><span>'+v+'</span></div>').join('')+'</div><div class="bld-card-price">'+o.price.toLocaleString()+' RUB</div></div>').join('')+'</div><div class="bld-nav"><button class="btn btn-o btn-sm" onclick="goBld('+(i-1)+')"'+(i===0?' disabled style="opacity:.3"':'')+'>'+t('btn_back')+'</button><button class="btn btn-g btn-sm" onclick="goBld('+(i+1)+')">'+t('btn_next')+'</button></div></div>').join('')+'<div class="bld-panel" data-s="'+BUILD.length+'"><div class="label">'+t('btn_summary')+'</div><h2 style="margin:.4rem 0 1.2rem">CONFIGURATION</h2><div class="bld-sum" id="bldSum"></div><div class="bld-nav"><button class="btn btn-o btn-sm" onclick="goBld('+(BUILD.length-1)+')">'+t('btn_back')+'</button><button class="btn btn-g btn-sm" onclick="alert(\'Quote sent!\')">'+t('btn_send')+'</button></div></div>'}
-function selBld(step,id,el){document.querySelectorAll('.bld-card[data-step="'+step+'"]').forEach(c=>c.classList.remove('sel'));el.classList.add('sel');buildSel[step]=id;updBldInd()}
-function goBld(n){if(n<0||n>BUILD.length)return;document.querySelectorAll('.bld-step').forEach((s,i)=>{s.classList.remove('active');if(buildSel[BUILD[i]?.key])s.classList.add('done')});document.querySelectorAll('.bld-panel').forEach(p=>p.classList.remove('active'));const panel=document.querySelector('.bld-panel[data-s="'+n+'"]');if(panel)panel.classList.add('active');const sb=document.querySelector('.bld-step[data-s="'+n+'"]');if(sb){sb.classList.remove('done');sb.classList.add('active')}if(n===BUILD.length)renderBldSum();updBldInd();window.scrollTo({top:document.getElementById('page-build').offsetTop+100,behavior:'smooth'})}
-function updBldInd(){BUILD.forEach((s,i)=>{const b=document.querySelector('.bld-step[data-s="'+i+'"]');if(b){if(buildSel[s.key]){b.classList.add('done');b.querySelector('.bld-n').textContent='\u2713'}else{b.classList.remove('done');b.querySelector('.bld-n').textContent=i+1}}})}
-function renderBldSum(){let t=0,r='';BUILD.forEach(s=>{const o=s.options.find(x=>x.id===buildSel[s.key]);if(o){t+=o.price;r+='<div class="bld-sum-item"><div class="bld-sum-l">'+s.title+'</div><div class="bld-sum-v">'+o.name+'</div></div>'}});document.getElementById('bldSum').innerHTML='<h3>'+t('btn_details')+'</h3><div class="bld-sum-items">'+r+'</div><div class="bld-sum-total"><div class="bld-sum-total-l">'+t('btn_summary')+'</div><div class="bld-sum-total-v">'+t.toLocaleString()+' RUB</div></div>'}
+
+// ── Configurator ──
+function initBuild(){document.getElementById('bldSteps').innerHTML=BUILD.map((s,i)=>`<button class="bld-step${i===0?' active':''}" data-s="${i}" onclick="goBld(${i})"><span class="bld-n">${i+1}</span> ${s.title}</button>${i<BUILD.length-1?'<div class="bld-div"></div>':''}`).join('');const c=document.getElementById('bldPanels');c.innerHTML=BUILD.map((s,i)=>`<div class="bld-panel${i===0?' active':''}" data-s="${i}"><div class="label">${s.title}</div><h2 style="margin:.4rem 0 1.2rem">${s.title.toUpperCase()}</h2><div class="bld-opts">${s.options.map(o=>`<div class="bld-card" data-step="${s.key}" data-id="${o.id}" onclick="selBld('${s.key}','${o.id}',this)"><h4>${o.name}</h4><p class="desc">${o.desc||''}</p><div class="bld-card-specs">${Object.entries(o.specs).map(([k,v])=>`<div class="bld-card-spec"><span>${k}</span><span>${v}</span></div>`).join('')}</div><div class="bld-card-price">${o.price.toLocaleString()} RUB</div></div>`).join('')}</div><div class="bld-nav"><button class="btn btn-o btn-sm" onclick="goBld(${i-1})"${i===0?' disabled style="opacity:.3"':''}>${t('btn_back')}</button><button class="btn btn-g btn-sm" onclick="goBld(${i+1})">${t('btn_next')}</button></div></div>`).join('')+`<div class="bld-panel" data-s="${BUILD.length}"><div class="label">${t('btn_summary')}</div><h2 style="margin:.4rem 0 1.2rem">CONFIGURATION</h2><div class="bld-sum" id="bldSum"></div><div class="bld-nav"><button class="btn btn-o btn-sm" onclick="goBld(${BUILD.length-1})">${t('btn_back')}</button><button class="btn btn-g btn-sm" onclick="alert('Quote sent!')">${t('btn_send')}</button></div></div>`}
+function selBld(step,id,el){document.querySelectorAll(`.bld-card[data-step="${step}"]`).forEach(c=>c.classList.remove('sel'));el.classList.add('sel');buildSel[step]=id;updBldInd()}
+function goBld(n){if(n<0||n>BUILD.length)return;document.querySelectorAll('.bld-step').forEach((s,i)=>{s.classList.remove('active');if(buildSel[BUILD[i]?.key])s.classList.add('done')});document.querySelectorAll('.bld-panel').forEach(p=>p.classList.remove('active'));document.querySelector(`.bld-panel[data-s="${n}"]`)?.classList.add('active');const sb=document.querySelector(`.bld-step[data-s="${n}"]`);if(sb){sb.classList.remove('done');sb.classList.add('active')}if(n===BUILD.length)renderBldSum();updBldInd();window.scrollTo({top:document.getElementById('page-build').offsetTop+100,behavior:'smooth'})}
+function updBldInd(){BUILD.forEach((s,i)=>{const b=document.querySelector(`.bld-step[data-s="${i}"]`);if(b){if(buildSel[s.key]){b.classList.add('done');b.querySelector('.bld-n').textContent='\u2713'}else{b.classList.remove('done');b.querySelector('.bld-n').textContent=i+1}}})}
+function renderBldSum(){let t=0,r='';BUILD.forEach(s=>{const o=s.options.find(x=>x.id===buildSel[s.key]);if(o){t+=o.price;r+=`<div class="bld-sum-item"><div class="bld-sum-l">${s.title}</div><div class="bld-sum-v">${o.name}</div></div>`}});document.getElementById('bldSum').innerHTML=`<h3>${t('btn_details')}</h3><div class="bld-sum-items">${r}</div><div class="bld-sum-total"><div class="bld-sum-total-l">${t('btn_summary')}</div><div class="bld-sum-total-v">${t.toLocaleString()} RUB</div></div>`}
+
+// ── Maintenance calculator ──
 const TO_SCHEDULE=[{hours:25,cost:2500,items:['Bolt check','Spark plug','Air filter']},{hours:50,cost:4200,items:['Spark plug','Air filter','Gaskets','Oil']},{hours:100,cost:8500,items:['Starter rope','Piston rings','Carb service']},{hours:200,cost:15000,items:['Bearings','Seals','Belt','Full inspection']},{hours:300,cost:28000,items:['Complete overhaul','All consumables','Dyno test']}];
-function calcTO(){const h=parseInt(document.getElementById('calcHours').value)||0;const res=document.getElementById('calcResult');const warn=document.getElementById('calcWarn');const fill=document.getElementById('calcFill');const overdueItems=TO_SCHEDULE.filter(s=>h>=s.hours*1.1);if(overdueItems.length>0)warn.classList.add('show');else warn.classList.remove('show');const pending=TO_SCHEDULE.filter(s=>h<s.hours);const nextDue=pending.length?pending[0]:null;const progress=nextDue?((h/nextDue.hours)*100):100;fill.style.width=Math.min(progress,100)+'%';let html='';if(overdueItems.length>0)html+='<div style="color:var(--r);font-family:var(--fm);font-size:.65rem;letter-spacing:.1em;margin-bottom:.5rem">OVERDUE</div>';TO_SCHEDULE.forEach(s=>{const done=h>=s.hours;const isNext=!done&&(!nextDue||s.hours===nextDue.hours);const cls=done?(h>=s.hours*1.1?'overdue':'done'):(isNext?'due':'');html+='<div class="calc-item '+cls+'"><div><div class="calc-item-name">'+s.hours+'h: '+s.items.join(', ')+'</div></div><div class="calc-item-cost">'+(done?(cls==='overdue'?'! ':'')+'Done':s.cost.toLocaleString()+' RUB')+'</div></div>'});if(nextDue)html+='<div class="calc-total"><div class="calc-total-l">'+t('calc_next')+': '+nextDue.hours+'h</div><div class="calc-total-v">~'+nextDue.cost.toLocaleString()+' RUB</div></div>';res.innerHTML=html}
-function lookup(){const input=document.getElementById('serIn').value.trim().toUpperCase();const c=document.getElementById('dashC');const e=EDB[input];if(!e){c.innerHTML='<div style="text-align:center;padding:3rem;color:var(--td);font-family:var(--fm);font-size:.8rem"><div style="font-size:2rem;margin-bottom:.8rem;opacity:.2">&#10005;</div>Not found: <strong style="color:var(--t)">'+(input||'--')+'</strong></div>';c.classList.add('vis');return}const sb=e.status.includes('expired')?'badge-r':'badge-g';const qrSvg=genQR(input);c.innerHTML='<div class="passport"><div class="passport-head"><div><div class="passport-title">VELTORY DIGITAL PASSPORT</div><div class="passport-sn">'+e.serial+'</div></div><div class="passport-qr">'+qrSvg+'</div></div><div class="passport-grid"><div class="passport-field"><div class="passport-field-l">Model</div><div class="passport-field-v">HE '+e.model+'</div></div><div class="passport-field"><div class="passport-field-l">Year</div><div class="passport-field-v">'+e.year+'</div></div><div class="passport-field"><div class="passport-field-l">Owner</div><div class="passport-field-v">'+e.owner+'</div></div><div class="passport-field"><div class="passport-field-l">Registration</div><div class="passport-field-v">'+e.reg+'</div></div><div class="passport-field"><div class="passport-field-l">Warranty</div><div class="passport-field-v">'+e.warr+'</div></div><div class="passport-field"><div class="passport-field-l">Status</div><div class="passport-field-v"><span class="badge '+sb+'">'+e.status+'</span></div></div><div class="passport-field"><div class="passport-field-l">Hours</div><div class="passport-field-v">'+e.hours+' h</div></div><div class="passport-field"><div class="passport-field-l">Next service</div><div class="passport-field-v" style="color:var(--gold)">'+e.nextTO+'</div></div></div><button class="btn btn-o btn-sm" onclick="alert(\'PDF generation placeholder\')">'+t('btn_view')+' PDF</button></div><div class="dash-grid"><div class="dash-stat"><div class="dash-stat-l">Hours</div><div class="dash-stat-v">'+e.hours+'</div><div class="dash-stat-s">engine hours</div></div><div class="dash-stat"><div class="dash-stat-l">Last service</div><div class="dash-stat-v" style="font-size:1.1rem">'+e.lastTO+'</div></div><div class="dash-stat"><div class="dash-stat-l">Next service</div><div class="dash-stat-v" style="font-size:1.1rem;color:var(--gold)">'+e.nextTO+'</div></div></div><div class="dash-sec"><div class="dash-sec-t">Service History</div><div style="overflow-x:auto"><table class="dash-table"><thead><tr><th>Date</th><th>Type</th><th>Description</th><th>Cost</th><th>Technician</th></tr></thead><tbody>'+e.history.map(h=>'<tr><td class="mc">'+h.d+'</td><td><span class="badge badge-gold">'+h.t+'</span></td><td>'+h.desc+'</td><td class="mc">'+h.cost+'</td><td class="mc">'+h.tech+'</td></tr>').join('')+'</tbody></table></div></div><div class="dash-sec"><div class="dash-sec-t">Documents</div><div class="dash-docs">'+e.docs.map(d=>'<div class="dash-doc"><div class="dash-doc-ic">&#128196;</div><div><h5>'+d.n+'</h5><p>'+d.t+'</p></div></div>').join('')+'</div></div>';c.classList.add('vis')}
-function genQR(text){let hash=0;for(let i=0;i<text.length;i++)hash=((hash<<5)-hash)+text.charCodeAt(i);hash|=0;const cells=[];const size=7;const cs=10;for(let r=0;r<size;r++){for(let c=0;c<size;c++){const corner=(r<3&&c<3)||(r<3&&c>=size-3)||(r>=size-3&&c<3);const val=corner?1:((hash>>(r*size+c))&1);cells.push('<rect x="'+(c*cs)+'" y="'+(r*cs)+'" width="'+cs+'" height="'+cs+'" fill="'+(val?'#0d1b2a':'#fff')+'"/>')}}return '<svg viewBox="0 0 '+(size*cs)+' '+(size*cs)+'" xmlns="http://www.w3.org/2000/svg">'+cells.join('')+'</svg>'}
-function renderDealers(filter){const f=filter||'all';document.getElementById('dealerFilters').innerHTML=['all','sales','service','training'].map(tag=>'<button class="dealer-filter '+(f===tag?'active':'')+'" onclick="renderDealers(\''+tag+'\')">'+(tag==='all'?'All':tag.charAt(0).toUpperCase()+tag.slice(1))+'</button>').join('');const filtered=f==='all'?DEALERS:DEALERS.filter(d=>d.tags.includes(f));document.getElementById('dealerGrid').innerHTML=filtered.map(d=>'<div class="dealer-card"><div class="dealer-ic">&#127970;</div><div class="dealer-info"><div class="dealer-name">'+d.name+'</div><div class="dealer-addr">'+d.city+', '+d.addr+'</div><div class="dealer-phone">'+d.phone+'</div><div class="dealer-tags">'+d.tags.map(tg=>'<span class="dealer-tag '+tg+'">'+tg+'</span>').join('')+'</div></div></div>').join('')}
-function renderAtelier(){const A=[{n:'Midnight MV2',d:'Custom MV2 200cc. The Monster.',tag:'Custom',s:{Engine:'MV2 200cc'}},{n:'Heritage MV1',d:'MV1 184.70cc restoration.',tag:'Restoration',s:{Engine:'MV1 184.70cc'}},{n:'MVL Sport',d:'MVL 125cc lightweight.',tag:'Sport',s:{Engine:'MVL 125cc'}}];document.getElementById('atlGrid').innerHTML=A.map(a=>'<div class="atl-card reveal"><div class="atl-img"><span class="atl-img-i">&#9670;</span><span class="atl-tag badge badge-gold">'+a.tag+'</span></div><div class="atl-body"><h3>'+a.n+'</h3><p class="desc">'+a.d+'</p><div class="atl-specs">'+Object.entries(a.s).map(([k,v])=>'<div class="atl-spec">'+k+': <span>'+v+'</span></div>').join('')+'</div><button class="btn btn-o btn-sm" onclick="switchPage(\'contact\')">'+t('btn_view')+'</button></div></div>').join('')}
+function calcTO(){const h=parseInt(document.getElementById('calcHours').value)||0;const res=document.getElementById('calcResult');const warn=document.getElementById('calcWarn');const fill=document.getElementById('calcFill');const overdueItems=TO_SCHEDULE.filter(s=>h>=s.hours*1.1);if(overdueItems.length>0)warn.classList.add('show');else warn.classList.remove('show');const pending=TO_SCHEDULE.filter(s=>h<s.hours);const nextDue=pending.length?pending[0]:null;const progress=nextDue?((h/nextDue.hours)*100):100;fill.style.width=Math.min(progress,100)+'%';let html='';if(overdueItems.length>0)html+=`<div style="color:var(--r);font-family:var(--fm);font-size:.65rem;letter-spacing:.1em;margin-bottom:.5rem">OVERDUE</div>`;TO_SCHEDULE.forEach(s=>{const done=h>=s.hours;const isNext=!done&&(!nextDue||s.hours===nextDue.hours);const cls=done?(h>=s.hours*1.1?'overdue':'done'):(isNext?'due':'');html+=`<div class="calc-item ${cls}"><div><div class="calc-item-name">${s.hours}h: ${s.items.join(', ')}</div></div><div class="calc-item-cost">${done?(cls==='overdue'?'! ':'')+'Done':s.cost.toLocaleString()+' RUB'}</div></div>`});if(nextDue)html+=`<div class="calc-total"><div class="calc-total-l">${t('calc_next')}: ${nextDue.hours}h</div><div class="calc-total-v">~${nextDue.cost.toLocaleString()} RUB</div></div>`;res.innerHTML=html}
+
+// ── Dashboard + Passport ──
+function lookup(){const input=document.getElementById('serIn').value.trim().toUpperCase();const c=document.getElementById('dashC');const e=EDB[input];if(!e){c.innerHTML=`<div style="text-align:center;padding:3rem;color:var(--td);font-family:var(--fm);font-size:.8rem"><div style="font-size:2rem;margin-bottom:.8rem;opacity:.2">&#10005;</div>Not found: <strong style="color:var(--nv)">${input||'--'}</strong></div>`;c.classList.add('vis');return}const sb=e.status.includes('expired')?'badge-r':'badge-g';const qrSvg=genQR(input);c.innerHTML=`<div class="passport"><div class="passport-head"><div><div class="passport-title">VELTORY DIGITAL PASSPORT</div><div class="passport-sn">${e.serial}</div></div><div class="passport-qr">${qrSvg}</div></div><div class="passport-grid"><div class="passport-field"><div class="passport-field-l">Model</div><div class="passport-field-v">HE ${e.model}</div></div><div class="passport-field"><div class="passport-field-l">Year</div><div class="passport-field-v">${e.year}</div></div><div class="passport-field"><div class="passport-field-l">Owner</div><div class="passport-field-v">${e.owner}</div></div><div class="passport-field"><div class="passport-field-l">Registration</div><div class="passport-field-v">${e.reg}</div></div><div class="passport-field"><div class="passport-field-l">Warranty</div><div class="passport-field-v">${e.warr}</div></div><div class="passport-field"><div class="passport-field-l">Status</div><div class="passport-field-v"><span class="badge ${sb}">${e.status}</span></div></div><div class="passport-field"><div class="passport-field-l">Hours</div><div class="passport-field-v">${e.hours} h</div></div><div class="passport-field"><div class="passport-field-l">Next service</div><div class="passport-field-v" style="color:var(--gold)">${e.nextTO}</div></div></div><button class="btn btn-o btn-sm" onclick="alert('PDF generation placeholder')">${t('btn_view')} PDF</button></div><div class="dash-grid"><div class="dash-stat"><div class="dash-stat-l">Hours</div><div class="dash-stat-v">${e.hours}</div><div class="dash-stat-s">engine hours</div></div><div class="dash-stat"><div class="dash-stat-l">Last service</div><div class="dash-stat-v" style="font-size:1.1rem">${e.lastTO}</div></div><div class="dash-stat"><div class="dash-stat-l">Next service</div><div class="dash-stat-v" style="font-size:1.1rem;color:var(--gold)">${e.nextTO}</div></div></div><div class="dash-sec"><div class="dash-sec-t">Service History</div><div style="overflow-x:auto"><table class="dash-table"><thead><tr><th>Date</th><th>Type</th><th>Description</th><th>Cost</th><th>Technician</th></tr></thead><tbody>${e.history.map(h=>`<tr><td class="mc">${h.d}</td><td><span class="badge badge-gold">${h.t}</span></td><td>${h.desc}</td><td class="mc">${h.cost}</td><td class="mc">${h.tech}</td></tr>`).join('')}</tbody></table></div></div><div class="dash-sec"><div class="dash-sec-t">Documents</div><div class="dash-docs">${e.docs.map(d=>`<div class="dash-doc"><div class="dash-doc-ic">&#128196;</div><div><h5>${d.n}</h5><p>${d.t}</p></div></div>`).join('')}</div></div>`;c.classList.add('vis')}
+function genQR(text){let hash=0;for(let i=0;i<text.length;i++)hash=((hash<<5)-hash)+text.charCodeAt(i);hash|=0;const cells=[];const size=7;const cs=10;for(let r=0;r<size;r++){for(let c=0;c<size;c++){const corner=(r<3&&c<3)||(r<3&&c>=size-3)||(r>=size-3&&c<3);const val=corner?1:((hash>>(r*size+c))&1);cells.push(`<rect x="${c*cs}" y="${r*cs}" width="${cs}" height="${cs}" fill="${val?'#0d1b2a':'#fff'}"/>`)}}return `<svg viewBox="0 0 ${size*cs} ${size*cs}" xmlns="http://www.w3.org/2000/svg">${cells.join('')}</svg>`}
+
+// ── Dealers ──
+function renderDealers(filter){const f=filter||'all';document.getElementById('dealerFilters').innerHTML=['all','sales','service','training'].map(tag=>`<button class="dealer-filter ${f===tag?'active':''}" onclick="renderDealers('${tag}')">${tag==='all'?'All':tag.charAt(0).toUpperCase()+tag.slice(1)}</button>`).join('');const filtered=f==='all'?DEALERS:DEALERS.filter(d=>d.tags.includes(f));document.getElementById('dealerGrid').innerHTML=filtered.map(d=>`<div class="dealer-card"><div class="dealer-ic">&#127970;</div><div class="dealer-info"><div class="dealer-name">${d.name}</div><div class="dealer-addr">${d.city}, ${d.addr}</div><div class="dealer-phone">${d.phone}</div><div class="dealer-tags">${d.tags.map(tg=>`<span class="dealer-tag ${tg}">${tg}</span>`).join('')}</div></div></div>`).join('')}
+
+// ── Atelier ──
+function renderAtelier(){const A=[{n:'Midnight MV2',d:'Custom MV2 130cc.',tag:'Custom',s:{Engine:'MV2 130cc'}},{n:'Heritage MV1',d:'MV1 restoration.',tag:'Restoration',s:{Engine:'MV1 100cc'}},{n:'MVL Sport',d:'Lightweight build.',tag:'Sport',s:{Engine:'MVL 80cc'}}];document.getElementById('atlGrid').innerHTML=A.map(a=>`<div class="atl-card reveal"><div class="atl-img"><span class="atl-img-i">&#9670;</span><span class="atl-tag badge badge-gold">${a.tag}</span></div><div class="atl-body"><h3>${a.n}</h3><p class="desc">${a.d}</p><div class="atl-specs">${Object.entries(a.s).map(([k,v])=>`<div class="atl-spec">${k}: <span>${v}</span></div>`).join('')}</div><button class="btn btn-o btn-sm" onclick="switchPage('contact')">${t('btn_view')}</button></div></div>`).join('')}
+
+// ── Forms ──
 function submitForm(e,msg){e.preventDefault();const b=e.target.querySelector('button[type="submit"]');b.textContent=msg+' \u2713';b.style.background='var(--g)';b.style.borderColor='var(--g)';setTimeout(()=>{b.textContent=t('btn_submit');b.style.background='';b.style.borderColor='';e.target.reset()},3000)}
+
+// ── Init ──
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
 renderEngines();renderCmp();renderEngSel();renderCatFil();renderParts();renderExploded();initBuild();renderAtelier();renderDealers();renderQuote();calcTO();
 setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))},150);
-</script>
-</body>
-</html>
+
+
