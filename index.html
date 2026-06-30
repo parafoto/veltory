@@ -647,6 +647,7 @@ let curEng='all',curCat='all',quote=[],buildSel={},cmpSel=['mv1','mv2'];
 
 // ── Navigation ──
 function switchPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.nav-tab').forEach(x=>x.classList.remove('active'));document.getElementById('page-'+p)?.classList.add('active');document.querySelector(`.nav-tab[data-p="${p}"]`)?.classList.add('active');document.getElementById('navTabs').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>{document.querySelectorAll('.page.active .reveal').forEach(el=>el.classList.add('vis'))},100)}
+function SP(p){switchPage(p)}
 
 // ── Engines ──
 function renderEngines(){document.getElementById('engGrid').innerHTML=ENGINES.map(e=>`<div class="eng-card reveal"><div class="eng-vis"><span class="eng-vis-i">&#9670;</span></div><div class="eng-body"><span class="badge badge-gold">${e.badge}</span><h3 style="margin-top:.5rem">${e.name}</h3><p class="desc">${e.desc}</p><div class="eng-specs">${Object.entries(e.specs).map(([k,v])=>`<div class="eng-spec"><span class="eng-spec-k">${k}</span><span class="eng-spec-v">${v}</span></div>`).join('')}</div><div class="eng-acts"><button class="btn btn-g btn-sm" onclick="switchPage('parts')">${t('btn_view')}</button><button class="btn btn-o btn-sm" onclick="switchPage('contact')">${t('btn_send')}</button></div></div></div>`).join('')}
@@ -698,10 +699,13 @@ function renderAtelier(){const A=[{n:'Midnight MV2',d:'Custom MV2 200cc.',tag:'C
 
 // ── Forms ──
 function submitForm(e,msg){e.preventDefault();const b=e.target.querySelector('button[type="submit"]');b.textContent=msg+' \u2713';b.style.background='var(--g)';b.style.borderColor='var(--g)';setTimeout(()=>{b.textContent=t('btn_submit');b.style.background='';b.style.borderColor='';e.target.reset()},3000)}
+function submitF(e,msg){submitForm(e,msg)}
+function calcM(){calcTO()}
+function initBld(){initBuild()}
+function upBldInd(){updBldInd()}
+function renderLibrary(){return null}
 
 // ── Init ──
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
-renderEngines();renderCmp();renderEngSel();renderCatFil();renderParts();renderExploded();initBuild();renderAtelier();renderDealers();renderQuote();calcTO();
+renderEngines();renderCmp();renderEngSel();renderCatFil();renderParts();renderExploded();initBuild();renderDealers();renderQuote();calcTO();
 setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))},150);
-
-
