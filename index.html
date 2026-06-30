@@ -3,694 +3,586 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VELTORY — HE Paramotores Official Partner</title>
-<!-- GitHub Pages canonical domain: heparamotor.ru -->
+<title>VELTORY — HE Paramotores Engineering Platform</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
---cr:#f5f0e6;--cr2:#ece5d8;--cr3:#e2dace;
---nv:#0d1b2a;--nv2:#1b2d45;--nv3:#253d5b;
---trr:#c4956a;--trrl:#d9b08c;--trrd:#a07850;
---rst:#c05e3c;
---sky:#6b9ec4;
---tx:#1a1a2e;--tx2:#3a3a52;--tx3:#7a7a92;
---w:#fdfbf7;
+--ds:#03030a;--ds2:#060812;--surf:#0a0d1a;--cr:#0e1224;--crh:#131838;--el:#161c3a;
+--gold:#c4956a;--goldw:#d4a87a;--goldd:#8a6a45;--goldg:rgba(196,149,106,.08);
+--cream:#f5f0e6;--navy:#0d1b2a;--terra:#c4956a;
+--t:#d4d8e8;--tb:#8890a8;--tm:#4a5068;--td:#252a3a;
+--b:#161c30;--bl:#1e2440;
+--g:#4ecb71;--r:#e05555;--blu:#6ba0d0;
 --fd:'Space Grotesk',sans-serif;--fb:'Cormorant Garamond',serif;--fm:'JetBrains Mono',monospace;
---tr:.35s cubic-bezier(.4,0,.2,1);--trs:.6s cubic-bezier(.4,0,.2,1);
+--rad:8px;--radl:14px;--radxl:20px;
+--shc:0 4px 30px rgba(0,0,0,.4);
+--tr:.35s cubic-bezier(.4,0,.2,1);--trs:.55s cubic-bezier(.4,0,.2,1);
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--fb);background:var(--cr);color:var(--tx);overflow-x:hidden;line-height:1.7}
-::selection{background:var(--nv);color:var(--cr)}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--cr)}::-webkit-scrollbar-thumb{background:var(--trr);border-radius:3px}
-h1,h2,h3,h4{font-family:var(--fd);font-weight:700;line-height:.98;letter-spacing:-.02em}
-a{color:var(--trr);text-decoration:none;transition:color var(--tr)}
-.mono{font-family:var(--fm)}.ctr{max-width:1400px;margin:0 auto;padding:0 clamp(1rem,3vw,4rem)}
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}.reveal.vis{opacity:1;transform:translateY(0)}
-
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.6rem 0;transition:all var(--tr);background:rgba(245,240,230,.88);backdrop-filter:blur(24px);border-bottom:1px solid transparent}
-.nav.scrolled{border-bottom:1px solid var(--cr3)}
-.nav .ctr{display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--nv);letter-spacing:.08em;cursor:pointer;display:flex;align-items:center;gap:.5rem}
-.logo-d{width:8px;height:8px;border-radius:50%;background:var(--trr)}
-.ntabs{display:flex;gap:.1rem;list:none;flex-wrap:wrap}
-.ntab{font-family:var(--fd);font-size:.68rem;font-weight:500;letter-spacing:.05em;padding:.4rem .75rem;border-radius:20px;cursor:pointer;color:var(--tx3);border:1px solid transparent;transition:all var(--tr);background:none;white-space:nowrap;text-transform:uppercase}
-.ntab:hover{color:var(--tx)}.ntab.act{color:var(--nv);background:var(--cr2);border-color:var(--cr3)}
+body{font-family:var(--fb);background:var(--ds);color:var(--tb);line-height:1.7;overflow-x:hidden}
+.sky{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;border-radius:50%;background:#fff}
+.star.t1{width:1px;height:1px;opacity:.6}.star.t2{width:1.5px;height:1.5px;opacity:.8;background:#dde4ff}
+.star.t3{width:2px;height:2px;opacity:.5;background:#b8c8ff;box-shadow:0 0 4px rgba(184,200,255,.4)}
+.moon{position:fixed;width:clamp(200px,22vw,380px);height:clamp(200px,22vw,380px);border-radius:50%;right:-3%;top:5%;z-index:0;pointer-events:none;background:radial-gradient(circle at 38% 35%,#222842 0%,#141828 25%,#0c0f1c 50%,#070912 75%,var(--ds) 100%);border:1px solid rgba(196,149,106,.03);box-shadow:inset -25px -20px 50px rgba(0,0,0,.7),inset 8px 6px 25px rgba(196,149,106,.04),0 0 120px rgba(196,149,106,.04),0 0 60px rgba(196,149,106,.02);animation:moonDrift 30s ease-in-out infinite}
+.crater{position:absolute;border-radius:50%;background:radial-gradient(circle,#080a14,#0c0f1c);box-shadow:inset 1px 1px 6px rgba(0,0,0,.6)}
+.crater.c1{width:35px;height:35px;top:22%;left:18%}.crater.c2{width:18px;height:18px;top:50%;left:62%}.crater.c3{width:12px;height:12px;top:35%;left:70%}.crater.c4{width:24px;height:24px;top:65%;left:25%}.crater.c5{width:8px;height:8px;top:15%;left:55%}
+@keyframes moonDrift{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.earth-glow{position:fixed;width:160px;height:160px;border-radius:50%;right:22%;top:28%;z-index:0;pointer-events:none;background:radial-gradient(circle,rgba(196,149,106,.06),transparent 70%);animation:earthP 6s ease-in-out infinite}
+@keyframes earthP{0%,100%{opacity:.4}50%{opacity:.8}}
+body::after{content:'';position:fixed;inset:0;z-index:99999;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='5' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");opacity:.015;pointer-events:none}
+h1,h2,h3,h4{font-family:var(--fd);color:var(--t);letter-spacing:.02em;line-height:1.08;font-weight:300}
+h1{font-size:clamp(2.8rem,7vw,5.5rem)}h2{font-size:clamp(1.8rem,4.5vw,3.5rem)}h3{font-size:clamp(1.1rem,2.5vw,1.5rem)}
+a{color:var(--gold);text-decoration:none;transition:color var(--tr)}a:hover{color:var(--goldw)}
+::selection{background:var(--gold);color:var(--ds)}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--ds)}::-webkit-scrollbar-thumb{background:var(--b);border-radius:3px}
+.mono{font-family:var(--fm)}.ctr{max-width:1440px;margin:0 auto;padding:0 clamp(1rem,3vw,3.5rem);position:relative;z-index:2}
+.text-c{text-align:center}
+.label{font-family:var(--fm);font-size:.65rem;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);display:flex;align-items:center;gap:.6rem}
+.label::before{content:'';width:24px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.label-c{justify-content:center}.label-c::before{display:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--fd);font-size:.78rem;font-weight:500;letter-spacing:.08em;padding:.72rem 1.8rem;border-radius:40px;border:1px solid transparent;cursor:pointer;transition:all var(--tr);white-space:nowrap;text-decoration:none}
+.btn-g{background:linear-gradient(135deg,var(--gold),var(--goldw));color:var(--ds);border-color:var(--gold)}
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 6px 30px rgba(196,149,106,.3);color:var(--ds)}
+.btn-o{background:transparent;color:var(--t);border-color:var(--bl)}
+.btn-o:hover{border-color:var(--gold);color:var(--gold)}
+.btn-sm{padding:.52rem 1.2rem;font-size:.72rem}.btn-xs{padding:.38rem .85rem;font-size:.65rem}.btn-bl{width:100%}
+.badge{font-family:var(--fm);font-size:.56rem;text-transform:uppercase;letter-spacing:.15em;padding:.22rem .65rem;border-radius:20px;display:inline-block}
+.badge-g{color:var(--g);background:rgba(78,203,113,.08);border:1px solid rgba(78,203,113,.18)}
+.badge-r{color:var(--r);background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.18)}
+.badge-gold{color:var(--gold);background:var(--goldg);border:1px solid rgba(196,149,106,.18)}
+.badge-eu{color:var(--blu);background:rgba(107,160,208,.08);border:1px solid rgba(107,160,208,.18)}
+.topbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:.5rem 0;background:rgba(3,3,10,.85);backdrop-filter:blur(30px);border-bottom:1px solid rgba(22,28,48,.5)}
+.topbar .ctr{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--fd);font-size:1.35rem;letter-spacing:.12em;color:var(--t);display:flex;align-items:center;gap:.5rem;cursor:pointer;font-weight:300}
+.logo-m{width:26px;height:26px;border:1.5px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.55rem;color:var(--gold);position:relative}
+.logo-m::after{content:'';position:absolute;width:4px;height:4px;background:var(--gold);border-radius:50%;top:3px;right:4px;opacity:.4}
+.logo-sub{font-family:var(--fm);font-size:.48rem;letter-spacing:.2em;color:var(--tm);text-transform:uppercase}
+.nav-tabs{display:flex;gap:.1rem;list-style:none;flex-wrap:wrap;justify-content:center}
+.nav-tab{font-family:var(--fd);font-size:.72rem;letter-spacing:.06em;padding:.42rem .8rem;border-radius:30px;cursor:pointer;color:var(--tm);border:1px solid transparent;transition:all var(--tr);background:none;white-space:nowrap;font-weight:400}
+.nav-tab:hover{color:var(--tb)}.nav-tab.active{color:var(--gold);border-color:var(--b);background:var(--goldg)}
 .nav-r{display:flex;align-items:center;gap:.5rem}
-.nav-ph{font-family:var(--fm);font-size:.65rem;color:var(--tx3)}
-.nav-btn{font-family:var(--fd);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.5rem 1.2rem;background:var(--nv);color:var(--cr);border:none;border-radius:20px;cursor:pointer;transition:all var(--tr)}
-.nav-btn:hover{background:var(--trr)}
-.nmob{display:none;background:none;border:none;cursor:pointer;padding:4px}.nmob span{display:block;width:20px;height:2px;background:var(--nv);margin:4px 0;border-radius:1px}
-
-.page{display:none;padding-top:56px;min-height:100vh;animation:pgIn .3s ease}.page.act{display:block}
-@keyframes pgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.ph{padding:3rem 0 2rem;border-bottom:1px solid var(--cr3);margin-bottom:2.5rem}
-.ph h1{font-size:clamp(2.5rem,6vw,4.5rem);color:var(--nv);margin:.3rem 0}.ph p{color:var(--tx3);max-width:600px;font-size:.95rem}
-.tag{font-family:var(--fm);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--trr);margin-bottom:.5rem}
-
-.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:1.25rem}
-.g5{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:1.25rem}
-.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1.25rem}
-.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:clamp(1.5rem,3vw,3rem);align-items:center}
-.card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.5rem;transition:all var(--tr);overflow:hidden}
-.card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(13,27,42,.08);border-color:var(--trr)}
-.card-ic{width:44px;height:44px;border-radius:50%;background:var(--cr);border:1px solid var(--cr3);display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1rem;opacity:.6}
-
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;font-family:var(--fd);font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.65rem 1.5rem;border-radius:30px;border:1px solid transparent;cursor:pointer;transition:all var(--tr);white-space:nowrap;text-decoration:none}
-.btn-p{background:var(--nv);color:var(--cr)}.btn-p:hover{background:var(--trr);transform:translateY(-2px);box-shadow:0 6px 24px rgba(196,149,106,.3)}
-.btn-s{background:transparent;color:var(--nv);border-color:var(--nv)}.btn-s:hover{border-color:var(--trr);color:var(--trr)}
-.btn-sm{padding:.48rem 1rem;font-size:.65rem}.btn-xs{padding:.35rem .75rem;font-size:.6rem}.btn-bl{width:100%}
-
-.badge{font-family:var(--fm);font-size:.52rem;text-transform:uppercase;letter-spacing:.15em;padding:.2rem .55rem;border-radius:15px;display:inline-block}
-.badge-g{color:#2d8a4e;background:rgba(45,138,78,.08);border:1px solid rgba(45,138,78,.15)}
-.badge-r{color:var(--rst);background:rgba(192,94,60,.08);border:1px solid rgba(192,94,60,.15)}
-.badge-t{color:var(--trr);background:rgba(196,149,106,.1);border:1px solid rgba(196,149,106,.2)}
-.badge-n{color:var(--nv);background:rgba(13,27,42,.04);border:1px solid var(--cr3)}
-.badge-sp{color:var(--sky);background:rgba(107,158,196,.08);border:1px solid rgba(107,158,196,.15)}
-.badge-new{color:var(--rst);background:rgba(192,94,60,.08);border:1px solid rgba(192,94,60,.18);animation:pulse 2s ease infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
-
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;background:var(--cr)}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 30%,var(--cr2) 0%,transparent 50%),radial-gradient(ellipse at 20% 80%,var(--cr3) 0%,transparent 40%)}
-.hero .ctr{position:relative;z-index:1}
-.hero-g{display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;align-items:center}
-.hero h1{font-size:clamp(3.5rem,9vw,7.5rem);color:var(--nv);line-height:.88;margin-bottom:1.5rem}
-.hero h1 em{font-style:normal;color:var(--trr);display:block}
-.hero-desc{font-size:1.1rem;color:var(--tx2);max-width:460px;margin-bottom:2rem;line-height:1.7}
-.hero-acts{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:3rem}
-.hero-stats{display:flex;gap:2rem;padding-top:2rem;border-top:1px solid var(--cr3);flex-wrap:wrap}
-.hs-n{font-family:var(--fd);font-size:1.8rem;color:var(--nv);font-weight:700;line-height:1}
-.hs-l{font-family:var(--fm);font-size:.5rem;letter-spacing:.15em;text-transform:uppercase;color:var(--tx3);margin-top:.2rem}
-.hero-vis{display:flex;justify-content:center;align-items:center}
-.moon-ill{width:clamp(260px,30vw,480px);height:clamp(260px,30vw,480px);animation:mf 10s ease-in-out infinite}
-@keyframes mf{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
-
-.about-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,4rem);align-items:start;margin-bottom:4rem}
-.ah-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:1.2rem}
-.ah{display:flex;align-items:flex-start;gap:.5rem;padding:.8rem;background:var(--w);border-radius:12px;border:1px solid var(--cr3)}
-.ah-ic{width:30px;height:30px;border-radius:50%;background:rgba(196,149,106,.1);display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
-.ah h4{font-size:.85rem;font-weight:600}.ah p{font-size:.75rem;color:var(--tx3)}
-
-.tl{position:relative;padding-left:2.5rem}.tl::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--trr),var(--cr3))}
-.tl-i{position:relative;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--cr3)}.tl-i:last-child{border:none}
-.tl-d{position:absolute;left:-2.5rem;top:.1rem;width:18px;height:18px;border-radius:50%;border:2px solid var(--trr);background:var(--cr);display:flex;align-items:center;justify-content:center}
-.tl-d::after{content:'';width:5px;height:5px;border-radius:50%;background:var(--trr)}
-.tl-y{font-family:var(--fd);font-size:1.6rem;color:var(--trr);font-weight:700;margin-bottom:.15rem}
-.tl-t{font-family:var(--fd);font-size:1.1rem;font-weight:600;margin-bottom:.15rem}
-.tl-ds{color:var(--tx3);font-size:.88rem;max-width:500px}
-
-.eng-card{background:var(--w);border:1px solid var(--cr3);border-radius:20px;overflow:hidden;transition:all var(--tr)}
-.eng-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(13,27,42,.08);border-color:var(--trr)}
-.eng-vis{height:160px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.eng-body{padding:1.5rem}.eng-body h3{font-size:1.2rem;margin:.3rem 0 .15rem}.eng-body .ds{font-size:.85rem;color:var(--tx3);margin-bottom:.8rem;line-height:1.5}
-.eng-sp{display:grid;grid-template-columns:1fr 1fr;gap:.25rem .8rem;margin-bottom:.8rem}
-.eng-sp-k{font-family:var(--fm);font-size:.48rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tx3)}
-.eng-sp-v{font-size:.85rem;color:var(--nv);font-weight:600}
-.eng-acts{display:flex;gap:.4rem}
-.eng-feat-bar{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.6rem}
-.eng-feat{font-family:var(--fm);font-size:.48rem;letter-spacing:.08em;padding:.2rem .5rem;border-radius:10px;background:var(--cr);border:1px solid var(--cr3);color:var(--tx3)}
-
-.parts-l{display:grid;grid-template-columns:240px 1fr;gap:2rem;align-items:start}
-.sb{position:sticky;top:70px}
-.sb-s{margin-bottom:1.2rem}
-.sb-t{font-family:var(--fm);font-size:.55rem;text-transform:uppercase;letter-spacing:.2em;color:var(--tx3);margin-bottom:.4rem;padding-bottom:.3rem;border-bottom:1px solid var(--cr3)}
-.eng-sel{display:flex;flex-direction:column;gap:.15rem}
-.eng-opt{display:flex;align-items:center;gap:.45rem;padding:.4rem .55rem;border-radius:20px;cursor:pointer;border:1px solid transparent;transition:all var(--tr);background:none;color:var(--tx2);font-family:var(--fb);font-size:.82rem;text-align:left;width:100%}
-.eng-opt:hover{background:var(--cr2)}.eng-opt.act{background:rgba(196,149,106,.1);border-color:rgba(196,149,106,.2);color:var(--trr)}
-.eng-dot{width:5px;height:5px;border-radius:50%;border:1.5px solid var(--cr3);flex-shrink:0;transition:var(--tr)}
-.eng-opt.act .eng-dot{border-color:var(--trr);background:var(--trr)}
-.cat-f{display:flex;flex-direction:column;gap:.1rem}
-.cat-o{font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;padding:.32rem .5rem;border-radius:15px;cursor:pointer;border:none;background:none;color:var(--tx3);text-align:left;transition:all var(--tr)}
-.cat-o:hover{background:var(--cr2);color:var(--tx2)}.cat-o.act{color:var(--trr);background:rgba(196,149,106,.1)}
-.cat-cnt{float:right;color:var(--cr3);font-size:.48rem}
-.p-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:.6rem}
-.p-cnt{font-family:var(--fm);font-size:.65rem;color:var(--tx3);letter-spacing:.1em}
-.p-search{display:flex;align-items:center;gap:.3rem;padding:.38rem .6rem;background:var(--w);border:1px solid var(--cr3);border-radius:20px;width:250px;transition:border-color var(--tr)}
-.p-search:focus-within{border-color:var(--trr)}
-.p-search input{background:none;border:none;color:var(--tx);font-family:var(--fm);font-size:.7rem;width:100%;outline:none}
-.p-search input::placeholder{color:var(--cr3)}
-.p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:.8rem}
-.p-card{background:var(--w);border:1px solid var(--cr3);border-radius:14px;padding:1rem;transition:all var(--tr);cursor:pointer}
-.p-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(13,27,42,.06);border-color:var(--trr)}
-.p-sku{font-family:var(--fm);font-size:.52rem;letter-spacing:.18em;color:var(--tx3);margin-bottom:.2rem}
-.p-name{font-family:var(--fd);font-size:.9rem;color:var(--nv);font-weight:600;margin-bottom:.2rem}
-.p-compat{font-family:var(--fm);font-size:.52rem;letter-spacing:.1em;color:var(--trr);margin-bottom:.5rem}
-.p-foot{display:flex;justify-content:space-between;align-items:center;padding-top:.5rem;border-top:1px solid var(--cr3)}
-.p-price{font-family:var(--fd);font-size:1.05rem;color:var(--nv);font-weight:700}
-.p-note{font-family:var(--fm);font-size:.5rem;color:var(--tx3);letter-spacing:.06em;margin-top:.3rem;line-height:1.4}
-
-.q-panel{position:fixed;right:-420px;top:0;bottom:0;width:400px;background:var(--w);border-left:1px solid var(--cr3);z-index:1001;transition:right var(--trs);overflow-y:auto;padding:1.5rem}
+.nav-ph{font-family:var(--fm);font-size:.68rem;color:var(--tm)}.nav-ph a{color:var(--tm)}.nav-ph a:hover{color:var(--gold)}
+.lang-sw{display:flex;gap:2px;background:var(--surf);border:1px solid var(--b);border-radius:6px;padding:2px}
+.lang-btn{font-family:var(--fm);font-size:.55rem;letter-spacing:.1em;padding:3px 8px;border:none;border-radius:4px;cursor:pointer;background:transparent;color:var(--tm);transition:all var(--tr)}
+.lang-btn.active{background:var(--gold);color:var(--ds)}
+.btn-mob{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;gap:4px}
+.btn-mob span{width:18px;height:1.5px;background:var(--t);border-radius:1px}
+.page{display:none;padding-top:64px;min-height:100vh;animation:pgIn .4s ease;position:relative;z-index:2}
+.page.active{display:block}
+@keyframes pgIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.ph{padding:3rem 0 2rem;border-bottom:1px solid var(--b);margin-bottom:2.5rem}
+.ph h1{margin:.4rem 0 .3rem}.ph p{color:var(--tm);max-width:620px;font-size:.95rem}
+section{padding:clamp(3rem,8vw,6rem) 0}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:1.25rem}
+.grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:1.25rem}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:clamp(1.5rem,3vw,3rem);align-items:center}
+.card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:1.5rem;transition:all var(--tr);overflow:hidden}
+.card:hover{border-color:var(--goldd);transform:translateY(-3px);box-shadow:var(--shc)}
+.card-ic{width:48px;height:48px;background:var(--surf);border:1px solid var(--b);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem;opacity:.15}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:64px}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 85%,rgba(196,149,106,.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 15%,rgba(196,149,106,.03) 0%,transparent 40%),linear-gradient(180deg,var(--ds) 0%,var(--ds2) 100%)}
+.hero-c{position:relative;z-index:2;max-width:820px}
+.hero-sub{font-family:var(--fm);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;opacity:0;animation:fadeUp .7s .2s ease forwards}
+.hero h1{margin-bottom:1.5rem;opacity:0;animation:fadeUp .7s .35s ease forwards}.hero h1 em{font-style:normal;color:var(--gold);font-weight:400}
+.hero-desc{font-size:1.12rem;color:var(--tb);max-width:540px;margin-bottom:2.2rem;opacity:0;animation:fadeUp .7s .5s ease forwards}
+.hero-acts{display:flex;gap:.8rem;flex-wrap:wrap;opacity:0;animation:fadeUp .7s .65s ease forwards}
+.hero-stats{display:flex;gap:2.5rem;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--b);opacity:0;animation:fadeUp .7s .8s ease forwards}
+.st-n{font-family:var(--fd);font-size:2.4rem;color:var(--gold);line-height:1;font-weight:300}
+.st-l{font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm);margin-top:.3rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.eng-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);overflow:hidden;transition:all var(--tr)}
+.eng-card:hover{border-color:var(--goldd);box-shadow:var(--shc)}
+.eng-vis{height:200px;background:linear-gradient(180deg,var(--surf),var(--cr));border-bottom:1px solid var(--b);display:flex;align-items:center;justify-content:center;position:relative}
+.eng-vis::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 80%,rgba(196,149,106,.04),transparent 60%)}
+.eng-vis-i{font-size:3rem;opacity:.06}
+.eng-body{padding:1.8rem}.eng-body h3{margin:.5rem 0 .3rem}
+.eng-body .desc{font-size:.9rem;color:var(--tm);margin-bottom:1.2rem;line-height:1.5}
+.eng-specs{display:grid;grid-template-columns:1fr 1fr;gap:.4rem 1.5rem;margin-bottom:1.3rem}
+.eng-spec{display:flex;flex-direction:column}
+.eng-spec-k{font-family:var(--fm);font-size:.54rem;text-transform:uppercase;letter-spacing:.2em;color:var(--td)}
+.eng-spec-v{font-size:.95rem;color:var(--t);margin-top:.08rem}
+.eng-acts{display:flex;gap:.5rem}
+.cfg-layout{display:grid;grid-template-columns:250px 1fr;gap:2rem;align-items:start}
+.sb{position:sticky;top:76px}
+.sb-sec{margin-bottom:1.5rem}
+.sb-t{font-family:var(--fm);font-size:.58rem;text-transform:uppercase;letter-spacing:.22em;color:var(--td);margin-bottom:.5rem;padding-bottom:.35rem;border-bottom:1px solid var(--b)}
+.eng-sel{display:flex;flex-direction:column;gap:.2rem}
+.eng-opt{display:flex;align-items:center;gap:.5rem;padding:.48rem .6rem;border-radius:30px;cursor:pointer;border:1px solid transparent;transition:all var(--tr);background:none;color:var(--tb);font-family:var(--fb);font-size:.85rem;text-align:left;width:100%}
+.eng-opt:hover{background:rgba(255,255,255,.015);color:var(--t)}
+.eng-opt.active{background:var(--goldg);border-color:rgba(196,149,106,.15);color:var(--gold)}
+.eng-dot{width:6px;height:6px;border-radius:50%;border:1.5px solid var(--b);flex-shrink:0;transition:var(--tr)}
+.eng-opt.active .eng-dot{border-color:var(--gold);background:var(--gold)}
+.cat-f{display:flex;flex-direction:column;gap:.12rem}
+.cat-o{font-family:var(--fm);font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;padding:.38rem .55rem;border-radius:30px;cursor:pointer;border:none;background:none;color:var(--tm);text-align:left;transition:all var(--tr)}
+.cat-o:hover{color:var(--tb);background:rgba(255,255,255,.015)}
+.cat-o.active{color:var(--gold);background:var(--goldg)}
+.cat-cnt{float:right;color:var(--td);font-size:.52rem}
+.p-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;flex-wrap:wrap;gap:.8rem}
+.p-cnt{font-family:var(--fm);font-size:.68rem;color:var(--tm);letter-spacing:.12em}
+.p-search{display:flex;align-items:center;gap:.4rem;padding:.42rem .7rem;background:var(--surf);border:1px solid var(--b);border-radius:30px;width:270px;transition:border-color var(--tr)}
+.p-search:focus-within{border-color:var(--goldd)}
+.p-search input{background:none;border:none;color:var(--t);font-family:var(--fm);font-size:.75rem;width:100%;outline:none}
+.p-search input::placeholder{color:var(--td)}
+.p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,275px),1fr));gap:1rem}
+.p-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);overflow:hidden;transition:all var(--tr);cursor:pointer}
+.p-card:hover{border-color:var(--goldd);transform:translateY(-3px);box-shadow:0 8px 40px rgba(0,0,0,.3)}
+.p-img{aspect-ratio:16/10;background:linear-gradient(135deg,var(--surf),var(--cr));display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--b);position:relative}
+.p-img-i{font-size:1.8rem;opacity:.06}
+.p-img .badge{position:absolute;top:.5rem;right:.5rem}
+.p-body{padding:1rem 1.1rem}
+.p-sku{font-family:var(--fm);font-size:.56rem;color:var(--td);letter-spacing:.18em;margin-bottom:.2rem}
+.p-name{font-family:var(--fd);font-size:1rem;letter-spacing:.03em;color:var(--t);margin-bottom:.25rem;font-weight:400}
+.p-compat{font-family:var(--fm);font-size:.58rem;color:var(--tm);letter-spacing:.1em;margin-bottom:.6rem}
+.p-foot{display:flex;justify-content:space-between;align-items:center;padding-top:.6rem;border-top:1px solid var(--b)}
+.p-price{font-family:var(--fd);font-size:1.3rem;color:var(--gold);font-weight:300}
+.p-price small{font-family:var(--fm);font-size:.52rem;color:var(--td);letter-spacing:.1em}
+.exploded-wrap{position:relative;width:100%;max-width:600px;margin:2rem auto}
+.exploded-svg{width:100%;height:auto}
+.exploded-dot{cursor:pointer;transition:all var(--tr)}
+.exploded-dot:hover{filter:brightness(1.4)}
+.exploded-tooltip{position:absolute;background:var(--cr);border:1px solid var(--gold);border-radius:var(--rad);padding:.8rem 1rem;pointer-events:none;opacity:0;transition:opacity .2s;z-index:10;min-width:180px}
+.exploded-tooltip.show{opacity:1}
+.exploded-tooltip .tt-name{font-family:var(--fd);font-size:.85rem;color:var(--t);margin-bottom:.2rem}
+.exploded-tooltip .tt-sku{font-family:var(--fm);font-size:.55rem;color:var(--td);letter-spacing:.12em;margin-bottom:.3rem}
+.exploded-tooltip .tt-price{font-family:var(--fd);font-size:1rem;color:var(--gold)}
+.exploded-tooltip .tt-btn{margin-top:.4rem}
+.q-panel{position:fixed;right:-420px;top:0;bottom:0;width:400px;background:var(--surf);border-left:1px solid var(--b);z-index:1001;transition:right var(--trs);overflow-y:auto;padding:1.5rem}
 .q-panel.open{right:0}
-.q-ov{position:fixed;inset:0;background:rgba(13,27,42,.3);z-index:1000;opacity:0;pointer-events:none;transition:opacity var(--tr)}
-.q-ov.open{opacity:1;pointer-events:all}
-.q-hd{display:flex;justify-content:space-between;align-items:center;padding-bottom:.7rem;border-bottom:1px solid var(--cr3);margin-bottom:1rem}
-.q-close{background:none;border:none;color:var(--tx3);cursor:pointer;font-size:1rem}.q-close:hover{color:var(--tx)}
-.q-items{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
-.q-item{display:flex;gap:.5rem;align-items:center;padding:.55rem;background:var(--cr);border-radius:10px;border:1px solid var(--cr3)}
-.q-item-info{flex:1;min-width:0}.q-item-name{font-family:var(--fd);font-size:.78rem;color:var(--nv);font-weight:600}.q-item-sku{font-family:var(--fm);font-size:.48rem;color:var(--tx3);letter-spacing:.12em}
-.q-item-rm{background:none;border:none;color:var(--tx3);cursor:pointer;font-size:.65rem;padding:2px}.q-item-rm:hover{color:var(--rst)}
-.q-total{display:flex;justify-content:space-between;align-items:center;padding:.75rem;background:var(--cr);border-radius:10px;border:1px solid var(--cr3);margin-bottom:.7rem}
-.q-total-l{font-family:var(--fm);font-size:.58rem;text-transform:uppercase;letter-spacing:.15em;color:var(--tx3)}
-.q-total-v{font-family:var(--fd);font-size:1.5rem;color:var(--nv);font-weight:700}
-.q-empty{text-align:center;padding:2rem;color:var(--tx3);font-family:var(--fm);font-size:.68rem;letter-spacing:.1em}
-.q-trig{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;width:48px;height:48px;border-radius:50%;background:var(--nv);color:var(--cr);display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;font-size:.9rem;box-shadow:0 4px 20px rgba(13,27,42,.2);transition:all var(--tr)}
-.q-trig:hover{transform:scale(1.08);background:var(--trr)}
-.q-trig .qc{position:absolute;top:-3px;right:-3px;width:16px;height:16px;border-radius:50%;background:var(--rst);color:#fff;font-size:.45rem;font-family:var(--fm);display:flex;align-items:center;justify-content:center}
-.q-trig .qc:empty{display:none}
-
-.bld-steps{display:flex;gap:.3rem;margin-bottom:2rem;overflow-x:auto;padding-bottom:.3rem}
-.bld-step{display:flex;align-items:center;gap:.3rem;padding:.4rem .75rem;border-radius:20px;font-family:var(--fd);font-size:.68rem;font-weight:500;letter-spacing:.05em;color:var(--tx3);border:1px solid transparent;white-space:nowrap;transition:all var(--tr);cursor:pointer;background:none}
-.bld-n{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--cr3);display:flex;align-items:center;justify-content:center;font-size:.5rem;transition:all var(--tr)}
-.bld-step.act{color:var(--trr);border-color:rgba(196,149,106,.2);background:rgba(196,149,106,.08)}
-.bld-step.act .bld-n{border-color:var(--trr);background:var(--trr);color:var(--w)}
-.bld-step.done{color:#2d8a4e}.bld-step.done .bld-n{border-color:#2d8a4e;background:#2d8a4e;color:var(--w)}
-.bld-div{width:12px;height:1px;background:var(--cr3);flex-shrink:0}
-.bld-progress{display:grid;gap:.65rem;margin:-.5rem 0 1.4rem}
-.bld-progress-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
-.bld-progress-copy{font-family:var(--fd);font-size:.88rem;color:var(--nv);font-weight:600}
-.bld-progress-copy span{color:var(--trr)}
-.bld-progress-note{font-family:var(--fm);font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3)}
-.bld-progress-track{height:6px;border-radius:999px;background:var(--cr2);overflow:hidden;position:relative}
-.bld-progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--trr),var(--trrl));width:0;transition:width var(--trs);box-shadow:0 0 18px rgba(196,149,106,.25)}
+.q-ov{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:1000;opacity:0;pointer-events:none;transition:opacity var(--tr)}.q-ov.open{opacity:1;pointer-events:all}
+.q-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:.8rem;border-bottom:1px solid var(--b);margin-bottom:1rem}
+.q-close{background:none;border:none;color:var(--tm);cursor:pointer;font-size:1rem;transition:color var(--tr)}.q-close:hover{color:var(--t)}
+.q-items{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.2rem}
+.q-item{display:flex;gap:.6rem;align-items:center;padding:.6rem;background:var(--cr);border-radius:var(--rad);border:1px solid var(--b)}
+.q-item-img{width:36px;height:36px;background:var(--ds);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;opacity:.15}
+.q-item-info{flex:1;min-width:0}.q-item-name{font-family:var(--fd);font-size:.8rem;color:var(--t)}.q-item-sku{font-family:var(--fm);font-size:.5rem;color:var(--td);letter-spacing:.15em}
+.q-item-price{font-family:var(--fm);font-size:.7rem;color:var(--gold);flex-shrink:0}
+.q-item-rm{background:none;border:none;color:var(--td);cursor:pointer;font-size:.7rem;padding:2px;transition:color var(--tr)}.q-item-rm:hover{color:var(--r)}
+.q-total{display:flex;justify-content:space-between;align-items:center;padding:.85rem;background:var(--cr);border-radius:var(--rad);border:1px solid var(--b);margin-bottom:.8rem}
+.q-total-l{font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm)}
+.q-total-v{font-family:var(--fd);font-size:1.6rem;color:var(--gold);font-weight:300}
+.q-empty{text-align:center;padding:2.5rem 1rem;color:var(--td);font-family:var(--fm);font-size:.7rem;letter-spacing:.1em}
+.q-trig{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--goldw));color:var(--ds);display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;font-size:1rem;box-shadow:0 4px 25px rgba(196,149,106,.3);transition:all var(--tr)}
+.q-trig:hover{transform:scale(1.1)}.q-trig .qc{position:absolute;top:-3px;right:-3px;width:18px;height:18px;border-radius:50%;background:var(--r);color:#fff;font-size:.48rem;font-family:var(--fm);display:flex;align-items:center;justify-content:center}.q-trig .qc:empty{display:none}
+.bld-steps{display:flex;gap:.35rem;margin-bottom:2rem;overflow-x:auto;padding-bottom:.4rem}
+.bld-step{display:flex;align-items:center;gap:.35rem;padding:.42rem .8rem;border-radius:30px;font-family:var(--fd);font-size:.7rem;letter-spacing:.06em;color:var(--td);border:1px solid transparent;white-space:nowrap;transition:all var(--tr);cursor:pointer;background:none}
+.bld-n{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:.52rem;transition:all var(--tr)}
+.bld-step.active{color:var(--gold);border-color:rgba(196,149,106,.12);background:var(--goldg)}
+.bld-step.active .bld-n{border-color:var(--gold);background:var(--gold);color:var(--ds)}
+.bld-step.done{color:var(--g)}.bld-step.done .bld-n{border-color:var(--g);background:var(--g);color:var(--ds)}
+.bld-div{width:16px;height:1px;background:var(--b);flex-shrink:0}
+.bld-panel{display:none;animation:pgIn .4s ease}.bld-panel.active{display:block}
 .bld-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:1rem}
-.bld-card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.3rem;cursor:pointer;transition:all var(--tr);position:relative}
-.bld-card:hover{border-color:var(--trr);transform:translateY(-3px);box-shadow:0 10px 30px rgba(13,27,42,.06)}
-.bld-card.sel{border-color:var(--trr);background:rgba(196,149,106,.06)}
-.bld-card.sel::after{content:'\2713';position:absolute;top:.7rem;right:.7rem;width:20px;height:20px;border-radius:50%;background:var(--trr);color:var(--w);display:flex;align-items:center;justify-content:center;font-size:.55rem;font-weight:700}
-.bld-card h4{font-size:.95rem;margin-bottom:.2rem}.bld-card .ds{font-size:.8rem;color:var(--tx3);margin-bottom:.6rem;line-height:1.45}
-.bld-card-sub{font-family:var(--fm);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);margin-bottom:.65rem}
-.bld-card-price{font-family:var(--fd);font-size:1.3rem;color:var(--nv);font-weight:700}
-.bld-card-price small{display:block;font-family:var(--fm);font-size:.52rem;letter-spacing:.12em;color:var(--tx3);margin-top:.15rem}
-.bld-compare{display:grid;gap:.28rem;margin:.8rem 0 .85rem;padding:.8rem;border-radius:12px;background:linear-gradient(180deg,rgba(245,240,230,.9),rgba(245,240,230,.55));border:1px solid var(--cr3)}
-.bld-compare-row{display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:baseline;font-family:var(--fm);font-size:.53rem;letter-spacing:.08em;color:var(--tx3)}
-.bld-compare-row strong{font-family:var(--fd);font-size:.8rem;letter-spacing:0;color:var(--nv)}
-.bld-card.is-engine:hover .bld-compare{border-color:rgba(196,149,106,.28);background:linear-gradient(180deg,rgba(245,240,230,.98),rgba(236,229,216,.85))}
-.bld-card.is-engine:hover .bld-compare-row.better strong{font-weight:700;color:var(--trr)}
-.bld-sum{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.5rem;margin-top:1.5rem}
-.bld-sum-i{display:flex;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid var(--cr3);font-size:.85rem}
-.bld-sum-l{font-family:var(--fm);font-size:.58rem;color:var(--tx3);letter-spacing:.1em;text-transform:uppercase}
-.bld-sum-t{display:flex;justify-content:space-between;align-items:baseline;padding-top:.8rem;border-top:2px solid var(--nv);margin-top:.5rem}
-.bld-sum-tl{font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.15em;color:var(--tx3)}
-.bld-sum-tv{font-family:var(--fd);font-size:2rem;color:var(--nv);font-weight:700}
-.bld-fin{margin-top:1.2rem;background:linear-gradient(180deg,var(--cr),rgba(245,240,230,.72));border:1px solid var(--cr3);border-radius:16px;padding:1.4rem}
-.bld-fin-top{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
-.bld-fin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:.75rem}
-.bld-fin-card{background:var(--w);border:1px solid var(--cr3);border-radius:14px;padding:1rem}
-.bld-fin-card span{display:block;font-family:var(--fm);font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);margin-bottom:.35rem}
-.bld-fin-card strong{display:block;font-family:var(--fd);font-size:1.2rem;color:var(--nv);line-height:1.05}
-.bld-fin-card small{display:block;font-family:var(--fb);font-size:.8rem;color:var(--tx3);margin-top:.3rem}
-
-.svc-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.25rem}
-.svc-card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.5rem;transition:all var(--tr);position:relative;overflow:hidden}
-.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--trr),transparent);transform:scaleX(0);transition:transform var(--tr)}
-.svc-card:hover{border-color:var(--trr);transform:translateY(-4px)}.svc-card:hover::before{transform:scaleX(1)}
-.svc-ic{width:48px;height:48px;border-radius:50%;background:rgba(196,149,106,.08);border:1px solid rgba(196,149,106,.15);display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem}
-.svc-card h4{margin-bottom:.3rem}.svc-card p{font-size:.85rem;color:var(--tx3);margin-bottom:.8rem;line-height:1.5}
-.svc-pn{font-family:var(--fm);font-size:.62rem;color:var(--tx3);letter-spacing:.1em;border-top:1px solid var(--cr3);padding-top:.7rem}
-.svc-book{background:var(--w);border:1px solid var(--cr3);border-radius:20px;padding:2rem;margin-top:2.5rem}
+.bld-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:1.4rem;cursor:pointer;transition:all var(--tr);position:relative}
+.bld-card:hover{border-color:var(--goldd);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.bld-card.sel{border-color:var(--gold);background:var(--goldg)}
+.bld-card.sel::after{content:'\2713';position:absolute;top:.7rem;right:.7rem;width:22px;height:22px;border-radius:50%;background:var(--gold);color:var(--ds);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:600;animation:checkPop .3s ease}
+@keyframes checkPop{from{transform:scale(0)}to{transform:scale(1)}}
+.bld-card h4{font-size:1rem;margin-bottom:.2rem;font-weight:400}
+.bld-card .desc{font-size:.82rem;color:var(--tm);margin-bottom:.7rem;line-height:1.45}
+.bld-card-specs{display:flex;flex-direction:column;gap:.15rem;margin-bottom:.7rem}
+.bld-card-spec{font-family:var(--fm);font-size:.58rem;color:var(--td);letter-spacing:.1em;display:flex;justify-content:space-between}.bld-card-spec span:last-child{color:var(--tm)}
+.bld-card-price{font-family:var(--fd);font-size:1.4rem;color:var(--gold);font-weight:300}
+.bld-nav{display:flex;justify-content:space-between;align-items:center;margin-top:2rem;padding-top:1.2rem;border-top:1px solid var(--b)}
+.bld-sum{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:2rem;margin-top:2rem}
+.bld-sum h3{margin-bottom:1.2rem}
+.bld-sum-items{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.2rem}
+.bld-sum-item{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;border-bottom:1px solid var(--b)}.bld-sum-item:last-child{border:none}
+.bld-sum-l{font-family:var(--fm);font-size:.62rem;color:var(--tm);letter-spacing:.12em;text-transform:uppercase}
+.bld-sum-v{font-size:.88rem;color:var(--t)}
+.bld-sum-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:1rem;border-top:2px solid var(--b)}
+.bld-sum-total-l{font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm)}
+.bld-sum-total-v{font-family:var(--fd);font-size:2.4rem;color:var(--gold);font-weight:300}
+/* Installment */
+.instal-card{background:linear-gradient(135deg,var(--cr),var(--surf));border:1px solid var(--gold);border-radius:var(--radxl);padding:2rem;margin-top:1.5rem;position:relative;overflow:hidden}
+.instal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--goldw),var(--gold))}
+.instal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1rem;margin-top:1rem}
+.instal-item{text-align:center;padding:1rem;background:var(--surf);border-radius:var(--rad);border:1px solid var(--b)}
+.instal-item-v{font-family:var(--fd);font-size:1.6rem;color:var(--gold);font-weight:300}
+.instal-item-l{font-family:var(--fm);font-size:.55rem;text-transform:uppercase;letter-spacing:.15em;color:var(--td);margin-top:.2rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:1.25rem}
+.svc-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:2rem;transition:all var(--tr);position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform var(--tr)}
+.svc-card:hover{border-color:var(--goldd);transform:translateY(-3px)}.svc-card:hover::before{transform:scaleX(1)}
+.svc-ic{width:52px;height:52px;background:var(--goldg);border:1px solid rgba(196,149,106,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:1.2rem}
+.svc-card h4{margin-bottom:.35rem;font-weight:400}.svc-card p{font-size:.88rem;color:var(--tm);margin-bottom:1rem;line-height:1.5}
+.svc-card .pn{font-family:var(--fm);font-size:.68rem;color:var(--td);letter-spacing:.1em;border-top:1px solid var(--b);padding-top:.8rem}
+.svc-book{background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);padding:2.5rem;margin-top:2.5rem}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.fg{margin-bottom:.8rem}.fg label{display:block;font-family:var(--fm);font-size:.58rem;text-transform:uppercase;letter-spacing:.15em;color:var(--tx3);margin-bottom:.3rem}
-.fg input,.fg select,.fg textarea{width:100%;padding:.65rem .85rem;background:var(--cr);border:1px solid var(--cr3);border-radius:20px;color:var(--tx);font-family:var(--fb);font-size:.88rem;outline:none;transition:border-color var(--tr)}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--trr)}.fg textarea{resize:vertical;min-height:70px;border-radius:14px}
-
-.dash-search{max-width:560px;margin:0 auto 2rem;text-align:center}
-.dash-sb{display:flex;gap:.4rem;margin-top:.7rem}
-.dash-sb input{flex:1;padding:.65rem .85rem;background:var(--w);border:1px solid var(--cr3);border-radius:20px;color:var(--tx);font-family:var(--fm);font-size:.78rem;letter-spacing:.06em;outline:none;transition:border-color var(--tr)}.dash-sb input:focus{border-color:var(--trr)}
-.dash-c{display:none;animation:pgIn .3s ease}.dash-c.vis{display:block}
-.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:.8rem;margin-bottom:1.5rem}
-.dash-st{background:var(--w);border:1px solid var(--cr3);border-radius:14px;padding:1.1rem}
-.dash-st-l{font-family:var(--fm);font-size:.5rem;text-transform:uppercase;letter-spacing:.2em;color:var(--tx3);margin-bottom:.3rem}
-.dash-st-v{font-family:var(--fd);font-size:1.6rem;color:var(--nv);font-weight:700}
-.dash-st-s{font-family:var(--fm);font-size:.52rem;color:var(--tx3);margin-top:.08rem}
-.dash-sec{margin-bottom:1.5rem}
-.dash-sec-t{font-family:var(--fd);font-size:1.2rem;letter-spacing:.03em;margin-bottom:.7rem;padding-bottom:.3rem;border-bottom:1px solid var(--cr3);font-weight:700}
-.eng-hero{display:grid;grid-template-columns:auto 1fr;gap:1.5rem;padding:1.5rem;background:var(--w);border:1px solid var(--cr3);border-radius:20px;margin-bottom:1.5rem;align-items:center}
-.eng-vis2{width:120px;height:120px;background:var(--cr);border-radius:50%;border:1px solid var(--cr3);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-family:var(--fd);font-weight:700;color:var(--nv);opacity:.25}
-.eng-meta{display:grid;grid-template-columns:1fr 1fr;gap:.3rem 1.2rem;margin-top:.6rem}
+.fg{margin-bottom:1rem}.fg label{display:block;font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm);margin-bottom:.35rem}
+.fg input,.fg select,.fg textarea{width:100%;padding:.72rem .9rem;background:var(--surf);border:1px solid var(--b);border-radius:30px;color:var(--t);font-family:var(--fb);font-size:.9rem;transition:border-color var(--tr);outline:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}.fg textarea{resize:vertical;min-height:80px;border-radius:var(--radl)}
+.calc-wrap{background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);padding:2.5rem;margin-top:2.5rem}
+.calc-input{display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.calc-input label{font-family:var(--fm);font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm)}
+.calc-input input{width:120px;padding:.6rem .8rem;background:var(--surf);border:1px solid var(--b);border-radius:var(--rad);color:var(--t);font-family:var(--fd);font-size:1.2rem;text-align:center;outline:none;transition:border-color var(--tr)}
+.calc-input input:focus{border-color:var(--gold)}
+.calc-result{margin-top:1rem}
+.calc-item{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px solid var(--b)}
+.calc-item:last-child{border:none}
+.calc-item-name{font-size:.9rem;color:var(--t)}
+.calc-item-cost{font-family:var(--fd);font-size:.95rem;color:var(--gold)}
+.calc-item.due{color:var(--gold)}
+.calc-item.overdue{color:var(--r)}
+.calc-item.done{color:var(--g);opacity:.5}
+.calc-total{display:flex;justify-content:space-between;align-items:baseline;padding-top:1rem;margin-top:.5rem;border-top:2px solid var(--b)}
+.calc-total-l{font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tm)}
+.calc-total-v{font-family:var(--fd);font-size:1.8rem;color:var(--gold);font-weight:300}
+.calc-progress{margin-top:1.5rem}
+.calc-progress-bar{height:6px;background:var(--b);border-radius:3px;overflow:hidden;margin-top:.4rem}
+.calc-progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--goldw));border-radius:3px;transition:width .5s ease}
+.calc-progress-label{font-family:var(--fm);font-size:.6rem;color:var(--tm);letter-spacing:.1em;display:flex;justify-content:space-between}
+.calc-warn{background:rgba(224,85,85,.08);border:1px solid rgba(224,85,85,.2);border-radius:var(--rad);padding:.8rem 1rem;margin-top:1rem;color:var(--r);font-size:.85rem;display:none}
+.calc-warn.show{display:block}
+.cmp-checks{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.cmp-chk{display:flex;align-items:center;gap:.4rem;padding:.4rem .8rem;border-radius:30px;border:1px solid var(--b);cursor:pointer;transition:all var(--tr);font-family:var(--fd);font-size:.72rem;color:var(--tm)}
+.cmp-chk:hover{border-color:var(--goldd)}
+.cmp-chk.active{border-color:var(--gold);color:var(--gold);background:var(--goldg)}
+.cmp-chk input{display:none}
+.cmp-table{width:100%;border-collapse:collapse}
+.cmp-table th{font-family:var(--fm);font-size:.55rem;text-transform:uppercase;letter-spacing:.15em;color:var(--td);text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--b)}
+.cmp-table td{padding:.6rem .8rem;border-bottom:1px solid var(--b);font-size:.85rem;color:var(--tb)}
+.cmp-table td.best{color:var(--gold);font-weight:500}
+.cmp-table tr:hover td{background:rgba(196,149,106,.03)}
+.dash-search{max-width:600px;margin:0 auto 2.5rem;text-align:center}
+.dash-sb{display:flex;gap:.5rem;margin-top:.8rem}
+.dash-sb input{flex:1;padding:.72rem .9rem;background:var(--surf);border:1px solid var(--b);border-radius:30px;color:var(--t);font-family:var(--fm);font-size:.82rem;letter-spacing:.06em;outline:none;transition:border-color var(--tr)}.dash-sb input:focus{border-color:var(--gold)}
+.dash-c{display:none;animation:pgIn .35s ease}.dash-c.vis{display:block}
+.dash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:1rem;margin-bottom:2rem}
+.dash-stat{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:1.3rem}
+.dash-stat-l{font-family:var(--fm);font-size:.55rem;text-transform:uppercase;letter-spacing:.22em;color:var(--td);margin-bottom:.35rem}
+.dash-stat-v{font-family:var(--fd);font-size:1.9rem;color:var(--t);letter-spacing:.02em;font-weight:300}
+.dash-stat-s{font-family:var(--fm);font-size:.58rem;color:var(--tm);margin-top:.1rem;letter-spacing:.06em}
+.dash-sec{margin-bottom:2rem}
+.dash-sec-t{font-family:var(--fd);font-size:1.3rem;letter-spacing:.03em;margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--b);font-weight:300}
+.eng-hero{display:grid;grid-template-columns:auto 1fr;gap:2rem;padding:2rem;background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);margin-bottom:2rem;align-items:center}
+.eng-vis2{width:160px;height:160px;background:var(--surf);border-radius:50%;border:1px solid var(--b);display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:.06}
+.eng-meta{display:grid;grid-template-columns:1fr 1fr;gap:.35rem 1.5rem;margin-top:.8rem}
 .eng-meta-i{display:flex;flex-direction:column}
-.eng-meta-l{font-family:var(--fm);font-size:.48rem;text-transform:uppercase;letter-spacing:.18em;color:var(--tx3)}
-.eng-meta-v{font-size:.82rem;color:var(--nv);margin-top:.05rem}
+.eng-meta-l{font-family:var(--fm);font-size:.52rem;text-transform:uppercase;letter-spacing:.2em;color:var(--td)}
+.eng-meta-v{font-size:.88rem;color:var(--t);margin-top:.08rem}
 .dash-table{width:100%;border-collapse:collapse}
-.dash-table th{font-family:var(--fm);font-size:.48rem;text-transform:uppercase;letter-spacing:.15em;color:var(--tx3);text-align:left;padding:.45rem .5rem;border-bottom:1px solid var(--cr3)}
-.dash-table td{padding:.5rem;border-bottom:1px solid var(--cr3);font-size:.8rem}
-.dash-table .mc{font-family:var(--fm);font-size:.68rem;color:var(--tx3)}
-.dash-docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,190px),1fr));gap:.6rem}
-.dash-doc{background:var(--w);border:1px solid var(--cr3);border-radius:10px;padding:.8rem;display:flex;align-items:center;gap:.5rem;cursor:pointer;transition:all var(--tr)}.dash-doc:hover{border-color:var(--trr)}
-.dash-doc-ic{width:32px;height:32px;background:var(--cr);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;border:1px solid var(--cr3)}
-.dash-doc h5{font-family:var(--fd);font-size:.78rem;color:var(--nv);font-weight:600}.dash-doc p{font-family:var(--fm);font-size:.48rem;color:var(--tx3);letter-spacing:.1em}
-
-.atl-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:1.25rem}
-.atl-card{border-radius:20px;overflow:hidden;position:relative;cursor:pointer;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;transition:all var(--tr)}
-.atl-card:hover{transform:translateY(-4px);box-shadow:0 16px 50px rgba(13,27,42,.1)}
-.atl-body{padding:1.5rem;position:relative;z-index:1}
-.atl-tag{font-family:var(--fm);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;padding:.2rem .6rem;border-radius:15px;display:inline-block;margin-bottom:.6rem;width:fit-content}
-.atl-card h3{font-size:1.2rem;margin-bottom:.2rem;font-weight:700}
-.atl-card .ds{font-size:.82rem;line-height:1.5}
-.ind-wrap{background:linear-gradient(160deg,var(--nv),var(--nv2));border-radius:24px;padding:clamp(1.5rem,3vw,2.4rem);color:var(--cr);position:relative;overflow:hidden}
-.ind-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(196,149,106,.2),transparent 36%),linear-gradient(180deg,transparent,rgba(245,240,230,.03))}
-.ind-wrap > *{position:relative;z-index:1}
-.ind-top{display:flex;justify-content:space-between;align-items:end;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.4rem}
-.ind-top h2{color:var(--cr);font-size:clamp(2rem,4vw,3rem);margin:.25rem 0}
-.ind-top p{max-width:560px;color:rgba(245,240,230,.68)}
-.ind-badge{font-family:var(--fm);font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--trrl)}
-.ind-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1rem;margin:1.4rem 0 1.6rem}
-.ind-card{background:rgba(255,255,255,.04);border:1px solid rgba(245,240,230,.12);border-radius:16px;padding:1.1rem}
-.ind-card h4{color:var(--cr);font-size:.96rem;margin-bottom:.25rem}
-.ind-card p{color:rgba(245,240,230,.62);font-size:.82rem;line-height:1.5}
-.ind-card .ind-ic{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(196,149,106,.16);color:var(--trrl);margin-bottom:.8rem;font-size:.9rem}
-.ind-cta{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:1.2rem;border-top:1px solid rgba(245,240,230,.12)}
-.ind-cta p{color:rgba(245,240,230,.58);font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase}
-
-.lib-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:1rem}
-.lib-card{background:var(--w);border:1px solid var(--cr3);border-radius:14px;padding:1.3rem;transition:all var(--tr);cursor:pointer}.lib-card:hover{border-color:var(--trr);transform:translateY(-3px)}
-.lib-ic{width:40px;height:40px;border-radius:50%;background:rgba(196,149,106,.08);display:flex;align-items:center;justify-content:center;font-size:.9rem;margin-bottom:.8rem}
-.lib-card h4{margin-bottom:.2rem;font-size:.95rem}.lib-card .ds{font-size:.8rem;color:var(--tx3);margin-bottom:.6rem}
-.lib-m{display:flex;gap:.8rem}.lib-m span{font-family:var(--fm);font-size:.52rem;color:var(--tx3);letter-spacing:.1em}
-
-.con-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:2rem}
-.con-card{display:flex;align-items:flex-start;gap:.7rem;padding:.9rem;background:var(--w);border:1px solid var(--cr3);border-radius:12px;margin-bottom:.6rem}
-.con-ic{width:36px;height:36px;border-radius:50%;background:rgba(196,149,106,.08);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
-.con-card h4{font-size:.8rem;font-weight:600;margin-bottom:.05rem}.con-card p{font-size:.82rem;color:var(--tx3)}
-.con-form{background:var(--w);border:1px solid var(--cr3);border-radius:20px;padding:2rem}
-
-footer{border-top:1px solid var(--cr3);padding:2rem 0;margin-top:2rem}
-.foot-c{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.foot-brand{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--nv);letter-spacing:.08em;display:flex;align-items:center;gap:.3rem}
-.foot-links{display:flex;gap:1rem;list:none}.foot-links a{font-family:var(--fd);font-size:.68rem;letter-spacing:.05em;color:var(--tx3);cursor:pointer;text-transform:uppercase}.foot-links a:hover{color:var(--nv)}
-.foot-copy{width:100%;text-align:center;font-family:var(--fm);font-size:.52rem;color:var(--cr3);margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--cr3)}
-
-.feat-strip{display:flex;gap:.8rem;overflow-x:auto;padding:2rem 0;scroll-snap-type:x mandatory}
-.feat-item{flex-shrink:0;scroll-snap-align:center;background:var(--w);border:1px solid var(--cr3);border-radius:14px;padding:1.2rem 1.5rem;min-width:200px;display:flex;flex-direction:column;gap:.3rem;transition:all var(--tr)}
-.feat-item:hover{border-color:var(--trr);transform:translateY(-2px)}
-.feat-item h4{font-size:.85rem;font-weight:600}.feat-item p{font-size:.78rem;color:var(--tx3);line-height:1.4}
-
-.info-box{background:rgba(107,158,196,.06);border:1px solid rgba(107,158,196,.15);border-radius:12px;padding:1rem;font-family:var(--fm);font-size:.6rem;letter-spacing:.06em;color:var(--tx3);line-height:1.6}
-.info-box strong{color:var(--tx2)}
-
-.compare-t{width:100%;border-collapse:collapse;margin-top:1.5rem;background:var(--w);border-radius:16px;overflow:hidden;border:1px solid var(--cr3)}
-.compare-t th{font-family:var(--fm);font-size:.52rem;text-transform:uppercase;letter-spacing:.15em;color:var(--tx3);text-align:center;padding:.7rem .5rem;border-bottom:1px solid var(--cr3);background:var(--cr)}
-.compare-t th:first-child{text-align:left;padding-left:1rem}
-.compare-t td{padding:.55rem .5rem;text-align:center;font-size:.82rem;border-bottom:1px solid var(--cr3)}
-.compare-t td:first-child{text-align:left;font-family:var(--fm);font-size:.58rem;letter-spacing:.08em;color:var(--tx3);padding-left:1rem}
-.compare-t tr:last-child td{border:none}
-.compare-t .hl{background:rgba(196,149,106,.04);font-weight:700;color:var(--nv)}
-
-@media(max-width:900px){
-.parts-l{grid-template-columns:1fr}.sb{position:static;display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
-.ntabs{display:none;position:fixed;inset:0;background:rgba(245,240,230,.97);flex-direction:column;align-items:center;justify-content:center;gap:1rem;z-index:999}
-.ntabs.open{display:flex}.ntabs .ntab{font-size:.9rem;padding:.6rem 1.5rem}
-.nmob{display:block;z-index:1001}.q-panel{width:100%;right:-100%}
-.hero-g{grid-template-columns:1fr}.hero-vis{display:none}.about-g{grid-template-columns:1fr}
-.eng-hero{grid-template-columns:1fr}.eng-vis2{width:100%;height:80px}
-.f-row{grid-template-columns:1fr}.ah-grid{grid-template-columns:1fr}
-.compare-t{font-size:.7rem}.ind-top,.ind-cta,.bld-progress-top{align-items:flex-start}
-}
-@media(max-width:520px){.sb{grid-template-columns:1fr}.hero-stats{gap:1rem}.dash-sb{flex-direction:column}.p-search{width:100%}.foot-c{flex-direction:column;text-align:center}.foot-links{justify-content:center}}
+.dash-table th{font-family:var(--fm);font-size:.52rem;text-transform:uppercase;letter-spacing:.18em;color:var(--td);text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--b)}
+.dash-table td{padding:.55rem .6rem;border-bottom:1px solid var(--b);font-size:.82rem}
+.dash-table .mc{font-family:var(--fm);font-size:.72rem;color:var(--tm);letter-spacing:.06em}
+.dash-docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:.8rem}
+.dash-doc{background:var(--cr);border:1px solid var(--b);border-radius:var(--rad);padding:1rem;display:flex;align-items:center;gap:.6rem;cursor:pointer;transition:all var(--tr)}.dash-doc:hover{border-color:var(--goldd)}
+.dash-doc-ic{width:36px;height:36px;background:var(--surf);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;flex-shrink:0;border:1px solid var(--b)}
+.dash-doc h5{font-family:var(--fd);font-size:.82rem;color:var(--t);font-weight:400}.dash-doc p{font-family:var(--fm);font-size:.52rem;color:var(--td);letter-spacing:.12em}
+.passport{background:var(--cr);border:1px solid var(--gold);border-radius:var(--radxl);padding:2rem;margin-top:1.5rem;position:relative;overflow:hidden}
+.passport::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--goldw),var(--gold))}
+.passport-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem}
+.passport-qr{width:80px;height:80px;background:#fff;border-radius:var(--rad);padding:4px;flex-shrink:0}
+.passport-qr svg{width:100%;height:100%}
+.passport-title{font-family:var(--fd);font-size:.6rem;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);margin-bottom:.3rem}
+.passport-sn{font-family:var(--fm);font-size:.72rem;color:var(--td);letter-spacing:.1em}
+.passport-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:.8rem;margin-bottom:1.5rem}
+.passport-field{padding:.6rem;background:var(--surf);border-radius:var(--rad);border:1px solid var(--b)}
+.passport-field-l{font-family:var(--fm);font-size:.5rem;text-transform:uppercase;letter-spacing:.2em;color:var(--td);margin-bottom:.15rem}
+.passport-field-v{font-size:.88rem;color:var(--t)}
+.dealer-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:1.2rem;display:flex;gap:1rem;align-items:flex-start;transition:all var(--tr)}
+.dealer-card:hover{border-color:var(--goldd);transform:translateY(-2px)}
+.dealer-ic{width:40px;height:40px;background:var(--goldg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;border:1px solid rgba(196,149,106,.12)}
+.dealer-info{flex:1}
+.dealer-name{font-family:var(--fd);font-size:.9rem;color:var(--t);margin-bottom:.15rem}
+.dealer-addr{font-size:.8rem;color:var(--tm);margin-bottom:.2rem}
+.dealer-phone{font-family:var(--fm);font-size:.72rem;color:var(--gold)}
+.dealer-tags{display:flex;gap:.3rem;margin-top:.3rem}
+.dealer-tag{font-family:var(--fm);font-size:.5rem;text-transform:uppercase;letter-spacing:.1em;padding:.15rem .4rem;border-radius:10px;border:1px solid var(--b);color:var(--tm)}
+.dealer-tag.sales{border-color:rgba(196,149,106,.2);color:var(--gold);background:var(--goldg)}
+.dealer-tag.service{border-color:rgba(78,203,113,.2);color:var(--g);background:rgba(78,203,113,.08)}
+.dealer-tag.training{border-color:rgba(107,160,208,.2);color:var(--blu);background:rgba(107,160,208,.08)}
+.dealer-filters{display:flex;gap:.4rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.dealer-filter{font-family:var(--fm);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;padding:.35rem .7rem;border-radius:20px;border:1px solid var(--b);background:none;color:var(--tm);cursor:pointer;transition:all var(--tr)}
+.dealer-filter:hover{color:var(--tb);background:rgba(255,255,255,.015)}
+.dealer-filter.active{color:var(--gold);background:var(--goldg);border-color:rgba(196,149,106,.15)}
+.ah-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1.5rem}
+.ah-item{display:flex;align-items:flex-start;gap:.6rem;padding:.85rem;background:var(--cr);border-radius:var(--rad);border:1px solid var(--b)}
+.ah-ic{width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--goldg);border-radius:50%;flex-shrink:0;font-size:.85rem}
+.ah-item h4{font-size:.9rem;letter-spacing:.03em;font-weight:400}.ah-item p{font-size:.8rem;color:var(--tm);margin:.08rem 0 0}
+.tl{position:relative;padding-left:3rem}.tl::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,var(--gold),var(--b))}
+.tl-item{position:relative;margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(22,28,48,.5)}.tl-item:last-child{border:none;margin-bottom:0;padding-bottom:0}
+.tl-dot{position:absolute;left:-3rem;top:.2rem;width:20px;height:20px;border-radius:50%;border:2px solid var(--gold);background:var(--ds);display:flex;align-items:center;justify-content:center;z-index:1}
+.tl-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.tl-year{font-family:var(--fd);font-size:2rem;color:var(--gold);letter-spacing:.04em;margin-bottom:.2rem;font-weight:300}
+.tl-title{font-family:var(--fd);font-size:1.2rem;letter-spacing:.03em;margin-bottom:.25rem;font-weight:400}
+.tl-desc{color:var(--tm);font-size:.92rem;max-width:560px}
+.atl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,370px),1fr));gap:1.25rem}
+.atl-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);overflow:hidden;transition:all var(--tr)}.atl-card:hover{border-color:var(--goldd);transform:translateY(-3px)}
+.atl-img{height:240px;background:linear-gradient(135deg,var(--surf),var(--cr));border-bottom:1px solid var(--b);position:relative;display:flex;align-items:center;justify-content:center}
+.atl-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,var(--cr))}
+.atl-img-i{font-size:2.5rem;opacity:.05}.atl-tag{position:absolute;top:1rem;left:1rem;z-index:1}
+.atl-body{padding:1.5rem}.atl-body h3{margin-bottom:.25rem;font-weight:400}.atl-body .desc{font-size:.88rem;color:var(--tm);margin-bottom:1rem;line-height:1.5}
+.atl-specs{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.atl-spec{font-family:var(--fm);font-size:.58rem;color:var(--td);letter-spacing:.12em}.atl-spec span{color:var(--tm)}
+.lib-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:1rem}
+.lib-card{background:var(--cr);border:1px solid var(--b);border-radius:var(--radl);padding:1.5rem;transition:all var(--tr);cursor:pointer}.lib-card:hover{border-color:var(--goldd);transform:translateY(-2px)}
+.lib-ic{width:44px;height:44px;background:var(--goldg);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:1rem}
+.lib-card h4{margin-bottom:.25rem;font-size:1.02rem;font-weight:400}.lib-card .desc{font-size:.82rem;color:var(--tm);margin-bottom:.7rem}
+.lib-meta{display:flex;gap:1rem}.lib-meta span{font-family:var(--fm);font-size:.56rem;color:var(--td);letter-spacing:.12em}
+.con-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,350px),1fr));gap:2.5rem}
+.con-card{display:flex;align-items:flex-start;gap:.8rem;padding:1rem;background:var(--cr);border:1px solid var(--b);border-radius:var(--rad);margin-bottom:.7rem}
+.con-ic{width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:var(--goldg);border-radius:50%;flex-shrink:0;font-size:.95rem}
+.con-card h4{font-size:.82rem;letter-spacing:.05em;margin-bottom:.1rem;font-weight:400}.con-card p{font-size:.85rem;color:var(--tm)}
+.con-form{background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);padding:2rem}
+footer{border-top:1px solid var(--b);padding:2.5rem 0;margin-top:2rem;position:relative;z-index:2}
+.foot-c{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.2rem}
+.foot-brand{font-family:var(--fd);font-size:1.15rem;color:var(--t);letter-spacing:.08em;display:flex;align-items:center;gap:.4rem;font-weight:300}
+.foot-links{display:flex;gap:1.2rem;list-style:none}.foot-links a{font-family:var(--fd);font-size:.72rem;letter-spacing:.06em;color:var(--tm);cursor:pointer}
+.foot-copy{width:100%;text-align:center;font-family:var(--fm);font-size:.58rem;color:var(--td);margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--b)}
+@media(max-width:900px){.cfg-layout{grid-template-columns:1fr}.sb{position:static;display:grid;grid-template-columns:1fr 1fr;gap:.8rem}.nav-tabs{display:none;position:fixed;inset:0;background:rgba(3,3,10,.97);flex-direction:column;align-items:center;justify-content:center;gap:1rem;z-index:999}.nav-tabs.open{display:flex}.nav-tabs .nav-tab{font-size:.95rem;padding:.65rem 1.5rem}.btn-mob{display:flex;z-index:1001}.q-panel{width:100%;right:-100%}.eng-hero{grid-template-columns:1fr}.eng-vis2{width:100%;height:120px}.f-row{grid-template-columns:1fr}.ah-grid{grid-template-columns:1fr}.moon{display:none}.passport-head{flex-direction:column;align-items:center}.passport-qr{margin:0 auto}}
+@media(max-width:520px){.sb{grid-template-columns:1fr}.hero-stats{gap:1.5rem;flex-wrap:wrap}.dash-sb{flex-direction:column}.p-search{width:100%}.foot-c{flex-direction:column;text-align:center}.foot-links{justify-content:center}.cmp-table{font-size:.75rem}.cmp-table th,.cmp-table td{padding:.4rem}}
 </style>
 </head>
 <body>
-
-<nav class="nav" id="nav"><div class="ctr">
-<div class="logo" onclick="SP('home')">VELTORY<div class="logo-d"></div></div>
-<ul class="ntabs" id="nTabs">
-<li><button class="ntab act" data-p="home" onclick="SP('home')">Главная</button></li>
-<li><button class="ntab" data-p="about" onclick="SP('about')">О нас</button></li>
-<li><button class="ntab" data-p="engines" onclick="SP('engines')">Двигатели</button></li>
-<li><button class="ntab" data-p="parts" onclick="SP('parts')">Запчасти</button></li>
-<li><button class="ntab" data-p="build" onclick="SP('build')">Конфигуратор</button></li>
-<li><button class="ntab" data-p="service" onclick="SP('service')">Сервис</button></li>
-<li><button class="ntab" data-p="dash" onclick="SP('dash')">Кабинет</button></li>
-<li><button class="ntab" data-p="atelier" onclick="SP('atelier')">Atelier</button></li>
-<li><button class="ntab" data-p="library" onclick="SP('library')">Библиотека</button></li>
-<li><button class="ntab" data-p="contact" onclick="SP('contact')">Контакты</button></li>
+<div class="sky" id="sky"></div>
+<div class="moon"><div class="crater c1"></div><div class="crater c2"></div><div class="crater c3"></div><div class="crater c4"></div><div class="crater c5"></div></div>
+<div class="earth-glow"></div>
+<header class="topbar"><div class="ctr">
+<a class="logo" onclick="switchPage('home')"><div class="logo-m">V</div>VELTORY<span class="logo-sub">HE Paramotores</span></a>
+<ul class="nav-tabs" id="navTabs">
+<li><button class="nav-tab active" data-p="home" onclick="switchPage('home')" data-i18n="nav_home">Главная</button></li>
+<li><button class="nav-tab" data-p="about" onclick="switchPage('about')" data-i18n="nav_about">О компании</button></li>
+<li><button class="nav-tab" data-p="engines" onclick="switchPage('engines')" data-i18n="nav_engines">Двигатели</button></li>
+<li><button class="nav-tab" data-p="compare" onclick="switchPage('compare')" data-i18n="nav_compare">Сравнение</button></li>
+<li><button class="nav-tab" data-p="parts" onclick="switchPage('parts')" data-i18n="nav_parts">Запчасти</button></li>
+<li><button class="nav-tab" data-p="build" onclick="switchPage('build')" data-i18n="nav_build">Конфигуратор</button></li>
+<li><button class="nav-tab" data-p="individual" onclick="switchPage('individual')" data-i18n="nav_individual">INDIVIDUAL</button></li>
+<li><button class="nav-tab" data-p="service" onclick="switchPage('service')" data-i18n="nav_service">Сервис</button></li>
+<li><button class="nav-tab" data-p="dash" onclick="switchPage('dash')" data-i18n="nav_dash">Кабинет</button></li>
+<li><button class="nav-tab" data-p="dealers" onclick="switchPage('dealers')" data-i18n="nav_dealers">Дилеры</button></li>
+<li><button class="nav-tab" data-p="contact" onclick="switchPage('contact')" data-i18n="nav_contact">Контакты</button></li>
 </ul>
-<div class="nav-r"><div class="nav-ph">+34 918 738 835</div><button class="nav-btn" onclick="SP('contact')">Запрос КП</button><button class="nmob" onclick="document.getElementById('nTabs').classList.toggle('open')"><span></span><span></span><span></span></button></div>
-</div></nav>
+<div class="nav-r">
+<div class="lang-sw"><button class="lang-btn active" onclick="setLang('ru')">RU</button><button class="lang-btn" onclick="setLang('en')">EN</button></div>
+<div class="nav-ph"><a href="tel:+79274770505">+7 927 477 05 05</a></div>
+<button class="btn-mob" onclick="document.getElementById('navTabs').classList.toggle('open')"><span></span><span></span><span></span></button>
+</div>
+</div></header>
 
 <!-- HOME -->
-<div class="page act" id="page-home">
-<section class="hero"><div class="ctr"><div class="hero-g">
-<div>
-<div class="tag reveal">HE Paramotores S.L. · Official Partner · Madrid, Spain</div>
-<h1 class="reveal" style="transition-delay:.1s">HE<br><em>PARAMOTORES</em></h1>
-<p class="hero-desc reveal" style="transition-delay:.2s">Испанские парамоторные двигатели. 5 моделей от 125 до 206cc. Дюралюминиевый корпус, покрытие Nikasil, карбюратор Walbro, 90% компонентов собственного производства.</p>
-<div class="hero-acts reveal" style="transition-delay:.3s">
-<button class="btn btn-p" onclick="SP('engines')">Двигатели</button>
-<button class="btn btn-s" onclick="SP('parts')">Каталог запчастей</button>
-</div>
-<div class="hero-stats reveal" style="transition-delay:.4s">
-<div><div class="hs-n">5</div><div class="hs-l">моделей</div></div>
-<div><div class="hs-n">206cc</div><div class="hs-l">макс. объём</div></div>
-<div><div class="hs-n">29 HP</div><div class="hs-l">макс. мощность</div></div>
-<div><div class="hs-n">90%</div><div class="hs-l">in-house</div></div>
-<div><div class="hs-n">DDP</div><div class="hs-l">Москва</div></div>
-</div>
-</div>
-<div class="hero-vis reveal">
-<div class="moon-ill"><svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
-<defs><radialGradient id="mg" cx="40%" cy="35%"><stop offset="0%" stop-color="#e8e0d0"/><stop offset="50%" stop-color="#d0c8b5"/><stop offset="100%" stop-color="#b8b0a0"/></radialGradient></defs>
-<circle cx="240" cy="240" r="180" fill="url(#mg)"/>
-<circle cx="170" cy="200" r="40" fill="#c0b5a0" opacity=".4"/>
-<circle cx="300" cy="180" r="22" fill="#c0b5a0" opacity=".3"/>
-<circle cx="220" cy="310" r="30" fill="#c0b5a0" opacity=".35"/>
-<circle cx="330" cy="280" r="16" fill="#c0b5a0" opacity=".25"/>
-<ellipse cx="240" cy="240" rx="230" ry="50" fill="none" stroke="#c4956a" stroke-width="1" opacity=".15" transform="rotate(-12 240 240)"/>
-<text x="240" y="225" text-anchor="middle" font-family="Space Grotesk" font-size="36" font-weight="700" fill="#0d1b2a" opacity=".08">HE</text>
-<text x="240" y="258" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#7a7a92" opacity=".2" letter-spacing="4">ENGINE</text>
-</svg></div>
-</div>
+<div class="page active" id="page-home">
+<section class="hero"><div class="ctr"><div class="hero-c">
+<p class="hero-sub" data-i18n="hero_sub">Engineering Atelier &amp; Service Center</p>
+<h1 data-i18n="hero_h1">ПРОЕКТИРУЕМ.<br>ПРОИЗВОДИМ.<br><em>ОБСЛУЖИВАЕМ.</em></h1>
+<p class="hero-desc" data-i18n="hero_desc">VELTORY — инженерная платформа для парамоторных двигателей HE Paramotores. Оригинальные запчасти, реальные цены DDP Москва.</p>
+<div class="hero-acts"><a class="btn btn-g" onclick="switchPage('engines')" data-i18n="hero_engines">Двигатели</a><a class="btn btn-o" onclick="switchPage('parts')" data-i18n="hero_parts">Каталог запчастей</a></div>
+<div class="hero-stats"><div><div class="st-n">330+</div><div class="st-l" data-i18n="stat_parts">запчастей</div></div><div><div class="st-n">5</div><div class="st-l" data-i18n="stat_models">моделей</div></div><div><div class="st-n">DDP</div><div class="st-l" data-i18n="stat_ddp">Москва</div></div><div><div class="st-n">HE</div><div class="st-l" data-i18n="stat_he">Paramotores</div></div></div>
 </div></div></section>
-<section style="padding:2.5rem 0"><div class="ctr">
-<div class="tag reveal">Ключевые технологии</div>
-<div class="feat-strip reveal">
-<div class="feat-item"><h4>Дюралюминий</h4><p>Корпуса из фрезерованного дюралюмина</p></div>
-<div class="feat-item"><h4>Nikasil</h4><p>Алюминиевое покрытие Nikasil для долговечности</p></div>
-<div class="feat-item"><h4>Walbro</h4><p>Карбюраторы Walbro для эффективности</p></div>
-<div class="feat-item"><h4>Электрозажигание</h4><p>Надёжная электронная катушка</p></div>
-<div class="feat-item"><h4>Poly V Belt</h4><p>Ременная передача для плавной тяги</p></div>
-<div class="feat-item"><h4>90% In-House</h4><p>90% компонентов — собственное производство</p></div>
-</div>
-</div></section>
-<section style="padding:1.5rem 0 3rem"><div class="ctr"><div class="g4">
-<div class="card" style="cursor:pointer" onclick="SP('engines')"><div class="card-ic">⚙</div><h4>5 двигателей</h4><p style="font-size:.82rem;color:var(--tx3)">RS-206 · RS-185 · MVL · MV1 · MV2</p></div>
-<div class="card" style="cursor:pointer" onclick="SP('parts')"><div class="card-ic">◆</div><h4>Запчасти</h4><p style="font-size:.82rem;color:var(--tx3)">Каталог по моделям</p></div>
-<div class="card" style="cursor:pointer" onclick="SP('build')"><div class="card-ic">◇</div><h4>Конфигуратор</h4><p style="font-size:.82rem;color:var(--tx3)">Соберите парамотор</p></div>
-<div class="card" style="cursor:pointer" onclick="SP('service')"><div class="card-ic">🔧</div><h4>Сервис</h4><p style="font-size:.82rem;color:var(--tx3)">ТО и ремонт</p></div>
-</div></div></section>
-</div>
+<section style="padding:3rem 0"><div class="ctr"><div class="grid-4">
+<div class="card" style="cursor:pointer" onclick="switchPage('parts')"><div class="card-ic">&#9881;</div><h4 data-i18n="card_catalog">Каталог запчастей</h4><p style="font-size:.85rem;color:var(--tm)" data-i18n="card_catalog_d">330+ позиций HE Paramotores</p></div>
+<div class="card" style="cursor:pointer" onclick="switchPage('build')"><div class="card-ic">&#9670;</div><h4 data-i18n="card_config">Конфигуратор</h4><p style="font-size:.85rem;color:var(--tm)" data-i18n="card_config_d">Соберите парамотор за 5 шагов</p></div>
+<div class="card" style="cursor:pointer" onclick="switchPage('service')"><div class="card-ic">&#128295;</div><h4 data-i18n="card_service">Сервис-центр</h4><p style="font-size:.85rem;color:var(--tm)" data-i18n="card_service_d">Диагностика, ТО, капремонт</p></div>
+<div class="card" style="cursor:pointer" onclick="switchPage('dash')"><div class="card-ic">&#128203;</div><h4 data-i18n="card_dash">Кабинет владельца</h4><p style="font-size:.85rem;color:var(--tm)" data-i18n="card_dash_d">Паспорт, история, документы</p></div>
+</div></div></section></div>
 
 <!-- ABOUT -->
 <div class="page" id="page-about"><div class="ctr">
-<div class="ph"><div class="tag">About HE Paramotores</div><h1>О КОМПАНИИ</h1><p>Испанский производитель парамоторных двигателей. Мадрид.</p></div>
-<div class="about-g"><div>
-<div class="tag reveal">Партнёрство</div>
-<h2 class="reveal" style="font-size:clamp(2rem,4vw,3.5rem);color:var(--nv);margin-bottom:1rem">HE PARAMOTORES<br>S.L.</h2>
-<p class="reveal" style="color:var(--tx3);margin-bottom:1.2rem">HE Paramotores S.L. — испанский производитель из Мадрида. Пять моделей двигателей: RS-206, RS-185, MVL, MV1, MV2. Все корпуса из фрезерованного дюралюмина с покрытием Nikasil. Карбюраторы Walbro. 90% компонентов производятся на собственных мощностях.</p>
+<div class="ph"><div class="label">About Us</div><h1 data-i18n="about_h1">О КОМПАНИИ</h1><p data-i18n="about_sub">VELTORY — инженерная платформа, официальный партнёр HE Paramotores.</p></div>
+<div class="grid-2" style="margin-bottom:4rem"><div>
+<div class="label reveal" style="margin-bottom:1rem" data-i18n="about_mission">Миссия</div><h2 class="reveal" style="margin-bottom:1rem" data-i18n="about_mission_h">СДЕЛАТЬ ПОЛЁТ<br>ДОСТУПНЫМ И БЕЗОПАСНЫМ</h2>
+<p class="reveal" style="color:var(--tm);margin-bottom:1rem" data-i18n="about_mission_d">Оригинальные запчасти HE Paramotores с доставкой DDP Москва.</p>
 <div class="ah-grid reveal">
-<div class="ah"><div class="ah-ic">🇪🇸</div><div><h4>Valdilecha, Madrid</h4><p>C/ Constitución, Nave 6</p></div></div>
-<div class="ah"><div class="ah-ic">📞</div><div><h4>+34 918 738 835</h4><p>Madrid office</p></div></div>
-<div class="ah"><div class="ah-ic">🏭</div><div><h4>90% In-House</h4><p>Собственное производство</p></div></div>
-<div class="ah"><div class="ah-ic">🛡</div><div><h4>Nikasil + Walbro</h4><p>Технологии</p></div></div>
+<div class="ah-item"><div class="ah-ic">&#127981;</div><div><h4>HE Paramotores</h4><p data-i18n="about_he">Оригинальные запчасти</p></div></div>
+<div class="ah-item"><div class="ah-ic">&#128230;</div><div><h4>DDP Moscow</h4><p data-i18n="about_ddp">Доставка включена</p></div></div>
+<div class="ah-item"><div class="ah-ic">&#128269;</div><div><h4 data-i18n="about_search_t">Поиск по коду</h4><p data-i18n="about_search_d">Артикулы HE</p></div></div>
+<div class="ah-item"><div class="ah-ic">&#128737;</div><div><h4 data-i18n="about_warr_t">Гарантия</h4><p data-i18n="about_warr_d">Оригинальное качество</p></div></div>
 </div></div>
-<div class="reveal" style="background:var(--w);border:1px solid var(--cr3);border-radius:20px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem">
-<svg viewBox="0 0 200 200" width="120" height="120"><circle cx="100" cy="100" r="80" fill="none" stroke="#c4956a" stroke-width="1.5" opacity=".3"/><circle cx="100" cy="100" r="50" fill="none" stroke="#c4956a" stroke-width="1" opacity=".2"/><circle cx="100" cy="100" r="20" fill="#c4956a" opacity=".1"/><text x="100" y="96" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700" fill="#0d1b2a" opacity=".15">HE</text><text x="100" y="112" text-anchor="middle" font-family="JetBrains Mono" font-size="6" fill="#7a7a92" letter-spacing="2">ENGINE</text></svg>
-<p style="font-family:var(--fm);font-size:.55rem;color:var(--tx3);letter-spacing:.15em">VALDILECHA · MADRID · SPAIN</p>
-</div></div>
-<div class="tag reveal">История</div><h2 class="reveal" style="font-size:clamp(1.8rem,3.5vw,3rem);margin-bottom:2rem">TIMELINE</h2>
+<div class="reveal" style="background:var(--cr);border:1px solid var(--b);border-radius:var(--radxl);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center"><span style="font-size:4rem;opacity:.04">&#9670;</span></div></div>
+<div class="label reveal" style="margin-bottom:1.5rem" data-i18n="about_history">История</div><h2 class="reveal" style="margin-bottom:2.5rem">TIMELINE</h2>
 <div class="tl">
-<div class="tl-i reveal"><div class="tl-d"></div><div class="tl-y">2008</div><div class="tl-t">Основание HE Paramotores S.L.</div><div class="tl-ds">Campo Real, Мадрид. Начало разработки парамоторных двигателей.</div></div>
-<div class="tl-i reveal"><div class="tl-d"></div><div class="tl-y">2013</div><div class="tl-t">Модель AIRMAX · Мануал V01</div><div class="tl-ds">Первый серийный двигатель. Карбюратор Walbro WB37.</div></div>
-<div class="tl-i reveal"><div class="tl-d"></div><div class="tl-y">~2018</div><div class="tl-t">MV1 · MV2 · MVL</div><div class="tl-ds">Три модели: MVL (125cc/23HP), MV1 (184.70cc/25HP), MV2 (200cc/29HP). Дюралюминий, Nikasil, Walbro.</div></div>
-<div class="tl-i reveal"><div class="tl-d"></div><div class="tl-y">~2022</div><div class="tl-t">RS-185 · RS-206 · Серия RS</div><div class="tl-ds">Новая линейка RS: RS-185 (185cc/26HP) и RS-206 (206cc). Переезд в Valdilecha.</div></div>
+<div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-year">2014</div><div class="tl-title">Основание HE Paramotores</div><div class="tl-desc" data-i18n="tl_2014">Создание компании и первого двигателя.</div></div>
+<div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-year">2016</div><div class="tl-title">RS-185</div><div class="tl-desc" data-i18n="tl_2016">Запуск серийного производства RS-185.</div></div>
+<div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-year">2018</div><div class="tl-title">RS-206 / MV1</div><div class="tl-desc" data-i18n="tl_2018">Расширение линейки: RS-206 и MV1 100cc.</div></div>
+<div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-year">2020</div><div class="tl-title">MV2 / MVL</div><div class="tl-desc" data-i18n="tl_2020">Двухцилиндровый MV2 и компактный MVL.</div></div>
+<div class="tl-item reveal"><div class="tl-dot"></div><div class="tl-year">2024</div><div class="tl-title">VELTORY Platform</div><div class="tl-desc" data-i18n="tl_2024">Запуск инженерной платформы VELTORY.</div></div>
 </div></div></div>
 
 <!-- ENGINES -->
 <div class="page" id="page-engines"><div class="ctr">
-<div class="ph"><div class="tag">HE Paramotores · 5 Models</div><h1>ДВИГАТЕЛИ</h1><p>Пять моделей от лёгкого MVL до мощного RS-206.</p></div>
-<div class="g3" id="engGrid" style="margin-bottom:3rem"></div>
-<div class="tag reveal">Сравнение</div><h3 class="reveal" style="margin-bottom:1rem">ТАБЛИЦА СРАВНЕНИЯ</h3>
-<div class="reveal" style="overflow-x:auto">
-<table class="compare-t">
-<thead><tr><th>Параметр</th><th>MVL</th><th>MV1</th><th>RS-185</th><th>MV2</th><th>RS-206</th></tr></thead>
-<tbody>
-<tr><td>Объём</td><td>125 cc</td><td>184.70 cc</td><td>185 cc</td><td>200 cc</td><td>206 cc</td></tr>
-<tr><td>Мощность</td><td>23 HP</td><td>25 HP</td><td>26 HP</td><td class="hl">29 HP</td><td class="hl">29 HP</td></tr>
-<tr><td>Корпус</td><td colspan="5" style="text-align:center;font-family:var(--fm);font-size:.65rem;letter-spacing:.06em">Дюралюминий с покрытием Nikasil</td></tr>
-<tr><td>Карбюратор</td><td colspan="5" style="text-align:center">Walbro</td></tr>
-<tr><td>Передача</td><td colspan="5" style="text-align:center">Poly V Belt</td></tr>
-<tr><td>Зажигание</td><td colspan="5" style="text-align:center">Электронная катушка</td></tr>
-<tr><td>Назначение</td><td>Ежедневные полёты</td><td>Foot + trike</td><td>Новая серия RS</td><td>Тандем + соло</td><td>Новая серия RS</td></tr>
-<tr><td>Пуск</td><td>Стандарт</td><td>Стандарт</td><td>Стандарт</td><td class="hl">Двойной</td><td>Стандарт</td></tr>
-</tbody>
-</table>
-</div></div></div>
+<div class="ph"><div class="label">Engines</div><h1 data-i18n="engines_h1">ДВИГАТЕЛИ HE PARAMOTORES</h1><p data-i18n="engines_sub">Пять моделей: MVL 80cc, MV1 100cc, MV2 130cc, RS-185, RS-206.</p></div>
+<div class="grid-3" id="engGrid"></div></div></div>
+
+<!-- COMPARE -->
+<div class="page" id="page-compare"><div class="ctr">
+<div class="ph"><div class="label">Compare</div><h1 data-i18n="compare_h1">СРАВНЕНИЕ МОДЕЛЕЙ</h1><p data-i18n="compare_sub">Выберите модели для сравнения характеристик.</p></div>
+<div class="cmp-checks" id="cmpChecks"></div>
+<div style="overflow-x:auto"><table class="cmp-table" id="cmpTable"></table></div></div></div>
 
 <!-- PARTS -->
 <div class="page" id="page-parts"><div class="ctr">
-<div class="ph"><div class="tag">Parts · HE Paramotores</div><h1>КАТАЛОГ ЗАПЧАСТЕЙ</h1><p>Компоненты для всех 5 моделей. Кликните — в запрос.</p></div>
-<div class="parts-l">
-<aside class="sb"><div class="sb-s"><div class="sb-t">Двигатель</div><div class="eng-sel" id="engSel"></div></div><div class="sb-s"><div class="sb-t">Группа</div><div class="cat-f" id="catFil"></div></div></aside>
-<div><div class="p-top"><div class="p-cnt"><span id="pShown">0</span> позиций</div><div class="p-search"><span style="color:var(--cr3)">⌕</span><input placeholder="HE-MV1-001..." id="pSearch" oninput="renderParts()"></div></div><div class="p-grid" id="pGrid"></div></div></div></div></div>
+<div class="ph"><div class="label">Parts &middot; HE Paramotores DDP Moscow</div><h1 data-i18n="parts_h1">КАТАЛОГ ЗАПЧАСТЕЙ</h1><p data-i18n="parts_sub">Оригинальные запчасти HE. Цены DDP Москва. Кликните — в запрос.</p></div>
+<div class="exploded-wrap" id="explodedWrap">
+<svg class="exploded-svg" viewBox="0 0 500 300" id="explodedSvg"></svg>
+<div class="exploded-tooltip" id="explodedTip"><div class="tt-name"></div><div class="tt-sku"></div><div class="tt-price"></div><button class="btn btn-g btn-xs tt-btn" data-i18n="btn_add_quote">В запрос</button></div>
+</div>
+<div class="cfg-layout">
+<aside class="sb">
+<div class="sb-sec"><div class="sb-t" data-i18n="sb_engine">Двигатель</div><div class="eng-sel" id="engSel"></div></div>
+<div class="sb-sec"><div class="sb-t" data-i18n="sb_group">Группа</div><div class="cat-f" id="catFil"></div></div>
+</aside>
+<div><div class="p-top"><div class="p-cnt"><span id="pShown">0</span> <span data-i18n="p_positions">позиций</span></div><div class="p-search"><span style="color:var(--td)">&#8981;</span><input type="text" placeholder="HE-MV1-RF-067" id="pSearch" oninput="renderParts()"></div></div>
+<div class="p-grid" id="pGrid"></div></div></div></div></div>
 
 <!-- BUILD -->
 <div class="page" id="page-build"><div class="ctr">
-<div class="ph"><div class="tag">Configurator</div><h1>КОНФИГУРАТОР</h1><p>Соберите парамотор на базе HE.</p></div>
-<div class="bld-steps" id="bldSteps"></div>
-<div class="bld-progress">
-<div class="bld-progress-top"><div><div class="bld-progress-copy" id="bldProgressCopy">Шаг 1 из 5 <span>— 20%</span></div><div class="bld-progress-note">VELTORY Configurator</div></div><div class="bld-progress-note" id="bldProgressLabel">Подбор двигателя</div></div>
-<div class="bld-progress-track"><div class="bld-progress-fill" id="bldProgressFill"></div></div>
+<div class="ph"><div class="label">Configurator</div><h1 data-i18n="build_h1">КОНФИГУРАТОР</h1><p data-i18n="build_sub">Соберите парамотор за 5 шагов.</p></div>
+<div class="bld-steps" id="bldSteps"></div><div id="bldPanels"></div></div></div>
+
+<!-- VELTORY INDIVIDUAL -->
+<div class="page" id="page-individual"><div class="ctr">
+<div class="ph"><div class="label">VELTORY Individual</div><h1>VELTORY <em style="color:var(--gold);font-weight:300">INDIVIDUAL</em></h1><p data-i18n="ind_sub">Персональная сборка парамотора под ваши задачи.</p></div>
+<div class="grid-2" style="margin-bottom:3rem">
+<div>
+<div class="label reveal" style="margin-bottom:1rem" data-i18n="ind_concept">Концепция</div>
+<h2 class="reveal" style="margin-bottom:1rem" data-i18n="ind_concept_h">ВАШ ПАРАМОТОР.<br>ВАШИ ПРАВИЛА.</h2>
+<p class="reveal" style="color:var(--tm);margin-bottom:1.5rem" data-i18n="ind_concept_d">Каждый VELTORY Individual собирается вручную под конкретного пилота. Выбор двигателя, рамы, подвески, винта и аксессуаров — без компромиссов.</p>
+<div class="ah-grid reveal">
+<div class="ah-item"><div class="ah-ic">&#127919;</div><div><h4 data-i18n="ind_select_t">Выбор компонентов</h4><p data-i18n="ind_select_d">5 двигателей, 3 рамы, 2 подвески</p></div></div>
+<div class="ah-item"><div class="ah-ic">&#128736;</div><div><h4 data-i18n="ind_assembly_t">Ручная сборка</h4><p data-i18n="ind_assembly_d">Каждый узел — контроль качества</p></div></div>
+<div class="ah-item"><div class="ah-ic">&#128200;</div><div><h4 data-i18n="ind_test_t">Стендовые испытания</h4><p data-i18n="ind_test_d">Динамометр, вибрация, ресурс</p></div></div>
+<div class="ah-item"><div class="ah-ic">&#128196;</div><div><h4 data-i18n="ind_passport_t">Цифровой паспорт</h4><p data-i18n="ind_passport_d">QR-код, история, гарантия</p></div></div>
 </div>
-<div id="bldPanels"></div></div></div>
+</div>
+<div class="reveal" style="background:var(--cr);border:1px solid var(--gold);border-radius:var(--radxl);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+<div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 40%,rgba(196,149,106,.08),transparent 60%)"></div>
+<span style="font-size:5rem;opacity:.06;position:relative">V</span>
+<span style="position:absolute;bottom:1.5rem;right:1.5rem;font-family:var(--fm);font-size:.55rem;letter-spacing:.2em;color:var(--td);text-transform:uppercase">Individual Build</span>
+</div>
+</div>
+<!-- Installment -->
+<div class="instal-card reveal">
+<div class="label" style="margin-bottom:.8rem" data-i18n="instal_label">Installment Plan</div>
+<h3 style="margin-bottom:.5rem" data-i18n="instal_h3">РАССРОЧКА</h3>
+<p style="color:var(--tm);font-size:.9rem;margin-bottom:1rem" data-i18n="instal_desc">Рассрочка на парамоторы и компоненты VELTORY Individual. Без переплат.</p>
+<div class="instal-grid">
+<div class="instal-item"><div class="instal-item-v">0%</div><div class="instal-item-l" data-i18n="instal_pct">Переплата</div></div>
+<div class="instal-item"><div class="instal-item-v">3-12</div><div class="instal-item-l" data-i18n="instal_months">Месяцев</div></div>
+<div class="instal-item"><div class="instal-item-v">15%</div><div class="instal-item-l" data-i18n="instal_first">Первый взнос</div></div>
+<div class="instal-item"><div class="instal-item-v">24ч</div><div class="instal-item-l" data-i18n="instal_approval">Одобрение</div></div>
+</div>
+<div style="margin-top:1.5rem"><a class="btn btn-g" onclick="switchPage('contact')" data-i18n="instal_apply">Оставить заявку</a></div>
+</div></div></div>
 
 <!-- SERVICE -->
 <div class="page" id="page-service"><div class="ctr">
-<div class="ph"><div class="tag">Service Center</div><h1>СЕРВИС-ЦЕНТР</h1><p>ТО и ремонт всех моделей HE.</p></div>
-<div class="svc-g" style="margin-bottom:2.5rem">
-<div class="svc-card reveal"><div class="svc-ic">🔍</div><h4>Диагностика</h4><p>Компрессия, зажигание, карбюратор Walbro, проверка Nikasil-покрытия.</p><div class="svc-pn">от 2 500 ₽</div></div>
-<div class="svc-card reveal"><div class="svc-ic">🔧</div><h4>Плановое ТО</h4><p>Свечи, воздушный фильтр, прокладки, проверка Poly V ремня.</p><div class="svc-pn">от 3 800 ₽</div></div>
-<div class="svc-card reveal"><div class="svc-ic">🛠</div><h4>Капремонт</h4><p>Полная разборка. ЦПГ, подшипники, сальники. Герметик ThreeBond TB1215.</p><div class="svc-pn">от 15 000 ₽</div></div>
+<div class="ph"><div class="label">Service Center</div><h1 data-i18n="service_h1">СЕРВИС-ЦЕНТР</h1><p data-i18n="service_sub">Обслуживание с оригинальными запчастями HE Paramotores.</p></div>
+<div class="svc-grid" style="margin-bottom:3rem">
+<div class="svc-card reveal"><div class="svc-ic">&#128269;</div><h4 data-i18n="svc_diag">Диагностика</h4><p data-i18n="svc_diag_d">Компьютерная диагностика двигателя.</p><div class="pn">от 2 500 &#8381;</div></div>
+<div class="svc-card reveal"><div class="svc-ic">&#128295;</div><h4 data-i18n="svc_to">Плановое ТО</h4><p data-i18n="svc_to_d">Расходники HE по моточасам.</p><div class="pn">от 3 800 &#8381;</div></div>
+<div class="svc-card reveal"><div class="svc-ic">&#128736;</div><h4 data-i18n="svc_cap">Капремонт</h4><p data-i18n="svc_cap_d">Полная разборка, замена, стенд.</p><div class="pn">от 18 000 &#8381;</div></div>
 </div>
-<div class="svc-book reveal"><div class="tag">Online Booking</div><h3 style="margin-bottom:1.2rem">ЗАПИСЬ НА ОБСЛУЖИВАНИЕ</h3>
-<form onsubmit="submitF(event,'Запись отправлена')"><div class="f-row"><div class="fg"><label>Имя</label><input required></div><div class="fg"><label>Телефон</label><input type="tel" required></div></div>
-<div class="fg"><label>Двигатель</label><select><option>RS-206</option><option>RS-185</option><option>MV2</option><option>MV1</option><option>MVL</option></select></div>
-<div class="fg"><label>Описание</label><textarea></textarea></div><button type="submit" class="btn btn-p">Отправить</button></form></div></div></div>
+<div class="calc-wrap reveal">
+<div class="label" style="margin-bottom:1rem" data-i18n="calc_label">Maintenance Calculator</div>
+<h3 style="margin-bottom:1.2rem" data-i18n="calc_h3">КАЛЬКУЛЯТОР ТО</h3>
+<div class="calc-input">
+<label data-i18n="calc_hours">Моточасы:</label>
+<input type="number" id="calcHours" min="0" max="9999" value="0" oninput="calcTO()">
+</div>
+<div class="calc-warn" id="calcWarn" data-i18n="calc_warn">ТО просрочено! Запишитесь на обслуживание.</div>
+<div class="calc-result" id="calcResult"></div>
+<div class="calc-progress">
+<div class="calc-progress-label"><span data-i18n="calc_current">Текущая наработка</span><span data-i18n="calc_next">Следующее ТО</span></div>
+<div class="calc-progress-bar"><div class="calc-progress-fill" id="calcFill" style="width:0%"></div></div>
+</div>
+<div style="margin-top:1.5rem"><a class="btn btn-g" onclick="switchPage('service');setTimeout(()=>document.querySelector('.svc-book').scrollIntoView({behavior:'smooth'}),300)" data-i18n="calc_book">Записаться на ТО</a></div>
+</div>
+<div class="svc-book reveal"><div class="label" style="margin-bottom:1rem">Online Booking</div><h3 style="margin-bottom:1.5rem" data-i18n="book_h3">ЗАПИСЬ НА ОБСЛУЖИВАНИЕ</h3>
+<form onsubmit="submitForm(event,'Запись отправлена')"><div class="f-row"><div class="fg"><label data-i18n="f_name">Имя</label><input required></div><div class="fg"><label data-i18n="f_phone">Телефон</label><input type="tel" required></div></div>
+<div class="fg"><label data-i18n="f_engine">Двигатель</label><select><option>MVL 80cc</option><option>MV1 100cc</option><option>MV2 130cc</option><option>RS-185</option><option>RS-206</option></select></div>
+<div class="fg"><label data-i18n="f_desc">Описание</label><textarea></textarea></div><button type="submit" class="btn btn-g" data-i18n="btn_submit">Отправить</button></form></div></div></div>
 
 <!-- DASHBOARD -->
 <div class="page" id="page-dash"><div class="ctr">
-<div class="ph" style="border:none;margin-bottom:1rem;text-align:center"><div class="tag" style="justify-content:center">Owner Dashboard</div><h1>КАБИНЕТ ВЛАДЕЛЬЦА</h1></div>
-<div class="dash-search"><div class="dash-sb"><input placeholder="HE-2024-MV2-00001" id="serIn" onkeydown="if(event.key==='Enter')lookup()"><button class="btn btn-p" onclick="lookup()">Найти</button></div>
-<p class="mono" style="font-size:.52rem;color:var(--tx3);margin-top:.4rem;letter-spacing:.1em">Попробуйте: HE-2024-MV2-00001</p></div>
+<div class="ph text-c" style="border:none;margin-bottom:1rem"><div class="label label-c">Owner Dashboard</div><h1 data-i18n="dash_h1">КАБИНЕТ ВЛАДЕЛЬЦА</h1></div>
+<div class="dash-search"><div class="dash-sb"><input placeholder="HE-2024-MV1-00487" id="serIn" onkeydown="if(event.key==='Enter')lookup()"><button class="btn btn-g" onclick="lookup()" data-i18n="btn_find">Найти</button></div>
+<p class="mono" style="font-size:.58rem;color:var(--td);margin-top:.5rem;letter-spacing:.12em">HE-2024-MV1-00487 &middot; HE-2023-RS206-00112</p></div>
 <div class="dash-c" id="dashC"></div></div></div>
 
-<!-- ATELIER -->
-<div class="page" id="page-atelier"><div class="ctr">
-<div class="ph"><div class="tag">Engineering Atelier</div><h1>VELTORY ATELIER</h1><p>Кастомные сборки на базе HE.</p></div>
-<div class="atl-g">
-<div class="atl-card reveal" style="background:linear-gradient(160deg,var(--nv),var(--nv2))"><div class="atl-body"><span class="atl-tag" style="background:rgba(196,149,106,.15);color:var(--trr)">Кастом</span><h3 style="color:var(--cr)">Midnight RS-206</h3><p class="ds" style="color:rgba(245,240,230,.5)">Флагманская сборка на базе RS-206. Чёрно-серебристая схема.</p></div></div>
-<div class="atl-card reveal" style="background:linear-gradient(135deg,var(--trr),var(--trrl))"><div class="atl-body"><span class="atl-tag" style="background:rgba(255,255,255,.2);color:#fff">Спорт</span><h3 style="color:#fff">MV2 Monster</h3><p class="ds" style="color:rgba(255,255,255,.7)">29 HP, двойной пуск. Для тандемов и соревнований.</p></div></div>
-<div class="atl-card reveal" style="background:linear-gradient(135deg,var(--sky),#93c0e0)"><div class="atl-body"><span class="atl-tag" style="background:rgba(255,255,255,.2);color:#fff">Ultralight</span><h3 style="color:#fff">MVL Daily</h3><p class="ds" style="color:rgba(255,255,255,.7)">Самая лёгкая сборка на базе MVL 125cc.</p></div></div>
-</div>
-<div class="ind-wrap reveal" style="margin-top:1.6rem">
-<div class="ind-top">
-<div><div class="ind-badge">VELTORY Custom</div><h2>VELTORY INDIVIDUAL</h2><p>Кастомная конфигурация под ваши задачи. Персональные материалы, отделка и оснащение для тандемных полётов, путешествий и демонстрационных сборок.</p></div>
-<button class="btn btn-p" style="background:var(--trr);color:var(--w)" onclick="SP('contact')">Запросить индивидуальную конфигурацию</button>
-</div>
-<div class="ind-grid">
-<div class="ind-card"><div class="ind-ic">🎨</div><h4>Custom Paint</h4><p>Многослойная окраска и фирменные графические пакеты под ваш борт.</p></div>
-<div class="ind-card"><div class="ind-ic">🜁</div><h4>Titanium Exhaust</h4><p>Титановая выпускная система с индивидуальной настройкой отклика и звучания.</p></div>
-<div class="ind-card"><div class="ind-ic">⬡</div><h4>Carbon Parts</h4><p>Карбоновые элементы обвеса и декоративные детали с акцентом на снижение массы.</p></div>
-<div class="ind-card"><div class="ind-ic">📡</div><h4>GPS Tracking</h4><p>Интегрированный GPS-модуль и телеметрия для парка, аренды или личного мониторинга.</p></div>
-</div>
-<div class="ind-cta"><p>Premium commissioning · one-off builds · factory coordination</p><button class="btn btn-s" style="border-color:rgba(245,240,230,.28);color:var(--cr)" onclick="SP('contact')">Обсудить проект</button></div>
-</div></div></div>
-
-<!-- LIBRARY -->
-<div class="page" id="page-library"><div class="ctr">
-<div class="ph"><div class="tag">Technical Library</div><h1>БИБЛИОТЕКА</h1><p>Мануалы и документация HE.</p></div>
-<div class="lib-g" id="libGrid"></div></div></div>
+<!-- DEALERS -->
+<div class="page" id="page-dealers"><div class="ctr">
+<div class="ph"><div class="label">Dealers</div><h1 data-i18n="dealers_h1">ДИЛЕРСКАЯ СЕТЬ</h1><p data-i18n="dealers_sub">Авторизованные партнёры VELTORY по России и СНГ.</p></div>
+<div class="dealer-filters" id="dealerFilters"></div>
+<div class="grid-3" id="dealerGrid"></div></div></div>
 
 <!-- CONTACT -->
 <div class="page" id="page-contact"><div class="ctr">
-<div class="ph"><div class="tag">Contact</div><h1>КОНТАКТЫ</h1><p>HE Paramotores S.L. + VELTORY.</p></div>
-<div class="con-g"><div>
-<h3 style="margin-bottom:1rem;font-size:1.1rem">HE PARAMOTORES · ИСПАНИЯ</h3>
-<div class="con-card"><div class="con-ic">🇪🇸</div><div><h4>C/ Constitución – Nave 6</h4><p>28511 Valdilecha, Prov. Madrid, España</p></div></div>
-<div class="con-card"><div class="con-ic">📞</div><div><h4>+34 918 738 835</h4><p>Tel/Fax</p></div></div>
-<div class="con-card"><div class="con-ic">📱</div><div><h4>+34 666 454 408</h4><p>Móvil</p></div></div>
-<div class="con-card"><div class="con-ic">✉</div><div><h4>paramotores.he@terra.es</h4><p>Email</p></div></div>
-<h3 style="margin:1.5rem 0 1rem;font-size:1.1rem">VELTORY · РОССИЯ</h3>
-<div class="con-card"><div class="con-ic">📞</div><div><h4>+7 927 477 05 05</h4><p>Ежедневно 8:00–20:00</p></div></div>
-<div class="con-card"><div class="con-ic">💬</div><div><h4>Telegram · WhatsApp</h4><p>Мессенджеры</p></div></div>
+<div class="ph"><div class="label">Contact</div><h1 data-i18n="contact_h1">КОНТАКТЫ</h1></div>
+<div class="con-grid"><div>
+<div class="con-card"><div class="con-ic">&#128222;</div><div><h4 data-i18n="contact_phone">Телефон</h4><p><a href="tel:+79274770505">+7 927 477 05 05</a></p></div></div>
+<div class="con-card"><div class="con-ic">&#9993;</div><div><h4>Email</h4><p><a href="mailto:sabitov.rr@yandex.ru">sabitov.rr@yandex.ru</a></p></div></div>
 </div>
-<div class="con-form"><h3 style="margin-bottom:1rem">ЗАПРОС ПРЕДЛОЖЕНИЯ</h3>
-<form onsubmit="submitF(event,'Отправлено')"><div class="f-row"><div class="fg"><label>Имя</label><input required></div><div class="fg"><label>Телефон</label><input type="tel" required></div></div>
-<div class="fg"><label>Интересует</label><select><option>RS-206</option><option>RS-185</option><option>MV2</option><option>MV1</option><option>MVL</option><option>Конфигуратор</option><option>Сервис</option><option>Сотрудничество</option></select></div>
-<div class="fg"><label>Сообщение</label><textarea></textarea></div><button type="submit" class="btn btn-p">Отправить</button></form></div></div>
-<footer><div class="ctr"><div class="foot-c"><div class="foot-brand">VELTORY<div class="logo-d"></div></div>
-<ul class="foot-links"><li><a onclick="SP('engines')">Двигатели</a></li><li><a onclick="SP('parts')">Запчасти</a></li><li><a onclick="SP('service')">Сервис</a></li><li><a onclick="SP('contact')">Контакты</a></li></ul>
-<p class="foot-copy">© 2025 VELTORY · Official Partner HE Paramotores S.L. Madrid</p></div></div></footer></div></div>
+<div class="con-form"><h3 style="margin-bottom:1.2rem" data-i18n="contact_form_h">НАПИСАТЬ НАМ</h3>
+<form onsubmit="submitForm(event,'Отправлено')"><div class="f-row"><div class="fg"><label data-i18n="f_name">Имя</label><input required></div><div class="fg"><label data-i18n="f_phone">Телефон</label><input type="tel" required></div></div>
+<div class="fg"><label data-i18n="f_message">Сообщение</label><textarea></textarea></div><button type="submit" class="btn btn-g" data-i18n="btn_submit">Отправить</button></form></div></div></div></div>
 
-<!-- QUOTE -->
+<!-- QUOTE PANEL -->
 <div class="q-ov" id="qOv" onclick="toggleQ()"></div>
-<div class="q-panel" id="qPan"><div class="q-hd"><h3 style="font-size:1rem">ЗАПРОС ПРЕДЛОЖЕНИЯ</h3><button class="q-close" onclick="toggleQ()">✕</button></div>
-<div id="qItems"></div><div id="qTotal"></div><button class="btn btn-p btn-bl" style="margin-top:.4rem" onclick="submitQ()">Отправить запрос</button></div>
-<button class="q-trig" onclick="toggleQ()">⚙<span class="qc" id="qCnt"></span></button>
+<div class="q-panel" id="qPan"><div class="q-head"><h3 style="font-size:1.05rem;font-weight:400" data-i18n="q_title">ЗАПРОС ПРЕДЛОЖЕНИЯ</h3><button class="q-close" onclick="toggleQ()">&#10005;</button></div>
+<div id="qItems"></div><div id="qTotal"></div><button class="btn btn-g btn-bl" style="margin-top:.4rem;border-radius:var(--rad)" onclick="submitQ()" data-i18n="btn_send">Отправить</button></div>
+<button class="q-trig" onclick="toggleQ()">&#9881;<span class="qc" id="qCnt"></span></button>
 
+<footer><div class="ctr"><div class="foot-c">
+<div class="foot-brand"><div class="logo-m" style="width:20px;height:20px;font-size:.45rem">V</div>VELTORY</div>
+<ul class="foot-links"><li><a onclick="switchPage('engines')" data-i18n="nav_engines">Двигатели</a></li><li><a onclick="switchPage('parts')" data-i18n="nav_parts">Запчасти</a></li><li><a onclick="switchPage('service')" data-i18n="nav_service">Сервис</a></li><li><a onclick="switchPage('contact')" data-i18n="nav_contact">Контакты</a></li></ul>
+<p class="foot-copy">&copy; 2025 VELTORY Engineering &middot; HE Paramotores DDP Moscow</p></div></div></footer>
 <script>
-const ENGINES=[
-{id:'rs206',name:'RS-206',tagline:'New RS',desc:'RS 206cc — сочетание мощности и точности. Флагман линейки.',badge:'New RS · 206cc',badgeType:'badge-new',
-specs:{'Объём':'206 cc','Мощность':'29 HP','Корпус':'Дюралюминий Nikasil','Карбюратор':'Walbro','Передача':'Poly V Belt','Зажигание':'Электрокатушка'},
-note:'Максимальный объём в лейне. Мощность будет объявлена.'},
-{id:'rs185',name:'RS-185',tagline:'New RS',desc:'RS 185cc, 26 HP. Мощность, точность и надёжность. Новая серия RS.',badge:'New RS · 185cc · 26HP',badgeType:'badge-new',
-specs:{'Объём':'185 cc','Мощность':'26 HP','Корпус':'Дюралюминий Nikasil','Карбюратор':'Walbro','Передача':'Poly V Belt','Зажигание':'Электрокатушка'},
-note:'Премиальный двигатель новой серии RS.'},
-{id:'mv2',name:'MV2',tagline:'The Monster of the Skies',desc:'200cc, 29 HP. Для тандемов и пилотов, требующих максимум. Двойной пуск.',badge:'200cc · 29 HP · Dual Start',badgeType:'badge-t',
-specs:{'Объём':'200 cc','Мощность':'29 HP','Корпус':'Дюралюминий Nikasil','Карбюратор':'Walbro','Передача':'Poly V Belt','Пуск':'Двойной'},
-note:'Максимальная мощность. Изначально для тандемов, но популярен среди соло-пилотов.'},
-{id:'mv1',name:'MV1',tagline:'The Powerful Performer',desc:'184.70cc, 25 HP. Для ноги и трика. Минимальная вибрация.',badge:'184.70cc · 25 HP',badgeType:'badge-t',
-specs:{'Объём':'184.70 cc','Мощность':'25 HP','Корпус':'Дюралюминий Nikasil','Карбюратор':'Walbro','Передача':'Poly V Belt','Зажигание':'Электрокатушка'},
-note:'Универсальный: foot launch и trike. Минимальные вибрации.'},
-{id:'mvl',name:'MVL',tagline:'The Everyday Wonder',desc:'125cc, 23 HP. Лёгкий, надёжный, маневренный. Идеален для ежедневных полётов.',badge:'125cc · 23 HP · Лёгкий',badgeType:'badge-sp',
-specs:{'Объём':'125 cc','Мощность':'23 HP','Корпус':'Дюралюминий Nikasil','Карбюратор':'Walbro','Передача':'Poly V Belt','Зажигание':'Электрокатушка'},
-note:'Самый лёгкий в линейке. Перо-подобный вес для лёгких взлётов.'},
-];
-
-const TPL=[
-{n:'Выпускная система',i:'EXH-001',c:'exhaust',note:'Righetti Ridolfi'},
-{n:'Глушитель',i:'EXH-002',c:'exhaust',note:'Righetti Ridolfi'},
-{n:'Карбюратор Walbro',i:'CRB-001',c:'carb',note:'Walbro'},
-{n:'Прокладка карбюратора',i:'CRB-002',c:'carb',note:''},
-{n:'Клапан карбюратора',i:'CRB-003',c:'carb',note:''},
-{n:'Воздушный фильтр',i:'FLT-001',c:'fuel',note:'Righetti Ridolfi'},
-{n:'Топливный фильтр',i:'FLT-002',c:'fuel',note:''},
-{n:'Топливный шланг 1м',i:'FLT-003',c:'fuel',note:'11 л/ч, макс 80 см'},
-{n:'Праймер ручной',i:'FLT-004',c:'fuel',note:'Рекомендуется'},
-{n:'Свеча зажигания (лето)',i:'IGN-001',c:'ignition',note:'NGK стандарт'},
-{n:'Свеча зажигания (зима)',i:'IGN-002',c:'ignition',note:'NGK холодная'},
-{n:'Катушка зажигания',i:'IGN-003',c:'ignition',note:'Электронная'},
-{n:'Провод свечи',i:'IGN-004',c:'ignition',note:''},
-{n:'Рид-коробка',i:'REED-001',c:'reed',note:''},
-{n:'Прокладка рид-коробки',i:'REED-002',c:'reed',note:''},
-{n:'Клапан рид-коробки',i:'REED-003',c:'reed',note:''},
-{n:'Поршень 125cc (MVL)',i:'PIS-001',c:'piston',note:'Для MVL'},
-{n:'Поршень 184.70cc (MV1)',i:'PIS-002',c:'piston',note:'Для MV1'},
-{n:'Поршень 185cc (RS-185)',i:'PIS-003',c:'piston',note:'Для RS-185'},
-{n:'Поршень 200cc (MV2)',i:'PIS-004',c:'piston',note:'Для MV2'},
-{n:'Поршень 206cc (RS-206)',i:'PIS-005',c:'piston',note:'Для RS-206'},
-{n:'Кольца поршневые',i:'PIS-006',c:'piston',note:''},
-{n:'Палец поршневой',i:'PIS-007',c:'piston',note:''},
-{n:'Стопорные кольца',i:'PIS-008',c:'piston',note:''},
-{n:'Цилиндр 125cc',i:'CYL-001',c:'piston',note:'Nikasil'},
-{n:'Цилиндр 184.70cc',i:'CYL-002',c:'piston',note:'Nikasil'},
-{n:'Цилиндр 200cc',i:'CYL-003',c:'piston',note:'Nikasil'},
-{n:'Прокладка цилиндра',i:'CYL-004',c:'piston',note:''},
-{n:'Головка цилиндра',i:'CYL-005',c:'piston',note:''},
-{n:'Коленчатый вал',i:'CRK-001',c:'crankcase',note:''},
-{n:'Подшипник коленвала',i:'CRK-002',c:'bearing',note:''},
-{n:'Сальник коленвала',i:'CRK-003',c:'bearing',note:''},
-{n:'Сторона картера A',i:'CRK-004',c:'crankcase',note:'Дюралюминий'},
-{n:'Сторона картера B',i:'CRK-005',c:'crankcase',note:'Дюралюминий'},
-{n:'Прокладка картера',i:'CRK-006',c:'crankcase',note:'ThreeBond TB1215'},
-{n:'Ремень Poly V',i:'DRV-001',c:'drive',note:'Poly V Belt Transmission'},
-{n:'Шкив малый',i:'DRV-002',c:'drive',note:''},
-{n:'Шкив большой',i:'DRV-003',c:'drive',note:''},
-{n:'Сцепление',i:'DRV-004',c:'drive',note:''},
-{n:'Колодки сцепления',i:'DRV-005',c:'drive',note:''},
-{n:'Пружина сцепления',i:'DRV-006',c:'drive',note:''},
-{n:'Стартер в сборе',i:'STR-001',c:'starter',note:''},
-{n:'Трос стартера',i:'STR-002',c:'starter',note:''},
-{n:'Пружина стартера',i:'STR-003',c:'starter',note:''},
-{n:'Шкив стартера',i:'STR-004',c:'starter',note:''},
-{n:'Корпус стартера',i:'STR-005',c:'starter',note:''},
-{n:'Резиновые сайлентблоки 40мм',i:'MTG-001',c:'misc',note:'Комплект 4 шт'},
-{n:'Болт крепления M8',i:'MTG-002',c:'fastener',note:'Комплект 4 шт'},
-{n:'Гайка M8 самоконтр.',i:'MTG-003',c:'fastener',note:'Комплект 4 шт'},
-{n:'Винт M6X20 (комплект)',i:'FST-001',c:'fastener',note:''},
-{n:'Винт M8X25 (комплект)',i:'FST-002',c:'fastener',note:''},
-{n:'Шайба M6 (10шт)',i:'FST-003',c:'fastener',note:''},
-{n:'Шайба M8 (10шт)',i:'FST-004',c:'fastener',note:''},
-{n:'Пропеллер 2L для HE',i:'PRP-001',c:'prop',note:'Специальный для HE'},
-{n:'Пропеллер 3L для HE',i:'PRP-002',c:'prop',note:''},
-{n:'Переходник пропеллера',i:'PRP-003',c:'prop',note:''},
-{n:'ThreeBond TB1215',i:'MTL-001',c:'misc',note:'Герметик 250г'},
-];
-
-const CATS={all:'Все',piston:'Поршневая',crankcase:'Картер',carb:'Карбюратор',fuel:'Фильтры и топливо',ignition:'Зажигание',exhaust:'Выпуск',starter:'Стартер',drive:'Привод',reed:'Рид-коробка',bearing:'Подшипники',fastener:'Крепёж',prop:'Пропеллеры',misc:'Прочее'};
-const CATO=['all','piston','crankcase','carb','fuel','ignition','exhaust','starter','drive','reed','bearing','fastener','prop','misc'];
-
-const FINANCE_MONTHS=[6,12,24,36];
-const BUILD=[
-{key:'engine',title:'Двигатель',opts:[
-{id:'rs206',name:'HE RS-206',ds:'Флагман. 206cc. Премиальная тяга и запас мощности.',price:185000,sub:'BMW-style flagship',s:{Объём:'206cc','HP':'29',Масса:'14.2 кг'}},
-{id:'rs185',name:'HE RS-185',ds:'Новая серия RS. 26 HP. Точный отклик и touring-баланс.',price:165000,sub:'New RS line',s:{Объём:'185cc','HP':'26',Масса:'13.6 кг'}},
-{id:'mv2',name:'HE MV2',ds:'29 HP, двойной пуск. Для тандемов и пилотов с высокой нагрузкой.',price:175000,sub:'Dual start',s:{Объём:'200cc','HP':'29',Масса:'14.8 кг'}},
-{id:'mv1',name:'HE MV1',ds:'25 HP, foot + trike. Универсальная конфигурация для регулярных вылетов.',price:155000,sub:'Foot + trike',s:{Объём:'184.70cc','HP':'25',Масса:'13.1 кг'}},
-{id:'mvl',name:'HE MVL',ds:'23 HP, самый лёгкий. Для лёгких пилотов и спокойной повседневной эксплуатации.',price:135000,sub:'Lightweight',s:{Объём:'125cc','HP':'23',Масса:'11.8 кг'}},
-]},
-{key:'frame',title:'Рама',opts:[{id:'f1',name:'Classic Steel',price:35000,s:{Материал:'Сталь'}},{id:'f2',name:'Aero Al',price:55000,s:{Материал:'Al 7075'}},{id:'f3',name:'Titan',price:120000,s:{Материал:'Ti Gr.5'}}]},
-{key:'prop',title:'Пропеллер',opts:[{id:'p1',name:'Дюраль 2L',price:12000,s:{Тип:'Специальный для HE'}},{id:'p2',name:'Carbon 2L',price:25000,s:{Тип:'Специальный для HE'}}]},
-{key:'harn',title:'Подвеска',opts:[{id:'h1',name:'Standard',price:15000,s:{Защита:'Пена'}},{id:'h2',name:'Air',price:28000,s:{Защита:'Airbag'}}]},
-{key:'acc',title:'Аксессуары',opts:[{id:'a1',name:'Бак 12 л',price:4500,s:{Шланг:'80 см макс.'}},{id:'a2',name:'Бак 18 л + праймер',price:7200,s:{Шланг:'80 см макс.'}}]},
-];
-
-const EDB={'HE-2024-MV2-00001':{model:'MV2',year:2024,serial:'HE-2024-MV2-00001',status:'На гарантии',owner:'Пилот #1',reg:'10.01.2024',warr:'09.01.2026',hours:62,lastTO:'25 м/ч',nextTO:'100 м/ч',
-history:[{d:'15.06.2024',t:'ТО-25',desc:'Свеча IGN-001, фильтр FLT-001, прокладка CYL-004.',cost:'3 200 ₽',tech:'VELTORY'}],
-docs:[{n:'Мануал V05.01',t:'PDF'},{n:'Карточка идентификации',t:'PDF'},{n:'Гарантийный талон',t:'PDF'}]}};
-
-let quote=[],bldSel={},curBld=0,curEng='all',curCat='all';
-let PR=[];let _id=1;
-['rs206','rs185','mv2','mv1','mvl'].forEach(eng=>{TPL.forEach(t=>{PR.push({id:_id++,sku:'HE-'+eng.toUpperCase()+'-'+t.i,name:t.n,cat:t.c,eng:[eng],note:t.note||'',stock:1})})});
-
-function SP(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('act'));document.querySelectorAll('.ntab').forEach(x=>x.classList.remove('act'));document.getElementById('page-'+p)?.classList.add('act');document.querySelector(`.ntab[data-p="${p}"]`)?.classList.add('act');document.getElementById('nTabs').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>{document.querySelectorAll('.page.act .reveal').forEach(el=>el.classList.add('vis'))},100)}
-
-function renderEngines(){
-const bg=['#f5ece0','#dce8f5','#f0e0f0','#e0f0e8','#f5ede0'];
-const ac=['#c05e3c','#6b9ec4','#8a6ec4','#2d8a6e','#c4956a'];
-document.getElementById('engGrid').innerHTML=ENGINES.map((e,i)=>`<div class="eng-card reveal">
-<div class="eng-vis"><svg viewBox="0 0 400 160"><rect width="400" height="160" fill="${bg[i]}"/>
-<circle cx="200" cy="80" r="45" fill="${ac[i]}" opacity=".08"/>
-<circle cx="200" cy="80" r="25" fill="${ac[i]}" opacity=".05"/>
-<text x="200" y="76" text-anchor="middle" font-family="Space Grotesk" font-size="16" font-weight="700" fill="${ac[i]}" opacity=".15">${e.name}</text>
-<text x="200" y="92" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="${ac[i]}" opacity=".1">${e.tagline}</text></svg></div>
-<div class="eng-body"><span class="badge ${e.badgeType}">${e.badge}</span><h3>HE ${e.name}</h3><p class="ds">${e.desc}</p>
-<div class="eng-sp">${Object.entries(e.specs).map(([k,v])=>`<div><div class="eng-sp-k">${k}</div><div class="eng-sp-v">${v}</div></div>`).join('')}</div>
-${e.note?`<div style="font-family:var(--fm);font-size:.5rem;color:var(--tx3);letter-spacing:.06em;background:var(--cr);border:1px solid var(--cr3);border-radius:8px;padding:.5rem;margin-top:.6rem;line-height:1.5">${e.note}</div>`:''}
-<div class="eng-acts" style="margin-top:.8rem"><button class="btn btn-p btn-sm" onclick="SP('parts')">Запчасти</button><button class="btn btn-s btn-sm" onclick="SP('contact')">Запрос КП</button></div></div></div>`).join('')}
-
-function renderEngSel(){document.getElementById('engSel').innerHTML=[{id:'all',l:'Все двигатели'}].concat(ENGINES.map(e=>({id:e.id,l:'HE '+e.name}))).map(e=>`<button class="eng-opt${e.id===curEng?' act':''}" onclick="fEng('${e.id}',this)"><span class="eng-dot"></span>${e.l}</button>`).join('')}
-function renderCatFil(){document.getElementById('catFil').innerHTML=CATO.map(c=>`<button class="cat-o${c===curCat?' act':''}" onclick="fCat('${c}',this)">${CATS[c]} <span class="cat-cnt">${c==='all'?PR.length:PR.filter(p=>p.cat===c).length}</span></button>`).join('')}
-function fEng(e,el){curEng=e;document.querySelectorAll('.eng-opt').forEach(x=>x.classList.remove('act'));el.classList.add('act');renderParts()}
-function fCat(c,el){curCat=c;document.querySelectorAll('.cat-o').forEach(x=>x.classList.remove('act'));el.classList.add('act');renderParts()}
-function renderParts(){let p=PR;if(curEng!=='all')p=p.filter(x=>x.eng.includes(curEng));if(curCat!=='all')p=p.filter(x=>x.cat===curCat);const q=(document.getElementById('pSearch')?.value||'').toLowerCase();if(q)p=p.filter(x=>x.name.toLowerCase().includes(q)||x.sku.toLowerCase().includes(q));document.getElementById('pShown').textContent=p.length;
-document.getElementById('pGrid').innerHTML=p.map(x=>`<div class="p-card" onclick="addQ(${x.id})"><div class="p-sku">${x.sku}</div><div class="p-name">${x.name}</div><div class="p-compat">${x.eng.map(e=>e.toUpperCase()).join(' · ')}</div>${x.note?`<div class="p-note">${x.note}</div>`:''}<div class="p-foot"><div class="p-price">Запрос цены</div><button class="btn btn-xs btn-s">+</button></div></div>`).join('')}
-
-function addQ(id){if(!quote.find(q=>q.id===id)){quote.push(PR.find(p=>p.id===id));renderQuote();if(!document.getElementById('qPan').classList.contains('open'))toggleQ()}}
+// VELTORY Engineering Platform - HE Paramotores
+(function(){const sky=document.getElementById('sky');for(let i=0;i<120;i++){const s=document.createElement('div');s.className='star '+(Math.random()>.8?'t3':Math.random()>.5?'t2':'t1');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*8+'s';sky.appendChild(s)}})();
+const I18N={ru:{nav_home:'Главная',nav_about:'О компании',nav_engines:'Двигатели',nav_compare:'Сравнение',nav_parts:'Запчасти',nav_build:'Конфигуратор',nav_individual:'INDIVIDUAL',nav_service:'Сервис',nav_dash:'Кабинет',nav_dealers:'Дилеры',nav_contact:'Контакты',hero_sub:'Engineering Atelier & Service Center',hero_h1:'ПРОЕКТИРУЕМ.<br>ПРОИЗВОДИМ.<br><em>ОБСЛУЖИВАЕМ.</em>',hero_desc:'VELTORY \u2014 инженерная платформа для парамоторных двигателей HE Paramotores. Оригинальные запчасти, реальные цены DDP Москва.',hero_engines:'Двигатели',hero_parts:'Каталог запчастей',stat_parts:'запчастей',stat_models:'моделей',stat_ddp:'Москва',stat_he:'Paramotores',card_catalog:'Каталог запчастей',card_catalog_d:'330+ позиций HE Paramotores',card_config:'Конфигуратор',card_config_d:'Соберите парамотор за 5 шагов',card_service:'Сервис-центр',card_service_d:'Диагностика, ТО, капремонт',card_dash:'Кабинет владельца',card_dash_d:'Паспорт, история, документы',about_h1:'О КОМПАНИИ',about_sub:'VELTORY \u2014 инженерная платформа, официальный партнёр HE Paramotores.',about_mission:'Миссия',about_mission_h:'СДЕЛАТЬ ПОЛЁТ<br>ДОСТУПНЫМ И БЕЗОПАСНЫМ',about_mission_d:'Оригинальные запчасти HE Paramotores с доставкой DDP Москва.',about_he:'Оригинальные запчасти',about_ddp:'Доставка включена',about_search_t:'Поиск по коду',about_search_d:'Артикулы HE',about_warr_t:'Гарантия',about_warr_d:'Оригинальное качество',about_history:'История',tl_2014:'Создание компании и первого двигателя.',tl_2016:'Запуск серийного производства RS-185.',tl_2018:'Расширение линейки: RS-206 и MV1 100cc.',tl_2020:'Двухцилиндровый MV2 и компактный MVL.',tl_2024:'Запуск инженерной платформы VELTORY.',engines_h1:'ДВИГАТЕЛИ HE PARAMOTORES',engines_sub:'Пять моделей: MVL 80cc, MV1 100cc, MV2 130cc, RS-185, RS-206.',compare_h1:'СРАВНЕНИЕ МОДЕЛЕЙ',compare_sub:'Выберите модели для сравнения характеристик.',parts_h1:'КАТАЛОГ ЗАПЧАСТЕЙ',parts_sub:'Оригинальные запчасти HE. Цены DDP Москва.',sb_engine:'Двигатель',sb_group:'Группа',p_positions:'позиций',btn_add_quote:'В запрос',build_h1:'КОНФИГУРАТОР',build_sub:'Соберите парамотор за 5 шагов.',ind_sub:'Персональная сборка парамотора под ваши задачи.',ind_concept:'Концепция',ind_concept_h:'ВАШ ПАРАМОТОР.<br>ВАШИ ПРАВИЛА.',ind_concept_d:'Каждый VELTORY Individual собирается вручную под конкретного пилота.',ind_select_t:'Выбор компонентов',ind_select_d:'5 двигателей, 3 рамы, 2 подвески',ind_assembly_t:'Ручная сборка',ind_assembly_d:'Каждый узел \u2014 контроль качества',ind_test_t:'Стендовые испытания',ind_test_d:'Динамометр, вибрация, ресурс',ind_passport_t:'Цифровой паспорт',ind_passport_d:'QR-код, история, гарантия',instal_label:'Installment Plan',instal_h3:'РАССРОЧКА',instal_desc:'Рассрочка на парамоторы и компоненты VELTORY Individual. Без переплат.',instal_pct:'Переплата',instal_months:'Месяцев',instal_first:'Первый взнос',instal_approval:'Одобрение',instal_apply:'Оставить заявку',service_h1:'СЕРВИС-ЦЕНТР',service_sub:'Обслуживание с оригинальными запчастями HE Paramotores.',svc_diag:'Диагностика',svc_diag_d:'Компьютерная диагностика двигателя.',svc_to:'Плановое ТО',svc_to_d:'Расходники HE по моточасам.',svc_cap:'Капремонт',svc_cap_d:'Полная разборка, замена, стенд.',calc_label:'Maintenance Calculator',calc_h3:'КАЛЬКУЛЯТОР ТО',calc_hours:'Моточасы:',calc_warn:'ТО просрочено! Запишитесь на обслуживание.',calc_current:'Текущая наработка',calc_next:'Следующее ТО',calc_book:'Записаться на ТО',book_h3:'ЗАПИСЬ НА ОБСЛУЖИВАНИЕ',f_name:'Имя',f_phone:'Телефон',f_engine:'Двигатель',f_desc:'Описание',f_message:'Сообщение',btn_submit:'Отправить',dash_h1:'КАБИНЕТ ВЛАДЕЛЬЦА',btn_find:'Найти',dealers_h1:'ДИЛЕРСКАЯ СЕТЬ',dealers_sub:'Авторизованные партнёры VELTORY по России и СНГ.',contact_h1:'КОНТАКТЫ',contact_phone:'Телефон',contact_form_h:'НАПИСАТЬ НАМ',q_title:'ЗАПРОС ПРЕДЛОЖЕНИЯ',btn_send:'Отправить',btn_back:'Назад',btn_next:'Далее',btn_summary:'Итого',btn_details:'Детали',btn_view:'Подробнее'},en:{nav_home:'Home',nav_about:'About',nav_engines:'Engines',nav_compare:'Compare',nav_parts:'Parts',nav_build:'Configurator',nav_individual:'INDIVIDUAL',nav_service:'Service',nav_dash:'Dashboard',nav_dealers:'Dealers',nav_contact:'Contact',hero_sub:'Engineering Atelier & Service Center',hero_h1:'WE ENGINEER.<br>WE BUILD.<br><em>WE SERVICE.</em>',hero_desc:'VELTORY \u2014 engineering platform for HE Paramotores engines. Original parts, real DDP prices Moscow.',hero_engines:'Engines',hero_parts:'Parts Catalog',stat_parts:'parts',stat_models:'models',stat_ddp:'Moscow',stat_he:'Paramotores',card_catalog:'Parts Catalog',card_catalog_d:'330+ HE Paramotores positions',card_config:'Configurator',card_config_d:'Build your paramotor in 5 steps',card_service:'Service Center',card_service_d:'Diagnostics, maintenance, overhaul',card_dash:'Owner Dashboard',card_dash_d:'Passport, history, documents',about_h1:'ABOUT US',about_sub:'VELTORY \u2014 engineering platform, official HE Paramotores partner.',about_mission:'Mission',about_mission_h:'MAKING FLIGHT<br>ACCESSIBLE AND SAFE',about_mission_d:'Original HE Paramotores parts with DDP delivery Moscow.',about_he:'Original parts',about_ddp:'Delivery included',about_search_t:'Search by code',about_search_d:'HE part numbers',about_warr_t:'Warranty',about_warr_d:'Original quality',about_history:'History',tl_2014:'Company founding and first engine.',tl_2016:'RS-185 serial production launch.',tl_2018:'Lineup expansion: RS-206 and MV1 100cc.',tl_2020:'Twin-cylinder MV2 and compact MVL.',tl_2024:'VELTORY Engineering Platform launch.',engines_h1:'HE PARAMOTORES ENGINES',engines_sub:'Five models: MVL 80cc, MV1 100cc, MV2 130cc, RS-185, RS-206.',compare_h1:'MODEL COMPARISON',compare_sub:'Select models to compare specifications.',parts_h1:'PARTS CATALOG',parts_sub:'Original HE parts. DDP Moscow prices.',sb_engine:'Engine',sb_group:'Group',p_positions:'positions',btn_add_quote:'Add to quote',build_h1:'CONFIGURATOR',build_sub:'Build your paramotor in 5 steps.',ind_sub:'Personal paramotor assembly for your needs.',ind_concept:'Concept',ind_concept_h:'YOUR PARAMOTOR.<br>YOUR RULES.',ind_concept_d:'Every VELTORY Individual is hand-built for a specific pilot.',ind_select_t:'Component Selection',ind_select_d:'5 engines, 3 frames, 2 harnesses',ind_assembly_t:'Hand Assembly',ind_assembly_d:'Every unit \u2014 quality control',ind_test_t:'Dyno Testing',ind_test_d:'Dynamometer, vibration, endurance',ind_passport_t:'Digital Passport',ind_passport_d:'QR code, history, warranty',instal_label:'Installment Plan',instal_h3:'INSTALLMENTS',instal_desc:'Installment plan for VELTORY Individual paramotors and components. No overpayment.',instal_pct:'Overpayment',instal_months:'Months',instal_first:'Down payment',instal_approval:'Approval',instal_apply:'Apply now',service_h1:'SERVICE CENTER',service_sub:'Maintenance with original HE Paramotores parts.',svc_diag:'Diagnostics',svc_diag_d:'Computer engine diagnostics.',svc_to:'Scheduled Maintenance',svc_to_d:'HE consumables by hours.',svc_cap:'Overhaul',svc_cap_d:'Full teardown, replacement, dyno.',calc_label:'Maintenance Calculator',calc_h3:'MAINTENANCE CALCULATOR',calc_hours:'Engine hours:',calc_warn:'Maintenance overdue! Book a service.',calc_current:'Current hours',calc_next:'Next service',calc_book:'Book Service',book_h3:'SERVICE BOOKING',f_name:'Name',f_phone:'Phone',f_engine:'Engine',f_desc:'Description',f_message:'Message',btn_submit:'Submit',dash_h1:'OWNER DASHBOARD',btn_find:'Search',dealers_h1:'DEALER NETWORK',dealers_sub:'Authorized VELTORY partners across Russia and CIS.',contact_h1:'CONTACTS',contact_phone:'Phone',contact_form_h:'WRITE TO US',q_title:'QUOTE REQUEST',btn_send:'Send',btn_back:'Back',btn_next:'Next',btn_summary:'Total',btn_details:'Details',btn_view:'Details'}};
+let currentLang='ru';
+function t(key){return(I18N[currentLang]&&I18N[currentLang][key])||key}
+function setLang(lang){currentLang=lang;document.querySelectorAll('.lang-btn').forEach(b=>{b.classList.toggle('active',b.textContent.trim().toLowerCase()===lang)});document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(el.tagName==='INPUT'||el.tagName==='TEXTAREA')el.placeholder=t(k);else el.innerHTML=t(k)});document.documentElement.lang=lang}
+const EUR2RUB=100;
+const ENGINES=[{id:'mvl',name:'MVL 80cc',desc:'Light. Ideal up to 80 kg.',badge:'Light',specs:{Displacement:'80 cc',Weight:'11.2 kg',Consumption:'3.8 l/h',Thrust:'55 kg'},cmp:{volume:80,power:23,weight:11.2,carb:'Walbro',trans:'Direct',start:'Manual',use:'Training'}},{id:'mv1',name:'MV1 100cc',desc:'Bestseller. Power and weight balance.',badge:'Bestseller',specs:{Displacement:'100 cc',Weight:'13.5 kg',Consumption:'4.5 l/h',Thrust:'68 kg'},cmp:{volume:100,power:25,weight:13.5,carb:'Walbro WT-637',trans:'Poly V Belt',start:'Manual/Electric',use:'All-round'}},{id:'mv2',name:'MV2 130cc',desc:'Twin-cylinder. Heavy and tandem.',badge:'2-cyl.',specs:{Displacement:'130 cc',Weight:'18.8 kg',Consumption:'6.2 l/h',Thrust:'85 kg'},cmp:{volume:130,power:29,weight:18.8,carb:'Walbro WT-985',trans:'Poly V Belt',start:'Electric',use:'Tandem/Heavy'}},{id:'rs185',name:'RS-185',desc:'Reliable workhorse. Proven design.',badge:'Proven',specs:{Displacement:'185 cc',Weight:'15.2 kg',Consumption:'5.0 l/h',Thrust:'72 kg'},cmp:{volume:185,power:26,weight:15.2,carb:'Walbro',trans:'Poly V Belt',start:'Manual',use:'Touring'}},{id:'rs206',name:'RS-206',desc:'High-performance single cylinder.',badge:'Sport',specs:{Displacement:'206 cc',Weight:'16.5 kg',Consumption:'5.5 l/h',Thrust:'78 kg'},cmp:{volume:206,power:29,weight:16.5,carb:'Walbro WT-985',trans:'Poly V Belt',start:'Electric',use:'Sport/Route'}}];
+const CMP_LABELS={volume:'Displacement',power:'Power (hp)',weight:'Weight (kg)',carb:'Carburetor',trans:'Transmission',start:'Starter',use:'Use case'};
+const TPL=[{n:'Starter assembly',i:'RF-001',c:'starter',eur:231},{n:'Rear panel',i:'RF-002',c:'crankcase',eur:58.56},{n:'Bolt M8',i:'RF-003',c:'fastener',eur:0.73},{n:'Bolt avell. M6X25',i:'RF-004',c:'fastener',eur:0.73},{n:'Female silentblock',i:'RF-005',c:'misc',eur:4.88},{n:'Bolt M8X10',i:'RF-006',c:'fastener',eur:0.73},{n:'Bolt avell. M6x25 (2)',i:'RF-007',c:'fastener',eur:15},{n:'Mixed silentblock',i:'RF-008',c:'misc',eur:4.88},{n:'Bolt M6X20 ISO',i:'RF-009',c:'fastener',eur:0.61},{n:'Wedge washer M6',i:'RF-010',c:'fastener',eur:0.3},{n:'Crankshaft nut M10',i:'RF-011',c:'fastener',eur:0.79},{n:'Crankshaft washer M10',i:'RF-012',c:'fastener',eur:0.41},{n:'Start plate',i:'RF-013',c:'starter',eur:6.78},{n:'Start disc washer',i:'RF-014',c:'starter',eur:2.19},{n:'Magnetic plate',i:'RF-015',c:'ignition',eur:92},{n:'Coil bolt M5X20',i:'RF-016',c:'ignition',eur:0.61},{n:'Ignition coil',i:'RF-018',c:'ignition',eur:54},{n:'Coil plate',i:'RF-020',c:'ignition',eur:59},{n:'Pulley nut M6',i:'RF-021',c:'drive',eur:0.3},{n:'Crankcase mount',i:'RF-022',c:'crankcase',eur:2},{n:'Carb rubber boot',i:'RF-023',c:'carb',eur:2},{n:'Crankcase side A',i:'RF-024',c:'crankcase',eur:198},{n:'Bearing 6204',i:'RF-026',c:'bearing',eur:11},{n:'Needle bearing',i:'RF-027',c:'bearing',eur:14},{n:'Crankshaft',i:'RF-028',c:'crankcase',eur:256},{n:'Crankcase side B',i:'RF-030',c:'crankcase',eur:198},{n:'Pulley plate bolt',i:'RF-032',c:'drive',eur:2},{n:'Pulley wedge M8',i:'RF-033',c:'drive',eur:1.3},{n:'Pulley plate',i:'RF-035',c:'drive',eur:23},{n:'Small pulley set',i:'RF-040',c:'drive',eur:85},{n:'Large pulley set',i:'RF-041',c:'drive',eur:147},{n:'Belt',i:'RF-042',c:'drive',eur:41},{n:'Reed box',i:'RF-047',c:'reed',eur:31.4},{n:'Reed box cover',i:'RF-049',c:'reed',eur:10.45},{n:'Carburetor',i:'RF-054',c:'carb',eur:1.7},{n:'Carb clamp plate',i:'RF-057',c:'carb',eur:3.84},{n:'Rubber filter',i:'RF-062',c:'fuel',eur:5.36},{n:'Air filter',i:'RF-063',c:'fuel',eur:30.74},{n:'Piston pin',i:'RF-066',c:'piston',eur:6.24},{n:'Piston',i:'RF-067',c:'piston',eur:103},{n:'Piston rings',i:'RF-068',c:'piston',eur:29},{n:'Cylinder gasket',i:'RF-069',c:'piston',eur:3},{n:'Cylinder',i:'RF-071',c:'piston',eur:317},{n:'Cylinder head',i:'RF-073',c:'piston',eur:146},{n:'Spark plug',i:'RF-075',c:'ignition',eur:5.36},{n:'Plug cap',i:'RF-076',c:'ignition',eur:10},{n:'Starter housing',i:'RF-094',c:'starter',eur:25.5},{n:'Eccentric',i:'RF-100',c:'drive',eur:23},{n:'Bearing 6004',i:'RF-102',c:'bearing',eur:10.98},{n:'Large alu pulley',i:'RF-105',c:'drive',eur:85.4},{n:'Clutch base',i:'RF-106',c:'drive',eur:49},{n:'Clutch pads',i:'RF-108',c:'drive',eur:11},{n:'Bearing 6002',i:'RF-113',c:'bearing',eur:11},{n:'Small reducer pulley',i:'RF-114',c:'drive',eur:55},{n:'Ball joint',i:'RF-121',c:'exhaust',eur:3.84},{n:'Exhaust ball support',i:'RF-122',c:'exhaust',eur:21.9},{n:'Curved pipe',i:'RF-127',c:'exhaust',eur:55},{n:'Exhaust pipe',i:'RF-132',c:'exhaust',eur:146},{n:'Silencer',i:'RF-135',c:'exhaust',eur:91.5},{n:'Silencer clamp',i:'RF-139',c:'exhaust',eur:7.8}];
+const MV2_OVR={'RF-062':13.76};
+let PARTS=[];let _id=1;
+['mv1','mv2','mvl','rs185','rs206'].forEach(eng=>{TPL.forEach(t=>{let eur=t.eur;if(eng==='mv2'&&MV2_OVR[t.i])eur=MV2_OVR[t.i];PARTS.push({id:_id++,sku:eng.toUpperCase()+'-'+t.i,name:t.n,cat:t.c,eng:[eng],price:Math.round(eur*EUR2RUB),eur:eur,stock:eur>0?1:0})})});
+const CATS={all:'All',piston:'Piston',crankcase:'Crankcase',carb:'Carburetor',fuel:'Filters',ignition:'Ignition',exhaust:'Exhaust',starter:'Starter',drive:'Drive',reed:'Reed valve',bearing:'Bearings',fastener:'Fasteners',misc:'Misc'};
+const CATO=['all','piston','crankcase','carb','fuel','ignition','exhaust','starter','drive','reed','bearing','fastener','misc'];
+const BUILD=[{key:'engine',title:'Engine',options:[{id:'mvl',name:'MVL 80cc',desc:'Up to 80 kg.',price:145000,specs:{Power:'23 hp',Weight:'11.2 kg'}},{id:'mv1',name:'MV1 100cc',desc:'Balanced.',price:185000,specs:{Power:'25 hp',Weight:'13.5 kg'}},{id:'mv2',name:'MV2 130cc',desc:'Heavy pilots.',price:265000,specs:{Power:'29 hp',Weight:'18.8 kg'}},{id:'rs185',name:'RS-185',desc:'Reliable.',price:165000,specs:{Power:'26 hp',Weight:'15.2 kg'}},{id:'rs206',name:'RS-206',desc:'Sport.',price:195000,specs:{Power:'29 hp',Weight:'16.5 kg'}}]},{key:'frame',title:'Frame',options:[{id:'f1',name:'Classic',price:38000,specs:{Material:'Steel'}},{id:'f2',name:'Aero',price:58000,specs:{Material:'Al 7075'}},{id:'f3',name:'Titan',price:125000,specs:{Material:'Ti Gr.5'}}]},{key:'harness',title:'Harness',options:[{id:'h1',name:'Standard',price:18000,specs:{Protection:'Foam'}},{id:'h2',name:'Air',price:32000,specs:{Protection:'Airbag'}}]},{key:'prop',title:'Propeller',options:[{id:'p1',name:'Dural 2L',price:14000,specs:{Material:'Dural'}},{id:'p2',name:'Carbon 2L',price:28000,specs:{Material:'Carbon'}}]},{key:'acc',title:'Accessories',options:[{id:'a1',name:'Tank 12L',price:4500,specs:{Volume:'12L'}},{id:'a2',name:'Tank 18L',price:6200,specs:{Volume:'18L'}}]}];
+const EDB={'HE-2024-MV1-00487':{model:'MV1 100cc',year:2024,serial:'HE-2024-MV1-00487',status:'Under warranty',owner:'Sergey M.',reg:'15.03.2024',warr:'14.03.2026',hours:87,lastTO:'45 h',nextTO:'100 h',history:[{d:'12.09.2024',t:'TO-45',desc:'Spark plug, air filter, gasket.',cost:'4 200 RUB',tech:'Ivanov A.V.'},{d:'15.03.2024',t:'Entry',desc:'Registration.',cost:'--',tech:'Sabitov R.R.'}],docs:[{n:'Passport',t:'PDF'},{n:'MV1 Manual',t:'PDF'},{n:'Warranty card',t:'PDF'},{n:'HE catalog',t:'PDF'}]},'HE-2023-RS206-00112':{model:'RS-206',year:2023,serial:'HE-2023-RS206-00112',status:'Warranty expired',owner:'Andrey K.',reg:'08.07.2023',warr:'07.07.2025',hours:312,lastTO:'300 h',nextTO:'350 h',history:[{d:'03.04.2025',t:'TO-300',desc:'Rings, bearings, seals. Overhaul.',cost:'28 400 RUB',tech:'Sabitov R.R.'},{d:'15.09.2023',t:'TO-100',desc:'Plugs, filter, rope.',cost:'3 800 RUB',tech:'Ivanov A.V.'}],docs:[{n:'Passport',t:'PDF'},{n:'RS206 Manual',t:'PDF'},{n:'HE catalog',t:'PDF'}]}};
+const DEALERS=[{name:'VELTORY Moscow',city:'Moscow',addr:'ul. Aviatorov 12, bld.3',phone:'+7 495 123-45-67',tags:['sales','service']},{name:'HE Centr SPb',city:'Saint Petersburg',addr:'Liteyny pr. 48',phone:'+7 812 234-56-78',tags:['sales','training']},{name:'Kazan Paramotor',city:'Kazan',addr:'ul. Baumana 32',phone:'+7 843 345-67-89',tags:['sales']},{name:'Sochi Fly Club',city:'Sochi',addr:'Kurortny pr. 76',phone:'+7 862 456-78-90',tags:['service','training']},{name:'Minsk Aero',city:'Minsk',addr:'pr. Nezavisimosti 110',phone:'+375 17 567-89-01',tags:['sales','service']}];
+let curEng='all',curCat='all',quote=[],buildSel={},cmpSel=['mv1','mv2'];
+function switchPage(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.nav-tab').forEach(x=>x.classList.remove('active'));const el=document.getElementById('page-'+p);if(el)el.classList.add('active');const nav=document.querySelector('.nav-tab[data-p="'+p+'"]');if(nav)nav.classList.add('active');document.getElementById('navTabs').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>{document.querySelectorAll('.page.active .reveal').forEach(el=>el.classList.add('vis'))},100)}
+function renderEngines(){document.getElementById('engGrid').innerHTML=ENGINES.map(e=>'<div class="eng-card reveal"><div class="eng-vis"><span class="eng-vis-i">&#9670;</span></div><div class="eng-body"><span class="badge badge-gold">'+e.badge+'</span><h3 style="margin-top:.5rem">'+e.name+'</h3><p class="desc">'+e.desc+'</p><div class="eng-specs">'+Object.entries(e.specs).map(([k,v])=>'<div class="eng-spec"><span class="eng-spec-k">'+k+'</span><span class="eng-spec-v">'+v+'</span></div>').join('')+'</div><div class="eng-acts"><button class="btn btn-g btn-sm" onclick="switchPage(\'parts\')">'+t('btn_view')+'</button><button class="btn btn-o btn-sm" onclick="switchPage(\'contact\')">'+t('btn_send')+'</button></div></div></div>').join('')}
+function renderCmp(){document.getElementById('cmpChecks').innerHTML=ENGINES.map(e=>'<label class="cmp-chk '+(cmpSel.includes(e.id)?'active':'')+'" onclick="toggleCmp(\''+e.id+'\')"><input type="checkbox" '+(cmpSel.includes(e.id)?'checked':'')+'>'+e.name+'</label>').join('');const rows=Object.keys(CMP_LABELS);const cols=ENGINES.filter(e=>cmpSel.includes(e.id));let h='<thead><tr><th></th>'+cols.map(e=>'<th>'+e.name+'</th>').join('')+'</tr></thead><tbody>';rows.forEach(r=>{const vals=cols.map(e=>e.cmp[r]);const isNum=typeof vals[0]==='number';const best=isNum?Math.max(...vals):null;h+='<tr><td style="color:var(--td);font-family:var(--fm);font-size:.7rem;text-transform:uppercase;letter-spacing:.1em">'+CMP_LABELS[r]+'</td>';cols.forEach(e=>{const v=e.cmp[r];h+='<td class="'+(isNum&&v===best?'best':'')+'">'+v+'</td>'});h+='</tr>'});h+='</tbody>';document.getElementById('cmpTable').innerHTML=h}
+function toggleCmp(id){if(cmpSel.includes(id)){if(cmpSel.length>1)cmpSel=cmpSel.filter(x=>x!==id)}else{if(cmpSel.length<3)cmpSel.push(id)}renderCmp()}
+function renderEngSel(){document.getElementById('engSel').innerHTML=[{id:'all',l:'All'}].concat(ENGINES.map(e=>({id:e.id,l:e.name}))).map(e=>'<button class="eng-opt '+(e.id===curEng?'active':'')+'" onclick="filterEng(\''+e.id+'\',this)"><span class="eng-dot"></span>'+e.l+'</button>').join('')}
+function renderCatFil(){const base=curEng!=='all'?PARTS.filter(p=>p.eng.includes(curEng)):PARTS;document.getElementById('catFil').innerHTML=CATO.map(c=>'<button class="cat-o '+(c===curCat?'active':'')+'" onclick="filterCat(\''+c+'\',this)">'+CATS[c]+' <span class="cat-cnt">'+(c==='all'?base.length:base.filter(p=>p.cat===c).length)+'</span></button>').join('')}
+function filterEng(e,el){curEng=e;document.querySelectorAll('.eng-opt').forEach(x=>x.classList.remove('active'));el.classList.add('active');renderCatFil();renderParts();renderExploded()}
+function filterCat(c,el){curCat=c;document.querySelectorAll('.cat-o').forEach(x=>x.classList.remove('active'));el.classList.add('active');renderParts()}
+function getParts(){let p=PARTS;if(curEng!=='all')p=p.filter(x=>x.eng.includes(curEng));if(curCat!=='all')p=p.filter(x=>x.cat===curCat);const q=(document.getElementById('pSearch')?.value||'').toLowerCase();if(q)p=p.filter(x=>x.name.toLowerCase().includes(q)||x.sku.toLowerCase().includes(q));return p}
+function renderParts(){const parts=getParts();document.getElementById('pShown').textContent=parts.length;document.getElementById('pGrid').innerHTML=parts.map(p=>'<div class="p-card" onclick="addQ('+p.id+')"><div class="p-img"><span class="p-img-i">&#9881;</span><span class="badge '+(p.stock?'badge-g':'badge-r')+'">'+(p.stock?'In stock':'Order')+'</span></div><div class="p-body"><div class="p-sku">'+p.sku+'</div><div class="p-name">'+p.name+'</div><div class="p-compat">'+p.eng.map(e=>e.toUpperCase()).join(' / ')+'</div><div class="p-foot"><div class="p-price">'+(p.price>0?p.price.toLocaleString()+' RUB':'')+(p.price>0?' <small>EUR '+p.eur.toFixed(2)+'</small>':'')+'</div><button class="btn btn-o btn-xs">+</button></div></div></div>').join('')}
+function renderExploded(){const svg=document.getElementById('explodedSvg');const keyParts=curEng!=='all'?PARTS.filter(p=>p.eng.includes(curEng)&&['piston','crankcase','carb','fuel','ignition','exhaust','starter','drive','bearing'].includes(p.cat)).slice(0,12):[];const pts=[[250,40],[250,80],[200,110],[300,110],[180,150],[320,150],[250,150],[220,190],[280,190],[250,220],[200,250],[300,250]];let s='<rect x="140" y="20" width="220" height="260" rx="20" fill="none" stroke="#161c30" stroke-width="1"/>';s+='<text x="250" y="15" text-anchor="middle" fill="#252a3a" font-family="JetBrains Mono" font-size="8" letter-spacing="2">ENGINE OVERVIEW</text>';keyParts.forEach((p,i)=>{const[cx,cy]=pts[i]||[250,150];s+='<circle class="exploded-dot" cx="'+cx+'" cy="'+cy+'" r="8" fill="#c4956a" opacity="0.15" stroke="#c4956a" stroke-width="1" data-id="'+p.id+'" data-name="'+p.name+'" data-sku="'+p.sku+'" data-price="'+p.eur+'" onmouseenter="showExplodedTip(event,this)" onmouseleave="hideExplodedTip()" onclick="addQ('+p.id+')"/>';s+='<text x="'+cx+'" y="'+(cy+3)+'" text-anchor="middle" fill="#c4956a" font-family="JetBrains Mono" font-size="7" pointer-events="none">'+p.sku.split('-').pop()+'</text>'});if(!keyParts.length)s+='<text x="250" y="150" text-anchor="middle" fill="#252a3a" font-family="JetBrains Mono" font-size="10">Select an engine to view diagram</text>';svg.innerHTML=s}
+function showExplodedTip(e,el){const tip=document.getElementById('explodedTip');const wrap=document.getElementById('explodedWrap');const r=wrap.getBoundingClientRect();tip.querySelector('.tt-name').textContent=el.dataset.name;tip.querySelector('.tt-sku').textContent=el.dataset.sku;tip.querySelector('.tt-price').textContent='EUR '+parseFloat(el.dataset.price).toFixed(2);tip.style.left=(e.clientX-r.left+10)+'px';tip.style.top=(e.clientY-r.top-60)+'px';tip.classList.add('show')}
+function hideExplodedTip(){document.getElementById('explodedTip').classList.remove('show')}
+function addQ(id){if(!quote.find(q=>q.id===id)){quote.push(PARTS.find(p=>p.id===id));renderQuote();if(!document.getElementById('qPan').classList.contains('open'))toggleQ()}}
 function rmQ(id){quote=quote.filter(q=>q.id!==id);renderQuote()}
-function renderQuote(){const cnt=document.getElementById('qCnt');cnt.textContent=quote.length||'';if(!quote.length){document.getElementById('qItems').innerHTML='<div class="q-empty">Добавьте запчасти из каталога</div>';document.getElementById('qTotal').innerHTML='';return}
-document.getElementById('qItems').innerHTML=quote.map(q=>`<div class="q-item"><div class="q-item-info"><div class="q-item-name">${q.name}</div><div class="q-item-sku">${q.sku}</div></div><button class="q-item-rm" onclick="rmQ(${q.id})">✕</button></div>`).join('');
-document.getElementById('qTotal').innerHTML=`<div class="q-total"><div class="q-total-l">Позиций</div><div class="q-total-v">${quote.length}</div></div>`}
+function renderQuote(){const items=document.getElementById('qItems'),total=document.getElementById('qTotal'),cnt=document.getElementById('qCnt');cnt.textContent=quote.length||'';if(!quote.length){items.innerHTML='<div class="q-empty">Add parts to quote</div>';total.innerHTML='';return}items.innerHTML=quote.map(q=>'<div class="q-item"><div class="q-item-img">&#9881;</div><div class="q-item-info"><div class="q-item-name">'+q.name+'</div><div class="q-item-sku">'+q.sku+'</div></div><div class="q-item-price">EUR '+q.eur.toFixed(2)+'</div><button class="q-item-rm" onclick="rmQ('+q.id+')">&#10005;</button></div>').join('');const sum=quote.reduce((s,q)=>s+q.price,0);total.innerHTML='<div class="q-total"><div class="q-total-l">'+t('btn_summary')+'</div><div class="q-total-v">'+sum.toLocaleString()+' RUB</div></div>'}
 function toggleQ(){document.getElementById('qPan').classList.toggle('open');document.getElementById('qOv').classList.toggle('open')}
-function submitQ(){if(!quote.length)return;quote=[];renderQuote();toggleQ();alert('Запрос отправлен')}
-
-function getBuildTotal(){let total=0;BUILD.forEach(step=>{const opt=step.opts.find(x=>x.id===bldSel[step.key]);if(opt)total+=opt.price||0});return total}
-function getSelectedEngine(){return BUILD[0].opts.find(x=>x.id===bldSel.engine)||BUILD[0].opts[0]}
-function formatRub(v){return v>0?v.toLocaleString('ru-RU')+' ₽':'Запрос цены'}
-function renderEngineCompareRow(label,value,current){const nv=parseFloat(String(value).replace(',','.'));const cv=parseFloat(String(current).replace(',','.'));const better=Number.isFinite(nv)&&Number.isFinite(cv)&&nv>cv;return `<div class="bld-compare-row${better?' better':''}"><span>${label}</span><strong>${value}</strong></div>`}
-function renderEngineCompareCard(opt){const current=getSelectedEngine();return `<div class="bld-compare">${Object.entries(opt.s).map(([k,v])=>renderEngineCompareRow(k,v,current.s[k]||v)).join('')}</div>`}
-function updateBldProgress(){const total=BUILD.length;const shown=Math.min(curBld,total-1)+1;const pct=Math.round((shown/total)*100);document.getElementById('bldProgressCopy').innerHTML=`Шаг ${shown} из ${total} <span>— ${pct}%</span>`;document.getElementById('bldProgressLabel').textContent=BUILD[Math.min(curBld,total-1)].title;document.getElementById('bldProgressFill').style.width=`${pct}%`}
-function initBld(){document.getElementById('bldSteps').innerHTML=BUILD.map((s,i)=>`<button class="bld-step${i===0?' act':''}" data-s="${i}" onclick="goBld(${i})"><span class="bld-n">${i+1}</span>${s.title}</button>${i<BUILD.length-1?'<div class="bld-div"></div>':''}`).join('');updateBldProgress();renderBld()}
-function renderBld(){const s=BUILD[curBld];const c=document.getElementById('bldPanels');c.innerHTML=`<div><h3 style="margin-bottom:1.2rem">${s.title}</h3><div class="bld-opts">${s.opts.map(o=>`<div class="bld-card${bldSel[s.key]===o.id?' sel':''}${s.key==='engine'?' is-engine':''}" onclick="selBld('${s.key}','${o.id}',this)">${o.sub?`<div class="bld-card-sub">${o.sub}</div>`:''}<h4>${o.name}</h4>${o.ds?`<p class="ds">${o.ds}</p>`:''}${s.key==='engine'?renderEngineCompareCard(o):''}<div style="display:flex;flex-direction:column;gap:.12rem;margin-bottom:.6rem">${Object.entries(o.s).map(([k,v])=>`<div style="font-family:var(--fm);font-size:.55rem;color:var(--tx3);letter-spacing:.08em;display:flex;justify-content:space-between"><span>${k}</span><span style="color:var(--tx2);font-weight:${s.key==='engine'&&k==='HP'?'700':'500'}">${v}</span></div>`).join('')}</div><div class="bld-card-price">${formatRub(o.price)}${s.key==='engine'?`<small>от ${formatRub(o.price)}</small>`:''}</div></div>`).join('')}</div></div>`;
-if(Object.keys(bldSel).length>=BUILD.length){const total=getBuildTotal();let rows='';BUILD.forEach(step=>{const opt=step.opts.find(x=>x.id===bldSel[step.key]);if(opt)rows+=`<div class="bld-sum-i"><span class="bld-sum-l">${step.title}</span><span>${opt.name}${opt.price>0?' — '+formatRub(opt.price):''}</span></div>`});c.innerHTML+=`<div class="bld-sum"><h4 style="margin-bottom:.8rem">Комплектация</h4>${rows}<div class="bld-sum-t"><div class="bld-sum-tl">Итого</div><div class="bld-sum-tv">${formatRub(total)}</div></div><div class="bld-fin"><div class="bld-fin-top"><div><div class="bld-sum-l" style="margin-bottom:.35rem">Рассрочка</div><h4 style="font-size:1.05rem">от ${Math.round(total/36).toLocaleString('ru-RU')} ₽/мес</h4></div><div class="bld-progress-note">Без учёта страховки и доставки</div></div><div class="bld-fin-grid">${FINANCE_MONTHS.map(m=>`<div class="bld-fin-card"><span>${m} месяцев</span><strong>${Math.round(total/m).toLocaleString('ru-RU')} ₽/мес</strong><small>${formatRub(total)} / ${m}</small></div>`).join('')}</div></div><button class="btn btn-p btn-bl" style="margin-top:1rem" onclick="SP('contact')">Отправить заявку</button></div>`}}
-function selBld(k,id,el){document.querySelectorAll('.bld-card').forEach(x=>x.classList.remove('sel'));el.classList.add('sel');bldSel[k]=id;upBldInd();renderBld()}
-function goBld(n){curBld=Math.max(0,Math.min(BUILD.length-1,n));upBldInd();updateBldProgress();renderBld()}
-function upBldInd(){BUILD.forEach((s,i)=>{const b=document.querySelector(`.bld-step[data-s="${i}"]`);if(b){b.classList.toggle('act',i===curBld);if(bldSel[s.key]){b.classList.add('done');b.querySelector('.bld-n').textContent='✓'}else{b.classList.remove('done');b.querySelector('.bld-n').textContent=i+1}}})}
-
-function lookup(){const input=document.getElementById('serIn').value.trim().toUpperCase();const c=document.getElementById('dashC');const e=EDB[input];if(!e){c.innerHTML=`<div style="text-align:center;padding:2.5rem;color:var(--tx3);font-family:var(--fm);font-size:.75rem"><div style="font-size:1.8rem;margin-bottom:.6rem;opacity:.15">✕</div>Не найден: <strong style="color:var(--tx)">${input||'—'}</strong></div>`;c.classList.add('vis');return}
-const sb=e.status.includes('истекла')?'badge-r':'badge-g';
-c.innerHTML=`<div class="eng-hero"><div class="eng-vis2">HE</div><div><span class="badge ${sb}">${e.status}</span><h2 style="margin-top:.3rem;font-size:1.3rem">HE ${e.model}</h2><div class="mono" style="font-size:.68rem;color:var(--tx3)">${e.serial}</div><div class="eng-meta"><div class="eng-meta-i"><div class="eng-meta-l">Владелец</div><div class="eng-meta-v">${e.owner}</div></div><div class="eng-meta-i"><div class="eng-meta-l">Регистрация</div><div class="eng-meta-v">${e.reg}</div></div><div class="eng-meta-i"><div class="eng-meta-l">Гарантия</div><div class="eng-meta-v">${e.warr}</div></div><div class="eng-meta-i"><div class="eng-meta-l">Год</div><div class="eng-meta-v">${e.year}</div></div></div></div></div>
-<div class="dash-grid"><div class="dash-st"><div class="dash-st-l">Наработка</div><div class="dash-st-v">${e.hours}</div><div class="dash-st-s">моточасов</div></div><div class="dash-st"><div class="dash-st-l">Последнее ТО</div><div class="dash-st-v" style="font-size:1rem">${e.lastTO}</div></div><div class="dash-st"><div class="dash-st-l">Следующее ТО</div><div class="dash-st-v" style="font-size:1rem;color:var(--trr)">${e.nextTO}</div></div></div>
-<div class="dash-sec"><div class="dash-sec-t">История</div><div style="overflow-x:auto"><table class="dash-table"><thead><tr><th>Дата</th><th>Тип</th><th>Описание</th><th>Стоимость</th><th>Мастер</th></tr></thead><tbody>${e.history.map(h=>`<tr><td class="mc">${h.d}</td><td><span class="badge badge-t">${h.t}</span></td><td>${h.desc}</td><td class="mc">${h.cost}</td><td class="mc">${h.tech}</td></tr>`).join('')}</tbody></table></div></div>
-<div class="dash-sec"><div class="dash-sec-t">Документы</div><div class="dash-docs">${e.docs.map(d=>`<div class="dash-doc"><div class="dash-doc-ic">📄</div><div><h5>${d.n}</h5><p>${d.t}</p></div></div>`).join('')}</div></div>`;
-c.classList.add('vis')}
-
-function renderLibrary(){const L=[
-{n:'Мануал R 80 / R 120 · V05.01',d:'Workshop, Installation Instructions and Operator\'s Manual.',t:'PDF',ic:'📖'},
-{n:'Мануал AIRMAX · V01',d:'Установка и эксплуатация. 10.07.2013.',t:'PDF',ic:'📖'},
-{n:'Каталог запчастей (запрос)',d:'Оригинальные компоненты. Запросить у HE.',t:'Запрос',ic:'📑'},
-{n:'Регламент ТО',d:'Моточасы: 25, 50, 100, 200.',t:'PDF',ic:'📋'},
-{n:'Технология Nikasil',d:'Алюминиевое покрытие цилиндров.',t:'PDF',ic:'🔧'},
-{n:'Walbro Carburetor Guide',d:'Настройка и обслуживание карбюратора.',t:'PDF',ic:'📖'},
-];
-document.getElementById('libGrid').innerHTML=L.map(l=>`<div class="lib-card reveal"><div class="lib-ic">${l.ic}</div><h4>${l.n}</h4><p class="ds">${l.d}</p><div class="lib-m"><span>${l.t}</span></div></div>`).join('')}
-
-function submitF(e,msg){e.preventDefault();const b=e.target.querySelector('button[type="submit"]');b.textContent=msg+' ✓';b.style.background='var(--trr)';setTimeout(()=>{b.textContent='Отправить';b.style.background='';e.target.reset()},3000)}
-
+function submitQ(){if(!quote.length)return;const b=document.querySelector('.q-panel .btn-g');b.textContent='SENT \u2713';b.style.background='var(--g)';b.style.borderColor='var(--g)';setTimeout(()=>{b.textContent=t('btn_send');b.style.background='';b.style.borderColor='';quote=[];renderQuote();toggleQ()},2500)}
+function initBuild(){document.getElementById('bldSteps').innerHTML=BUILD.map((s,i)=>'<button class="bld-step '+(i===0?'active':'')+'" data-s="'+i+'" onclick="goBld('+i+')"><span class="bld-n">'+(i+1)+'</span> '+s.title+'</button>'+(i<BUILD.length-1?'<div class="bld-div"></div>':'')).join('');const c=document.getElementById('bldPanels');c.innerHTML=BUILD.map((s,i)=>'<div class="bld-panel '+(i===0?'active':'')+'" data-s="'+i+'"><div class="label">'+s.title+'</div><h2 style="margin:.4rem 0 1.2rem">'+s.title.toUpperCase()+'</h2><div class="bld-opts">'+s.options.map(o=>'<div class="bld-card" data-step="'+s.key+'" data-id="'+o.id+'" onclick="selBld(\''+s.key+'\',\''+o.id+'\',this)"><h4>'+o.name+'</h4><p class="desc">'+(o.desc||'')+'</p><div class="bld-card-specs">'+Object.entries(o.specs).map(([k,v])=>'<div class="bld-card-spec"><span>'+k+'</span><span>'+v+'</span></div>').join('')+'</div><div class="bld-card-price">'+o.price.toLocaleString()+' RUB</div></div>').join('')+'</div><div class="bld-nav"><button class="btn btn-o btn-sm" onclick="goBld('+(i-1)+')"'+(i===0?' disabled style="opacity:.3"':'')+'>'+t('btn_back')+'</button><button class="btn btn-g btn-sm" onclick="goBld('+(i+1)+')">'+t('btn_next')+'</button></div></div>').join('')+'<div class="bld-panel" data-s="'+BUILD.length+'"><div class="label">'+t('btn_summary')+'</div><h2 style="margin:.4rem 0 1.2rem">CONFIGURATION</h2><div class="bld-sum" id="bldSum"></div><div class="bld-nav"><button class="btn btn-o btn-sm" onclick="goBld('+(BUILD.length-1)+')">'+t('btn_back')+'</button><button class="btn btn-g btn-sm" onclick="alert(\'Quote sent!\')">'+t('btn_send')+'</button></div></div>'}
+function selBld(step,id,el){document.querySelectorAll('.bld-card[data-step="'+step+'"]').forEach(c=>c.classList.remove('sel'));el.classList.add('sel');buildSel[step]=id;updBldInd()}
+function goBld(n){if(n<0||n>BUILD.length)return;document.querySelectorAll('.bld-step').forEach((s,i)=>{s.classList.remove('active');if(buildSel[BUILD[i]?.key])s.classList.add('done')});document.querySelectorAll('.bld-panel').forEach(p=>p.classList.remove('active'));const panel=document.querySelector('.bld-panel[data-s="'+n+'"]');if(panel)panel.classList.add('active');const sb=document.querySelector('.bld-step[data-s="'+n+'"]');if(sb){sb.classList.remove('done');sb.classList.add('active')}if(n===BUILD.length)renderBldSum();updBldInd();window.scrollTo({top:document.getElementById('page-build').offsetTop+100,behavior:'smooth'})}
+function updBldInd(){BUILD.forEach((s,i)=>{const b=document.querySelector('.bld-step[data-s="'+i+'"]');if(b){if(buildSel[s.key]){b.classList.add('done');b.querySelector('.bld-n').textContent='\u2713'}else{b.classList.remove('done');b.querySelector('.bld-n').textContent=i+1}}})}
+function renderBldSum(){let t=0,r='';BUILD.forEach(s=>{const o=s.options.find(x=>x.id===buildSel[s.key]);if(o){t+=o.price;r+='<div class="bld-sum-item"><div class="bld-sum-l">'+s.title+'</div><div class="bld-sum-v">'+o.name+'</div></div>'}});document.getElementById('bldSum').innerHTML='<h3>'+t('btn_details')+'</h3><div class="bld-sum-items">'+r+'</div><div class="bld-sum-total"><div class="bld-sum-total-l">'+t('btn_summary')+'</div><div class="bld-sum-total-v">'+t.toLocaleString()+' RUB</div></div>'}
+const TO_SCHEDULE=[{hours:25,cost:2500,items:['Bolt check','Spark plug','Air filter']},{hours:50,cost:4200,items:['Spark plug','Air filter','Gaskets','Oil']},{hours:100,cost:8500,items:['Starter rope','Piston rings','Carb service']},{hours:200,cost:15000,items:['Bearings','Seals','Belt','Full inspection']},{hours:300,cost:28000,items:['Complete overhaul','All consumables','Dyno test']}];
+function calcTO(){const h=parseInt(document.getElementById('calcHours').value)||0;const res=document.getElementById('calcResult');const warn=document.getElementById('calcWarn');const fill=document.getElementById('calcFill');const overdueItems=TO_SCHEDULE.filter(s=>h>=s.hours*1.1);if(overdueItems.length>0)warn.classList.add('show');else warn.classList.remove('show');const pending=TO_SCHEDULE.filter(s=>h<s.hours);const nextDue=pending.length?pending[0]:null;const progress=nextDue?((h/nextDue.hours)*100):100;fill.style.width=Math.min(progress,100)+'%';let html='';if(overdueItems.length>0)html+='<div style="color:var(--r);font-family:var(--fm);font-size:.65rem;letter-spacing:.1em;margin-bottom:.5rem">OVERDUE</div>';TO_SCHEDULE.forEach(s=>{const done=h>=s.hours;const isNext=!done&&(!nextDue||s.hours===nextDue.hours);const cls=done?(h>=s.hours*1.1?'overdue':'done'):(isNext?'due':'');html+='<div class="calc-item '+cls+'"><div><div class="calc-item-name">'+s.hours+'h: '+s.items.join(', ')+'</div></div><div class="calc-item-cost">'+(done?(cls==='overdue'?'! ':'')+'Done':s.cost.toLocaleString()+' RUB')+'</div></div>'});if(nextDue)html+='<div class="calc-total"><div class="calc-total-l">'+t('calc_next')+': '+nextDue.hours+'h</div><div class="calc-total-v">~'+nextDue.cost.toLocaleString()+' RUB</div></div>';res.innerHTML=html}
+function lookup(){const input=document.getElementById('serIn').value.trim().toUpperCase();const c=document.getElementById('dashC');const e=EDB[input];if(!e){c.innerHTML='<div style="text-align:center;padding:3rem;color:var(--td);font-family:var(--fm);font-size:.8rem"><div style="font-size:2rem;margin-bottom:.8rem;opacity:.2">&#10005;</div>Not found: <strong style="color:var(--t)">'+(input||'--')+'</strong></div>';c.classList.add('vis');return}const sb=e.status.includes('expired')?'badge-r':'badge-g';const qrSvg=genQR(input);c.innerHTML='<div class="passport"><div class="passport-head"><div><div class="passport-title">VELTORY DIGITAL PASSPORT</div><div class="passport-sn">'+e.serial+'</div></div><div class="passport-qr">'+qrSvg+'</div></div><div class="passport-grid"><div class="passport-field"><div class="passport-field-l">Model</div><div class="passport-field-v">HE '+e.model+'</div></div><div class="passport-field"><div class="passport-field-l">Year</div><div class="passport-field-v">'+e.year+'</div></div><div class="passport-field"><div class="passport-field-l">Owner</div><div class="passport-field-v">'+e.owner+'</div></div><div class="passport-field"><div class="passport-field-l">Registration</div><div class="passport-field-v">'+e.reg+'</div></div><div class="passport-field"><div class="passport-field-l">Warranty</div><div class="passport-field-v">'+e.warr+'</div></div><div class="passport-field"><div class="passport-field-l">Status</div><div class="passport-field-v"><span class="badge '+sb+'">'+e.status+'</span></div></div><div class="passport-field"><div class="passport-field-l">Hours</div><div class="passport-field-v">'+e.hours+' h</div></div><div class="passport-field"><div class="passport-field-l">Next service</div><div class="passport-field-v" style="color:var(--gold)">'+e.nextTO+'</div></div></div><button class="btn btn-o btn-sm" onclick="alert(\'PDF generation placeholder\')">'+t('btn_view')+' PDF</button></div><div class="dash-grid"><div class="dash-stat"><div class="dash-stat-l">Hours</div><div class="dash-stat-v">'+e.hours+'</div><div class="dash-stat-s">engine hours</div></div><div class="dash-stat"><div class="dash-stat-l">Last service</div><div class="dash-stat-v" style="font-size:1.1rem">'+e.lastTO+'</div></div><div class="dash-stat"><div class="dash-stat-l">Next service</div><div class="dash-stat-v" style="font-size:1.1rem;color:var(--gold)">'+e.nextTO+'</div></div></div><div class="dash-sec"><div class="dash-sec-t">Service History</div><div style="overflow-x:auto"><table class="dash-table"><thead><tr><th>Date</th><th>Type</th><th>Description</th><th>Cost</th><th>Technician</th></tr></thead><tbody>'+e.history.map(h=>'<tr><td class="mc">'+h.d+'</td><td><span class="badge badge-gold">'+h.t+'</span></td><td>'+h.desc+'</td><td class="mc">'+h.cost+'</td><td class="mc">'+h.tech+'</td></tr>').join('')+'</tbody></table></div></div><div class="dash-sec"><div class="dash-sec-t">Documents</div><div class="dash-docs">'+e.docs.map(d=>'<div class="dash-doc"><div class="dash-doc-ic">&#128196;</div><div><h5>'+d.n+'</h5><p>'+d.t+'</p></div></div>').join('')+'</div></div>';c.classList.add('vis')}
+function genQR(text){let hash=0;for(let i=0;i<text.length;i++)hash=((hash<<5)-hash)+text.charCodeAt(i);hash|=0;const cells=[];const size=7;const cs=10;for(let r=0;r<size;r++){for(let c=0;c<size;c++){const corner=(r<3&&c<3)||(r<3&&c>=size-3)||(r>=size-3&&c<3);const val=corner?1:((hash>>(r*size+c))&1);cells.push('<rect x="'+(c*cs)+'" y="'+(r*cs)+'" width="'+cs+'" height="'+cs+'" fill="'+(val?'#0d1b2a':'#fff')+'"/>')}}return '<svg viewBox="0 0 '+(size*cs)+' '+(size*cs)+'" xmlns="http://www.w3.org/2000/svg">'+cells.join('')+'</svg>'}
+function renderDealers(filter){const f=filter||'all';document.getElementById('dealerFilters').innerHTML=['all','sales','service','training'].map(tag=>'<button class="dealer-filter '+(f===tag?'active':'')+'" onclick="renderDealers(\''+tag+'\')">'+(tag==='all'?'All':tag.charAt(0).toUpperCase()+tag.slice(1))+'</button>').join('');const filtered=f==='all'?DEALERS:DEALERS.filter(d=>d.tags.includes(f));document.getElementById('dealerGrid').innerHTML=filtered.map(d=>'<div class="dealer-card"><div class="dealer-ic">&#127970;</div><div class="dealer-info"><div class="dealer-name">'+d.name+'</div><div class="dealer-addr">'+d.city+', '+d.addr+'</div><div class="dealer-phone">'+d.phone+'</div><div class="dealer-tags">'+d.tags.map(tg=>'<span class="dealer-tag '+tg+'">'+tg+'</span>').join('')+'</div></div></div>').join('')}
+function renderAtelier(){const A=[{n:'Midnight MV2',d:'Custom MV2 130cc.',tag:'Custom',s:{Engine:'MV2 130cc'}},{n:'Heritage MV1',d:'MV1 restoration.',tag:'Restoration',s:{Engine:'MV1 100cc'}},{n:'MVL Sport',d:'Lightweight build.',tag:'Sport',s:{Engine:'MVL 80cc'}}];document.getElementById('atlGrid').innerHTML=A.map(a=>'<div class="atl-card reveal"><div class="atl-img"><span class="atl-img-i">&#9670;</span><span class="atl-tag badge badge-gold">'+a.tag+'</span></div><div class="atl-body"><h3>'+a.n+'</h3><p class="desc">'+a.d+'</p><div class="atl-specs">'+Object.entries(a.s).map(([k,v])=>'<div class="atl-spec">'+k+': <span>'+v+'</span></div>').join('')+'</div><button class="btn btn-o btn-sm" onclick="switchPage(\'contact\')">'+t('btn_view')+'</button></div></div>').join('')}
+function submitForm(e,msg){e.preventDefault();const b=e.target.querySelector('button[type="submit"]');b.textContent=msg+' \u2713';b.style.background='var(--g)';b.style.borderColor='var(--g)';setTimeout(()=>{b.textContent=t('btn_submit');b.style.background='';b.style.borderColor='';e.target.reset()},3000)}
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.08,rootMargin:'0px 0px -30px 0px'});
-window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>30)});
-
-renderEngines();renderEngSel();renderCatFil();renderParts();initBld();renderLibrary();renderQuote();
+renderEngines();renderCmp();renderEngSel();renderCatFil();renderParts();renderExploded();initBuild();renderAtelier();renderDealers();renderQuote();calcTO();
 setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))},150);
 </script>
 </body>
