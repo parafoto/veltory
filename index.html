@@ -167,19 +167,40 @@ a{color:var(--trr);text-decoration:none;transition:color var(--tr)}
 .bld-step.act .bld-n{border-color:var(--trr);background:var(--trr);color:var(--w)}
 .bld-step.done{color:#2d8a4e}.bld-step.done .bld-n{border-color:#2d8a4e;background:#2d8a4e;color:var(--w)}
 .bld-div{width:12px;height:1px;background:var(--cr3);flex-shrink:0}
+.bld-progress{display:grid;gap:.65rem;margin:-.5rem 0 1.4rem}
+.bld-progress-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.bld-progress-copy{font-family:var(--fd);font-size:.88rem;color:var(--nv);font-weight:600}
+.bld-progress-copy span{color:var(--trr)}
+.bld-progress-note{font-family:var(--fm);font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3)}
+.bld-progress-track{height:6px;border-radius:999px;background:var(--cr2);overflow:hidden;position:relative}
+.bld-progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--trr),var(--trrl));width:0;transition:width var(--trs);box-shadow:0 0 18px rgba(196,149,106,.25)}
 .bld-opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:1rem}
 .bld-card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.3rem;cursor:pointer;transition:all var(--tr);position:relative}
 .bld-card:hover{border-color:var(--trr);transform:translateY(-3px);box-shadow:0 10px 30px rgba(13,27,42,.06)}
 .bld-card.sel{border-color:var(--trr);background:rgba(196,149,106,.06)}
 .bld-card.sel::after{content:'\2713';position:absolute;top:.7rem;right:.7rem;width:20px;height:20px;border-radius:50%;background:var(--trr);color:var(--w);display:flex;align-items:center;justify-content:center;font-size:.55rem;font-weight:700}
 .bld-card h4{font-size:.95rem;margin-bottom:.2rem}.bld-card .ds{font-size:.8rem;color:var(--tx3);margin-bottom:.6rem;line-height:1.45}
+.bld-card-sub{font-family:var(--fm);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);margin-bottom:.65rem}
 .bld-card-price{font-family:var(--fd);font-size:1.3rem;color:var(--nv);font-weight:700}
+.bld-card-price small{display:block;font-family:var(--fm);font-size:.52rem;letter-spacing:.12em;color:var(--tx3);margin-top:.15rem}
+.bld-compare{display:grid;gap:.28rem;margin:.8rem 0 .85rem;padding:.8rem;border-radius:12px;background:linear-gradient(180deg,rgba(245,240,230,.9),rgba(245,240,230,.55));border:1px solid var(--cr3)}
+.bld-compare-row{display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:baseline;font-family:var(--fm);font-size:.53rem;letter-spacing:.08em;color:var(--tx3)}
+.bld-compare-row strong{font-family:var(--fd);font-size:.8rem;letter-spacing:0;color:var(--nv)}
+.bld-card.is-engine:hover .bld-compare{border-color:rgba(196,149,106,.28);background:linear-gradient(180deg,rgba(245,240,230,.98),rgba(236,229,216,.85))}
+.bld-card.is-engine:hover .bld-compare-row.better strong{font-weight:700;color:var(--trr)}
 .bld-sum{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.5rem;margin-top:1.5rem}
 .bld-sum-i{display:flex;justify-content:space-between;padding:.45rem 0;border-bottom:1px solid var(--cr3);font-size:.85rem}
 .bld-sum-l{font-family:var(--fm);font-size:.58rem;color:var(--tx3);letter-spacing:.1em;text-transform:uppercase}
 .bld-sum-t{display:flex;justify-content:space-between;align-items:baseline;padding-top:.8rem;border-top:2px solid var(--nv);margin-top:.5rem}
 .bld-sum-tl{font-family:var(--fm);font-size:.62rem;text-transform:uppercase;letter-spacing:.15em;color:var(--tx3)}
 .bld-sum-tv{font-family:var(--fd);font-size:2rem;color:var(--nv);font-weight:700}
+.bld-fin{margin-top:1.2rem;background:linear-gradient(180deg,var(--cr),rgba(245,240,230,.72));border:1px solid var(--cr3);border-radius:16px;padding:1.4rem}
+.bld-fin-top{display:flex;justify-content:space-between;align-items:end;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.bld-fin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:.75rem}
+.bld-fin-card{background:var(--w);border:1px solid var(--cr3);border-radius:14px;padding:1rem}
+.bld-fin-card span{display:block;font-family:var(--fm);font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);margin-bottom:.35rem}
+.bld-fin-card strong{display:block;font-family:var(--fd);font-size:1.2rem;color:var(--nv);line-height:1.05}
+.bld-fin-card small{display:block;font-family:var(--fb);font-size:.8rem;color:var(--tx3);margin-top:.3rem}
 
 .svc-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:1.25rem}
 .svc-card{background:var(--w);border:1px solid var(--cr3);border-radius:16px;padding:1.5rem;transition:all var(--tr);position:relative;overflow:hidden}
@@ -227,6 +248,20 @@ a{color:var(--trr);text-decoration:none;transition:color var(--tr)}
 .atl-tag{font-family:var(--fm);font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;padding:.2rem .6rem;border-radius:15px;display:inline-block;margin-bottom:.6rem;width:fit-content}
 .atl-card h3{font-size:1.2rem;margin-bottom:.2rem;font-weight:700}
 .atl-card .ds{font-size:.82rem;line-height:1.5}
+.ind-wrap{background:linear-gradient(160deg,var(--nv),var(--nv2));border-radius:24px;padding:clamp(1.5rem,3vw,2.4rem);color:var(--cr);position:relative;overflow:hidden}
+.ind-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(196,149,106,.2),transparent 36%),linear-gradient(180deg,transparent,rgba(245,240,230,.03))}
+.ind-wrap > *{position:relative;z-index:1}
+.ind-top{display:flex;justify-content:space-between;align-items:end;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.ind-top h2{color:var(--cr);font-size:clamp(2rem,4vw,3rem);margin:.25rem 0}
+.ind-top p{max-width:560px;color:rgba(245,240,230,.68)}
+.ind-badge{font-family:var(--fm);font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--trrl)}
+.ind-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1rem;margin:1.4rem 0 1.6rem}
+.ind-card{background:rgba(255,255,255,.04);border:1px solid rgba(245,240,230,.12);border-radius:16px;padding:1.1rem}
+.ind-card h4{color:var(--cr);font-size:.96rem;margin-bottom:.25rem}
+.ind-card p{color:rgba(245,240,230,.62);font-size:.82rem;line-height:1.5}
+.ind-card .ind-ic{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(196,149,106,.16);color:var(--trrl);margin-bottom:.8rem;font-size:.9rem}
+.ind-cta{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:1.2rem;border-top:1px solid rgba(245,240,230,.12)}
+.ind-cta p{color:rgba(245,240,230,.58);font-family:var(--fm);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase}
 
 .lib-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:1rem}
 .lib-card{background:var(--w);border:1px solid var(--cr3);border-radius:14px;padding:1.3rem;transition:all var(--tr);cursor:pointer}.lib-card:hover{border-color:var(--trr);transform:translateY(-3px)}
@@ -270,7 +305,7 @@ footer{border-top:1px solid var(--cr3);padding:2rem 0;margin-top:2rem}
 .hero-g{grid-template-columns:1fr}.hero-vis{display:none}.about-g{grid-template-columns:1fr}
 .eng-hero{grid-template-columns:1fr}.eng-vis2{width:100%;height:80px}
 .f-row{grid-template-columns:1fr}.ah-grid{grid-template-columns:1fr}
-.compare-t{font-size:.7rem}
+.compare-t{font-size:.7rem}.ind-top,.ind-cta,.bld-progress-top{align-items:flex-start}
 }
 @media(max-width:520px){.sb{grid-template-columns:1fr}.hero-stats{gap:1rem}.dash-sb{flex-direction:column}.p-search{width:100%}.foot-c{flex-direction:column;text-align:center}.foot-links{justify-content:center}}
 </style>
@@ -402,7 +437,12 @@ footer{border-top:1px solid var(--cr3);padding:2rem 0;margin-top:2rem}
 <!-- BUILD -->
 <div class="page" id="page-build"><div class="ctr">
 <div class="ph"><div class="tag">Configurator</div><h1>КОНФИГУРАТОР</h1><p>Соберите парамотор на базе HE.</p></div>
-<div class="bld-steps" id="bldSteps"></div><div id="bldPanels"></div></div></div>
+<div class="bld-steps" id="bldSteps"></div>
+<div class="bld-progress">
+<div class="bld-progress-top"><div><div class="bld-progress-copy" id="bldProgressCopy">Шаг 1 из 5 <span>— 20%</span></div><div class="bld-progress-note">VELTORY Configurator</div></div><div class="bld-progress-note" id="bldProgressLabel">Подбор двигателя</div></div>
+<div class="bld-progress-track"><div class="bld-progress-fill" id="bldProgressFill"></div></div>
+</div>
+<div id="bldPanels"></div></div></div>
 
 <!-- SERVICE -->
 <div class="page" id="page-service"><div class="ctr">
@@ -431,6 +471,19 @@ footer{border-top:1px solid var(--cr3);padding:2rem 0;margin-top:2rem}
 <div class="atl-card reveal" style="background:linear-gradient(160deg,var(--nv),var(--nv2))"><div class="atl-body"><span class="atl-tag" style="background:rgba(196,149,106,.15);color:var(--trr)">Кастом</span><h3 style="color:var(--cr)">Midnight RS-206</h3><p class="ds" style="color:rgba(245,240,230,.5)">Флагманская сборка на базе RS-206. Чёрно-серебристая схема.</p></div></div>
 <div class="atl-card reveal" style="background:linear-gradient(135deg,var(--trr),var(--trrl))"><div class="atl-body"><span class="atl-tag" style="background:rgba(255,255,255,.2);color:#fff">Спорт</span><h3 style="color:#fff">MV2 Monster</h3><p class="ds" style="color:rgba(255,255,255,.7)">29 HP, двойной пуск. Для тандемов и соревнований.</p></div></div>
 <div class="atl-card reveal" style="background:linear-gradient(135deg,var(--sky),#93c0e0)"><div class="atl-body"><span class="atl-tag" style="background:rgba(255,255,255,.2);color:#fff">Ultralight</span><h3 style="color:#fff">MVL Daily</h3><p class="ds" style="color:rgba(255,255,255,.7)">Самая лёгкая сборка на базе MVL 125cc.</p></div></div>
+</div>
+<div class="ind-wrap reveal" style="margin-top:1.6rem">
+<div class="ind-top">
+<div><div class="ind-badge">VELTORY Custom</div><h2>VELTORY INDIVIDUAL</h2><p>Кастомная конфигурация под ваши задачи. Персональные материалы, отделка и оснащение для тандемных полётов, путешествий и демонстрационных сборок.</p></div>
+<button class="btn btn-p" style="background:var(--trr);color:var(--w)" onclick="SP('contact')">Запросить индивидуальную конфигурацию</button>
+</div>
+<div class="ind-grid">
+<div class="ind-card"><div class="ind-ic">🎨</div><h4>Custom Paint</h4><p>Многослойная окраска и фирменные графические пакеты под ваш борт.</p></div>
+<div class="ind-card"><div class="ind-ic">🜁</div><h4>Titanium Exhaust</h4><p>Титановая выпускная система с индивидуальной настройкой отклика и звучания.</p></div>
+<div class="ind-card"><div class="ind-ic">⬡</div><h4>Carbon Parts</h4><p>Карбоновые элементы обвеса и декоративные детали с акцентом на снижение массы.</p></div>
+<div class="ind-card"><div class="ind-ic">📡</div><h4>GPS Tracking</h4><p>Интегрированный GPS-модуль и телеметрия для парка, аренды или личного мониторинга.</p></div>
+</div>
+<div class="ind-cta"><p>Premium commissioning · one-off builds · factory coordination</p><button class="btn btn-s" style="border-color:rgba(245,240,230,.28);color:var(--cr)" onclick="SP('contact')">Обсудить проект</button></div>
 </div></div></div>
 
 <!-- LIBRARY -->
@@ -547,13 +600,14 @@ const TPL=[
 const CATS={all:'Все',piston:'Поршневая',crankcase:'Картер',carb:'Карбюратор',fuel:'Фильтры и топливо',ignition:'Зажигание',exhaust:'Выпуск',starter:'Стартер',drive:'Привод',reed:'Рид-коробка',bearing:'Подшипники',fastener:'Крепёж',prop:'Пропеллеры',misc:'Прочее'};
 const CATO=['all','piston','crankcase','carb','fuel','ignition','exhaust','starter','drive','reed','bearing','fastener','prop','misc'];
 
+const FINANCE_MONTHS=[6,12,24,36];
 const BUILD=[
 {key:'engine',title:'Двигатель',opts:[
-{id:'rs206',name:'HE RS-206',ds:'Флагман. 206cc.',price:0,s:{Объём:'206cc',Серия:'RS'}},
-{id:'rs185',name:'HE RS-185',ds:'Новая серия RS. 26 HP.',price:0,s:{Объём:'185cc','HP':'26'}},
-{id:'mv2',name:'HE MV2',ds:'29 HP, двойной пуск.',price:0,s:{Объём:'200cc','HP':'29'}},
-{id:'mv1',name:'HE MV1',ds:'25 HP, foot + trike.',price:0,s:{Объём:'184.70cc','HP':'25'}},
-{id:'mvl',name:'HE MVL',ds:'23 HP, самый лёгкий.',price:0,s:{Объём:'125cc','HP':'23'}},
+{id:'rs206',name:'HE RS-206',ds:'Флагман. 206cc. Премиальная тяга и запас мощности.',price:185000,sub:'BMW-style flagship',s:{Объём:'206cc','HP':'29',Масса:'14.2 кг'}},
+{id:'rs185',name:'HE RS-185',ds:'Новая серия RS. 26 HP. Точный отклик и touring-баланс.',price:165000,sub:'New RS line',s:{Объём:'185cc','HP':'26',Масса:'13.6 кг'}},
+{id:'mv2',name:'HE MV2',ds:'29 HP, двойной пуск. Для тандемов и пилотов с высокой нагрузкой.',price:175000,sub:'Dual start',s:{Объём:'200cc','HP':'29',Масса:'14.8 кг'}},
+{id:'mv1',name:'HE MV1',ds:'25 HP, foot + trike. Универсальная конфигурация для регулярных вылетов.',price:155000,sub:'Foot + trike',s:{Объём:'184.70cc','HP':'25',Масса:'13.1 кг'}},
+{id:'mvl',name:'HE MVL',ds:'23 HP, самый лёгкий. Для лёгких пилотов и спокойной повседневной эксплуатации.',price:135000,sub:'Lightweight',s:{Объём:'125cc','HP':'23',Масса:'11.8 кг'}},
 ]},
 {key:'frame',title:'Рама',opts:[{id:'f1',name:'Classic Steel',price:35000,s:{Материал:'Сталь'}},{id:'f2',name:'Aero Al',price:55000,s:{Материал:'Al 7075'}},{id:'f3',name:'Titan',price:120000,s:{Материал:'Ti Gr.5'}}]},
 {key:'prop',title:'Пропеллер',opts:[{id:'p1',name:'Дюраль 2L',price:12000,s:{Тип:'Специальный для HE'}},{id:'p2',name:'Carbon 2L',price:25000,s:{Тип:'Специальный для HE'}}]},
@@ -600,12 +654,18 @@ document.getElementById('qTotal').innerHTML=`<div class="q-total"><div class="q-
 function toggleQ(){document.getElementById('qPan').classList.toggle('open');document.getElementById('qOv').classList.toggle('open')}
 function submitQ(){if(!quote.length)return;quote=[];renderQuote();toggleQ();alert('Запрос отправлен')}
 
-function initBld(){document.getElementById('bldSteps').innerHTML=BUILD.map((s,i)=>`<button class="bld-step${i===0?' act':''}" data-s="${i}" onclick="goBld(${i})"><span class="bld-n">${i+1}</span>${s.title}</button>${i<BUILD.length-1?'<div class="bld-div"></div>':''}`).join('');renderBld()}
-function renderBld(){const s=BUILD[curBld];const c=document.getElementById('bldPanels');c.innerHTML=`<div><h3 style="margin-bottom:1.2rem">${s.title}</h3><div class="bld-opts">${s.opts.map(o=>`<div class="bld-card${bldSel[s.key]===o.id?' sel':''}" onclick="selBld('${s.key}','${o.id}',this)"><h4>${o.name}</h4>${o.ds?`<p class="ds">${o.ds}</p>`:''}<div style="display:flex;flex-direction:column;gap:.12rem;margin-bottom:.6rem">${Object.entries(o.s).map(([k,v])=>`<div style="font-family:var(--fm);font-size:.55rem;color:var(--tx3);letter-spacing:.08em;display:flex;justify-content:space-between"><span>${k}</span><span style="color:var(--tx2)">${v}</span></div>`).join('')}</div><div class="bld-card-price">${o.price>0?o.price.toLocaleString('ru-RU')+' ₽':'Запрос цены'}</div></div>`).join('')}</div></div>`;
-if(Object.keys(bldSel).length>=BUILD.length){let t=0,r='';BUILD.forEach(s2=>{const o=s2.opts.find(x=>x.id===bldSel[s2.key]);if(o){t+=o.price;r+=`<div class="bld-sum-i"><span class="bld-sum-l">${s2.title}</span><span>${o.name}${o.price>0?' — '+o.price.toLocaleString('ru-RU')+' ₽':''}</span></div>`}});c.innerHTML+=`<div class="bld-sum"><h4 style="margin-bottom:.8rem">Комплектация</h4>${r}<div class="bld-sum-t"><div class="bld-sum-tl">Итого</div><div class="bld-sum-tv">${t>0?t.toLocaleString('ru-RU')+' ₽':'Запрос цены'}</div></div><button class="btn btn-p btn-bl" style="margin-top:1rem" onclick="alert('Заявка отправлена!')">Отправить заявку</button></div>`}}
+function getBuildTotal(){let total=0;BUILD.forEach(step=>{const opt=step.opts.find(x=>x.id===bldSel[step.key]);if(opt)total+=opt.price||0});return total}
+function getSelectedEngine(){return BUILD[0].opts.find(x=>x.id===bldSel.engine)||BUILD[0].opts[0]}
+function formatRub(v){return v>0?v.toLocaleString('ru-RU')+' ₽':'Запрос цены'}
+function renderEngineCompareRow(label,value,current){const nv=parseFloat(String(value).replace(',','.'));const cv=parseFloat(String(current).replace(',','.'));const better=Number.isFinite(nv)&&Number.isFinite(cv)&&nv>cv;return `<div class="bld-compare-row${better?' better':''}"><span>${label}</span><strong>${value}</strong></div>`}
+function renderEngineCompareCard(opt){const current=getSelectedEngine();return `<div class="bld-compare">${Object.entries(opt.s).map(([k,v])=>renderEngineCompareRow(k,v,current.s[k]||v)).join('')}</div>`}
+function updateBldProgress(){const total=BUILD.length;const shown=Math.min(curBld,total-1)+1;const pct=Math.round((shown/total)*100);document.getElementById('bldProgressCopy').innerHTML=`Шаг ${shown} из ${total} <span>— ${pct}%</span>`;document.getElementById('bldProgressLabel').textContent=BUILD[Math.min(curBld,total-1)].title;document.getElementById('bldProgressFill').style.width=`${pct}%`}
+function initBld(){document.getElementById('bldSteps').innerHTML=BUILD.map((s,i)=>`<button class="bld-step${i===0?' act':''}" data-s="${i}" onclick="goBld(${i})"><span class="bld-n">${i+1}</span>${s.title}</button>${i<BUILD.length-1?'<div class="bld-div"></div>':''}`).join('');updateBldProgress();renderBld()}
+function renderBld(){const s=BUILD[curBld];const c=document.getElementById('bldPanels');c.innerHTML=`<div><h3 style="margin-bottom:1.2rem">${s.title}</h3><div class="bld-opts">${s.opts.map(o=>`<div class="bld-card${bldSel[s.key]===o.id?' sel':''}${s.key==='engine'?' is-engine':''}" onclick="selBld('${s.key}','${o.id}',this)">${o.sub?`<div class="bld-card-sub">${o.sub}</div>`:''}<h4>${o.name}</h4>${o.ds?`<p class="ds">${o.ds}</p>`:''}${s.key==='engine'?renderEngineCompareCard(o):''}<div style="display:flex;flex-direction:column;gap:.12rem;margin-bottom:.6rem">${Object.entries(o.s).map(([k,v])=>`<div style="font-family:var(--fm);font-size:.55rem;color:var(--tx3);letter-spacing:.08em;display:flex;justify-content:space-between"><span>${k}</span><span style="color:var(--tx2);font-weight:${s.key==='engine'&&k==='HP'?'700':'500'}">${v}</span></div>`).join('')}</div><div class="bld-card-price">${formatRub(o.price)}${s.key==='engine'?`<small>от ${formatRub(o.price)}</small>`:''}</div></div>`).join('')}</div></div>`;
+if(Object.keys(bldSel).length>=BUILD.length){const total=getBuildTotal();let rows='';BUILD.forEach(step=>{const opt=step.opts.find(x=>x.id===bldSel[step.key]);if(opt)rows+=`<div class="bld-sum-i"><span class="bld-sum-l">${step.title}</span><span>${opt.name}${opt.price>0?' — '+formatRub(opt.price):''}</span></div>`});c.innerHTML+=`<div class="bld-sum"><h4 style="margin-bottom:.8rem">Комплектация</h4>${rows}<div class="bld-sum-t"><div class="bld-sum-tl">Итого</div><div class="bld-sum-tv">${formatRub(total)}</div></div><div class="bld-fin"><div class="bld-fin-top"><div><div class="bld-sum-l" style="margin-bottom:.35rem">Рассрочка</div><h4 style="font-size:1.05rem">от ${Math.round(total/36).toLocaleString('ru-RU')} ₽/мес</h4></div><div class="bld-progress-note">Без учёта страховки и доставки</div></div><div class="bld-fin-grid">${FINANCE_MONTHS.map(m=>`<div class="bld-fin-card"><span>${m} месяцев</span><strong>${Math.round(total/m).toLocaleString('ru-RU')} ₽/мес</strong><small>${formatRub(total)} / ${m}</small></div>`).join('')}</div></div><button class="btn btn-p btn-bl" style="margin-top:1rem" onclick="SP('contact')">Отправить заявку</button></div>`}}
 function selBld(k,id,el){document.querySelectorAll('.bld-card').forEach(x=>x.classList.remove('sel'));el.classList.add('sel');bldSel[k]=id;upBldInd();renderBld()}
-function goBld(n){curBld=n;upBldInd();renderBld()}
-function upBldInd(){BUILD.forEach((s,i)=>{const b=document.querySelector(`.bld-step[data-s="${i}"]`);if(b){if(bldSel[s.key]){b.classList.add('done');b.querySelector('.bld-n').textContent='✓'}else{b.classList.remove('done');b.querySelector('.bld-n').textContent=i+1}}})}
+function goBld(n){curBld=Math.max(0,Math.min(BUILD.length-1,n));upBldInd();updateBldProgress();renderBld()}
+function upBldInd(){BUILD.forEach((s,i)=>{const b=document.querySelector(`.bld-step[data-s="${i}"]`);if(b){b.classList.toggle('act',i===curBld);if(bldSel[s.key]){b.classList.add('done');b.querySelector('.bld-n').textContent='✓'}else{b.classList.remove('done');b.querySelector('.bld-n').textContent=i+1}}})}
 
 function lookup(){const input=document.getElementById('serIn').value.trim().toUpperCase();const c=document.getElementById('dashC');const e=EDB[input];if(!e){c.innerHTML=`<div style="text-align:center;padding:2.5rem;color:var(--tx3);font-family:var(--fm);font-size:.75rem"><div style="font-size:1.8rem;margin-bottom:.6rem;opacity:.15">✕</div>Не найден: <strong style="color:var(--tx)">${input||'—'}</strong></div>`;c.classList.add('vis');return}
 const sb=e.status.includes('истекла')?'badge-r':'badge-g';
