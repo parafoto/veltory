@@ -6,10 +6,8 @@
 <title>HE Paramotores — Испанские парамоторные двигатели</title>
 <meta name="description" content="HE Paramotores S.L. (Мадрид, Испания) — производитель парамоторных двигателей. 6 моделей от 125 до 277cc. Каталог запчастей 330+. Доставка DDP Москва.">
 <meta name="keywords" content="HE Paramotores, MVL 125, MV1 185, MV2 204, Raptor 250, RS-185, RS-206, Nikasil, Walbro, Мадрид">
-<meta name="author" content="HE Paramotores S.L.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://heparamotor.ru">
-<meta property="og:type" content="website">
 <meta property="og:title" content="HE Paramotores — Испанские парамоторные двигатели">
 <meta property="og:description" content="6 моделей от 125 до 277cc. Каталог запчастей, конфигуратор, сервис.">
 <meta property="og:url" content="https://heparamotor.ru">
@@ -18,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--ds:#0a0a0a;--ds2:#101015;--surf:#14141a;--surf2:#1a1a22;--border:rgba(220,180,80,.12);--border-h:rgba(220,180,80,.25);--accent:#dca844;--accent2:#ecc864;--accent3:#b8882a;--accent-g:rgba(220,168,68,.12);--accent-glow:rgba(220,168,68,.2);--t:#ffffff;--tm:#d9d9d0;--td:#8a8678;--g:#22c55e;--r:#ef4444}
+:root{--ds:#0b0b0f;--ds2:#0e0e14;--surf:#12121a;--surf2:#1a1a24;--border:rgba(220,180,80,.12);--border-h:rgba(220,180,80,.25);--accent:#dca844;--accent2:#ecc864;--accent3:#b8882a;--accent-g:rgba(220,168,68,.12);--accent-glow:rgba(220,168,68,.2);--t:#f5f0e8;--tm:#a09888;--td:#605850;--g:#22c55e;--r:#ef4444}
 html{scroll-behavior:smooth}
 body{background:var(--ds);color:var(--tm);font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.7;overflow-x:hidden;background-image:radial-gradient(ellipse at 30% 20%,rgba(220,168,68,.02) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(220,168,68,.015) 0%,transparent 50%)}
 body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(220,168,68,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(220,168,68,.015) 1px,transparent 1px);background-size:80px 80px}
@@ -26,9 +24,7 @@ body::after{content:'';position:fixed;inset:0;z-index:99999;background-image:url
 ::selection{background:var(--accent);color:var(--ds)}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--ds)}::-webkit-scrollbar-thumb{background:var(--surf2);border-radius:3px}
 h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;color:var(--t);font-weight:300;line-height:.9}
-h1{font-size:clamp(3rem,12vw,9rem);letter-spacing:-.04em}
-h2{font-size:clamp(2rem,6vw,4.5rem);letter-spacing:-.03em;line-height:.95}
-h3{font-size:clamp(1.2rem,3vw,1.6rem);font-weight:500}
+h1{font-size:clamp(3rem,12vw,9rem);letter-spacing:-.04em}h2{font-size:clamp(2rem,6vw,4.5rem);letter-spacing:-.03em;line-height:.95}h3{font-size:clamp(1.2rem,3vw,1.6rem);font-weight:500}
 a{color:var(--accent);text-decoration:none;transition:color .3s}a:hover{color:var(--accent2)}
 .mn{font-family:'JetBrains Mono',monospace}
 .label{font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;text-transform:uppercase;letter-spacing:.15em;color:var(--accent)}
@@ -43,79 +39,52 @@ a{color:var(--accent);text-decoration:none;transition:color .3s}a:hover{color:va
 @keyframes badgePulse{0%,100%{opacity:1}50%{opacity:.6}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
 @keyframes scrollPulse{0%,100%{opacity:.3;transform:translateY(0)}50%{opacity:1;transform:translateY(10px)}}
-@keyframes badgePulse{0%,100%{opacity:1}50%{opacity:.6}}
 .page{display:none;padding-top:64px;min-height:100vh}.page.active{display:block}
 section{padding:clamp(3rem,8vw,6rem) clamp(1rem,5vw,6rem)}
-.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;align-items:center}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;align-items:center}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
 .scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:10001;transition:width .1s;width:0%}
-/* Nav */
 .topbar{position:fixed;top:0;left:0;right:0;z-index:1000;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1rem,3vw,3.5rem);background:rgba(11,11,15,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
 .logo-wrap{cursor:pointer;display:flex;flex-direction:column;gap:2px}
 .logo-h{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;color:var(--accent);letter-spacing:.05em;line-height:1}
 .logo-sub{font-family:'JetBrains Mono',monospace;font-size:.55rem;color:var(--td);letter-spacing:.2em}
-.nav-tabs{display:flex;gap:0;list-style:none}
-.ntab{font-family:'JetBrains Mono',monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--td);padding:.8rem 1rem;cursor:pointer;border-bottom:2px solid transparent;transition:color .3s;background:none;border-top:none;border-left:none;border-right:none}
-.ntab:hover{color:var(--tm)}.ntab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.nav-tabs{display:flex;gap:0;list-style:none}.ntab{font-family:'JetBrains Mono',monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--td);padding:.8rem 1rem;cursor:pointer;border-bottom:2px solid transparent;transition:color .3s;background:none;border-top:none;border-left:none;border-right:none}.ntab:hover{color:var(--tm)}.ntab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .nav-r{display:flex;align-items:center;gap:1rem}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem}
-.burger span{width:22px;height:1.5px;background:var(--t);transition:all .3s;border-radius:1px}
-.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.burger.open span:nth-child(2){opacity:0}.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-/* Hero */
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem}.burger span{width:22px;height:1.5px;background:var(--t);transition:all .3s;border-radius:1px}.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.burger.open span:nth-child(2){opacity:0}.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:64px 1.5rem 2rem;position:relative}
 .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(ellipse at 50% 35%,rgba(220,168,68,.04) 0%,transparent 60%),radial-gradient(ellipse at 50% 70%,rgba(220,168,68,.02) 0%,transparent 40%);pointer-events:none}
 .hero-status{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--td);letter-spacing:.2em;opacity:0;animation:fadeUp .8s .1s forwards}
-.hero-line{overflow:hidden}
 .hero-line1{font-size:clamp(3rem,12vw,8rem);opacity:0;animation:fadeUp .8s .2s forwards}
 .hero-line2{font-size:clamp(2rem,8vw,5rem);color:var(--tm);letter-spacing:-.03em;opacity:0;animation:fadeUp .8s .4s forwards}
 .hero-line3{font-size:clamp(5rem,20vw,14rem);color:var(--accent);letter-spacing:.1em;text-shadow:0 0 80px rgba(220,168,68,.15);opacity:0;animation:fadeUp .8s .6s forwards}
 .hero-italic{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:var(--tm);max-width:600px;margin:2rem auto;opacity:0;animation:fadeUp .8s .8s forwards}
 .hero-btns{display:flex;gap:1rem;justify-content:center;margin-top:2rem;opacity:0;animation:fadeUp .8s 1s forwards}
 .hero-stats{display:flex;gap:2rem;justify-content:center;margin-top:3rem;opacity:0;animation:fadeUp .8s 1.2s forwards}
-.hero-stat{text-align:center}
-.hero-stat-n{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;color:var(--accent);line-height:1}
-.hero-stat-l{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--td);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+.hero-stat{text-align:center}.hero-stat-n{font-family:'Space Grotesk',sans-serif;font-size:1.8rem;font-weight:700;color:var(--accent);line-height:1}.hero-stat-l{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--td);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
 .hero-stat-v{width:1px;height:40px;background:var(--border);margin:0 1rem}
 .scroll-arrow{width:1px;height:40px;background:linear-gradient(to bottom,var(--accent),transparent);margin-top:3rem;animation:scrollPulse 2s infinite}
-/* Tech strip */
 .tech-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2rem 0;display:flex;justify-content:center;flex-wrap:wrap;gap:0}
-.tech-item{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--td);text-transform:uppercase;letter-spacing:.15em;padding:0 1.5rem;transition:color .3s;cursor:default}
-.tech-item:hover{color:var(--accent)}
+.tech-item{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--td);text-transform:uppercase;letter-spacing:.15em;padding:0 1.5rem;transition:color .3s;cursor:default}.tech-item:hover{color:var(--accent)}
 .tech-sep{color:var(--border)}
-/* Engine cards */
-.eng-section{padding:5rem clamp(1rem,5vw,6rem);display:flex;align-items:center;gap:4rem}
-.eng-section.reverse{flex-direction:row-reverse}
-.eng-section.alt{background:var(--ds2)}
-.eng-left{flex:55;min-width:0}
-.eng-right{flex:45;min-width:0;display:flex;align-items:center;justify-content:center}
+.eng-section{padding:5rem clamp(1rem,5vw,6rem);display:flex;align-items:center;gap:4rem}.eng-section.reverse{flex-direction:row-reverse}.eng-section.alt{background:var(--ds2)}
+.eng-left{flex:55;min-width:0}.eng-right{flex:45;min-width:0;display:flex;align-items:center;justify-content:center}
 .eng-badge{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
 .eng-tagline{font-size:clamp(1.8rem,5vw,3.5rem);letter-spacing:-.02em;margin-top:.5rem}
 .eng-desc{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--tm);max-width:450px;margin-top:1rem}
 .eng-specs-row{display:flex;gap:2rem;margin-top:1.5rem;flex-wrap:wrap}
-.eng-spec{font-family:'JetBrains Mono',monospace;font-size:.7rem}
-.eng-spec-k{color:var(--td)}.eng-spec-v{color:var(--accent);margin-left:.3rem}
+.eng-spec{font-family:'JetBrains Mono',monospace;font-size:.7rem}.eng-spec-k{color:var(--td)}.eng-spec-v{color:var(--accent);margin-left:.3rem}
 .eng-btns{display:flex;gap:.8rem;margin-top:1.5rem;flex-wrap:wrap}
 .eng-svg-wrap{position:relative;width:100%;max-width:350px}
 .eng-svg-glow{position:absolute;inset:-20%;background:radial-gradient(circle,rgba(220,168,68,.04) 0%,transparent 70%);border-radius:50%}
-/* Specs panel */
 .specs-panel{max-height:0;overflow:hidden;transition:max-height .5s ease}
 .specs-inner{padding:2rem;background:var(--surf);border:1px solid var(--border);margin:0 clamp(1rem,5vw,6rem)}
 .hud-table{width:100%;border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:.75rem}
 .hud-table th{background:rgba(220,168,68,.06);color:var(--accent);padding:.6rem 1rem;text-align:left;border-bottom:1px solid var(--border);font-weight:500}
 .hud-table td{padding:.5rem 1rem;color:var(--tm);border-bottom:1px solid rgba(255,255,255,.03)}
 .hud-table tr:hover td{background:rgba(220,168,68,.03)}
-/* Cards */
-.card{background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:1.5rem;transition:all .3s}
-.card:hover{border-color:var(--accent);box-shadow:0 0 30px var(--accent-g)}
-/* Parts */
-.p-layout{display:grid;grid-template-columns:220px 1fr;gap:2rem;align-items:start}
-.p-sidebar{position:sticky;top:76px}
-.p-search{width:100%;padding:14px 16px;border:1px solid var(--border);border-radius:2px;font-size:1rem;font-family:'JetBrains Mono',monospace;background:var(--ds);color:var(--t);outline:none;transition:border-color .3s}
-.p-search:focus{border-color:var(--accent)}
-.p-pills{display:flex;flex-wrap:wrap;gap:.3rem}
-.p-pill{font-family:'JetBrains Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.06em;padding:.3rem .6rem;border:1px solid var(--border);border-radius:2px;cursor:pointer;background:none;color:var(--td);transition:all .2s;min-height:36px}
-.p-pill:hover{border-color:var(--accent);color:var(--accent)}.p-pill.active{background:var(--accent);color:var(--ds);border-color:var(--accent)}
+.card{background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:1.5rem;transition:all .3s}.card:hover{border-color:var(--accent);box-shadow:0 0 30px var(--accent-g)}
+.p-layout{display:grid;grid-template-columns:220px 1fr;gap:2rem;align-items:start}.p-sidebar{position:sticky;top:76px}
+.p-search{width:100%;padding:14px 16px;border:1px solid var(--border);border-radius:2px;font-size:1rem;font-family:'JetBrains Mono',monospace;background:var(--ds);color:var(--t);outline:none;transition:border-color .3s}.p-search:focus{border-color:var(--accent)}
+.p-pills{display:flex;flex-wrap:wrap;gap:.3rem}.p-pill{font-family:'JetBrains Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.06em;padding:.3rem .6rem;border:1px solid var(--border);border-radius:2px;cursor:pointer;background:none;color:var(--td);transition:all .2s;min-height:36px}.p-pill:hover{border-color:var(--accent);color:var(--accent)}.p-pill.active{background:var(--accent);color:var(--ds);border-color:var(--accent)}
 .p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
 .p-card{background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:1.2rem;cursor:pointer;transition:all .3s;min-height:44px}.p-card:hover{border-color:var(--accent);box-shadow:0 0 30px var(--accent-g)}
 .p-sku{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--accent);letter-spacing:.1em;margin-bottom:.2rem}
@@ -123,16 +92,13 @@ section{padding:clamp(3rem,8vw,6rem) clamp(1rem,5vw,6rem)}
 .p-compat{font-family:'JetBrains Mono',monospace;font-size:.5rem;color:var(--td);margin-bottom:.4rem}
 .p-foot{display:flex;justify-content:space-between;align-items:center;padding-top:.4rem;border-top:1px solid var(--border)}
 .p-price{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent)}
-/* Build */
 .bld-layout{display:grid;grid-template-columns:28% 47% 25%;gap:1.5rem;align-items:start}
 .bld-preview{position:sticky;top:76px;text-align:center;background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:1.5rem}
 .bld-sidebar{position:sticky;top:76px}
 .bld-steps{display:flex;gap:0;margin-bottom:2rem;border-bottom:1px solid var(--border)}
-.bld-step{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.08em;padding:.5rem .8rem;cursor:pointer;color:var(--td);border-bottom:2px solid transparent;transition:all .2s;background:none;flex:1;text-align:center;min-height:44px}
-.bld-step.active{color:var(--accent);border-bottom-color:var(--accent)}.bld-step.done{color:var(--g);border-bottom-color:var(--g)}
+.bld-step{font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.08em;padding:.5rem .8rem;cursor:pointer;color:var(--td);border-bottom:2px solid transparent;transition:all .2s;background:none;flex:1;text-align:center;min-height:44px}.bld-step.active{color:var(--accent);border-bottom-color:var(--accent)}.bld-step.done{color:var(--g);border-bottom-color:var(--g)}
 .bld-panel{display:none}.bld-panel.active{display:block}
-.bld-card{background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:1rem;cursor:pointer;transition:all .3s;position:relative;margin-bottom:.6rem;min-height:44px}
-.bld-card:hover{border-color:var(--border-h)}.bld-card.sel{border-color:var(--accent);box-shadow:0 0 15px var(--accent-g)}
+.bld-card{background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:1rem;cursor:pointer;transition:all .3s;position:relative;margin-bottom:.6rem;min-height:44px}.bld-card:hover{border-color:var(--border-h)}.bld-card.sel{border-color:var(--accent);box-shadow:0 0 15px var(--accent-g)}
 .bld-card.sel::after{content:'\2713';position:absolute;top:.6rem;right:.6rem;width:20px;height:20px;border-radius:50%;background:var(--accent);color:var(--ds);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700}
 .bld-card h4{font-size:1rem;font-weight:500;margin-bottom:.1rem}.bld-card .desc{font-size:.85rem;color:var(--td);margin-bottom:.4rem}
 .bld-card-price{font-family:'JetBrains Mono',monospace;font-size:1rem;color:var(--accent)}
@@ -144,12 +110,6 @@ section{padding:clamp(3rem,8vw,6rem) clamp(1rem,5vw,6rem)}
 .bld-inst-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.4rem}
 .bld-inst-item{text-align:center;padding:.35rem;background:var(--surf);border-radius:2px;border:1px solid var(--border)}
 .bld-inst-v{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--t)}.bld-inst-l{font-size:.45rem;color:var(--td);text-transform:uppercase;letter-spacing:.08em}
-/* Compare */
-.cmp-table{width:100%;border-collapse:collapse;border:1px solid var(--border);font-size:.85rem}
-.cmp-table th{font-family:'JetBrains Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);text-align:left;padding:.5rem .6rem;background:rgba(220,168,68,.06);border-bottom:1px solid var(--border);font-weight:500}
-.cmp-table td{padding:.45rem .6rem;border-bottom:1px solid var(--border);font-family:'JetBrains Mono',monospace;color:var(--tm)}
-.cmp-table td.best{color:var(--accent);font-weight:500;background:var(--accent-g)}
-/* Service */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem}
 .calc-wrap{background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:2rem}
 .calc-input{display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap}
@@ -164,7 +124,6 @@ section{padding:clamp(3rem,8vw,6rem) clamp(1rem,5vw,6rem)}
 .calc-fill{height:100%;background:var(--accent);border-radius:1px;transition:width .4s}
 .calc-label{font-family:'JetBrains Mono',monospace;font-size:.55rem;color:var(--td);display:flex;justify-content:space-between}
 .calc-warn{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:2px;padding:.5rem .7rem;margin-top:.6rem;color:var(--r);font-size:.85rem;display:none}.calc-warn.show{display:block}
-/* Dashboard */
 .dash-search{max-width:480px;margin:0 auto 2rem;text-align:center}
 .dash-sb{display:flex;gap:.5rem;margin-top:.6rem}.dash-sb input{flex:1;padding:.6rem .8rem;background:var(--ds);border:1px solid var(--border);border-radius:2px;color:var(--t);font-family:'JetBrains Mono',monospace;font-size:1rem;outline:none;min-height:44px}.dash-sb input:focus{border-color:var(--accent)}
 .dash-c{display:none}.dash-c.vis{display:block}
@@ -183,20 +142,28 @@ section{padding:clamp(3rem,8vw,6rem) clamp(1rem,5vw,6rem)}
 .passport-field-l{font-family:'JetBrains Mono',monospace;font-size:.45rem;text-transform:uppercase;letter-spacing:.12em;color:var(--td);margin-bottom:.1rem}
 .passport-field-v{font-size:.9rem;color:var(--t)}
 .dash-table{width:100%;border-collapse:collapse}.dash-table th{font-family:'JetBrains Mono',monospace;font-size:.5rem;text-transform:uppercase;letter-spacing:.1em;color:var(--td);text-align:left;padding:.4rem;border-bottom:1px solid var(--border)}.dash-table td{padding:.4rem;border-bottom:1px solid var(--border);font-size:.85rem;font-family:'JetBrains Mono',monospace}
-/* Dealers */
+.cmp-table{width:100%;border-collapse:collapse;border:1px solid var(--border);font-size:.85rem}
+.cmp-table th{font-family:'JetBrains Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);text-align:left;padding:.5rem .6rem;background:rgba(220,168,68,.06);border-bottom:1px solid var(--border);font-weight:500}
+.cmp-table td{padding:.45rem .6rem;border-bottom:1px solid var(--border);font-family:'JetBrains Mono',monospace;color:var(--tm)}
+.cmp-table td.best{color:var(--accent);font-weight:500;background:var(--accent-g)}
+.lib-section{background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:2rem;margin-bottom:1.5rem}
+.lib-section h3{font-size:1.2rem;margin-bottom:1rem;font-weight:500}
+.lib-table{width:100%;border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:.8rem}
+.lib-table th{text-align:left;padding:.5rem .7rem;background:rgba(220,168,68,.06);border-bottom:1px solid var(--border);color:var(--accent);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.lib-table td{padding:.4rem .7rem;border-bottom:1px solid var(--border);color:var(--tm)}
+.lib-table .hl{color:var(--accent);font-weight:500}
+.lib-warn{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:2px;padding:.75rem;margin:.75rem 0;color:var(--r);font-size:.9rem}
+.lib-faq-q{font-weight:500;color:var(--t);margin-bottom:.25rem;font-size:1.05rem}
+.lib-faq-a{color:var(--tm);font-size:1rem;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
 .dealer-card{background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:1.2rem;transition:all .3s;min-height:44px}.dealer-card:hover{border-color:var(--accent);box-shadow:0 0 30px var(--accent-g)}
 .dealer-name{font-size:1rem;font-weight:500;color:var(--t);margin-bottom:.15rem}.dealer-addr{font-size:.9rem;color:var(--td);margin-bottom:.15rem}.dealer-phone{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--accent)}
-.dealer-tags{display:flex;gap:.25rem;margin-top:.35rem}.dealer-tag{font-family:'JetBrains Mono',monospace;font-size:.45rem;text-transform:uppercase;letter-spacing:.06em;padding:.15rem .35rem;border-radius:1px;border:1px solid var(--border);color:var(--td)}
-.dealer-tag.sales{border-color:rgba(220,168,68,.3);color:var(--accent);background:var(--accent-g)}
+.dealer-tags{display:flex;gap:.25rem;margin-top:.35rem}.dealer-tag{font-family:'JetBrains Mono',monospace;font-size:.45rem;text-transform:uppercase;letter-spacing:.06em;padding:.15rem .35rem;border-radius:1px;border:1px solid var(--border);color:var(--td)}.dealer-tag.sales{border-color:rgba(220,168,68,.3);color:var(--accent);background:var(--accent-g)}
 .dealer-filters{display:flex;gap:.3rem;margin-bottom:1.25rem;flex-wrap:wrap}
-.dealer-filter{font-family:'JetBrains Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.08em;padding:.3rem .6rem;border-radius:2px;border:1px solid var(--border);background:none;color:var(--td);cursor:pointer;transition:all .2s;min-height:36px}
-.dealer-filter:hover{border-color:var(--accent);color:var(--accent)}.dealer-filter.active{background:var(--accent);color:var(--ds);border-color:var(--accent)}
-/* Individual */
+.dealer-filter{font-family:'JetBrains Mono',monospace;font-size:.55rem;text-transform:uppercase;letter-spacing:.08em;padding:.3rem .6rem;border-radius:2px;border:1px solid var(--border);background:none;color:var(--td);cursor:pointer;transition:all .2s;min-height:36px}.dealer-filter:hover{border-color:var(--accent);color:var(--accent)}.dealer-filter.active{background:var(--accent);color:var(--ds);border-color:var(--accent)}
 .ind-section{background:var(--ds2);padding:clamp(4rem,10vw,8rem) clamp(1rem,5vw,6rem);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
 .ind-card{background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:1.25rem;text-align:center;transition:all .3s;min-height:44px}.ind-card:hover{border-color:var(--accent);box-shadow:0 0 30px var(--accent-g)}
 .ind-card h4{color:var(--t);font-weight:500;margin-bottom:.2rem;font-size:1rem}.ind-card p{font-size:.9rem;color:var(--td)}
-/* Quote */
 .q-ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;opacity:0;pointer-events:none;transition:opacity .3s}.q-ov.open{opacity:1;pointer-events:all}
 .q-panel{position:fixed;right:-420px;top:0;bottom:0;width:400px;background:var(--ds2);border-left:1px solid var(--accent);z-index:1001;transition:right .4s;overflow-y:auto;padding:1.25rem}.q-panel.open{right:0}
 .q-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:.6rem;border-bottom:1px solid var(--border);margin-bottom:.75rem}.q-head h4{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent)}.q-close{background:none;border:none;color:var(--td);cursor:pointer;font-size:1rem}.q-close:hover{color:var(--t)}
@@ -210,78 +177,20 @@ section{padding:clamp(3rem,8vw,6rem) clamp(1rem,5vw,6rem)}
 .q-empty{text-align:center;padding:1.5rem;color:var(--td);font-size:.85rem}
 .q-trig{position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;width:48px;height:48px;border-radius:2px;background:var(--accent);color:var(--ds);display:flex;align-items:center;justify-content:center;border:none;cursor:pointer;font-size:1rem;box-shadow:0 0 20px var(--accent-glow);transition:all .3s;min-height:48px}.q-trig:hover{box-shadow:0 0 30px var(--accent-glow);transform:scale(1.05)}
 .q-trig .qc{position:absolute;top:-3px;right:-3px;width:16px;height:16px;border-radius:50%;background:var(--r);color:#fff;font-size:.4rem;font-family:'JetBrains Mono',monospace;display:flex;align-items:center;justify-content:center}.q-trig .qc:empty{display:none}
-/* Contact */
 .con-form{background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:2rem}
 .fg{margin-bottom:.75rem}.fg label{display:block;font-family:'JetBrains Mono',monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.12em;color:var(--td);margin-bottom:.25rem}
 .fg input,.fg select,.fg textarea{width:100%;padding:.7rem .9rem;background:var(--ds);border:1px solid var(--border);border-radius:2px;color:var(--t);font-family:'Cormorant Garamond',serif;font-size:1rem;transition:border-color .3s;outline:none;min-height:44px}
 .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--accent)}.fg textarea{resize:vertical;min-height:80px}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
-/* Library */
-.lib-section{background:var(--surf);border:1px solid var(--border);border-radius:4px;padding:2rem;margin-bottom:1.5rem}
-.lib-section h3{font-size:1.2rem;margin-bottom:1rem;font-weight:500}
-.lib-table{width:100%;border-collapse:collapse;font-family:'JetBrains Mono',monospace;font-size:.8rem}
-.lib-table th{text-align:left;padding:.5rem .7rem;background:rgba(220,168,68,.06);border-bottom:1px solid var(--border);color:var(--accent);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
-.lib-table td{padding:.4rem .7rem;border-bottom:1px solid var(--border);color:var(--tm)}
-.lib-table .hl{color:var(--accent);font-weight:500}
-.lib-warn{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:2px;padding:.75rem;margin:.75rem 0;color:var(--r);font-size:.9rem}
-.lib-faq-q{font-weight:500;color:var(--t);margin-bottom:.25rem;font-size:1.05rem}
-.lib-faq-a{color:var(--tm);font-size:1rem;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
-/* Footer */
 footer{border-top:1px solid var(--border);padding:4rem clamp(1rem,5vw,6rem) 2rem}
 .foot-c{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .foot-brand{font-family:'JetBrains Mono',monospace;font-size:.75rem;color:var(--accent);letter-spacing:.1em}.foot-brand-sub{font-size:.5rem;color:var(--td);letter-spacing:.2em;display:block}
 .foot-links{display:flex;gap:1.25rem;list-style:none}.foot-links a{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.08em;color:var(--tm);text-transform:uppercase}
 .foot-copy{width:100%;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.5rem;color:var(--td);margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border)}
 .foot-status{display:flex;align-items:center;gap:.4rem;font-family:'JetBrains Mono',monospace;font-size:.5rem;color:var(--g);letter-spacing:.1em}
-/* ═══ TABLET ═══ */
-@media (max-width: 1024px) {
-.eng-section{flex-direction:column!important;gap:2rem;padding:3rem clamp(1rem,5vw,6rem)}
-.eng-left,.eng-right{width:100%}
-.bld-layout{grid-template-columns:1fr}.bld-preview,.bld-sidebar{position:static}
-.p-layout{grid-template-columns:1fr}.p-sidebar{position:static}
-.g2,.g3{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}
-.ind-grid{grid-template-columns:repeat(2,1fr)}
-}
-/* ═══ MOBILE ═══ */
-@media (max-width: 768px) {
-body{font-size:1rem}
-section{padding:3rem clamp(1rem,3vw,2rem)}
-.hero{padding:80px 1rem 2rem;min-height:auto}
-.hero-line1{font-size:clamp(2.5rem,10vw,4rem)}.hero-line2{font-size:clamp(1.5rem,7vw,3rem)}.hero-line3{font-size:clamp(3.5rem,15vw,7rem)}
-.hero-btns{flex-direction:column;align-items:center}.hero-btns .btn{width:100%;text-align:center;justify-content:center}
-.hero-stats{flex-wrap:wrap;gap:1rem;justify-content:center}
-.hero-stat-v{display:none}
-.eng-section{padding:3rem clamp(1rem,3vw,2rem)}
-.eng-tagline{font-size:clamp(1.5rem,8vw,2.5rem)}
-.svc-grid,.g2,.g3,.g4{grid-template-columns:1fr}
-.ind-grid,.dash-grid{grid-template-columns:1fr}
-.dash-sb{flex-direction:column}
-.passport-head{flex-direction:column;align-items:center}
-.f-row{grid-template-columns:1fr}
-.nav-tabs{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(11,11,15,.97);flex-direction:column;align-items:center;justify-content:flex-start;gap:0;padding:1.5rem 1rem;z-index:999;overflow-y:auto}
-.nav-tabs.open{display:flex}
-.ntab{font-size:1rem;padding:.8rem 0;border-bottom:1px solid var(--border);width:100%;text-align:center}
-.burger{display:flex;z-index:1001}
-.burger span{width:22px;height:1.5px;background:var(--t);transition:all .3s;border-radius:1px}
-.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.burger.open span:nth-child(2){opacity:0}.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.q-panel{width:100%;right:-100%}
-.card{padding:1.2rem}
-.btn{width:100%;text-align:center;justify-content:center;min-height:48px}
-.g4,.ind-grid{grid-template-columns:1fr}
-.fg input,.fg select,.fg textarea{font-size:1rem;padding:.8rem}
-.foot-c{flex-direction:column;text-align:center}.foot-links{justify-content:center}
-.lib-section{padding:1.5rem 1rem}
-table{font-size:.85rem}
-a,button,.btn,.ntab,.p-card,.dealer-card{min-height:44px;display:flex;align-items:center}
-}
-@media (max-width: 480px) {
-body{font-size:.95rem}
-.hero-line1{font-size:clamp(2rem,10vw,3rem)}.hero-line2{font-size:clamp(1.2rem,6vw,2rem)}.hero-line3{font-size:clamp(2.5rem,12vw,4rem)}
-.g4,.ind-grid{grid-template-columns:1fr}
-section{padding:2rem .8rem}
-.f-row{grid-template-columns:1fr}
-.hero-btns .btn{font-size:.65rem;padding:.7rem 1.2rem}
-}
+@media (max-width: 1024px){.eng-section{flex-direction:column!important;gap:2rem;padding:3rem clamp(1rem,5vw,6rem)}.eng-left,.eng-right{width:100%}.bld-layout{grid-template-columns:1fr}.bld-preview,.bld-sidebar{position:static}.p-layout{grid-template-columns:1fr}.p-sidebar{position:static}.g2,.g3{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}.ind-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width: 768px){body{font-size:1rem}section{padding:3rem clamp(1rem,3vw,2rem)}.hero{padding:80px 1rem 2rem;min-height:auto}.hero-line1{font-size:clamp(2.5rem,10vw,4rem)}.hero-line2{font-size:clamp(1.5rem,7vw,3rem)}.hero-line3{font-size:clamp(3.5rem,15vw,7rem)}.hero-btns{flex-direction:column;align-items:center}.hero-btns .btn{width:100%;text-align:center;justify-content:center}.hero-stats{flex-wrap:wrap;gap:1rem;justify-content:center}.hero-stat-v{display:none}.eng-section{padding:3rem clamp(1rem,3vw,2rem)}.eng-tagline{font-size:clamp(1.5rem,8vw,2.5rem)}.svc-grid,.g2,.g3,.g4{grid-template-columns:1fr}.ind-grid,.dash-grid{grid-template-columns:1fr}.dash-sb{flex-direction:column}.f-row{grid-template-columns:1rem}.nav-tabs{display:none;position:fixed;top:64px;left:0;right:0;bottom:0;background:rgba(11,11,15,.97);flex-direction:column;align-items:center;justify-content:flex-start;gap:0;padding:1.5rem 1rem;z-index:999;overflow-y:auto}.nav-tabs.open{display:flex}.ntab{font-size:1rem;padding:.8rem 0;border-bottom:1px solid var(--border);width:100%;text-align:center}.burger{display:flex;z-index:1001}.burger span{width:22px;height:1.5px;background:var(--t);transition:all .3s;border-radius:1px}.burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.burger.open span:nth-child(2){opacity:0}.burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}.q-panel{width:100%;right:-100%}.card{padding:1.2rem}.btn{width:100%;text-align:center;justify-content:center;min-height:48px}.g4,.ind-grid{grid-template-columns:1fr}.fg input,.fg select,.fg textarea{font-size:1rem;padding:.8rem}.foot-c{flex-direction:column;text-align:center}.foot-links{justify-content:center}a,button,.btn,.ntab,.p-card,.dealer-card{min-height:44px;display:flex;align-items:center}}
+@media (max-width: 480px){body{font-size:.95rem}.hero-line1{font-size:clamp(2rem,10vw,3rem)}.hero-line2{font-size:clamp(1.2rem,6vw,2rem)}.hero-line3{font-size:clamp(2.5rem,12vw,4rem)}.g4,.ind-grid{grid-template-columns:1fr}section{padding:2rem .8rem}.f-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -303,30 +212,17 @@ section{padding:2rem .8rem}
 <li><button class="ntab" data-page="dealers" onclick="switchPage('dealers')">Дилеры</button></li>
 <li><button class="ntab" data-page="individual" onclick="switchPage('individual')">На заказ</button></li>
 </ul>
-<div class="nav-r"><button class="btn btn-g btn-sm" onclick="switchPage('contact')">ЗАЯВКА</button></div>
+<div class="nav-r"><button class="btn btn-g btn-sm" onclick="toggleQ()">ЗАЯВКА</button></div>
 </header>
 
-<!-- HOME -->
-<div class="page active" id="page-home">
-<section class="hero">
-<p class="hero-status">HE PARAMOTORES S.L. &middot; MADRID &middot; SPAIN &middot; SINCE 2003</p>
-<div class="hero-line"><div class="hero-line1">ENGINEERED</div></div>
-<div class="hero-line"><div class="hero-line2">FOR THE</div></div>
-<div class="hero-line"><div class="hero-line3">SKY</div></div>
-<p class="hero-italic">7 двигателей. Каждый — результат 20 лет инженерного опыта.</p>
-<div class="hero-btns"><button class="btn btn-g" onclick="switchPage('engines')">СМОТРЕТЬ ДВИГАТЕЛИ</button><button class="btn btn-o" onclick="switchPage('build')">СОБРАТЬ КОНФИГУРАЦИЮ</button></div>
-<div class="hero-stats">
-<div class="hero-stat"><div class="hero-stat-n" data-count="6">0</div><div class="hero-stat-l">МОДЕЛЕЙ</div></div>
-<div class="hero-stat-v"></div>
-<div class="hero-stat"><div class="hero-stat-n" data-count="277">0</div><div class="hero-stat-l">CC MAX</div></div>
-<div class="hero-stat-v"></div>
-<div class="hero-stat"><div class="hero-stat-n" data-count="29">0</div><div class="hero-stat-l">Л.С.</div></div>
-<div class="hero-stat-v"></div>
-<div class="hero-stat"><div class="hero-stat-n" data-count="90" data-suffix="%">0</div><div class="hero-stat-l">IN-HOUSE</div></div>
-</div>
-<div class="scroll-arrow"></div>
-</section>
-<div class="tech-strip"><div class="tech-item">ДЮРАЛЮМИНИЙ</div><span class="tech-sep">|</span><div class="tech-item">NIKASIL</div><span class="tech-sep">|</span><div class="tech-item">WALBRO</div><span class="tech-sep">|</span><div class="tech-item">ЗАЖИГАНИЕ</div><span class="tech-sep">|</span><div class="tech-item">POLY V BELT</div><span class="tech-sep">|</span><div class="tech-item">90% IN-HOUSE</div></div>
+<div class="page active" id="page-home"><section class="hero">
+<p class="mono hero-status">HE PARAMOTORES S.L. · MADRID · SPAIN · SINCE 2003</p>
+<h1><span class="hero-line1">ENGINEERED</span><br><span class="hero-line2">FOR THE</span><br><span class="hero-line3">SKY</span></h1>
+<p class="italic hero-sub">7 двигателей. Каждый — результат 20 лет инженерного опыта.</p>
+<div class="hero-btns"><button class="btn btn-g" onclick="switchPage('engines')">СМОТРЕТЬ ДВИГАТЕЛИ</button><button class="btn btn-o" onclick="switchPage('build')">СОБРАТЬ КОНФИГУРАТОР</button></div>
+<div class="hero-stats"><div class="hero-stat"><div class="hero-stat-n" data-count="6">0</div><div class="hero-stat-l">МОДЕЛЕЙ</div></div><div class="hero-stat-v"></div><div class="hero-stat"><div class="hero-stat-n" data-count="277">0</div><div class="hero-stat-l">CC MAX</div></div><div class="hero-stat-v"></div><div class="hero-stat"><div class="hero-stat-n" data-count="29">0</div><div class="hero-stat-l">Л.С.</div></div><div class="hero-stat-v"></div><div class="hero-stat"><div class="hero-stat-n" data-count="90" data-suffix="%">0</div><div class="hero-stat-l">IN-HOUSE</div></div></div>
+<div class="scroll-arrow"></div></section>
+<div class="tech-strip"><span class="tech-item">ДЮРАЛЮМИНИЙ</span><span class="tech-sep">|</span><span class="tech-item">NIKASIL</span><span class="tech-sep">|</span><span class="tech-item">WALBRO</span><span class="tech-sep">|</span><span class="tech-item">ЗАЖИГАНИЕ</span><span class="tech-sep">|</span><span class="tech-item">POLY V BELT</span><span class="tech-sep">|</span><span class="tech-item">90% IN-HOUSE</span></div>
 <section><div class="ctr"><div class="g4">
 <div class="card fade-in" style="cursor:pointer" onclick="switchPage('parts')"><div class="label" style="margin-bottom:.6rem">Запчасти</div><h4>330+ деталей</h4><p class="italic" style="font-size:.9rem;margin-top:.15rem">Оригинальные компоненты, доставка DDP</p></div>
 <div class="card fade-in" style="cursor:pointer" onclick="switchPage('build')"><div class="label" style="margin-bottom:.6rem">Конфигуратор</div><h4>Соберите свой</h4><p class="italic" style="font-size:.9rem;margin-top:.15rem">5 шагов, мгновенный расчёт</p></div>
@@ -334,12 +230,116 @@ section{padding:2rem .8rem}
 <div class="card fade-in" style="cursor:pointer" onclick="switchPage('library')"><div class="label" style="margin-bottom:.6rem">Инструкции</div><h4>Руководства</h4><p class="italic" style="font-size:.9rem;margin-top:.15rem">Настройка, обкатка, ТО, FAQ</p></div>
 </div></div></section></div>
 
-<!-- ABOUT -->
+<div class="page" id="page-engines"><div class="ph" style="padding:3rem clamp(1rem,5vw,6rem) 2rem;border-bottom:1px solid var(--border)"><div class="ctr"><div class="label">Двигатели</div><h2>БОЛЬШЕ ЧЕМ ДВИГАТЕЛЬ</h2><p class="italic" style="margin-top:.5rem">6 моделей. Каждый — шедевр инженерии.</p></div></div>
+<div class="eng-section"><div class="ctr" style="display:flex;gap:4rem;align-items:center"><div class="eng-left fade-in"><div class="eng-badge">MVL 125</div><h2 class="eng-tagline">ЛЕГКОСТЬ, КОТОРАЯ ВДОХНОВЛЯЕТ</h2><p class="eng-desc">Компактный, мощный, неприхотливый. Создан для тех, кто летает каждый день.</p><div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">125cc</span></div><div class="eng-spec"><span class="eng-spec-k">ТЯГА</span><span class="eng-spec-v">73 кг</span></div><div class="eng-spec"><span class="eng-spec-k">ВЕС</span><span class="eng-spec-v">26 кг</span></div></div><div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-mvl')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div><div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="80" r="28" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="80" r="4" fill="var(--accent)" style="animation:badgePulse 2s infinite"/><text x="150" y="125" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">MVL 125cc</text><circle cx="150" cy="170" r="18" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="170" r="3" fill="var(--accent)" opacity=".5" style="animation:badgePulse 2s .5s infinite"/><text x="150" y="210" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">23 HP &middot; 73 kg</text></svg></div></div></div></div>
+<div class="specs-panel" id="specs-mvl"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ MVL 125</th></tr></thead><tbody><tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>125cc</td></tr><tr><td>Цилиндр</td><td>Алюминий Nikasil</td></tr><tr><td>Карбюратор</td><td>Walbro 37</td></tr><tr><td>Зажигание</td><td>Inductive IDI</td></tr><tr><td>Свеча</td><td>BR9ES (0.7mm)</td></tr><tr><td>Передача</td><td>Центробежное ременное</td></tr><tr><td>Стартер</td><td>Ручной / Flash</td></tr><tr><td>Выхлоп</td><td>Карбоновый глушитель</td></tr><tr><td>Охлаждение</td><td>Воздушное</td></tr><tr><td>Топливо</td><td>АИ-98 + масло 2.5%</td></tr></tbody></table></div></div>
+<div class="eng-section alt reverse"><div class="ctr" style="display:flex;gap:4rem;align-items:center;flex-direction:row-reverse"><div class="eng-left fade-in"><div class="eng-badge">MV1 185</div><h2 class="eng-tagline">МОЩНОСТЬ БЕЗ КОМПРОМИССОВ</h2><p class="eng-desc">Универсальный двигатель для пеших и трик-полётов. 25 лошадиных сил.</p><div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">184.70cc</span></div><div class="eng-spec"><span class="eng-spec-k">МОЩНОСТЬ</span><span class="eng-spec-v">25 HP</span></div><div class="eng-spec"><span class="eng-spec-k">ВЕС</span><span class="eng-spec-v">13.4 кг</span></div></div><div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-mv1')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div><div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="70" r="32" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="70" r="4" fill="var(--accent)" style="animation:badgePulse 2s .3s infinite"/><text x="150" y="125" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">MV1 184.70cc</text><circle cx="150" cy="175" r="20" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="175" r="3" fill="var(--accent)" opacity=".5" style="animation:badgePulse 2s .8s infinite"/><text x="150" y="215" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">25 HP &middot; 13.4 kg</text></svg></div></div></div></div>
+<div class="specs-panel" id="specs-mv1"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ MV1 185</th></tr></thead><tbody><tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>184.70cc (54x66mm)</td></tr><tr><td>Мощность</td><td>25 HP при 8300 RPM</td></tr><tr><td>Тяга</td><td>75 кг (130cm) / 70 кг (122cm)</td></tr><tr><td>Вес</td><td>13.4 кг</td></tr><tr><td>Расход</td><td>4.3-4.7 л/ч</td></tr><tr><td>Цилиндр</td><td>Алюминий Nikasil</td></tr><tr><td>Поршень</td><td>HQ diamond graphite 2 rings</td></tr><tr><td>Карбюратор</td><td>Walbro 37</td></tr><tr><td>Зажигание</td><td>Inductive IDI</td></tr><tr><td>Свеча</td><td>BR9ES (0.7mm)</td></tr><tr><td>Передача</td><td>Центробежное ременное 1:2.90</td></tr><tr><td>Стартер</td><td>Ручной / Flash / Электро</td></tr><tr><td>Выхлоп</td><td>Карбоновый глушитель</td></tr><tr><td>Температура</td><td>EGT 550 / CHT 250</td></tr><tr><td>Обороты</td><td>Макс 8300, Оптимум 8000-8300</td></tr></tbody></table></div></div>
+<div class="eng-section"><div class="ctr" style="display:flex;gap:4rem;align-items:center"><div class="eng-left fade-in"><div class="eng-badge">MV2 204 <span class="badge" style="margin-left:.5rem">BESTSELLER</span></div><h2 class="eng-tagline">МОНСТР НЕБЕС</h2><p class="eng-desc">29 л.с., двойной пуск, тандем. Самый популярный двигатель в линейке.</p><div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">204cc</span></div><div class="eng-spec"><span class="eng-spec-k">МОЩНОСТЬ</span><span class="eng-spec-v">29 HP</span></div><div class="eng-spec"><span class="eng-spec-k">ТЯГА</span><span class="eng-spec-v">75 кг</span></div></div><div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-mv2')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div><div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="70" r="36" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="70" r="4" fill="var(--accent)" style="animation:badgePulse 2s infinite"/><circle cx="130" cy="70" r="14" fill="none" stroke="var(--accent)" stroke-width=".8" opacity=".5"/><circle cx="170" cy="70" r="14" fill="none" stroke="var(--accent)" stroke-width=".8" opacity=".5"/><text x="150" y="130" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">MV2 204cc</text><text x="150" y="145" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono" font-size="5">ДВОЙНОЙ ЦИЛИНДР</text><circle cx="150" cy="190" r="22" fill="none" stroke="var(--border)" stroke-width="1"/><text x="150" y="240" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">29 HP &middot; 13.6 kg</text></svg></div></div></div></div>
+<div class="specs-panel" id="specs-mv2"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ MV2 204</th></tr></thead><tbody><tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>204cc (66x54mm)</td></tr><tr><td>Мощность</td><td>29 HP при 8300 RPM</td></tr><tr><td>Тяга</td><td>75 кг (130cm) / 70 кг (122cm)</td></tr><tr><td>Вес</td><td>13.6 кг</td></tr><tr><td>Расход</td><td>4.3-4.7 л/ч</td></tr><tr><td>Цилиндр</td><td>Алюминий Nikasil</td></tr><tr><td>Поршень</td><td>HQ diamond graphite 2 rings</td></tr><tr><td>Карбюратор</td><td>Walbro 37</td></tr><tr><td>Зажигание</td><td>Inductive IDI</td></tr><tr><td>Свеча</td><td>BR9ES (0.7mm)</td></tr><tr><td>Передача</td><td>Центробежное ременное</td></tr><tr><td>Стартер</td><td>Ручной / Flash / Электро</td></tr><tr><td>Выхлоп</td><td>Карбоновый глушитель</td></tr><tr><td>Температура</td><td>EGT 550 / CHT 250</td></tr><tr><td>Обороты</td><td>Макс 8600, Оптимум 8300-8600</td></tr><tr><td>Особенность</td><td>Двойной пуск</td></tr></tbody></table></div></div>
+<div class="eng-section alt reverse"><div class="ctr" style="display:flex;gap:4rem;align-items:center;flex-direction:row-reverse"><div class="eng-left fade-in"><div class="eng-badge">RAPTOR 250</div><h2 class="eng-tagline">МАКСИМАЛЬНЫЙ ОБЪЁМ. МАКСИМАЛЬНАЯ ТЯГА.</h2><p class="eng-desc">277 кубических сантиметров. Сухое сцепление. Db-Killer глушитель.</p><div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">277cc</span></div><div class="eng-spec"><span class="eng-spec-k">МОЩНОСТЬ</span><span class="eng-spec-v">25 HP</span></div><div class="eng-spec"><span class="eng-spec-k">ТЯГА</span><span class="eng-spec-v">77 кг</span></div></div><div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-raptor')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div><div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="70" r="40" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="70" r="5" fill="var(--accent)" style="animation:badgePulse 2s infinite"/><text x="150" y="130" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">RAPTOR 250</text><text x="150" y="145" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">277cc &middot; СУХОЕ СЦЕПЛЕНИЕ</text><circle cx="150" cy="195" r="25" fill="none" stroke="var(--border)" stroke-width="1"/><text x="150" y="245" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">25 HP &middot; 77 kg</text></svg></div></div></div></div>
+<div class="specs-panel" id="specs-raptor"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ RAPTOR 250</th></tr></thead><tbody><tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>277cc (66x54mm)</td></tr><tr><td>Мощность</td><td>25 HP при 7800 RPM</td></tr><tr><td>Тяга</td><td>77 кг (130cm) / 72 кг (122cm)</td></tr><tr><td>Вес</td><td>14.2 кг</td></tr><tr><td>Расход</td><td>3.8-4.2 л/ч</td></tr><tr><td>Цилиндр</td><td>Алюминий Nikasil</td></tr><tr><td>Поршень</td><td>HQ diamond graphite 2 rings</td></tr><tr><td>Карбюратор</td><td>Walbro 37</td></tr><tr><td>Зажигание</td><td>Inductive IDI</td></tr><tr><td>Свеча</td><td>BR9ES (0.7mm)</td></tr><tr><td>Передача</td><td>Центробежное сухое</td></tr><tr><td>Стартер</td><td>Ручной / Flash / Электро</td></tr><tr><td>Выхлоп</td><td>Db-Killer карбон</td></tr><tr><td>Температура</td><td>EGT 550 / CHT 250</td></tr><tr><td>Обороты</td><td>Макс 8600, Оптимум 8300-8600</td></tr></tbody></table></div></div>
+<div class="eng-section"><div class="ctr" style="display:flex;gap:4rem;align-items:center"><div class="eng-left fade-in"><div class="eng-badge">RS-185 <span class="badge badge-pulse" style="margin-left:.5rem">NEW</span></div><h2 class="eng-tagline">НОВАЯ ЭРА RS</h2><p class="eng-desc">Обновлённая серия. Повышенная эффективность. 26 лошадиных сил.</p><div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">185cc</span></div><div class="eng-spec"><span class="eng-spec-k">МОЩНОСТЬ</span><span class="eng-spec-v">26 HP</span></div><div class="eng-spec"><span class="eng-spec-k">СЕРИЯ</span><span class="eng-spec-v">RS</span></div></div><div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-rs185')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div><div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><text x="150" y="75" text-anchor="middle" fill="rgba(220,168,68,.08)" font-family="Space Grotesk" font-size="28" font-weight="300">RS</text><circle cx="150" cy="150" r="28" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="150" r="4" fill="var(--accent)" style="animation:badgePulse 2s .5s infinite"/><text x="150" y="200" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">RS-185 185cc</text><text x="150" y="240" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">26 HP</text></svg></div></div></div></div>
+<div class="specs-panel" id="specs-rs185"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ RS-185</th></tr></thead><tbody><tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>185cc</td></tr><tr><td>Мощность</td><td>26 HP</td></tr><tr><td>Серия</td><td>New RS</td></tr><tr><td>Цилиндр</td><td>Алюминий Nikasil</td></tr><tr><td>Карбюратор</td><td>Walbro</td></tr><tr><td>Зажигание</td><td>Электронная катушка</td></tr><tr><td>Передача</td><td>Poly V Belt</td></tr><tr><td>Охлаждение</td><td>Воздушное</td></tr><tr><td>Топливо</td><td>АИ-98 + масло 2.5%</td></tr></tbody></table></div></div>
+<div class="eng-section alt reverse"><div class="ctr" style="display:flex;gap:4rem;align-items:center;flex-direction:row-reverse"><div class="eng-left fade-in"><div class="eng-badge">RS-206 <span class="badge" style="margin-left:.5rem;background:var(--accent3);color:var(--t);border:1px solid var(--accent)">FLAGSHIP</span></div><h2 class="eng-tagline">ФЛАГМАН. БЕЗ ОГОВОРОК.</h2><p class="eng-desc">Максимальная мощность в линейке RS. 29 л.с., Flash starter.</p><div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">206cc</span></div><div class="eng-spec"><span class="eng-spec-k">МОЩНОСТЬ</span><span class="eng-spec-v">29 HP</span></div><div class="eng-spec"><span class="eng-spec-k">СТАРТЕР</span><span class="eng-spec-v">Flash</span></div></div><div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-rs206')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div><div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><text x="150" y="70" text-anchor="middle" fill="rgba(220,168,68,.08)" font-family="Space Grotesk" font-size="24" font-weight="300">RS</text><circle cx="150" cy="150" r="36" fill="none" stroke="var(--accent)" stroke-width="2"/><circle cx="150" cy="150" r="5" fill="var(--accent)" style="animation:badgePulse 2s infinite"/><circle cx="150" cy="150" r="18" fill="none" stroke="var(--accent)" stroke-width=".8" opacity=".4"/><text x="150" y="210" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">RS-206 206cc</text><text x="150" y="250" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono" font-size="6" font-weight="500">29 HP FLAGSHIP</text></svg></div></div></div></div>
+<div class="specs-panel" id="specs-rs206"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ RS-206</th></tr></thead><tbody><tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>206cc</td></tr><tr><td>Мощность</td><td>29 HP</td></tr><tr><td>Серия</td><td>New RS, флагман</td></tr><tr><td>Цилиндр</td><td>Алюминий Nikasil</td></tr><tr><td>Карбюратор</td><td>Walbro</td></tr><tr><td>Зажигание</td><td>Электронная катушка</td></tr><tr><td>Передача</td><td>Poly V Belt</td></tr><tr><td>Стартер</td><td>Flash starter</td></tr><tr><td>Охлаждение</td><td>Воздушное</td></tr><tr><td>Топливо</td><td>АИ-98 + масло 2.5%</td></tr></tbody></table></div></div></div>
+
+<div class="page" id="page-parts"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
+<div class="label" style="margin-bottom:.75rem">Запчасти</div><h2>ОРИГИНАЛЬНЫЕ ЗАПЧАСТИ</h2>
+<p class="italic" style="margin-top:.5rem">330+ компонентов напрямую с завода в Мадриде. Доставка DDP Москва.</p>
+<div class="p-layout" style="margin-top:2rem"><aside class="p-sidebar">
+<div class="mn" style="font-size:.55rem;text-transform:uppercase;letter-spacing:.12em;color:var(--td);margin-bottom:.4rem">Двигатель</div><div id="engSel" style="margin-bottom:1.25rem"></div>
+<div class="mn" style="font-size:.55rem;text-transform:uppercase;letter-spacing:.12em;color:var(--td);margin-bottom:.4rem">Категория</div><div id="catFil"></div>
+</aside><div>
+<input class="p-search" type="text" placeholder="ПОИСК ПО АРТИКУЛУ ИЛИ НАЗВАНИЮ..." id="pSearch" oninput="renderParts()">
+<div style="margin-top:.75rem;margin-bottom:.5rem"><span class="mn" style="font-size:.65rem;color:var(--td)"><span id="pShown">0</span> деталей</span></div>
+<div class="p-grid" id="pGrid"></div></div></div></div></div>
+
+<div class="page" id="page-build"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
+<div class="label" style="margin-bottom:.75rem">Конфигуратор</div><h2>СОБЕРИТЕ СВОЙ ДВИГАТЕЛЬ</h2>
+<p class="italic" style="margin-top:.5rem">Выберите модель, раму, пропеллер и аксессуары.</p>
+<div class="bld-layout" style="margin-top:2rem">
+<div class="bld-preview"><svg viewBox="0 0 280 280" width="260"><rect x="40" y="15" width="200" height="250" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><text x="140" y="145" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="8">Выберите</text></svg><div class="mn" style="font-size:.55rem;color:var(--td);margin-top:.75rem">ВЫБРАНО: <span id="bldPreviewModel" style="color:var(--accent)">---</span></div></div>
+<div><div class="bld-steps" id="bldSteps"></div><div id="bldPanels"></div></div>
+<div class="bld-sidebar"><div class="bld-sum"><h4 style="font-size:.85rem;font-weight:500;margin-bottom:.75rem">ИТОГО</h4><div id="bldSumItems"></div><div class="bld-sum-total"><span>Сумма</span><span id="bldSumTotal">0 руб</span></div></div>
+<div class="bld-inst"><h5>Рассрочка</h5><div class="bld-inst-grid"><div class="bld-inst-item"><div class="bld-inst-l">6 мес</div><div class="bld-inst-v" id="inst6">---</div></div><div class="bld-inst-item"><div class="bld-inst-l">12 мес</div><div class="bld-inst-v" id="inst12">---</div></div><div class="bld-inst-item"><div class="bld-inst-l">24 мес</div><div class="bld-inst-v" id="inst24">---</div></div><div class="bld-inst-item"><div class="bld-inst-l">36 мес</div><div class="bld-inst-v" id="inst36">---</div></div></div></div>
+<div style="margin-top:.75rem"><a class="btn btn-g btn-bl" onclick="switchPage('contact')">ОТПРАВИТЬ ЗАЯВКУ</a></div></div></div></div></div>
+
+<div class="page" id="page-service"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
+<div class="label" style="margin-bottom:.75rem">Сервис</div><h2>ОБСЛУЖИВАНИЕ И РЕМОНТ</h2>
+<p class="italic" style="margin-top:.5rem">Регулярное ТО — залог долгой жизни вашего двигателя.</p>
+<div class="svc-grid" style="margin-top:2rem">
+<div class="card"><div class="label" style="margin-bottom:.6rem">Диагностика</div><h4>Полная проверка</h4><p class="italic" style="font-size:.9rem;margin-top:.15rem">Компьютерная диагностика состояния двигателя.</p><div class="mn" style="font-size:.65rem;color:var(--td);margin-top:.6rem;border-top:1px solid var(--border);padding-top:.4rem">от 2 500 руб</div></div>
+<div class="card"><div class="label" style="margin-bottom:.6rem">ТО</div><h4>Плановое обслуживание</h4><p class="italic" style="font-size:.9rem;margin-top:.15rem">Расходники HE по графику 25/100/200 моточасов.</p><div class="mn" style="font-size:.65rem;color:var(--td);margin-top:.6rem;border-top:1px solid var(--border);padding-top:.4rem">от 2 500 руб</div></div>
+<div class="card"><div class="label" style="margin-bottom:.6rem">Капремонт</div><h4>Полное восстановление</h4><p class="italic" style="font-size:.9rem;margin-top:.15rem">Полная разборка, замена, стенд.</p><div class="mn" style="font-size:.65rem;color:var(--td);margin-top:.6rem;border-top:1px solid var(--border);padding-top:.4rem">от 18 000 руб</div></div>
+</div>
+<div class="calc-wrap"><div class="label" style="margin-bottom:.75rem">Калькулятор ТО</div>
+<h3 style="margin-bottom:1rem">КАЛЬКУЛЯТОР ТО</h3>
+<div class="calc-input"><label>Двигатель:</label><select id="calcModel"><option>MVL 125</option><option>MV1 185</option><option>MV2 204</option><option>Raptor 250</option><option>RS-185</option><option>RS-206</option></select>
+<label style="margin-left:1rem">Моточасы:</label><input type="number" id="calcHours" min="0" max="9999" value="0" oninput="calcTO()"></div>
+<div class="calc-warn" id="calcWarn">ТО просрочено!</div><div id="calcResult"></div>
+<div class="calc-progress"><div class="calc-label"><span>Текущая наработка</span><span>Следующее ТО</span></div><div class="calc-bar"><div class="calc-fill" id="calcFill" style="width:0%"></div></div></div>
+<div style="margin-top:1rem"><a class="btn btn-g" onclick="switchPage('contact')">ЗАПИСАТЬСЯ НА ТО</a></div></div></div></div>
+
+<div class="page" id="page-dash"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
+<div class="text-c" style="margin-bottom:2rem"><div class="label" style="margin-bottom:.75rem">Кабинет владельца</div><h2>ПАСПОРТ ДВИГАТЕЛЯ</h2></div>
+<div class="dash-search"><div class="dash-sb"><input placeholder="Введите серийный номер..." id="serIn" onkeydown="if(event.key==='Enter')lookup()"><button class="btn btn-g" onclick="lookup()">Найти</button></div>
+<p class="mn" style="font-size:.55rem;color:var(--td);margin-top:.4rem">HE-2024-MV1-00487 &middot; HE-2023-RS206-00112</p></div>
+<div class="dash-c" id="dashC"></div></div></div>
+
+<div class="page" id="page-compare"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
+<div class="label" style="margin-bottom:.75rem">Сравнение</div><h2>СРАВНЕНИЕ ДВИГАТЕЛЕЙ</h2>
+<div style="overflow-x:auto;margin-top:2rem"><table class="cmp-table">
+<thead><tr><th>Параметр</th><th>MVL 125</th><th>MV1 185</th><th>MV2 204</th><th>Raptor 250</th><th>RS-185</th><th>RS-206</th></tr></thead>
+<tbody><tr><td style="color:var(--td)">Объём</td><td>125cc</td><td>184.70cc</td><td class="best">204cc</td><td class="best">277cc</td><td>185cc</td><td>206cc</td></tr>
+<tr><td style="color:var(--td)">Мощность</td><td>23 HP</td><td>25 HP</td><td class="best">29 HP</td><td>25 HP</td><td>26 HP</td><td class="best">29 HP</td></tr>
+<tr><td style="color:var(--td)">Тяга</td><td>73 кг</td><td>75 кг</td><td>75 кг</td><td class="best">77 кг</td><td>-</td><td>-</td></tr>
+<tr><td style="color:var(--td)">Вес</td><td>26 кг</td><td class="best">13.4 кг</td><td>13.6 кг</td><td>14.2 кг</td><td>-</td><td>-</td></tr>
+<tr><td style="color:var(--td)">Цилиндр</td><td>Nikasil</td><td>Nikasil</td><td>Nikasil</td><td>Nikasil</td><td>Nikasil</td><td>Nikasil</td></tr>
+<tr><td style="color:var(--td)">Сцепление</td><td>Ременное</td><td>Ременное</td><td>Ременное</td><td class="best">Сухое</td><td>Poly V</td><td>Poly V</td></tr>
+<tr><td style="color:var(--td)">Зажигание</td><td>IDI</td><td>IDI</td><td>IDI</td><td>IDI</td><td>Катушка</td><td>Катушка</td></tr>
+<tr><td style="color:var(--td)">Стартер</td><td>R/Flash/E</td><td>R/Flash/E</td><td>R/Flash/E</td><td>R/Flash/E</td><td>Ручной</td><td>Flash</td></tr></tbody></table></div></div></div>
+
+<div class="page" id="page-library"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
+<div class="label" style="margin-bottom:.75rem">Инструкции</div><h2>РУКОВОДСТВА И ИНСТРУКЦИИ</h2>
+<div style="margin-top:2rem">
+<div class="lib-section fade-in"><h3>НАСТРОЙКА КАРБЮРАТОРА</h3>
+<h4 style="font-size:.9rem;color:var(--accent);margin-bottom:.5rem">Винт L</h4><table class="lib-table"><thead><tr><th>Параметр</th><th>Значение</th></tr></thead><tbody><tr><td>Стандарт</td><td class="hl">от 1/4 до 1/3 оборота</td></tr><tr><td>MV2</td><td class="hl">от 3/4 до 1 оборота</td></tr></tbody></table>
+<h4 style="font-size:.9rem;color:var(--accent);margin:.75rem 0 .5rem">Винт H</h4><table class="lib-table"><thead><tr><th>Параметр</th><th>Значение</th></tr></thead><tbody><tr><td>Стандарт</td><td class="hl">от 1+1/8 до 1+1/4 оборота</td></tr><tr><td>MV2</td><td class="hl">от 1+1/4 до 1.5 оборота</td></tr></tbody></table>
+<div class="lib-warn">ВНИМАНИЕ: слишком обеднённая смесь = прогар поршня!</div></div>
+<div class="lib-section fade-in"><h3>ОБКАТКА</h3>
+<p class="italic" style="margin-bottom:.75rem">Первые 20 л: масло 3.0% (33:1). После 15 л: масло 2.5% (40:1).</p>
+<p class="italic">Макс CHT при обкатке: 250 градусов. Не превышать высокую мощность первые 10 часов.</p></div>
+<div class="lib-section fade-in"><h3>МОМЕНТЫ ЗАТЯЖКИ</h3>
+<table class="lib-table"><thead><tr><th>Элемент</th><th>Момент</th></tr></thead><tbody>
+<tr><td>Гайки головки</td><td class="hl">16-17 Нм</td></tr><tr><td>Маховик</td><td class="hl">42-45 Нм</td></tr><tr><td>Свеча</td><td class="hl">25 Нм</td></tr><tr><td>Цилиндр</td><td>20 Нм</td></tr><tr><td>Карбюратор</td><td>5-6 Нм</td></tr><tr><td>Выхлоп</td><td>32 Нм</td></tr></tbody></table></div>
+<div class="lib-section fade-in"><h3>ТОПЛИВО</h3><table class="lib-table"><thead><tr><th>Параметр</th><th>Значение</th></tr></thead><tbody><tr><td>Бензин</td><td class="hl">АИ-98</td></tr><tr><td>Масло</td><td class="hl">2.5% (40:1)</td></tr><tr><td>Motul</td><td>710 / 800</td></tr></tbody></table></div>
+<div class="lib-section fade-in"><h3>FAQ</h3>
+<div class="lib-faq-q">Зазор свечи?</div><div class="lib-faq-a">NGK BR9ES, 0.7mm, 5 кОм.</div>
+<div class="lib-faq-q">Электростартер?</div><div class="lib-faq-a">Да, kit для MVL, MV1, MV2.</div>
+<div class="lib-faq-q">Гарантия?</div><div class="lib-faq-a">2 года. Оригинальные детали + ТО.</div>
+<div class="lib-faq-q">Перегрев?</div><div class="lib-faq-a">Проверить пропеллер, масло, карбюрацию. Кожух снижает CHT на 25&deg;.</div>
+</div></div></div></div>
+
+<div class="page" id="page-dealers"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
+<div class="label" style="margin-bottom:.75rem">Дилеры</div><h2>НАШИ ДИЛЕРЫ</h2>
+<div class="dealer-filters" id="dealerFilters" style="margin-top:1rem"></div><div class="g3" id="dealerGrid"></div></div></div>
+
+<div class="page" id="page-contact"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
+<div class="label" style="margin-bottom:.75rem">Контакты</div><h2>СВЯЖИТЕСЬ С НАМИ</h2>
+<div class="g2" style="margin-top:2rem"><div>
+<div class="card" style="margin-bottom:.75rem"><div class="label" style="margin-bottom:.4rem">Завод Мадрид</div><p style="font-size:.9rem;color:var(--td)">HE Paramotores S.L.<br>C/ Esta&ntilde;o, 28510 Campo Real<br>Madrid, Spain</p><p style="margin-top:.5rem"><a href="tel:+34666454408" style="font-size:1rem">+34 666 45 44 08</a></p><p class="mn" style="font-size:.65rem;color:var(--td)">Офис: +34 918 73 88 35</p><p class="mn" style="font-size:.65rem;color:var(--td)">ventas@heparamotores.com</p></div>
+<div class="card"><div class="label" style="margin-bottom:.4rem">Россия</div><p style="font-size:.9rem;color:var(--td)">info@heparamotor.ru</p></div></div>
+<div class="con-form"><h3 style="margin-bottom:1.25rem">НАПИСАТЬ НАМ</h3>
+<form onsubmit="submitForm(event,'Отправлено')"><div class="f-row"><div class="fg"><label>Имя</label><input required></div><div class="fg"><label>Телефон</label><input type="tel" required></div></div>
+<div class="fg"><label>Тема</label><select><option>Заказ запчастей</option><option>Сервис</option><option>Консультация</option></select></div>
+<div class="fg"><label>Сообщение</label><textarea></textarea></div><button type="submit" class="btn btn-g">ОТПРАВИТЬ ЗАЯВКУ</button></form></div></div></div></div>
+
 <div class="page" id="page-about"><section style="background:var(--ds2)">
-<div class="ctr text-c" style="padding-top:3rem">
+<div class="ctr" style="padding-top:3rem">
 <div class="label" style="margin-bottom:.75rem">О компании</div>
 <h2>МЫ НАЧАЛИ С ПРОСТОЙ ИДЕИ</h2>
-<p class="label" style="margin-top:.5rem">HE Paramotores S.L. &middot; Мадрид, Испания</p>
+<p class="label" style="margin-top:.5rem">HE Paramotores S.L. · Мадрид, Испания</p>
 <p class="italic" style="max-width:650px;margin:2rem auto;font-size:1.3rem;line-height:1.6">Создать двигатель, на который пилот может положиться. Каждый цилиндр фрезеруется из цельного блока дюралюмина. Каждое покрытие Nikasil наносится в нашем цеху. 90% компонентов мы производим сами — потому что доверяем только себе.</p>
 </div>
 <div class="ctr" style="margin-top:4rem">
@@ -359,140 +359,6 @@ section{padding:2rem .8rem}
 <div><div style="font-family:'Space Grotesk',sans-serif;font-size:3rem;font-weight:700;color:var(--accent);line-height:1">90%</div><div class="mn" style="font-size:.7rem;color:var(--td);margin-top:.3rem">IN-HOUSE</div></div>
 </div></div></section></div>
 
-<!-- ENGINES -->
-<div class="page" id="page-engines">
-<div class="ph" style="padding:3rem clamp(1rem,5vw,6rem) 2rem;border-bottom:1px solid var(--border)"><div class="ctr"><div class="label">Двигатели</div><h2>ЛИНЕЙКА ДВИГАТЕЛЕЙ</h2><p class="italic" style="margin-top:.5rem">6 моделей от 125 до 277 кубических сантиметров.</p></div></div>
-<!-- MVL -->
-<div class="eng-section"><div class="ctr" style="display:flex;gap:4rem;align-items:center">
-<div class="eng-left fade-in"><div class="eng-badge">MVL 125</div><h2 class="eng-tagline">ЛЕГКОСТЬ, КОТОРАЯ ВДОХНОВЛЯЕТ</h2><p class="eng-desc">Компактный, мощный, неприхотливый. Создан для тех, кто летает каждый день.</p>
-<div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">125cc</span></div><div class="eng-spec"><span class="eng-spec-k">ТЯГА</span><span class="eng-spec-v">73 кг</span></div><div class="eng-spec"><span class="eng-spec-k">ВЕС</span><span class="eng-spec-v">26 кг</span></div></div>
-<div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-mvl')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div>
-<div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="80" r="28" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="80" r="4" fill="var(--accent)" style="animation:badgePulse 2s infinite"/><text x="150" y="125" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">MVL 125cc</text><circle cx="150" cy="170" r="18" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="170" r="3" fill="var(--accent)" opacity=".5" style="animation:badgePulse 2s .5s infinite"/><text x="150" y="210" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">23 HP &middot; 73 kg</text></svg></div></div>
-</div></div>
-<div class="specs-panel" id="specs-mvl"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ MVL 125</th></tr></thead><tbody>
-<tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>125cc</td></tr><tr><td>Цилиндр</td><td>Алюминий, покрытие Nikasil</td></tr><tr><td>Карбюратор</td><td>Walbro 37</td></tr><tr><td>Зажигание</td><td>Inductive IDI</td></tr><tr><td>Свеча</td><td>BR9ES (зазор 0.7mm)</td></tr><tr><td>Передача</td><td>Центробежное ременное</td></tr><tr><td>Стартер</td><td>Ручной / Flash</td></tr><tr><td>Выхлоп</td><td>Карбоновый глушитель</td></tr><tr><td>Охлаждение</td><td>Воздушное</td></tr><tr><td>Топливо</td><td>АИ-98 + масло 2.5%</td></tr>
-</tbody></table></div></div>
-<!-- MV1 -->
-<div class="eng-section alt reverse"><div class="ctr" style="display:flex;gap:4rem;align-items:center;flex-direction:row-reverse">
-<div class="eng-left fade-in"><div class="eng-badge">MV1 185</div><h2 class="eng-tagline">МОЩНОСТЬ БЕЗ КОМПРОМИССОВ</h2><p class="eng-desc">Универсальный двигатель для пеших и трик-полётов. 25 лошадиных сил.</p>
-<div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">184.70cc</span></div><div class="eng-spec"><span class="eng-spec-k">МОЩНОСТЬ</span><span class="eng-spec-v">25 HP</span></div><div class="eng-spec"><span class="eng-spec-k">ВЕС</span><span class="eng-spec-v">13.4 кг</span></div></div>
-<div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-mv1')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div>
-<div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="70" r="32" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="70" r="4" fill="var(--accent)" style="animation:badgePulse 2s .3s infinite"/><text x="150" y="125" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">MV1 184.70cc</text><circle cx="150" cy="175" r="20" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="175" r="3" fill="var(--accent)" opacity=".5" style="animation:badgePulse 2s .8s infinite"/><text x="150" y="215" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">25 HP &middot; 13.4 kg</text></svg></div></div>
-</div></div>
-<div class="specs-panel" id="specs-mv1"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ MV1 185</th></tr></thead><tbody>
-<tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>184.70cc (54 x 66mm)</td></tr><tr><td>Мощность</td><td>25 HP при 8300 RPM</td></tr><tr><td>Тяга</td><td>75 кг (130cm) / 70 кг (122cm)</td></tr><tr><td>Вес</td><td>13.4 кг</td></tr><tr><td>Расход</td><td>4.3-4.7 л/ч</td></tr><tr><td>Цилиндр</td><td>Алюминий Nikasil</td></tr><tr><td>Поршень</td><td>HQ, diamond, graphite, 2 chromed rings</td></tr><tr><td>Карбюратор</td><td>Walbro 37</td></tr><tr><td>Зажигание</td><td>Inductive IDI</td></tr><tr><td>Свеча</td><td>BR9ES (0.7mm)</td></tr><tr><td>Передача</td><td>Центробежное ременное, 1:2.90</td></tr><tr><td>Стартер</td><td>Ручной / Flash / Электро</td></tr><tr><td>Выхлоп</td><td>Карбоновый глушитель</td></tr><tr><td>Охлаждение</td><td>Воздушное</td></tr><tr><td>Топливо</td><td>АИ-98 + масло 2.5%</td></tr><tr><td>Температура</td><td>EGT 550 / CHT 250</td></tr><tr><td>Обороты</td><td>Макс 8300, Оптимум 8000-8300</td></tr>
-</tbody></table></div></div>
-<!-- MV2 -->
-<div class="eng-section"><div class="ctr" style="display:flex;gap:4rem;align-items:center">
-<div class="eng-left fade-in"><div class="eng-badge">MV2 204 <span class="badge" style="margin-left:.5rem">BESTSELLER</span></div><h2 class="eng-tagline">МОНСТР НЕБЕС</h2><p class="eng-desc">29 л.с., двойной пуск, тандем. Самый популярный двигатель в линейке.</p>
-<div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">204cc</span></div><div class="eng-spec"><span class="eng-spec-k">МОЩНОСТЬ</span><span class="eng-spec-v">29 HP</span></div><div class="eng-spec"><span class="eng-spec-k">ТЯГА</span><span class="eng-spec-v">75 кг</span></div></div>
-<div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-mv2')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div>
-<div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="70" r="36" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="70" r="4" fill="var(--accent)" style="animation:badgePulse 2s infinite"/><circle cx="130" cy="70" r="14" fill="none" stroke="var(--accent)" stroke-width=".8" opacity=".5"/><circle cx="170" cy="70" r="14" fill="none" stroke="var(--accent)" stroke-width=".8" opacity=".5"/><text x="150" y="130" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">MV2 204cc</text><text x="150" y="145" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono" font-size="5">ДВОЙНОЙ ЦИЛИНДР</text><circle cx="150" cy="190" r="22" fill="none" stroke="var(--border)" stroke-width="1"/><text x="150" y="240" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">29 HP &middot; 13.6 kg</text></svg></div></div>
-</div></div>
-<div class="specs-panel" id="specs-mv2"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ MV2 204</th></tr></thead><tbody>
-<tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>204cc (66 x 54mm)</td></tr><tr><td>Мощность</td><td>29 HP при 8300 RPM</td></tr><tr><td>Тяга</td><td>75 кг (130cm) / 70 кг (122cm)</td></tr><tr><td>Вес</td><td>13.6 кг</td></tr><tr><td>Расход</td><td>4.3-4.7 л/ч</td></tr><tr><td>Цилиндр</td><td>Алюминий Nikasil</td></tr><tr><td>Поршень</td><td>HQ, diamond, graphite, 2 chromed rings</td></tr><tr><td>Карбюратор</td><td>Walbro 37</td></tr><tr><td>Зажигание</td><td>Inductive IDI</td></tr><tr><td>Свеча</td><td>BR9ES (0.7mm)</td></tr><tr><td>Передача</td><td>Центробежное ременное</td></tr><tr><td>Стартер</td><td>Ручной / Flash / Электро</td></tr><tr><td>Выхлоп</td><td>Карбоновый глушитель</td></tr><tr><td>Охлаждение</td><td>Воздушное</td></tr><tr><td>Топливо</td><td>АИ-98 + масло 2.5%</td></tr><tr><td>Температура</td><td>EGT 550 / CHT 250</td></tr><tr><td>Обороты</td><td>Макс 8600, Оптимум 8300-8600</td></tr><tr><td>Особенность</td><td>Двойной пуск (Flash + электрический)</td></tr>
-</tbody></table></div></div>
-<!-- Raptor -->
-<div class="eng-section alt reverse"><div class="ctr" style="display:flex;gap:4rem;align-items:center;flex-direction:row-reverse">
-<div class="eng-left fade-in"><div class="eng-badge">RAPTOR 250</div><h2 class="eng-tagline">МАКСИМАЛЬНЫЙ ОБЪЁМ. МАКСИМАЛЬНАЯ ТЯГА.</h2><p class="eng-desc">277 кубических сантиметров мощности. Сухое сцепление, Db-Killer глушитель.</p>
-<div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">277cc</span></div><div class="eng-spec"><span class="eng-spec-k">МОЩНОСТЬ</span><span class="eng-spec-v">25 HP</span></div><div class="eng-spec"><span class="eng-spec-k">ТЯГА</span><span class="eng-spec-v">77 кг</span></div></div>
-<div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-rap')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div>
-<div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><circle cx="150" cy="70" r="40" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="70" r="5" fill="var(--accent)" style="animation:badgePulse 2s infinite"/><text x="150" y="130" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">RAPTOR 250</text><text x="150" y="145" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">277cc &middot; СУХОЕ СЦЕПЛЕНИЕ</text><circle cx="150" cy="195" r="25" fill="none" stroke="var(--border)" stroke-width="1"/><text x="150" y="245" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">25 HP &middot; 77 kg</text></svg></div></div>
-</div></div>
-<div class="specs-panel" id="specs-rap"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ RAPTOR 250</th></tr></thead><tbody>
-<tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>277cc (66 x 54mm)</td></tr><tr><td>Мощность</td><td>25 HP при 7800 RPM</td></tr><tr><td>Тяга</td><td>77 кг (130cm) / 72 кг (122cm)</td></tr><tr><td>Вес</td><td>14.2 кг</td></tr><tr><td>Расход</td><td>3.8-4.2 л/ч</td></tr><tr><td>Цилиндр</td><td>Алюминий Nikasil</td></tr><tr><td>Поршень</td><td>HQ, diamond, graphite, 2 chromed rings</td></tr><tr><td>Карбюратор</td><td>Walbro 37</td></tr><tr><td>Зажигание</td><td>Inductive IDI</td></tr><tr><td>Свеча</td><td>BR9ES (0.7mm)</td></tr><tr><td>Передача</td><td>Центробежное сухое</td></tr><tr><td>Стартер</td><td>Ручной / Flash / Электро</td></tr><tr><td>Выхлоп</td><td>Db-Killer карбон</td></tr><tr><td>Охлаждение</td><td>Воздушное</td></tr><tr><td>Топливо</td><td>АИ-98 + масло 2.5%</td></tr><tr><td>Температура</td><td>EGT 550 / CHT 250</td></tr><tr><td>Обороты</td><td>Макс 8600, Оптимум 8300-8600</td></tr>
-</tbody></table></div></div>
-<!-- RS-185 -->
-<div class="eng-section"><div class="ctr" style="display:flex;gap:4rem;align-items:center">
-<div class="eng-left fade-in"><div class="eng-badge">RS-185 <span class="badge badge-pulse" style="margin-left:.5rem">NEW</span></div><h2 class="eng-tagline">НОВАЯ ЭРА RS</h2><p class="eng-desc">Обновлённая серия. Повышенная эффективность. 26 лошадиных сил.</p>
-<div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">185cc</span></div><div class="eng-spec"><span class="eng-spec-k">МОЩНОСТЬ</span><span class="eng-spec-v">26 HP</span></div><div class="eng-spec"><span class="eng-spec-k">СЕРИЯ</span><span class="eng-spec-v">RS</span></div></div>
-<div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-rs185')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div>
-<div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><text x="150" y="75" text-anchor="middle" fill="rgba(220,168,68,.08)" font-family="Space Grotesk" font-size="28" font-weight="300">RS</text><circle cx="150" cy="150" r="28" fill="none" stroke="var(--accent)" stroke-width="1.5"/><circle cx="150" cy="150" r="4" fill="var(--accent)" style="animation:badgePulse 2s .5s infinite"/><text x="150" y="200" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">RS-185 185cc</text><text x="150" y="240" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="5">26 HP</text></svg></div></div>
-</div></div>
-<div class="specs-panel" id="specs-rs185"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ RS-185</th></tr></thead><tbody>
-<tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>185cc</td></tr><tr><td>Мощность</td><td>26 HP</td></tr><tr><td>Серия</td><td>New RS</td></tr><tr><td>Цилиндр</td><td>Алюминий Nikasil</td></tr><tr><td>Карбюратор</td><td>Walbro</td></tr><tr><td>Зажигание</td><td>Электронная катушка</td></tr><tr><td>Передача</td><td>Poly V Belt</td></tr><tr><td>Охлаждение</td><td>Воздушное</td></tr><tr><td>Топливо</td><td>АИ-98 + масло 2.5%</td></tr>
-</tbody></table></div></div>
-<!-- RS-206 -->
-<div class="eng-section alt reverse"><div class="ctr" style="display:flex;gap:4rem;align-items:center;flex-direction:row-reverse">
-<div class="eng-left fade-in"><div class="eng-badge">RS-206 <span class="badge" style="margin-left:.5rem;background:var(--accent3);color:var(--t);border:1px solid var(--accent)">FLAGSHIP</span></div><h2 class="eng-tagline">ФЛАГМАН. БЕЗ ОГОВОРОК.</h2><p class="eng-desc">Максимальная мощность в линейке RS. 29 л.с., Flash starter, 206cc чистой производительности.</p>
-<div class="eng-specs-row"><div class="eng-spec"><span class="eng-spec-k">ОБЪЁМ</span><span class="eng-spec-v">206cc</span></div><div class="eng-spec"><span class="eng-spec-k">МОЩНОСТЬ</span><span class="eng-spec-v">29 HP</span></div><div class="eng-spec"><span class="eng-spec-k">СТАРТЕР</span><span class="eng-spec-v">Flash</span></div></div>
-<div class="eng-btns"><button class="btn btn-o btn-sm" onclick="toggleSpecs('specs-rs206')">ХАРАКТЕРИСТИКИ</button><button class="btn btn-o btn-sm" onclick="switchPage('parts')">ЗАПЧАСТИ</button><button class="btn btn-g btn-sm" onclick="switchPage('build')">КОНФИГУРАТОР</button></div></div>
-<div class="eng-right"><div class="eng-svg-glow"></div><div class="eng-svg-wrap"><svg viewBox="0 0 300 300" width="280"><rect x="40" y="15" width="220" height="270" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><text x="150" y="70" text-anchor="middle" fill="rgba(220,168,68,.08)" font-family="Space Grotesk" font-size="24" font-weight="300">RS</text><circle cx="150" cy="150" r="36" fill="none" stroke="var(--accent)" stroke-width="2"/><circle cx="150" cy="150" r="5" fill="var(--accent)" style="animation:badgePulse 2s infinite"/><circle cx="150" cy="150" r="18" fill="none" stroke="var(--accent)" stroke-width=".8" opacity=".4"/><text x="150" y="210" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="6">RS-206 206cc</text><text x="150" y="250" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono" font-size="6" font-weight="500">29 HP FLAGSHIP</text></svg></div></div>
-</div></div>
-<div class="specs-panel" id="specs-rs206"><div class="specs-inner"><table class="hud-table"><thead><tr><th colspan="2">ХАРАКТЕРИСТИКИ RS-206</th></tr></thead><tbody>
-<tr><td>Тип</td><td>Одноцилиндровый 2-тактный</td></tr><tr><td>Объём</td><td>206cc</td></tr><tr><td>Мощность</td><td>29 HP</td></tr><tr><td>Серия</td><td>New RS, флагман</td></tr><tr><td>Цилиндр</td><td>Алюминий Nikasil</td></tr><tr><td>Карбюратор</td><td>Walbro</td></tr><tr><td>Зажигание</td><td>Электронная катушка</td></tr><tr><td>Передача</td><td>Poly V Belt</td></tr><tr><td>Стартер</td><td>Flash starter</td></tr><tr><td>Охлаждение</td><td>Воздушное</td></tr><tr><td>Топливо</td><td>АИ-98 + масло 2.5%</td></tr>
-</tbody></table></div></div>
-</div>
-
-<!-- ENGINEERING -->
-<section style="background:var(--ds2)">
-<div class="ctr text-c">
-<div class="label" style="margin-bottom:.75rem">Инженерия</div>
-<h2 class="fade-in">ИНЖЕНЕРНОЕ СОВЕРШЕНСТВО</h2>
-<p class="italic fade-in" style="margin-top:.5rem">Каждая деталь — результат 20 лет исследований</p>
-<div class="g3 fade-in" style="margin-top:3rem">
-<div class="card" style="text-align:left"><div style="width:32px;height:32px;background:var(--accent-g);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--accent)">&#9632;</div><h4>ДЮРАЛЮМИНИЙ</h4><p class="italic" style="font-size:.95rem;margin-top:.3rem">Каждый цилиндр вырезан из цельного блока. Никакого литья.</p></div>
-<div class="card" style="text-align:left"><div style="width:32px;height:32px;background:var(--accent-g);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--accent)">&#9679;</div><h4>NIKASIL</h4><p class="italic" style="font-size:.95rem;margin-top:.3rem">Алюминиевое покрытие. Снижает трение. Увеличивает ресурс.</p></div>
-<div class="card" style="text-align:left"><div style="width:32px;height:32px;background:var(--accent-g);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--accent)">&#9881;</div><h4>WALBRO</h4><p class="italic" style="font-size:.95rem;margin-top:.3rem">Карбюратор Walbro 37. Ручная настройка каждого экземпляра.</p></div>
-<div class="card" style="text-align:left"><div style="width:32px;height:32px;background:var(--accent-g);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--accent)">&#9650;</div><h4>POLY V BELT</h4><p class="italic" style="font-size:.95rem;margin-top:.3rem">Центробежное сцепление. Плавная передача мощности.</p></div>
-<div class="card" style="text-align:left"><div style="width:32px;height:32px;background:var(--accent-g);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--accent)">&#9889;</div><h4>ЗАЖИГАНИЕ</h4><p class="italic" style="font-size:.95rem;margin-top:.3rem">Inductive IDI. Надёжный запуск в любых условиях.</p></div>
-<div class="card" style="text-align:left"><div style="width:32px;height:32px;background:var(--accent-g);border-radius:4px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--accent)">&#9733;</div><h4>90% IN-HOUSE</h4><p class="italic" style="font-size:.95rem;margin-top:.3rem">Мы не закупаем компоненты. Мы создаём их в Мадриде.</p></div>
-</div></div></div></section>
-
-<!-- TESTED -->
-<section class="text-c">
-<div class="ctr">
-<div class="label" style="margin-bottom:.75rem">Доказательства</div>
-<h2 class="fade-in">ТЕСТИРОВАНО. ДОКАЗАНО.</h2>
-<p class="italic fade-in" style="margin-top:.5rem">Каждый двигатель проходит 15-минутный тест на стенде</p>
-<div class="fade-in" style="display:flex;justify-content:center;gap:3rem;margin-top:3rem;flex-wrap:wrap">
-<div class="text-c"><div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:var(--accent);line-height:1" data-count="15">0</div><div class="mn" style="font-size:.6rem;color:var(--td);text-transform:uppercase;letter-spacing:.12em;margin-top:.3rem">МИН ТЕСТ НА СТЕНДЕ</div></div>
-<div class="text-c"><div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:var(--accent);line-height:1" data-count="20" data-suffix="+">0</div><div class="mn" style="font-size:.6rem;color:var(--td);text-transform:uppercase;letter-spacing:.12em;margin-top:.3rem">ЛЕТ ОПЫТА</div></div>
-<div class="text-c"><div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:var(--accent);line-height:1" data-count="90" data-suffix="%">0</div><div class="mn" style="font-size:.6rem;color:var(--td);text-transform:uppercase;letter-spacing:.12em;margin-top:.3rem">IN-HOUSE</div></div>
-<div class="text-c"><div style="font-family:'Space Grotesk',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;color:var(--accent);line-height:1" data-count="20000" data-suffix="+">0</div><div class="mn" style="font-size:.6rem;color:var(--td);text-transform:uppercase;letter-spacing:.12em;margin-top:.3rem">ДВИГАТЕЛЕЙ</div></div>
-</div></div></section>
-
-<!-- COMPARE -->
-<div class="page" id="page-compare"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
-<div class="label" style="margin-bottom:.75rem">Сравнение</div><h2>СРАВНЕНИЕ ДВИГАТЕЛЕЙ</h2>
-<div style="overflow-x:auto;margin-top:2rem"><table class="cmp-table">
-<thead><tr><th>Параметр</th><th>MVL 125</th><th>MV1 185</th><th>MV2 204</th><th>Raptor 250</th><th>RS-185</th><th>RS-206</th></tr></thead>
-<tbody>
-<tr><td style="color:var(--td)">Объём</td><td>125cc</td><td>184.70cc</td><td class="best">204cc</td><td class="best">277cc</td><td>185cc</td><td>206cc</td></tr>
-<tr><td style="color:var(--td)">Мощность</td><td>23 HP</td><td>25 HP</td><td class="best">29 HP</td><td>25 HP</td><td>26 HP</td><td class="best">29 HP</td></tr>
-<tr><td style="color:var(--td)">Тяга</td><td>73 кг</td><td>75 кг</td><td>75 кг</td><td class="best">77 кг</td><td>-</td><td>-</td></tr>
-<tr><td style="color:var(--td)">Вес</td><td>26 кг</td><td class="best">13.4 кг</td><td>13.6 кг</td><td>14.2 кг</td><td>-</td><td>-</td></tr>
-<tr><td style="color:var(--td)">Цилиндр</td><td>Nikasil</td><td>Nikasil</td><td>Nikasil</td><td>Nikasil</td><td>Nikasil</td><td>Nikasil</td></tr>
-<tr><td style="color:var(--td)">Сцепление</td><td>Ременное</td><td>Ременное</td><td>Ременное</td><td class="best">Сухое</td><td>Poly V</td><td>Poly V</td></tr>
-<tr><td style="color:var(--td)">Зажигание</td><td>IDI</td><td>IDI</td><td>IDI</td><td>IDI</td><td>Катушка</td><td>Катушка</td></tr>
-<tr><td style="color:var(--td)">Стартер</td><td>R/Flash/E</td><td>R/Flash/E</td><td>R/Flash/E</td><td>R/Flash/E</td><td>Ручной</td><td>Flash</td></tr>
-</tbody></table></div></div></div>
-
-<!-- PARTS -->
-<div class="page" id="page-parts"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
-<div class="label" style="margin-bottom:.75rem">Запчасти</div><h2>ОРИГИНАЛЬНЫЕ ЗАПЧАСТИ</h2>
-<p class="italic" style="margin-top:.5rem">330+ компонентов напрямую с завода в Мадриде. Доставка DDP Москва.</p>
-<div class="p-layout" style="margin-top:2rem"><aside class="p-sidebar">
-<div class="mn" style="font-size:.55rem;text-transform:uppercase;letter-spacing:.12em;color:var(--td);margin-bottom:.4rem">Двигатель</div><div id="engSel" style="margin-bottom:1.25rem"></div>
-<div class="mn" style="font-size:.55rem;text-transform:uppercase;letter-spacing:.12em;color:var(--td);margin-bottom:.4rem">Категория</div><div id="catFil"></div>
-</aside><div>
-<input class="p-search" type="text" placeholder="ПОИСК ПО АРТИКУЛУ ИЛИ НАЗВАНИЮ..." id="pSearch" oninput="renderParts()">
-<div style="margin-top:.75rem;margin-bottom:.5rem"><span class="mn" style="font-size:.65rem;color:var(--td)"><span id="pShown">0</span> деталей</span></div>
-<div class="p-grid" id="pGrid"></div></div></div></div></div>
-
-<!-- BUILD -->
-<div class="page" id="page-build"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
-<div class="label" style="margin-bottom:.75rem">Конфигуратор</div><h2>СОБЕРИТЕ СВОЙ ДВИГАТЕЛЬ</h2>
-<p class="italic" style="margin-top:.5rem">Выберите модель, раму, пропеллер и аксессуары</p>
-<div class="bld-layout" style="margin-top:2rem">
-<div class="bld-preview"><svg viewBox="0 0 280 280" width="260"><rect x="40" y="15" width="200" height="250" rx="8" fill="none" stroke="var(--border)" stroke-width="1"/><text x="140" y="145" text-anchor="middle" fill="var(--td)" font-family="JetBrains Mono" font-size="8">Выберите</text></svg><div class="mn" style="font-size:.55rem;color:var(--td);margin-top:.75rem">ВЫБРАНО: <span id="bldPreviewModel" style="color:var(--accent)">---</span></div></div>
-<div><div class="bld-steps" id="bldSteps"></div><div id="bldPanels"></div></div>
-<div class="bld-sidebar"><div class="bld-sum"><h4 style="font-size:.85rem;font-weight:500;margin-bottom:.75rem">ИТОГО</h4><div id="bldSumItems"></div><div class="bld-sum-total"><span>Сумма</span><span id="bldSumTotal">0 руб</span></div></div>
-<div class="bld-inst"><h5>Рассрочка</h5><div class="bld-inst-grid"><div class="bld-inst-item"><div class="bld-inst-l">6 мес</div><div class="bld-inst-v" id="inst6">---</div></div><div class="bld-inst-item"><div class="bld-inst-l">12 мес</div><div class="bld-inst-v" id="inst12">---</div></div><div class="bld-inst-item"><div class="bld-inst-l">24 мес</div><div class="bld-inst-v" id="inst24">---</div></div><div class="bld-inst-item"><div class="bld-inst-l">36 мес</div><div class="bld-inst-v" id="inst36">---</div></div></div></div>
-<div style="margin-top:.75rem"><a class="btn btn-g btn-bl" onclick="switchPage('contact')">ОТПРАВИТЬ ЗАЯВКУ</a></div>
-</div></div></div></div>
-
-<!-- INDIVIDUAL -->
 <div class="page" id="page-individual"><section class="ind-section"><div class="ctr">
 <div class="label" style="margin-bottom:.75rem">На заказ</div>
 <h2 style="font-size:clamp(2rem,6vw,4rem);margin-bottom:.5rem">HE <span style="color:var(--accent)">INDIVIDUAL</span></h2>
@@ -503,80 +369,15 @@ section{padding:2rem .8rem}
 <div class="ind-card"><h4>Карбоновые детали</h4><p>Углепластиковые компоненты</p></div>
 <div class="ind-card"><h4>GPS-трекинг</h4><p>Данные полёта в реальном времени</p></div>
 </div>
-<div style="margin-top:2.5rem"><a class="btn btn-g" onclick="switchPage('build')">ЗАПРОСИТЬ СБОРКУ</a></div>
+<div style="margin-top:2.5rem;text-align:center"><a class="btn btn-g" onclick="switchPage('build')">ЗАПРОСИТЬ СБОРКУ</a></div>
 </div></section></div>
 
-<!-- SERVICE -->
-<div class="page" id="page-service"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
-<div class="label" style="margin-bottom:.75rem">Сервис</div><h2>ОБСЛУЖИВАНИЕ И РЕМОНТ</h2>
-<p class="italic" style="margin-top:.5rem">Регулярное ТО — залог долгой жизни вашего двигателя</p>
-<div class="svc-grid" style="margin-top:2rem">
-<div class="card"><div class="label" style="margin-bottom:.6rem">Диагностика</div><h4>Полная проверка</h4><p class="italic" style="font-size:.9rem;margin-top:.15rem">Компьютерная диагностика состояния двигателя.</p><div class="mn" style="font-size:.65rem;color:var(--td);margin-top:.6rem;border-top:1px solid var(--border);padding-top:.4rem">от 2 500 руб</div></div>
-<div class="card"><div class="label" style="margin-bottom:.6rem">ТО</div><h4>Плановое обслуживание</h4><p class="italic" style="font-size:.9rem;margin-top:.15rem">Расходники HE по графику 25/100/200 моточасов.</p><div class="mn" style="font-size:.65rem;color:var(--td);margin-top:.6rem;border-top:1px solid var(--border);padding-top:.4rem">от 2 500 руб</div></div>
-<div class="card"><div class="label" style="margin-bottom:.6rem">Капремонт</div><h4>Полное восстановление</h4><p class="italic" style="font-size:.9rem;margin-top:.15rem">Полная разборка, замена, стенд.</p><div class="mn" style="font-size:.65rem;color:var(--td);margin-top:.6rem;border-top:1px solid var(--border);padding-top:.4rem">от 18 000 руб</div></div>
-</div>
-<div class="calc-wrap"><div class="label" style="margin-bottom:.75rem">Калькулятор ТО</div>
-<h3 style="margin-bottom:1rem">КАЛЬКУЛЯТОР ТО</h3>
-<div class="calc-input"><label>Двигатель:</label><select id="calcModel"><option>MVL 125</option><option>MV1 185</option><option>MV2 204</option><option>Raptor 250</option><option>RS-185</option><option>RS-206</option></select>
-<label style="margin-left:1rem">Моточасы:</label><input type="number" id="calcHours" min="0" max="9999" value="0" oninput="calcTO()"></div>
-<div class="calc-warn" id="calcWarn">ТО просрочено!</div><div id="calcResult"></div>
-<div class="calc-progress"><div class="calc-label"><span>Текущая наработка</span><span>Следующее ТО</span></div><div class="calc-bar"><div class="calc-fill" id="calcFill" style="width:0%"></div></div></div>
-<div style="margin-top:1rem"><a class="btn btn-g" onclick="switchPage('contact')">ЗАПИСАТЬСЯ НА ТО</a></div></div></div></div>
-
-<!-- DASH -->
-<div class="page" id="page-dash"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
-<div class="text-c" style="margin-bottom:2rem"><div class="label" style="margin-bottom:.75rem">Кабинет владельца</div><h2>ПАСПОРТ ДВИГАТЕЛЯ</h2></div>
-<div class="dash-search"><div class="dash-sb"><input placeholder="Введите серийный номер..." id="serIn" onkeydown="if(event.key==='Enter')lookup()"><button class="btn btn-g" onclick="lookup()">Найти</button></div>
-<p class="mn" style="font-size:.55rem;color:var(--td);margin-top:.4rem">HE-2024-MV1-00487 &middot; HE-2023-RS206-00112</p></div>
-<div class="dash-c" id="dashC"></div></div></div>
-
-<!-- LIBRARY -->
-<div class="page" id="page-library"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
-<div class="label" style="margin-bottom:.75rem">Инструкции</div><h2>РУКОВОДСТВА И ИНСТРУКЦИИ</h2>
-<div style="margin-top:2rem">
-<div class="lib-section fade-in"><h3>НАСТРОЙКА КАРБЮРАТОРА</h3>
-<h4 style="font-size:.9rem;color:var(--accent);margin-bottom:.5rem">Винт L</h4><table class="lib-table"><thead><tr><th>Параметр</th><th>Значение</th></tr></thead><tbody><tr><td>Стандарт</td><td class="hl">от 1/4 до 1/3 оборота</td></tr><tr><td>MV2</td><td class="hl">от 3/4 до 1 оборота</td></tr></tbody></table>
-<h4 style="font-size:.9rem;color:var(--accent);margin:.75rem 0 .5rem">Винт H</h4><table class="lib-table"><thead><tr><th>Параметр</th><th>Значение</th></tr></thead><tbody><tr><td>Стандарт</td><td class="hl">от 1+1/8 до 1+1/4 оборота</td></tr><tr><td>MV2</td><td class="hl">от 1+1/4 до 1.5 оборота</td></tr></tbody></table>
-<div class="lib-warn">ВНИМАНИЕ: слишком обеднённая смесь = прогар поршня!</div></div>
-<div class="lib-section fade-in"><h3>ОБКАТКА</h3>
-<p class="italic" style="margin-bottom:.75rem">Первые 20 л: масло 3.0% (33:1). После 15 л: масло 2.5% (40:1).</p>
-<p class="italic">Макс CHT при обкатке: 250 градусов. Не превышать высокую мощность первые 10 часов.</p></div>
-<div class="lib-section fade-in"><h3>МОМЕНТЫ ЗАТЯЖКИ</h3>
-<table class="lib-table"><thead><tr><th>Элемент</th><th>Момент</th></tr></thead><tbody>
-<tr><td>Гайки головки</td><td class="hl">16-17 Нм</td></tr><tr><td>Маховик</td><td class="hl">42-45 Нм</td></tr><tr><td>Свеча</td><td class="hl">25 Нм</td></tr><tr><td>Цилиндр</td><td>20 Нм</td></tr><tr><td>Карбюратор</td><td>5-6 Нм</td></tr><tr><td>Выхлоп</td><td>32 Нм</td></tr></tbody></table></div>
-<div class="lib-section fade-in"><h3>ТОПЛИВО</h3><table class="lib-table"><thead><tr><th>Параметр</th><th>Значение</th></tr></thead><tbody><tr><td>Бензин</td><td class="hl">АИ-98</td></tr><tr><td>Масло</td><td class="hl">2.5% (40:1)</td></tr><tr><td>Motul</td><td>710 / 800</td></tr></tbody></table></div>
-<div class="lib-section fade-in"><h3>FAQ</h3>
-<div class="lib-faq-q">Зазор свечи?</div><div class="lib-faq-a">NGK BR9ES, 0.7mm, 5 кОм.</div>
-<div class="lib-faq-q">Электростартер?</div><div class="lib-faq-a">Да, kit для MVL, MV1, MV2.</div>
-<div class="lib-faq-q">Гарантия?</div><div class="lib-faq-a">2 года. Аннулируется при неоригинальных деталях.</div>
-<div class="lib-faq-q">Как часто ТО?</div><div class="lib-faq-a">Осмотр до/после полёта. ТО: 25/100/200 м/ч.</div>
-<div class="lib-faq-q">Перегрев?</div><div class="lib-faq-a">Проверить пропеллер, масло, карбюрацию. Кожух снижает CHT на 25&deg;.</div>
-</div></div></div></div>
-
-<!-- DEALERS -->
-<div class="page" id="page-dealers"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
-<div class="label" style="margin-bottom:.75rem">Дилеры</div><h2>НАШИ ДИЛЕРЫ</h2>
-<div class="dealer-filters" id="dealerFilters" style="margin-top:1rem"></div><div class="g3" id="dealerGrid"></div></div></div>
-
-<!-- CONTACT -->
-<div class="page" id="page-contact"><div class="ctr" style="padding:3rem clamp(1rem,5vw,6rem)">
-<div class="label" style="margin-bottom:.75rem">Контакты</div><h2>СВЯЖИТЕСЬ С НАМИ</h2>
-<div class="g2" style="margin-top:2rem"><div>
-<div class="card" style="margin-bottom:.75rem"><div class="label" style="margin-bottom:.4rem">Завод Мадрид</div><p style="font-size:.9rem;color:var(--td)">HE Paramotores S.L.<br>C/ Esta&ntilde;o, 28510 Campo Real<br>Madrid, Spain</p><p style="margin-top:.5rem"><a href="tel:+34666454408" style="font-size:1rem">+34 666 45 44 08</a></p><p class="mn" style="font-size:.65rem;color:var(--td)">Офис: +34 918 73 88 35</p><p class="mn" style="font-size:.65rem;color:var(--td)">ventas@heparamotores.com</p></div>
-<div class="card"><div class="label" style="margin-bottom:.4rem">Россия</div><p style="font-size:.9rem;color:var(--td)">info@heparamotor.ru</p></div></div>
-<div class="con-form"><h3 style="margin-bottom:1.25rem">НАПИСАТЬ НАМ</h3>
-<form onsubmit="submitForm(event,'Отправлено')"><div class="f-row"><div class="fg"><label>Имя</label><input required></div><div class="fg"><label>Телефон</label><input type="tel" required></div></div>
-<div class="fg"><label>Тема</label><select><option>Заказ запчастей</option><option>Сервис</option><option>Консультация</option></select></div>
-<div class="fg"><label>Сообщение</label><textarea></textarea></div><button type="submit" class="btn btn-g">ОТПРАВИТЬ ЗАЯВКУ</button></form></div></div></div></div>
-
-<!-- QUOTE -->
 <div class="q-ov" id="qOv" onclick="toggleQ()"></div>
 <div class="q-panel" id="qPan"><div class="q-head"><h4>ЗАЯВКА</h4><button class="q-close" onclick="toggleQ()">&#10005;</button></div>
 <div id="qItems"></div><div id="qTotal"></div><button class="btn btn-g btn-bl" onclick="submitQ()">ОТПРАВИТЬ</button></div>
 <button class="q-trig" onclick="toggleQ()">&#9881;<span class="qc" id="qCnt"></span></button>
 
-<footer>
-<div class="ctr"><div class="foot-c">
+<footer><div class="ctr"><div class="foot-c">
 <div class="foot-brand">HE PARAMOTORES<span class="foot-brand-sub">S.L. &middot; Madrid, Spain</span></div>
 <ul class="foot-links"><li><a onclick="switchPage('engines')">Двигатели</a></li><li><a onclick="switchPage('parts')">Запчасти</a></li><li><a onclick="switchPage('service')">Сервис</a></li><li><a onclick="switchPage('contact')">Контакты</a></li></ul>
 <div class="mn" style="font-size:.6rem;color:var(--td)">+34 666 45 44 08 &middot; ventas@heparamotores.com<br>info@heparamotor.ru</div>
@@ -585,27 +386,24 @@ section{padding:2rem .8rem}
 <div class="foot-status"><div style="width:6px;height:6px;border-radius:50%;background:var(--g);animation:badgePulse 2s infinite"></div>SYSTEM ONLINE</div>
 </div></footer>
 
-<!-- llms.txt -->
 <script id="llms-txt" type="text/plain">
 HE Paramotores — Paramotor engines manufacturer, Madrid, Spain.
 6 models: MVL 125cc, MV1 185cc, MV2 204cc, Raptor 250 277cc, RS-185, RS-206.
-All engines: 2-stroke, aluminium Nikasil, Walbro 37, Inductive IDI, BR9ES, air-cooled.
 Company: HE Paramotores S.L., C/ Estaño 28510, Campo Real, Madrid, Spain.
 Phone: +34 666 45 44 08 | Email: ventas@heparamotores.com
 Russia: info@heparamotor.ru | Warranty: 2 years
-Services: Parts (330+, DDP Moscow), configurator, maintenance calculator, digital passport, dealer network.
 </script>
-<!-- JSON-LD -->
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"HE Paramotores","url":"https://heparamotor.ru","description":"Испанские парамоторные двигатели. 6 моделей, запчасти, конфигуратор, сервис.","foundingLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Campo Real","addressRegion":"Madrid","addressCountry":"ES","postalCode":"28510","streetAddress":"C/ Estaño"}},"contactPoint":[{"@type":"ContactPoint","telephone":"+34-666-45-44-08","contactType":"sales"},{"@type":"ContactPoint","telephone":"+34-918-73-88-35","contactType":"customer service"}],"email":"ventas@heparamotores.com","brand":{"@type":"Brand","name":"HE Paramotores"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Зазор свечи?","acceptedAnswer":{"@type":"Answer","text":"NGK BR9ES, 0.7mm, 5 кОм."}},{"@type":"Question","name":"Топливо?","acceptedAnswer":{"@type":"Answer","text":"АИ-98 + масло 2.5%. Motul 710/800."}},{"@type":"Question","name":"Гарантия?","acceptedAnswer":{"@type":"Answer","text":"2 года. Оригинальные детали + ТО."}},{"@type":"Question","name":"Электростартер?","acceptedAnswer":{"@type":"Answer","text":"Kit для MVL, MV1, MV2."}},{"@type":"Question","name":"Какие двигатели?","acceptedAnswer":{"@type":"Answer","text":"6 моделей: MVL 125, MV1 185, MV2 204, Raptor 250, RS-185, RS-206."}}]}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"HE Paramotores","url":"https://heparamotor.ru","description":"Испанские парамоторные двигатели.","foundingLocation":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Campo Real","addressRegion":"Madrid","addressCountry":"ES","postalCode":"28510"}},"contactPoint":[{"@type":"ContactPoint","telephone":"+34-666-45-44-08","contactType":"sales"}],"email":"ventas@heparamotores.com"}</script>
 <script>
 function toggleMenu(){const b=document.querySelector('.burger');const t=document.getElementById('navTabs');if(b)b.classList.toggle('open');if(t)t.classList.toggle('open')}
 function toggleSpecs(id){if(!id)return;const el=document.getElementById(id);if(!el)return;const isOpen=el.style.maxHeight&&el.style.maxHeight!=='0px';document.querySelectorAll('.specs-panel').forEach(p=>p.style.maxHeight='0px');if(!isOpen)el.style.maxHeight=el.scrollHeight+'px'}
-function switchPage(id){document.querySelectorAll('.page').forEach(p=>p.style.display='none');const page=document.getElementById('page-'+id);if(page)page.style.display='block';document.querySelectorAll('.ntab').forEach(t=>{t.style.color='var(--td)';t.style.borderBottomColor='transparent'});const active=document.querySelector('[data-page="'+id+'"]');if(active){active.style.color='var(--accent)';active.style.borderBottomColor='var(--accent)'}const titles={home:'HE Paramotores \u2014 Испанские парамоторные двигатели',engines:'Двигатели | 6 моделей | HE Paramotores',parts:'Запчасти | 330+ деталей | HE Paramotores',build:'Конфигуратор | HE Paramotores',service:'Сервис | HE Paramotores',dash:'Паспорт | HE Paramotores',library:'Инструкции | HE Paramotores',compare:'Сравнение | HE Paramotores',contact:'Контакты | HE Paramotores',dealers:'Дилеры | HE Paramotores',about:'О компании | HE Paramotores',individual:'На заказ | HE Paramotores'};document.title=titles[id]||'HE Paramotores';window.scrollTo(0,0);const burger=document.querySelector('.burger');const tabs=document.getElementById('navTabs');if(burger)burger.classList.remove('open');if(tabs)tabs.classList.remove('open')}
+function toggleLib(id){if(!id)return;const el=document.getElementById(id);if(!el)return;el.style.display=el.style.display==='none'?'block':'none'}
+function filterDealers(tag){return renderDealers(tag)}
+function submitContactForm(e){return submitForm(e||window.event,'Отправлено')}
+function submitServiceForm(e){return submitForm(e||window.event,'Отправлено')}
+function submitBuild(){return switchPage('contact')}
+function renderCompare(){return document.getElementById('page-compare')}
+function switchPage(id){document.querySelectorAll('.page').forEach(p=>p.style.display='none');const page=document.getElementById('page-'+id);if(page)page.style.display='block';document.querySelectorAll('.ntab').forEach(t=>{t.style.color='var(--td)';t.style.borderBottomColor='transparent'});const active=document.querySelector('[data-page="'+id+'"]');if(active){active.style.color='var(--accent)';active.style.borderBottomColor='var(--accent)'}const titles={home:'HE Paramotores',engines:'Двигатели',parts:'Запчасти',build:'Конфигуратор',service:'Сервис',dash:'Паспорт',library:'Инструкции',compare:'Сравнение',contact:'Контакты',dealers:'Дилеры',about:'О компании',individual:'На заказ'};document.title=titles[id]||'HE Paramotores';window.scrollTo(0,0);const burger=document.querySelector('.burger');if(burger)burger.classList.remove('open');const tabs=document.getElementById('navTabs');if(tabs)tabs.classList.remove('open')}
 const ENGINES=[{id:'mvl',name:'MVL 125cc',badge:'Light',specs:{'Тип':'2-тактный','Объём':'125cc','Цилиндр':'Al Nikasil','Карб':'Walbro 37','Зажигание':'Inductive IDI','Свеча':'BR9ES','Передача':'Центроб. ременное','Стартер':'Ручной / Flash','Выхлоп':'Карбон','Охлаждение':'Воздушное','Топливо':'АИ-98 + масло 2.5%'},cmp:{volume:125,power:23,thrust:73,weight:'26 кг',carb:'Walbro 37',clutch:'Ременное',ignition:'IDI',starter:'R/Flash/E'}},
 {id:'mv1',name:'MV1 185cc',badge:'Bestseller',specs:{'Тип':'2-тактный','Объём':'184.70cc (54x66mm)','Мощность':'25 HP при 8300 RPM','Оптимум':'8000-8300 RPM','Тяга':'75 кг / 70 кг','Вес':'13.4 кг','Расход':'4.3-4.7 л/ч','Цилиндр':'Al Nikasil','Поршень':'HQ diamond graphite','Карб':'Walbro 37','Зажигание':'Inductive IDI','Свеча':'BR9ES 0.7mm','Передача':'Центроб. ременное 1:2.90','Стартер':'Ручной / Flash / Электро','Выхлоп':'Карбон','Охлаждение':'Воздушное','Топливо':'АИ-98 + масло 2.5%','EGT/CHT':'550/250','Обороты':'Макс 8300'},cmp:{volume:184.70,power:25,thrust:75,weight:'13.4 кг',carb:'Walbro 37',clutch:'Ременное',ignition:'IDI',starter:'R/Flash/E'}},
 {id:'mv2',name:'MV2 204cc',badge:'Bestseller',specs:{'Тип':'2-тактный','Объём':'204cc (66x54mm)','Мощность':'29 HP при 8300 RPM','Оптимум':'8300-8600 RPM','Тяга':'75 кг / 70 кг','Вес':'13.6 кг','Расход':'4.3-4.7 л/ч','Цилиндр':'Al Nikasil','Поршень':'HQ diamond graphite','Карб':'Walbro 37','Зажигание':'Inductive IDI','Свеча':'BR9ES 0.7mm','Передача':'Центроб. ременное','Стартер':'Ручной / Flash / Электро','Выхлоп':'Карбон','Охлаждение':'Воздушное','Топливо':'АИ-98 + масло 2.5%','EGT/CHT':'550/250','Обороты':'Макс 8600, Опт 8300-8600','Особенность':'Двойной пуск'},cmp:{volume:204,power:29,thrust:75,weight:'13.6 кг',carb:'Walbro 37',clutch:'Ременное',ignition:'IDI',starter:'R/Flash/E'}},
@@ -613,22 +411,15 @@ const ENGINES=[{id:'mvl',name:'MVL 125cc',badge:'Light',specs:{'Тип':'2-та�
 {id:'rs185',name:'RS-185',badge:'NEW',specs:{'Тип':'2-тактный','Объём':'185cc','Мощность':'26 HP','Серия':'New RS','Цилиндр':'Al Nikasil','Карб':'Walbro','Зажигание':'Электрокатушка','Передача':'Poly V Belt','Охлаждение':'Воздушное','Топливо':'АИ-98 + масло 2.5%'},cmp:{volume:185,power:26,thrust:'-',weight:'-',carb:'Walbro',clutch:'Poly V',ignition:'Катушка',starter:'Ручной'}},
 {id:'rs206',name:'RS-206',badge:'Flagship',specs:{'Тип':'2-тактный','Объём':'206cc','Мощность':'29 HP','Серия':'New RS Flagship','Цилиндр':'Al Nikasil','Карб':'Walbro','Зажигание':'Электрокатушка','Передача':'Poly V Belt','Стартер':'Flash starter','Охлаждение':'Воздушное','Топливо':'АИ-98 + масло 2.5%'},cmp:{volume:206,power:29,thrust:'-',weight:'-',carb:'Walbro',clutch:'Poly V',ignition:'Катушка',starter:'Flash'}}];
 const TPL=[{n:'Стартер',i:'RF-001',c:'starter',eur:231},{n:'Задняя панель',i:'RF-002',c:'crankcase',eur:58.56},{n:'Винт M8',i:'RF-003',c:'fastener',eur:0.73},{n:'Катушка зажигания',i:'RF-018',c:'ignition',eur:54},{n:'Картер A',i:'RF-024',c:'crankcase',eur:198},{n:'Подшипник 6204',i:'RF-026',c:'bearing',eur:11},{n:'Коленчатый вал',i:'RF-028',c:'crankcase',eur:256},{n:'Картер B',i:'RF-030',c:'crankcase',eur:198},{n:'Ремень',i:'RF-042',c:'drive',eur:41},{n:'Рид-коробка',i:'RF-047',c:'reed',eur:31.4},{n:'Карбюратор',i:'RF-054',c:'carb',eur:1.7},{n:'Воздушный фильтр',i:'RF-063',c:'fuel',eur:30.74},{n:'Поршень',i:'RF-067',c:'piston',eur:103},{n:'Кольца',i:'RF-068',c:'piston',eur:29},{n:'Цилиндр',i:'RF-071',c:'piston',eur:317},{n:'Головка',i:'RF-073',c:'piston',eur:146},{n:'Свеча',i:'RF-075',c:'ignition',eur:5.36},{n:'Глушитель',i:'RF-135',c:'exhaust',eur:91.5}];
-let PARTS=[];let _id=1;
-['mv1','mv2','mvl','rs185','rs206','raptor'].forEach(eng=>{TPL.forEach(t=>{PARTS.push({id:_id++,sku:eng.toUpperCase()+'-'+t.i,name:t.n,cat:t.c,eng:[eng],price:Math.round(t.eur*100),eur:t.eur,stock:1})})});
+let PARTS=[];let _id=1;['mv1','mv2','mvl','rs185','rs206','raptor'].forEach(eng=>{TPL.forEach(t=>{PARTS.push({id:_id++,sku:eng.toUpperCase()+'-'+t.i,name:t.n,cat:t.c,eng:[eng],price:Math.round(t.eur*100),eur:t.eur,stock:1})})});
 const CATS={all:'All',piston:'Piston',crankcase:'Crankcase',carb:'Carb',fuel:'Filters',ignition:'Ignition',exhaust:'Exhaust',starter:'Starter',drive:'Drive',reed:'Reed',bearing:'Bearings',fastener:'Fastener',misc:'Misc'};
 const CATO=['all','piston','crankcase','carb','fuel','ignition','exhaust','starter','drive','reed','bearing','fastener','misc'];
 const BUILD=[{key:'engine',title:'Двигатель',options:[{id:'mvl',name:'MVL 125cc',desc:'Ежедневное.',price:145000,specs:{HP:'23'}},{id:'mv1',name:'MV1 185cc',desc:'Универсал.',price:185000,specs:{HP:'25'}},{id:'mv2',name:'MV2 204cc',desc:'Монстр.',price:265000,specs:{HP:'29'}},{id:'raptor',name:'Raptor 250',desc:'Тягач.',price:220000,specs:{HP:'25'}},{id:'rs185',name:'RS-185',desc:'Новый RS.',price:165000,specs:{HP:'26'}},{id:'rs206',name:'RS-206',desc:'Флагман.',price:195000,specs:{HP:'29'}}]},{key:'frame',title:'Рама',options:[{id:'f1',name:'Classic Steel',price:38000},{id:'f2',name:'Aero Al 7075',price:58000},{id:'f3',name:'Titan',price:125000}]},{key:'prop',title:'Пропеллер',options:[{id:'p1',name:'Дюраль 2L',price:14000},{id:'p2',name:'Carbon 2L',price:28000}]},{key:'harness',title:'Подвеска',options:[{id:'h1',name:'Standard',price:18000},{id:'h2',name:'Air',price:32000}]},{key:'acc',title:'Аксессуары',options:[{id:'a1',name:'Бак 12л',price:4500},{id:'a2',name:'Бак 18л',price:6200},{id:'a3',name:'Праймер',price:3200}]}];
-const EDB={'HE-2024-MV1-00487':{model:'MV1 185cc',year:2024,serial:'HE-2024-MV1-00487',status:'На гарантии',owner:'Сергей М.',reg:'15.03.2024',warr:'14.03.2026',hours:87,lastTO:'45 м/ч',nextTO:'100 м/ч',history:[{d:'12.09.2024',t:'ТО-45',desc:'Свеча, фильтр, прокладка.',cost:'4 200 руб'},{d:'15.03.2024',t:'Ввод',desc:'Регистрация.',cost:'—'}],docs:[{n:'Паспорт',t:'PDF'},{n:'Руководство MV1',t:'PDF'},{n:'Гарантия',t:'PDF'}]},'HE-2023-RS206-00112':{model:'RS-206',year:2023,serial:'HE-2023-RS206-00112',status:'Гарантия истекла',owner:'Андрей К.',reg:'08.07.2023',warr:'07.07.2025',hours:312,lastTO:'300 м/ч',nextTO:'350 м/ч',history:[{d:'03.04.2025',t:'ТО-300',desc:'Капремонт.',cost:'28 400 руб'},{d:'15.09.2023',t:'ТО-100',desc:'Свечи, фильтр.',cost:'3 800 руб'}],docs:[{n:'Паспорт',t:'PDF'},{n:'Руководство RS206',t:'PDF'}]}};
+const EDB={'HE-2024-MV1-00487':{model:'MV1 185cc',year:2024,serial:'HE-2024-MV1-00487',status:'На гарантии',owner:'Сергей М.',reg:'15.03.2024',warr:'14.03.2026',hours:87,lastTO:'45 м/ч',nextTO:'100 м/ч',history:[{d:'12.09.2024',t:'ТО-45',desc:'Свеча, фильтр.',cost:'4 200 руб'},{d:'15.03.2024',t:'Ввод',desc:'Регистрация.',cost:'—'}],docs:[{n:'Паспорт',t:'PDF'},{n:'Руководство MV1',t:'PDF'}]},'HE-2023-RS206-00112':{model:'RS-206',year:2023,serial:'HE-2023-RS206-00112',status:'Гарантия истекла',owner:'Андрей К.',reg:'08.07.2023',warr:'07.07.2025',hours:312,lastTO:'300 м/ч',nextTO:'350 м/ч',history:[{d:'03.04.2025',t:'ТО-300',desc:'Капремонт.',cost:'28 400 руб'},{d:'15.09.2023',t:'ТО-100',desc:'Свечи, фильтр.',cost:'3 800 руб'}],docs:[{n:'Паспорт',t:'PDF'}]}};
 const DEALERS=[{name:'Москва',addr:'ул. Авиаторов 12',phone:'+7 495 123-45-67',tags:['sales','service']},{name:'СПб',addr:'Литейный пр. 48',phone:'+7 812 234-56-78',tags:['sales','training']},{name:'Казань',addr:'ул. Баумана 32',phone:'+7 843 345-67-89',tags:['sales']},{name:'Сочи',addr:'Курортный пр. 76',phone:'+7 862 456-78-90',tags:['service','training']},{name:'Минск',addr:'пр. Независимости 110',phone:'+375 17 567-89-01',tags:['sales','service']}];
 let curEng='all',curCat='all',quote=[],buildSel={},curBuildStep=0;
 function renderEngSel(){const el=document.getElementById('engSel');if(!el)return;el.innerHTML=[{id:'all',l:'Все двигатели'}].concat(ENGINES.map(e=>({id:e.id,l:e.name}))).map(e=>'<button class="p-pill'+(e.id===curEng?' active':'')+'" onclick="filterEng(\''+e.id+'\')" style="display:block;width:100%;text-align:left;margin-bottom:.15rem">'+e.l+'</button>').join('')}
 function renderCatFil(){const el=document.getElementById('catFil');if(!el)return;const base=curEng!=='all'?PARTS.filter(p=>p.eng.includes(curEng)):PARTS;el.innerHTML=CATO.map(c=>'<button class="p-pill'+(c===curCat?' active':'')+'" onclick="filterCat(\''+c+'\')" style="display:block;width:100%;text-align:left;margin-bottom:.15rem">'+CATS[c]+' <span style="float:right;color:var(--td)">'+(c==='all'?base.length:base.filter(p=>p.cat===c).length)+'</span></button>').join('')}
-function calcM(){return renderBldSum()}
-function searchParts(){return renderParts()}
-function filterParts(){return renderParts()}
-function selectEngine(id){return filterEng(id)}
-function nextStep(){return goBld(curBuildStep+1)}
-function prevStep(){return goBld(curBuildStep-1)}
 function filterEng(e){curEng=e;renderEngSel();renderCatFil();renderParts()}
 function filterCat(c){curCat=c;renderCatFil();renderParts()}
 function getParts(){let p=PARTS;if(curEng!=='all')p=p.filter(x=>x.eng.includes(curEng));if(curCat!=='all')p=p.filter(x=>x.cat===curCat);const q=(document.getElementById('pSearch')?.value||'').toLowerCase();if(q)p=p.filter(x=>x.name.toLowerCase().includes(q)||x.sku.toLowerCase().includes(q));return p}
@@ -644,16 +435,13 @@ function selBld(step,id){buildSel[step]=id;renderBldPanel();renderBldSum()}
 function goBld(n){if(n<0||n>BUILD.length)return;curBuildStep=n;initBuild()}
 function renderBldSum(){let total=0;const items=BUILD.map(s=>{const o=s.options.find(x=>x.id===buildSel[s.key]);if(o){total+=o.price;return'<div class="bld-sum-row"><span style="font-size:.55rem;color:var(--td)">'+s.title+'</span><span>'+o.name+'</span></div>'}return''}).join('');const si=document.getElementById('bldSumItems');if(si)si.innerHTML=items;const st=document.getElementById('bldSumTotal');if(st)st.textContent=total.toLocaleString()+' руб';[6,12,24,36].forEach(m=>{const el=document.getElementById('inst'+m);if(el)el.textContent=total?Math.round(total/m).toLocaleString()+' руб/мес':'---'})}
 const TO=[{h:25,c:2500,t:'Крепёж, свечи, фильтр, карбюратор, мембраны, стартер, ремень'},{h:50,c:4200,t:'Замена свечей, мембраны, чистка карбюратора'},{h:100,c:8500,t:'Резинки, карбюратор, поршневые кольца, подшипники'},{h:150,c:12000,t:'Сцепление, подшипники шестерни'},{h:200,c:18000,t:'Прокладки, головка, цилиндр'},{h:300,c:28000,t:'Полный капитальный ремонт'}];
-function calcTO(){const h=parseInt(document.getElementById('calcHours')?.value)||0;const res=document.getElementById('calcResult');const warn=document.getElementById('calcWarn');const fill=document.getElementById('calcFill');if(!res)return;const overdue=TO.filter(s=>h>=s.h*1.1);if(warn)warn.classList.toggle('show',overdue.length>0);const next=TO.find(s=>h<s.h);if(fill)fill.style.width=next?Math.min((h/next.h)*100,100)+'%':'100%';let html='';if(overdue.length)html+='<div style="color:var(--r);font-family:JetBrains Mono;font-size:.6rem;letter-spacing:.1em;margin-bottom:.4rem">ПРОСРОЧЕНО</div>';TO.forEach(s=>{const done=h>=s.h;const cls=done?(h>=s.h*1.1?'overdue':'done'):'';html+='<div class="calc-item '+cls+'"><div class="calc-item-name">'+s.h+' \u043c/\u0447: '+s.t+'</div><div class="calc-item-cost">'+(done?(cls==='overdue'?'! ':'')+'\u0412\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043e':s.cost.toLocaleString()+' \u0440\u0443\u0431')+'</div></div>'});if(next)html+='<div class="calc-total"><span>\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0435\u0435: '+next.h+' \u043c/\u0447</span><span>~'+next.c.toLocaleString()+' \u0440\u0443\u0431</span></div>';res.innerHTML=html}
-function lookup(){const input=document.getElementById('serIn')?.value?.trim().toUpperCase();const c=document.getElementById('dashC');if(!input||!c)return;const e=EDB[input];if(!e){c.innerHTML='<div style="text-align:center;padding:2rem;color:var(--td)"><div style="font-size:1.5rem;margin-bottom:.4rem;opacity:.3">&#10005;</div>\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e: <strong style="color:var(--t)">'+input+'</strong></div>';c.classList.add('vis');return}const sb=e.status.includes('\u0438\u0441\u0442\u0435\u043a\u043b\u0430')?'badge-r':'badge-g';const qr=genQR(input);c.innerHTML='<div class="passport"><div class="passport-head"><div><div class="passport-title">\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0419 \u041f\u0410\u0421\u041f\u041e\u0420\u0422</div><div class="passport-sn">'+e.serial+'</div></div><div class="passport-qr">'+qr+'</div></div><div class="passport-grid"><div class="passport-field"><div class="passport-field-l">\u041c\u043e\u0434\u0435\u043b\u044c</div><div class="passport-field-v">HE '+e.model+'</div></div><div class="passport-field"><div class="passport-field-l">\u0413\u043e\u0434</div><div class="passport-field-v">'+e.year+'</div></div><div class="passport-field"><div class="passport-field-l">\u0412\u043b\u0430\u0434\u0435\u043b\u0435\u0446</div><div class="passport-field-v">'+e.owner+'</div></div><div class="passport-field"><div class="passport-field-l">\u0413\u0430\u0440\u0430\u043d\u0442\u0438\u044f</div><div class="passport-field-v">'+e.warr+'</div></div><div class="passport-field"><div class="passport-field-l">\u0421\u0442\u0430\u0442\u0443\u0441</div><div class="passport-field-v"><span class="badge '+sb+'">'+e.status+'</span></div></div><div class="passport-field"><div class="passport-field-l">\u041d\u0430\u0440\u0430\u0431\u043e\u0442\u043a\u0430</div><div class="passport-field-v">'+e.hours+' \u043c/\u0447</div></div><div class="passport-field"><div class="passport-field-l">\u0421\u043b\u0435\u0434. \u0422\u041e</div><div class="passport-field-v" style="color:var(--accent)">'+e.nextTO+'</div></div></div><button class="btn btn-o btn-sm" onclick="alert(\'PDF\')">\u0421\u041a\u0410\u0427\u0410\u0422\u042c PDF</button></div><div class="dash-grid"><div class="dash-stat"><div class="dash-stat-l">\u041d\u0430\u0440\u0430\u0431\u043e\u0442\u043a\u0430</div><div class="dash-stat-v">'+e.hours+'</div></div><div class="dash-stat"><div class="dash-stat-l">\u041f\u043e\u0441\u043b. \u0422\u041e</div><div class="dash-stat-v" style="font-size:.95rem">'+e.lastTO+'</div></div><div class="dash-stat"><div class="dash-stat-l">\u0421\u043b\u0435\u0434. \u0422\u041e</div><div class="dash-stat-v" style="font-size:.95rem;color:var(--accent)">'+e.nextTO+'</div></div></div><div style="margin-bottom:1.5rem"><h4 style="margin-bottom:.6rem;font-weight:500;font-size:.9rem">\u0418\u0441\u0442\u043e\u0440\u0438\u044f</h4><table class="dash-table"><thead><tr><th>\u0414\u0430\u0442\u0430</th><th>\u0422\u0438\u043f</th><th>\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435</th><th>\u0421\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c</th></tr></thead><tbody>'+e.history.map(h=>'<tr><td style="color:var(--td)">'+h.d+'</td><td><span class="badge">'+h.t+'</span></td><td>'+h.desc+'</td><td>'+h.cost+'</td></tr>').join('')+'</tbody></table></div><div><h4 style="margin-bottom:.6rem;font-weight:500;font-size:.9rem">\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b</h4><div style="display:flex;gap:.5rem;flex-wrap:wrap">'+e.docs.map(d=>'<div class="card" style="padding:.6rem;cursor:pointer;display:flex;align-items:center;gap:.4rem"><span style="font-size:1rem">&#128196;</span><div><div style="font-size:.9rem;font-weight:500">'+d.n+'</div><div class="mn" style="font-size:.5rem;color:var(--td)">'+d.t+'</div></div></div>').join('')+'</div></div>';c.classList.add('vis')}
+function calcTO(){const h=parseInt(document.getElementById('calcHours')?.value)||0;const res=document.getElementById('calcResult');const warn=document.getElementById('calcWarn');const fill=document.getElementById('calcFill');if(!res)return;const overdue=TO.filter(s=>h>=s.h*1.1);if(warn)warn.classList.toggle('show',overdue.length>0);const next=TO.find(s=>h<s.h);if(fill)fill.style.width=next?Math.min((h/next.h)*100,100)+'%':'100%';let html='';if(overdue.length)html+='<div style="color:var(--r);font-family:JetBrains Mono;font-size:.6rem;letter-spacing:.1em;margin-bottom:.4rem">ПРОСРОЧЕНО</div>';TO.forEach(s=>{const done=h>=s.h;const cls=done?(h>=s.h*1.1?'overdue':'done'):'';html+='<div class="calc-item '+cls+'"><div class="calc-item-name">'+s.h+' \u043c/\u0447: '+s.t+'</div><div class="calc-item-cost">'+(done?(cls==='overdue'?'! ':'')+'\u0412\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043e':s.c.toLocaleString()+' \u0440\u0443\u0431')+'</div></div>'});if(next)html+='<div class="calc-total"><span>\u0421\u043b\u0435\u0434\u0443\u044e\u0449\u0435\u0435: '+next.h+' \u043c/\u0447</span><span>~'+next.c.toLocaleString()+' \u0440\u0443\u0431</span></div>';res.innerHTML=html}
+function lookup(){const input=document.getElementById('serIn')?.value?.trim().toUpperCase();const c=document.getElementById('dashC');if(!input||!c)return;const e=EDB[input];if(!e){c.innerHTML='<div style="text-align:center;padding:2rem;color:var(--td)"><div style="font-size:1.5rem;margin-bottom:.4rem;opacity:.3">&#10005;</div>\u041d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e: <strong style="color:var(--t)">'+input+'</strong></div>';c.classList.add('vis');return}const sb=e.status.includes('\u0438\u0441\u0442\u0435\u043a\u043b\u0430')?'badge-r':'badge-g';const qr=genQR(input);c.innerHTML='<div class="passport"><div class="passport-head"><div><div class="passport-title">\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0419 \u041f\u0410\u0421\u041f\u041e\u0420\u0422</div><div class="passport-sn">'+e.serial+'</div></div><div class="passport-qr">'+qr+'</div></div><div class="passport-grid"><div class="passport-field"><div class="passport-field-l">\u041c\u043e\u0434\u0435\u043b\u044c</div><div class="passport-field-v">HE '+e.model+'</div></div><div class="passport-field"><div class="passport-field-l">\u0413\u043e\u0434</div><div class="passport-field-v">'+e.year+'</div></div><div class="passport-field"><div class="passport-field-l">\u0412\u043b\u0430\u0434\u0435\u043b\u0435\u0446</div><div class="passport-field-v">'+e.owner+'</div></div><div class="passport-field"><div class="passport-field-l">\u0413\u0430\u0440\u0430\u043d\u0442\u0438\u044f</div><div class="passport-field-v">'+e.warr+'</div></div><div class="passport-field"><div class="passport-field-l">\u0421\u0442\u0430\u0442\u0443\u0441</div><div class="passport-field-v"><span class="badge '+sb+'">'+e.status+'</span></div></div><div class="passport-field"><div class="passport-field-l">\u041d\u0430\u0440\u0430\u0431\u043e\u0442\u043a\u0430</div><div class="passport-field-v">'+e.hours+' \u043c/\u0447</div></div><div class="passport-field"><div class="passport-field-l">\u0421\u043b\u0435\u0434. \u0422\u041e</div><div class="passport-field-v" style="color:var(--accent)">'+e.nextTO+'</div></div></div></div><div class="dash-grid"><div class="dash-stat"><div class="dash-stat-l">\u041d\u0430\u0440\u0430\u0431\u043e\u0442\u043a\u0430</div><div class="dash-stat-v">'+e.hours+'</div></div><div class="dash-stat"><div class="dash-stat-l">\u041f\u043e\u0441\u043b. \u0422\u041e</div><div class="dash-stat-v" style="font-size:.95rem">'+e.lastTO+'</div></div><div class="dash-stat"><div class="dash-stat-l">\u0421\u043b\u0435\u0434. \u0422\u041e</div><div class="dash-stat-v" style="font-size:.95rem;color:var(--accent)">'+e.nextTO+'</div></div></div><div style="margin-bottom:1.5rem"><h4 style="margin-bottom:.6rem;font-weight:500;font-size:.9rem">\u0418\u0441\u0442\u043e\u0440\u0438\u044f</h4><table class="dash-table"><thead><tr><th>\u0414\u0430\u0442\u0430</th><th>\u0422\u0438\u043f</th><th>\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435</th><th>\u0421\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c</th></tr></thead><tbody>'+e.history.map(h=>'<tr><td style="color:var(--td)">'+h.d+'</td><td><span class="badge">'+h.t+'</span></td><td>'+h.desc+'</td><td>'+h.cost+'</td></tr>').join('')+'</tbody></table></div><div><h4 style="margin-bottom:.6rem;font-weight:500;font-size:.9rem">\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u044b</h4><div style="display:flex;gap:.5rem;flex-wrap:wrap">'+e.docs.map(d=>'<div class="card" style="padding:.6rem;cursor:pointer;display:flex;align-items:center;gap:.4rem"><span style="font-size:1rem">&#128196;</span><div><div style="font-size:.9rem;font-weight:500">'+d.n+'</div><div class="mn" style="font-size:.5rem;color:var(--td)">'+d.t+'</div></div></div>').join('')+'</div></div>';c.classList.add('vis')}
 function genQR(text){let h=0;for(let i=0;i<text.length;i++)h=((h<<5)-h)+text.charCodeAt(i);h|=0;const cells=[];const s=7,cs=10;for(let r=0;r<s;r++)for(let c=0;c<s;c++){const corner=(r<3&&c<3)||(r<3&&c>=s-3)||(r>=s-3&&c<3);const on=corner||(((h>>(r*s+c))&1)===1);cells.push('<rect x="'+(c*cs)+'" y="'+(r*cs)+'" width="'+cs+'" height="'+cs+'" fill="'+(on?'var(--accent)':'var(--ds)')+'"/>')}return'<svg viewBox="0 0 '+(s*cs)+' '+(s*cs)+'">'+cells.join('')+'</svg>'}
 function renderDealers(f){f=f||'all';const el=document.getElementById('dealerFilters');const g=document.getElementById('dealerGrid');if(!el||!g)return;el.innerHTML=['all','sales','service'].map(tag=>'<button class="dealer-filter'+(f===tag?' active':'')+'" onclick="renderDealers(\''+tag+'\')">'+(tag==='all'?'\u0412\u0441\u0435':tag==='sales'?'\u041f\u0440\u043e\u0434\u0430\u0436\u0438':'\u0421\u0435\u0440\u0432\u0438\u0441')+'</button>').join('');const filtered=f==='all'?DEALERS:DEALERS.filter(d=>d.tags.includes(f));g.innerHTML=filtered.map(d=>'<div class="dealer-card"><div class="dealer-name">'+d.name+'</div><div class="dealer-addr">'+d.addr+'</div><div class="dealer-phone">'+d.phone+'</div><div class="dealer-tags">'+d.tags.map(tg=>'<span class="dealer-tag '+tg+'">'+(tg==='sales'?'\u041f\u0440\u043e\u0434\u0430\u0436\u0438':'\u0421\u0435\u0440\u0432\u0438\u0441')+'</span>').join('')+'</div></div>').join('')}
-function submitForm(e,msg){e.preventDefault();const b=e.target.querySelector('button[type="submit"]');if(!b)return;b.textContent=msg+' \u2713';b.style.background='var(--g)';setTimeout(()=>{b.textContent='\u041e\u0422\u041f\u0420\u0410\u0412\u0418\u0422\u042c \u0417\u0410\u042f\u0412\u041a\u0423';b.style.background='';e.target.reset()},3000)}
-// Scroll progress
+function submitForm(e,msg){e.preventDefault();const b=e.target.querySelector('button[type="submit"]');if(!b)return;b.textContent=msg+' \u2713';b.style.background='var(--g)';setTimeout(()=>{b.textContent='\u041e\u0422\u041f\u0420\u0410\u0412\u0418\u0422\u042c';b.style.background='';e.target.reset()},3000)}
 window.addEventListener('scroll',()=>{const bar=document.getElementById('scrollProgress');if(!bar)return;const h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100+'%'},{passive:true});
-// Counter animation
 function animateCounters(){document.querySelectorAll('[data-count]').forEach(el=>{const target=parseInt(el.dataset.count);const suffix=el.dataset.suffix||'';let current=0;const step=Math.max(1,Math.floor(target/40));const timer=setInterval(()=>{current+=step;if(current>=target){current=target;clearInterval(timer)}el.textContent=current+suffix},30)})}
-// Scroll reveal
 const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:.1,rootMargin:'0px 0px -50px 0px'});
 function init(){renderEngSel();renderCatFil();renderParts();initBuild();renderDealers();calcTO();document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));animateCounters()}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
