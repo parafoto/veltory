@@ -1,5 +1,7 @@
 # heparamotor.ru — Knowledge Base for Paramotor Pilots
 
+Last updated: 2026-07-01
+
 ## About
 Independent informational platform for Russian-speaking pilots
 using HE Paramotores engines. Not a seller, distributor, or agent.
