@@ -3,7 +3,12 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
-    paths: [ 'index.html', 'CNAME' ]
+    paths:
+      - 'index.html'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'llms.txt'
+      - 'CNAME'
 
 permissions:
   contents: read

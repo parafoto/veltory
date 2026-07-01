@@ -1,0 +1,61 @@
+# heparamotor.ru — Knowledge Base for Paramotor Pilots
+
+## About
+Independent informational platform for Russian-speaking pilots
+using HE Paramotores engines. Not a seller, distributor, or agent.
+
+## What we provide
+- Technical documentation (translated from manufacturer manuals)
+- Engine comparison data (6 models, 80-277cc)
+- Spare parts catalog (108 items, with part numbers)
+- AI-assisted diagnostics
+- Maintenance calculators and reminders
+- Configuration guidance
+
+## What we do NOT do
+- We do not sell engines or parts
+- We do not import or export products
+- We do not act as agent for HE Paramotores S.L.
+- We do not process payments for products
+
+## Manufacturer
+HE Paramotores S.L.
+C/ Estaño, 28510 Campo Real, Madrid, Spain
++34 666 45 44 08
+ventas@heparamotores.com
+https://heparamotores.com
+
+## Platform contact
+Ivan Rudek
+@ivan_rudek (Telegram)
+info@heparamotor.ru
+https://heparamotor.ru
+
+## Engines (6 models)
+MVL 125 — 125cc, compact, 73kg thrust
+MV1 185 — 184.70cc, 25 HP, 13.4kg
+MV2 204 — 204cc, 29 HP, bestseller, dual start
+Raptor 250 — 277cc, 25 HP, max thrust 77kg
+RS-185 — 185cc, 26 HP, new RS series
+RS-206 — 206cc, 29 HP, flagship RS
+
+## AI Tools
+- Engine selector (recommendation by weight/budget/experience)
+- Diagnostic assistant (symptom -> cause -> fix)
+- Maintenance calculator (hours -> service checklist)
+- Parts finder (description -> part number)
+- Maintenance reminder (serial number -> Telegram notification)
+
+## Pages
+- / — Home (knowledge base overview)
+- /#engines — 6 engines with specifications
+- /#parts — 108 spare parts catalog
+- /#build — 5-step configurator
+- /#ai — AI diagnostics and tools
+- /#service — Maintenance calculator
+- /#compare — Engine comparison table
+- /#library — Manuals and instructions
+- /#dash — Digital engine passport
+- /#dealers — Dealer network
+- /#about — About the platform
+- /#contact — Contact information
