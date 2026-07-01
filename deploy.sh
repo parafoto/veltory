@@ -15,6 +15,20 @@ if [ ! -d ".git" ]; then
   exit 1
 fi
 
+# Sync root files from dist/ (GitHub Pages serves from repo root)
+if [ -f "dist/index.html" ]; then
+  cp dist/index.html index.html
+  echo "Synced: dist/index.html -> index.html"
+fi
+if [ -f "dist/sitemap.xml" ]; then
+  cp dist/sitemap.xml sitemap.xml
+  echo "Synced: dist/sitemap.xml -> sitemap.xml"
+fi
+if [ -f "dist/robots.txt" ]; then
+  cp dist/robots.txt robots.txt
+  echo "Synced: dist/robots.txt -> robots.txt"
+fi
+
 # Stage all changes
 git add -A
 
