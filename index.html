@@ -623,6 +623,12 @@ const DEALERS=[{name:'Москва',addr:'ул. Авиаторов 12',phone:'+7
 let curEng='all',curCat='all',quote=[],buildSel={},curBuildStep=0;
 function renderEngSel(){const el=document.getElementById('engSel');if(!el)return;el.innerHTML=[{id:'all',l:'Все двигатели'}].concat(ENGINES.map(e=>({id:e.id,l:e.name}))).map(e=>'<button class="p-pill'+(e.id===curEng?' active':'')+'" onclick="filterEng(\''+e.id+'\')" style="display:block;width:100%;text-align:left;margin-bottom:.15rem">'+e.l+'</button>').join('')}
 function renderCatFil(){const el=document.getElementById('catFil');if(!el)return;const base=curEng!=='all'?PARTS.filter(p=>p.eng.includes(curEng)):PARTS;el.innerHTML=CATO.map(c=>'<button class="p-pill'+(c===curCat?' active':'')+'" onclick="filterCat(\''+c+'\')" style="display:block;width:100%;text-align:left;margin-bottom:.15rem">'+CATS[c]+' <span style="float:right;color:var(--td)">'+(c==='all'?base.length:base.filter(p=>p.cat===c).length)+'</span></button>').join('')}
+function calcM(){return renderBldSum()}
+function searchParts(){return renderParts()}
+function filterParts(){return renderParts()}
+function selectEngine(id){return filterEng(id)}
+function nextStep(){return goBld(curBuildStep+1)}
+function prevStep(){return goBld(curBuildStep-1)}
 function filterEng(e){curEng=e;renderEngSel();renderCatFil();renderParts()}
 function filterCat(c){curCat=c;renderCatFil();renderParts()}
 function getParts(){let p=PARTS;if(curEng!=='all')p=p.filter(x=>x.eng.includes(curEng));if(curCat!=='all')p=p.filter(x=>x.cat===curCat);const q=(document.getElementById('pSearch')?.value||'').toLowerCase();if(q)p=p.filter(x=>x.name.toLowerCase().includes(q)||x.sku.toLowerCase().includes(q));return p}
