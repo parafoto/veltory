@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'index.html'
+      - 'src/main.js'
       - 'robots.txt'
       - 'sitemap.xml'
       - 'llms.txt'

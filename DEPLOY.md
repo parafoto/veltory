@@ -1,23 +1,44 @@
-# VELTORY Deploy Instructions
+# heparamotor.ru — Deploy Instructions
 
-## Quick Update Workflow
+## Architecture
 
-When receiving updated index.html code from MiMo chat:
+- `index.html` — HTML structure + inline CSS + JSON-LD schemas
+- `src/main.js` — All JavaScript logic (single source of truth)
+- GitHub Pages serves from repo root
 
-1. Replace the contents of index.html with the new code
-2. Commit and push to main
-3. GitHub Pages auto-deploys within 1-2 minutes
+## Quick Update
+
+```bash
+cd /Users/up/paramotor
+# Edit src/main.js or index.html
+bash deploy.sh "describe change"
+```
 
 ## Commands
 
 ```bash
-cd /Users/up/Documents/Codex/2026-06-30/new-chat/work/veltory
-# Replace index.html with new code from MiMo
-git add index.html
+# Full deploy
+bash deploy.sh "Update: [describe change]"
+
+# Or manual
+git add -A
 git commit -m "Update: [describe change]"
 git push origin main
 ```
 
-## Live URL
+## Live
 
-https://parafoto.github.io/veltory/
+https://heparamotor.ru
+
+## Key Files
+
+| File | Purpose |
+|------|---------|
+| `index.html` | HTML + CSS + JSON-LD structured data |
+| `src/main.js` | JavaScript — engines, parts, configurator, AI, dealers |
+| `public/favicon.svg` | Site favicon |
+| `public/icons.svg` | Icon sprite |
+| `robots.txt` | Crawler directives |
+| `sitemap.xml` | Sitemap for search engines |
+| `CNAME` | Custom domain |
+| `llms.txt` | LLM crawler metadata |
