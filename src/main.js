@@ -224,7 +224,7 @@ function toggleSpecs(id) {
     allPanels[i].style.maxHeight = '0px';
   }
   if (!wasOpen) {
-    el.style.maxHeight = '2000px';
+    setTimeout(function() { el.style.maxHeight = '2000px'; }, 50);
   }
 }
 function switchPage(id) {
