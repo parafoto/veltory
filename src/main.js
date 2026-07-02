@@ -2,7 +2,6 @@
 // HE Paramotores — heparamotor.ru
 // Unified codebase — single source of truth
 // ═══════════════════════════════════════════════════════
-
 const AI_DIAG = {
   no_start: {
     title: 'ДВИГАТЕЛЬ НЕ ЗАВОДИТСЯ',
@@ -169,7 +168,6 @@ const AI_DIAG = {
     critical: 'Масло на ремне/сцеплении — замена сальника обязательна.'
   }
 };
-
 const AI_PARTS_DB_SEARCH = {
   'поршень': ['Поршень HQ diamond graphite', 'Поршневые кольца chromed (2)', 'Стопорное кольцо поршневого пальца', 'Палец поршневой'],
   'кольца': ['Поршневые кольца chromed (2)', 'Компрессионное кольцо', 'Маслосъёмное кольцо'],
@@ -190,7 +188,6 @@ const AI_PARTS_DB_SEARCH = {
   'трос': ['Трос газа', 'Трос ручного газа'],
   'рида': ['Редклапан (рид)', 'Корпус ридклапана']
 };
-
 const AI_MAINT_DATA = {
   intervals: [
     { hours: 25, title: 'ТО-25 (25 моточасов)', items: ['Затянуть все крепежные элементы', 'Проверить и почистить свечу (BR9ES, 0.7mm)', 'Проверить воздушный фильтр', 'Проверить карбюратор', 'Проверить мембраны карбюратора', 'Проверить ручной стартер', 'Проверить топливные шланги и хомуты', 'Проверить крепление глушителя', 'Проверить крепление двигателя к раме'], estimated: '2 500 руб' },
@@ -201,7 +198,6 @@ const AI_MAINT_DATA = {
     { hours: 300, title: 'ТО-300 / КАПРЕМОНТ', items: ['Полный разбор двигателя', 'Замена поршневой группы', 'Замена всех подшипников', 'Замена всех сальников', 'Замена всех прокладок', 'Проверка/замена коленвала', 'Сборка, обкатка, тест на стенде'], estimated: '28 000 руб' }
   ]
 };
-
 // ── Navigation ──
 function toggleMenu() {
   const b = document.querySelector('.burger');
@@ -209,7 +205,6 @@ function toggleMenu() {
   if (b) b.classList.toggle('open');
   if (t) t.classList.toggle('open');
 }
-
 function toggleFAQ(id) {
   if (!id) return;
   const el = document.getElementById(id);
@@ -219,7 +214,6 @@ function toggleFAQ(id) {
   const item = el.closest('.faq-item');
   if (item) item.classList.toggle('open', !isOpen);
 }
-
 function toggleSpecs(id) {
   if (!id) return;
   var el = document.getElementById(id);
@@ -233,7 +227,6 @@ function toggleSpecs(id) {
     el.style.maxHeight = '2000px';
   }
 }
-
 function switchPage(id) {
   document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
   const page = document.getElementById('page-' + id);
@@ -284,7 +277,6 @@ function switchPage(id) {
   if (desc) desc.setAttribute('content', descs[id] || descs.home);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 // ── Engines data (single source of truth) ──
 const ENGINES = [
   {
@@ -318,7 +310,6 @@ const ENGINES = [
     cmp: { volume: 206, power: 29, weight: '-', carb: 'Walbro', clutch: 'Poly V', ignition: 'Катушка', starter: 'Flash' }
   }
 ];
-
 // ── Parts catalog ──
 const TPL = [
   { n: 'Стартер', i: 'RF-001', c: 'starter', eur: 231 },
@@ -340,7 +331,6 @@ const TPL = [
   { n: 'Свеча', i: 'RF-075', c: 'ignition', eur: 5.36 },
   { n: 'Глушитель', i: 'RF-135', c: 'exhaust', eur: 91.5 }
 ];
-
 let PARTS = [];
 let _id = 1;
 ['mv1', 'mv2', 'mvl', 'rs185', 'rs206', 'raptor'].forEach(function(eng) {
@@ -357,10 +347,8 @@ let _id = 1;
     });
   });
 });
-
 const CATS = { all: 'All', piston: 'Piston', crankcase: 'Crankcase', carb: 'Carb', fuel: 'Filters', ignition: 'Ignition', exhaust: 'Exhaust', starter: 'Starter', drive: 'Drive', reed: 'Reed', bearing: 'Bearings', fastener: 'Fastener', misc: 'Misc' };
 const CATO = ['all', 'piston', 'crankcase', 'carb', 'fuel', 'ignition', 'exhaust', 'starter', 'drive', 'reed', 'bearing', 'fastener', 'misc'];
-
 // ── Configurator ──
 const BUILD = [
   {
@@ -405,7 +393,6 @@ const BUILD = [
     ]
   }
 ];
-
 // ── Engine database (passports) ──
 const EDB = {
   'HE-2024-MV1-00487': {
@@ -429,7 +416,6 @@ const EDB = {
     docs: [{ n: 'Паспорт', t: 'PDF' }]
   }
 };
-
 // ── Dealers ──
 const DEALERS = [
   { name: 'Москва', addr: 'ул. Авиаторов 12', phone: '+7 495 123-45-67', tags: ['sales', 'service'] },
@@ -438,14 +424,12 @@ const DEALERS = [
   { name: 'Сочи', addr: 'Курортный пр. 76', phone: '+7 862 456-78-90', tags: ['service', 'training'] },
   { name: 'Минск', addr: 'пр. Независимости 110', phone: '+375 17 567-89-01', tags: ['sales', 'service'] }
 ];
-
 // ── State ──
 let curEng = 'all';
 let curCat = 'all';
 let quote = [];
 let buildSel = {};
 let curBuildStep = 0;
-
 // ── Parts rendering ──
 function renderEngSel() {
   const el = document.getElementById('engSel');
@@ -456,7 +440,6 @@ function renderEngSel() {
       return '<button class="p-pill' + (e.id === curEng ? ' active' : '') + '" onclick="filterEng(\'' + e.id + '\')" style="display:block;width:100%;text-align:left;margin-bottom:.15rem">' + e.l + '</button>';
     }).join('');
 }
-
 function renderCatFil() {
   const el = document.getElementById('catFil');
   if (!el) return;
@@ -465,10 +448,8 @@ function renderCatFil() {
     return '<button class="p-pill' + (c === curCat ? ' active' : '') + '" onclick="filterCat(\'' + c + '\')" style="display:block;width:100%;text-align:left;margin-bottom:.15rem">' + CATS[c] + ' <span style="float:right;color:var(--td)">' + (c === 'all' ? base.length : base.filter(function(p) { return p.cat === c; }).length) + '</span></button>';
   }).join('');
 }
-
 function filterEng(e) { curEng = e; renderEngSel(); renderCatFil(); renderParts(); }
 function filterCat(c) { curCat = c; renderCatFil(); renderParts(); }
-
 function getParts() {
   var p = PARTS;
   if (curEng !== 'all') p = p.filter(function(x) { return x.eng.includes(curEng); });
@@ -477,7 +458,6 @@ function getParts() {
   if (q) p = p.filter(function(x) { return x.name.toLowerCase().includes(q) || x.sku.toLowerCase().includes(q); });
   return p;
 }
-
 function renderParts() {
   var el = document.getElementById('pGrid');
   if (!el) return;
@@ -488,7 +468,6 @@ function renderParts() {
     return '<div class="p-card" onclick="addQ(' + p.id + ')"><div class="p-sku">' + p.sku + '</div><div class="p-name">' + p.name + '</div><div class="p-compat">' + p.eng.map(function(e) { return e.toUpperCase(); }).join(' / ') + '</div><div class="p-foot"><div class="p-price">EUR ' + p.eur.toFixed(2) + '</div><button class="btn btn-o btn-xs">+</button></div></div>';
   }).join('');
 }
-
 // ── Quote ──
 function addQ(id) {
   if (!quote.find(function(q) { return q.id === id; })) {
@@ -497,9 +476,7 @@ function addQ(id) {
     if (!document.getElementById('qPan').classList.contains('open')) toggleQ();
   }
 }
-
 function rmQ(id) { quote = quote.filter(function(q) { return q.id !== id; }); renderQuote(); }
-
 function renderQuote() {
   var items = document.getElementById('qItems');
   var total = document.getElementById('qTotal');
@@ -517,12 +494,10 @@ function renderQuote() {
   var sum = quote.reduce(function(s, q) { return s + q.price; }, 0);
   total.innerHTML = '<div class="q-total"><div class="q-total-l">Итого</div><div class="q-total-v">' + sum.toLocaleString() + ' руб</div></div>';
 }
-
 function toggleQ() {
   document.getElementById('qPan').classList.toggle('open');
   document.getElementById('qOv').classList.toggle('open');
 }
-
 function submitQ() {
   if (!quote.length) return;
   var b = document.querySelector('.q-panel .btn-g');
@@ -537,7 +512,6 @@ function submitQ() {
     toggleQ();
   }, 2000);
 }
-
 // ── Configurator ──
 function initBuild() {
   var el = document.getElementById('bldSteps');
@@ -548,7 +522,6 @@ function initBuild() {
   renderBldPanel();
   renderBldSum();
 }
-
 function renderBldPanel() {
   var s = BUILD[curBuildStep];
   if (!s) return;
@@ -568,15 +541,12 @@ function renderBldPanel() {
     '<button class="btn btn-g btn-sm" onclick="goBld(' + (curBuildStep + 1) + ')">' + (curBuildStep < BUILD.length - 1 ? '&#8594; Далее' : '&#10003; Готово') + '</button>' +
     '</div></div>';
 }
-
 function selBld(step, id) { buildSel[step] = id; renderBldPanel(); renderBldSum(); }
-
 function goBld(n) {
   if (n < 0 || n > BUILD.length) return;
   curBuildStep = n;
   initBuild();
 }
-
 function renderBldSum() {
   var total = 0;
   var items = BUILD.map(function(s) {
@@ -596,7 +566,6 @@ function renderBldSum() {
     if (el) el.textContent = total ? Math.round(total / m).toLocaleString() + ' руб/мес' : '---';
   });
 }
-
 // ── Maintenance calculator ──
 var TO = [
   { h: 25, c: 2500, t: 'Крепёж, свечи, фильтр, карбюратор, мембраны, стартер, ремень' },
@@ -606,7 +575,6 @@ var TO = [
   { h: 200, c: 18000, t: 'Прокладки, головка, цилиндр' },
   { h: 300, c: 28000, t: 'Полный капитальный ремонт' }
 ];
-
 function calcTO() {
   var h = parseInt(document.getElementById('calcHours')?.value) || 0;
   var res = document.getElementById('calcResult');
@@ -627,7 +595,6 @@ function calcTO() {
   if (next) html += '<div class="calc-total"><span>Следующее: ' + next.h + ' м/ч</span><span>~' + next.c.toLocaleString() + ' руб</span></div>';
   res.innerHTML = html;
 }
-
 // ── Owner dashboard / passport ──
 function lookup() {
   var input = document.getElementById('serIn')?.value?.trim().toUpperCase();
@@ -644,7 +611,6 @@ function lookup() {
   c.innerHTML = '<div class="passport"><div class="passport-head"><div><div class="passport-title">\u0426\u0418\u0424\u0420\u041e\u0412\u041e\u0419 \u041f\u0410\u0421\u041f\u041e\u0420\u0422</div><div class="passport-sn">' + e.serial + '</div></div><div class="passport-qr">' + qr + '</div></div><div class="passport-grid"><div class="passport-field"><div class="passport-field-l">\u041c\u043e\u0434\u0435\u043b\u044c</div><div class="passport-field-v">HE ' + e.model + '</div></div><div class="passport-field"><div class="passport-field-l">\u0413\u043e\u0434</div><div class="passport-field-v">' + e.year + '</div></div><div class="passport-field"><div class="passport-field-l">\u0412\u043b\u0430\u0434\u0435\u043b\u0435\u0446</div><div class="passport-field-v">' + e.owner + '</div></div><div class="passport-field"><div class="passport-field-l">\u0413\u0430\u0440\u0430\u043d\u0442\u0438\u044f</div><div class="passport-field-v">' + e.warr + '</div></div><div class="passport-field"><div class="passport-field-l">\u0421\u0442\u0430\u0442\u0443\u0441</div><div class="passport-field-v"><span class="badge ' + sb + '">' + e.status + '</span></div></div><div class="passport-field"><div class="passport-field-l">\u041d\u0430\u0440\u0430\u0431\u043e\u0442\u043a\u0430</div><div class="passport-field-v">' + e.hours + ' \u043c/\u0447</div></div><div class="passport-field"><div class="passport-field-l">\u0421\u043b\u0435\u0434. \u0422\u041e</div><div class="passport-field-v" style="color:var(--accent)">' + e.nextTO + '</div></div></div></div><div style="margin-bottom:1.5rem"><div class="label" style="margin-bottom:.75rem">\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u043e\u0431\u0441\u043b\u0443\u0436\u0438\u0432\u0430\u043d\u0438\u044f</div><table class="dash-table"><thead><tr><th>\u0414\u0430\u0442\u0430</th><th>\u0422\u0438\u043f</th><th>\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435</th><th>\u0421\u0442\u043e\u0438\u043c\u043e\u0441\u0442\u044c</th></tr></thead><tbody>' + e.history.map(function(h) { return '<tr><td>' + h.d + '</td><td>' + h.t + '</td><td>' + h.desc + '</td><td>' + h.cost + '</td></tr>'; }).join('') + '</tbody></table></div>';
   c.classList.add('vis');
 }
-
 function genQR(text) {
   var h = 0;
   for (var i = 0; i < text.length; i++) h = ((h << 5) - h) + text.charCodeAt(i);
@@ -659,7 +625,6 @@ function genQR(text) {
     }
   return '<svg viewBox="0 0 ' + (s * cs) + ' ' + (s * cs) + '">' + cells.join('') + '</svg>';
 }
-
 // ── Dealers ──
 function renderDealers(f) {
   f = f || 'all';
@@ -676,7 +641,6 @@ function renderDealers(f) {
     }).join('') + '</div></div>';
   }).join('');
 }
-
 // ── Forms ──
 function submitForm(e, msg) {
   e.preventDefault();
@@ -690,7 +654,6 @@ function submitForm(e, msg) {
     e.target.reset();
   }, 3000);
 }
-
 function submitToTelegram(e) {
   e.preventDefault();
   var name = document.getElementById('tgName')?.value || '';
@@ -709,7 +672,6 @@ function submitToTelegram(e) {
   }
   window.open('https://t.me/skynetparamotor?text=' + text, '_blank');
 }
-
 // ── AI Services ──
 function openAI(type) {
   document.querySelectorAll('.ai-panel').forEach(function(p) { p.style.display = 'none'; });
@@ -719,11 +681,9 @@ function openAI(type) {
     panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
-
 function closeAI() {
   document.querySelectorAll('.ai-panel').forEach(function(p) { p.style.display = 'none'; });
 }
-
 function runDiag() {
   var symptom = document.getElementById('aiDiagSymptom')?.value;
   var custom = document.getElementById('aiDiagText')?.value?.trim();
@@ -755,7 +715,6 @@ function runDiag() {
   result.style.display = 'block';
   result.innerHTML = html;
 }
-
 function runParts() {
   var model = document.getElementById('aiPartsModel')?.value;
   var query = document.getElementById('aiPartsText')?.value?.trim().toLowerCase();
@@ -780,7 +739,6 @@ function runParts() {
   result.style.display = 'block';
   result.innerHTML = html;
 }
-
 function runMaint() {
   var model = document.getElementById('aiMaintModel')?.value;
   var hours = parseInt(document.getElementById('aiMaintHours')?.value || 0);
@@ -804,7 +762,6 @@ function runMaint() {
   result.style.display = 'block';
   result.innerHTML = html;
 }
-
 function runRemind() {
   var serial = document.getElementById('aiRemSerial')?.value?.trim();
   var hours = parseInt(document.getElementById('aiRemHours')?.value || 0);
@@ -833,7 +790,6 @@ function runRemind() {
   result.style.display = 'block';
   result.innerHTML = html;
 }
-
 // ── Scroll progress ──
 window.addEventListener('scroll', function() {
   var bar = document.getElementById('scrollProgress');
@@ -841,7 +797,6 @@ window.addEventListener('scroll', function() {
   var h = document.documentElement;
   bar.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + '%';
 }, { passive: true });
-
 // ── Init ──
 function init() {
   renderEngSel();
@@ -851,10 +806,8 @@ function init() {
   renderDealers();
   calcTO();
 }
-
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
   init();
 }
-
