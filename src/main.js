@@ -856,5 +856,3 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
-// deploy
-// v2
