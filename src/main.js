@@ -222,14 +222,15 @@ function toggleFAQ(id) {
 
 function toggleSpecs(id) {
   if (!id) return;
-  const el = document.getElementById(id);
+  var el = document.getElementById(id);
   if (!el) return;
-  const isOpen = el.style.maxHeight && el.style.maxHeight !== '0px';
-  document.querySelectorAll('.specs-panel').forEach(function(p) { p.style.maxHeight = '0px'; });
-  if (!isOpen) {
-    requestAnimationFrame(function() {
-      el.style.maxHeight = el.scrollHeight + 'px';
-    });
+  var allPanels = document.querySelectorAll('.specs-panel');
+  var wasOpen = el.style.maxHeight && el.style.maxHeight !== '0px';
+  for (var i = 0; i < allPanels.length; i++) {
+    allPanels[i].style.maxHeight = '0px';
+  }
+  if (!wasOpen) {
+    el.style.maxHeight = '2000px';
   }
 }
 
