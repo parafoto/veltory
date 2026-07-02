@@ -225,8 +225,12 @@ function toggleSpecs(id) {
   const el = document.getElementById(id);
   if (!el) return;
   const isOpen = el.style.maxHeight && el.style.maxHeight !== '0px';
-  document.querySelectorAll('.specs-panel').forEach(p => p.style.maxHeight = '0px');
-  if (!isOpen) el.style.maxHeight = el.scrollHeight + 'px';
+  document.querySelectorAll('.specs-panel').forEach(function(p) { p.style.maxHeight = '0px'; });
+  if (!isOpen) {
+    requestAnimationFrame(function() {
+      el.style.maxHeight = el.scrollHeight + 'px';
+    });
+  }
 }
 
 function switchPage(id) {
