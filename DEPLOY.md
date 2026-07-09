@@ -9,7 +9,7 @@
 ## Quick Update
 
 ```bash
-cd /Users/up/paramotor
+cd /Users/up/business/paramotor
 # Edit src/main.js or index.html
 bash deploy.sh "describe change"
 ```
@@ -36,7 +36,10 @@ https://heparamotor.ru
 |------|---------|
 | `index.html` | HTML + CSS + JSON-LD structured data |
 | `src/main.js` | JavaScript — engines, parts, configurator, AI, dealers |
-| `public/favicon.svg` | Site favicon |
+| `favicon.svg` | Site favicon (repo root) |
+| `og-image.svg` | Open Graph / social preview 1200×630 |
+| `site.webmanifest` | Web app manifest |
+| `public/favicon.svg` | Favicon copy for public/ |
 | `public/icons.svg` | Icon sprite |
 | `robots.txt` | Crawler directives |
 | `sitemap.xml` | Sitemap for search engines |

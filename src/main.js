@@ -227,20 +227,45 @@ function toggleSpecs(id) {
     setTimeout(function() { el.style.maxHeight = '2000px'; }, 50);
   }
 }
-function switchPage(id) {
-  document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
-  const page = document.getElementById('page-' + id);
-  if (page) page.style.display = 'block';
-  document.querySelectorAll('.ntab').forEach(t => {
+const PAGES = [
+  'home', 'engines', 'parts', 'build', 'service', 'ai', 'dash',
+  'library', 'compare', 'contact', 'dealers', 'about', 'individual', 'faq'
+];
+function pageFromHash() {
+  var raw = (location.hash || '').replace(/^#/, '').split('?')[0].trim().toLowerCase();
+  if (raw && PAGES.indexOf(raw) !== -1 && document.getElementById('page-' + raw)) return raw;
+  return 'home';
+}
+function setPageHash(id) {
+  if (id === 'home') {
+    if (location.hash) history.pushState(null, '', location.pathname + location.search);
+    return;
+  }
+  if (location.hash !== '#' + id) location.hash = id;
+}
+function switchPage(id, fromHash) {
+  if (PAGES.indexOf(id) === -1 || !document.getElementById('page-' + id)) id = 'home';
+  document.querySelectorAll('.page').forEach(function(p) {
+    p.style.display = 'none';
+    p.classList.remove('active');
+  });
+  var page = document.getElementById('page-' + id);
+  if (page) {
+    page.style.display = 'block';
+    page.classList.add('active');
+  }
+  document.querySelectorAll('.ntab').forEach(function(t) {
     t.style.color = 'var(--td)';
     t.style.borderBottomColor = 'transparent';
+    t.classList.remove('active');
   });
-  const active = document.querySelector('[data-page="' + id + '"]');
+  var active = document.querySelector('[data-page="' + id + '"]');
   if (active) {
     active.style.color = 'var(--accent)';
     active.style.borderBottomColor = 'var(--accent)';
+    active.classList.add('active');
   }
-  const titles = {
+  var titles = {
     home: 'HE Paramotores — База знаний',
     engines: 'Двигатели',
     parts: 'Запчасти',
@@ -257,7 +282,7 @@ function switchPage(id) {
     faq: 'FAQ'
   };
   document.title = titles[id] || 'HE Paramotores';
-  const descs = {
+  var descs = {
     home: 'Информационная платформа для русскоязычных пилотов. Техническая документация, AI-диагностика, каталог запчастей.',
     engines: '6 двигателей HE Paramotores: MVL 125, MV1 185, MV2 204, Raptor 250, RS-185, RS-206. Характеристики и сравнение.',
     parts: 'Каталог оригинальных запчастей HE Paramotores. Артикулы, совместимость, фильтры по моделям.',
@@ -273,10 +298,20 @@ function switchPage(id) {
     individual: 'Конфигурация двигателей HE Paramotores на заказ.',
     faq: 'Часто задаваемые вопросы: выбор двигателя, обслуживание, запчасти.'
   };
-  const desc = document.querySelector('meta[name="description"]');
+  var desc = document.querySelector('meta[name="description"]');
   if (desc) desc.setAttribute('content', descs[id] || descs.home);
+  if (!fromHash) setPageHash(id);
+  var menu = document.getElementById('navTabs');
+  var burger = document.querySelector('.burger');
+  if (menu) menu.classList.remove('open');
+  if (burger) burger.classList.remove('open');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+function onRouteChange() {
+  switchPage(pageFromHash(), true);
+}
+window.addEventListener('hashchange', onRouteChange);
+window.addEventListener('popstate', onRouteChange);
 // ── Engines data (single source of truth) ──
 const ENGINES = [
   {
@@ -805,6 +840,7 @@ function init() {
   initBuild();
   renderDealers();
   calcTO();
+  switchPage(pageFromHash(), true);
 }
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="HE Paramotores — база знаний для пилотов">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#dca844" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#0b0b0f" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#dca844" stroke-opacity="0.06" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#0b0b0f"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <text x="80" y="120" font-family="Space Grotesk, system-ui, sans-serif" font-size="28" font-weight="500" letter-spacing="0.28em" fill="#dca844">HE PARAMOTORES</text>
+  <text x="80" y="280" font-family="Space Grotesk, system-ui, sans-serif" font-size="72" font-weight="300" fill="#f5f0e8">База знаний</text>
+  <text x="80" y="360" font-family="Space Grotesk, system-ui, sans-serif" font-size="72" font-weight="300" fill="#dca844">для пилотов</text>
+  <text x="80" y="440" font-family="Cormorant Garamond, Georgia, serif" font-size="28" font-style="italic" fill="#a09888">6 двигателей · AI-диагностика · каталог запчастей</text>
+  <text x="80" y="560" font-family="JetBrains Mono, ui-monospace, monospace" font-size="22" letter-spacing="0.12em" fill="#605850">heparamotor.ru</text>
+  <rect x="900" y="200" width="200" height="200" rx="16" fill="none" stroke="#dca844" stroke-width="2" opacity="0.45"/>
+  <text x="1000" y="325" text-anchor="middle" font-family="Space Grotesk, system-ui, sans-serif" font-size="64" font-weight="700" fill="#dca844">HE</text>
+</svg>

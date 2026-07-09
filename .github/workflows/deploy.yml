@@ -10,6 +10,10 @@ on:
       - 'sitemap.xml'
       - 'llms.txt'
       - 'CNAME'
+      - 'favicon.svg'
+      - 'og-image.svg'
+      - 'site.webmanifest'
+      - 'public/**'
 
 permissions:
   contents: read

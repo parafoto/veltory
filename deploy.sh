@@ -1,10 +1,10 @@
 #!/bin/bash
 # deploy.sh — Deploy heparamotor.ru
-# Usage: bash /Users/up/paramotor/deploy.sh "commit message"
+# Usage: bash deploy.sh "commit message"
 
 set -e
 
-REPO="/Users/up/paramotor"
+REPO="/Users/up/business/paramotor"
 MSG="${1:-Auto-deploy from MiMoCode}"
 
 cd "$REPO"
