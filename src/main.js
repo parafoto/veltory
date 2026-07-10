@@ -317,34 +317,115 @@ const ENGINES = [
   {
     id: 'mvl', name: 'MVL 125cc', badge: 'Light',
     specs: { 'Тип': '2-тактный', 'Объём': '125cc', 'Цилиндр': 'Al Nikasil', 'Карб': 'Walbro 37', 'Зажигание': 'Inductive IDI', 'Свеча': 'BR9ES', 'Передача': 'Центроб. ременное', 'Стартер': 'Ручной / Flash', 'Выхлоп': 'Карбон', 'Охлаждение': 'Воздушное', 'Топливо': 'АИ-98 + масло 2.5%' },
-    cmp: { volume: 125, power: 23, thrust: 73, weight: '26 кг', carb: 'Walbro 37', clutch: 'Ременное', ignition: 'IDI', starter: 'R/Flash/E' }
+    cmp: { volume: 125, power: 23, thrust: 73, weight: 26, carb: 'Walbro 37', clutch: 'Ременное', ignition: 'IDI', starter: 'Ручной / Flash / электро' }
   },
   {
     id: 'mv1', name: 'MV1 185cc', badge: 'Bestseller',
     specs: { 'Тип': '2-тактный', 'Объём': '184.70cc (54x66mm)', 'Мощность': '25 HP при 8300 RPM', 'Оптимум': '8000-8300 RPM', 'Тяга': '75 кг / 70 кг', 'Вес': '13.4 кг', 'Расход': '4.3-4.7 л/ч', 'Цилиндр': 'Al Nikasil', 'Поршень': 'HQ diamond graphite', 'Карб': 'Walbro 37', 'Зажигание': 'Inductive IDI', 'Свеча': 'BR9ES 0.7mm', 'Передача': 'Центроб. ременное 1:2.90', 'Стартер': 'Ручной / Flash / Электро', 'Выхлоп': 'Карбон', 'Охлаждение': 'Воздушное', 'Топливо': 'АИ-98 + масло 2.5%', 'EGT/CHT': '550/250', 'Обороты': 'Макс 8300' },
-    cmp: { volume: 184.70, power: 25, thrust: 75, weight: '13.4 кг', carb: 'Walbro 37', clutch: 'Ременное', ignition: 'IDI', starter: 'R/Flash/E' }
+    cmp: { volume: 184.70, power: 25, thrust: 75, weight: 13.4, carb: 'Walbro 37', clutch: 'Ременное', ignition: 'IDI', starter: 'Ручной / Flash / электро' }
   },
   {
     id: 'mv2', name: 'MV2 204cc', badge: 'Bestseller',
     specs: { 'Тип': '2-тактный', 'Объём': '204cc (66x54mm)', 'Мощность': '29 HP при 8300 RPM', 'Оптимум': '8300-8600 RPM', 'Тяга': '75 кг / 70 кг', 'Вес': '13.6 кг', 'Расход': '4.3-4.7 л/ч', 'Цилиндр': 'Al Nikasil', 'Поршень': 'HQ diamond graphite', 'Карб': 'Walbro 37', 'Зажигание': 'Inductive IDI', 'Свеча': 'BR9ES 0.7mm', 'Передача': 'Центроб. ременное', 'Стартер': 'Ручной / Flash / Электро', 'Выхлоп': 'Карбон', 'Охлаждение': 'Воздушное', 'Топливо': 'АИ-98 + масло 2.5%', 'EGT/CHT': '550/250', 'Обороты': 'Макс 8600, Опт 8300-8600', 'Особенность': 'Двойной пуск' },
-    cmp: { volume: 204, power: 29, thrust: 75, weight: '13.6 кг', carb: 'Walbro 37', clutch: 'Ременное', ignition: 'IDI', starter: 'R/Flash/E' }
+    cmp: { volume: 204, power: 29, thrust: 75, weight: 13.6, carb: 'Walbro 37', clutch: 'Ременное', ignition: 'IDI', starter: 'Ручной / Flash / электро' }
   },
   {
     id: 'raptor', name: 'Raptor 250', badge: 'Flagship',
     specs: { 'Тип': '2-тактный', 'Объём': '277cc (66x54mm)', 'Мощность': '25 HP при 7800 RPM', 'Оптимум': '8300-8600 RPM', 'Тяга': '77 кг / 72 кг', 'Вес': '14.2 кг', 'Расход': '3.8-4.2 л/ч', 'Цилиндр': 'Al Nikasil', 'Поршень': 'HQ diamond graphite', 'Карб': 'Walbro 37', 'Зажигание': 'Inductive IDI', 'Свеча': 'BR9ES 0.7mm', 'Передача': 'Центроб. сухое', 'Стартер': 'Ручной / Flash / Электро', 'Выхлоп': 'Db-Killer карбон', 'Охлаждение': 'Воздушное', 'Топливо': 'АИ-98 + масло 2.5%', 'EGT/CHT': '550/250', 'Обороты': 'Макс 8600, Опт 8300-8600' },
-    cmp: { volume: 277, power: 25, thrust: 77, weight: '14.2 кг', carb: 'Walbro 37', clutch: 'Сухое', ignition: 'IDI', starter: 'R/Flash/E' }
+    cmp: { volume: 277, power: 25, thrust: 77, weight: 14.2, carb: 'Walbro 37', clutch: 'Сухое', ignition: 'IDI', starter: 'Ручной / Flash / электро' }
   },
   {
     id: 'rs185', name: 'RS-185', badge: 'New RS',
     specs: { 'Тип': '2-тактный', 'Объём': '185cc', 'Мощность': '26 HP', 'Серия': 'New RS', 'Цилиндр': 'Al Nikasil', 'Карб': 'Walbro', 'Зажигание': 'Электронная катушка', 'Передача': 'Poly V Belt', 'Охлаждение': 'Воздушное', 'Топливо': 'АИ-98 + масло 2.5%' },
-    cmp: { volume: 185, power: 26, weight: '-', carb: 'Walbro', clutch: 'Poly V', ignition: 'Катушка', starter: 'Ручной' }
+    cmp: { volume: 185, power: 26, weight: null, thrust: null, carb: 'Walbro', clutch: 'Poly V', ignition: 'Катушка', starter: 'Ручной' }
   },
   {
     id: 'rs206', name: 'RS-206', badge: 'Flagship',
     specs: { 'Тип': '2-тактный', 'Объём': '206cc', 'Мощность': '29 HP', 'Серия': 'New RS, флагман', 'Цилиндр': 'Al Nikasil', 'Карб': 'Walbro', 'Зажигание': 'Электронная катушка', 'Передача': 'Poly V Belt', 'Стартер': 'Flash starter', 'Охлаждение': 'Воздушное', 'Топливо': 'АИ-98 + масло 2.5%' },
-    cmp: { volume: 206, power: 29, weight: '-', carb: 'Walbro', clutch: 'Poly V', ignition: 'Катушка', starter: 'Flash' }
+    cmp: { volume: 206, power: 29, weight: null, thrust: null, carb: 'Walbro', clutch: 'Poly V', ignition: 'Катушка', starter: 'Flash' }
   }
 ];
+const COMPARE_ROWS = [
+  { key: 'volume', label: 'Объём', unit: 'cc' },
+  { key: 'power', label: 'Мощность', unit: 'HP', best: 'max' },
+  { key: 'thrust', label: 'Тяга', unit: 'кг', best: 'max' },
+  { key: 'weight', label: 'Вес', unit: 'кг', best: 'min' },
+  { key: 'carb', label: 'Карбюратор' },
+  { key: 'clutch', label: 'Передача' },
+  { key: 'ignition', label: 'Зажигание' },
+  { key: 'starter', label: 'Стартер' }
+];
+function renderEngineCompare() {
+  var table = document.getElementById('engineCompare');
+  if (!table) return;
+  var head = '<thead><tr><th scope="col">Параметр</th>' + ENGINES.map(function(engine) {
+    return '<th scope="col">' + engine.name + '</th>';
+  }).join('') + '</tr></thead>';
+  var body = COMPARE_ROWS.map(function(row) {
+    var numeric = ENGINES.map(function(engine) { return engine.cmp[row.key]; }).filter(function(value) { return typeof value === 'number'; });
+    var best = row.best === 'min' ? Math.min.apply(null, numeric) : Math.max.apply(null, numeric);
+    var cells = ENGINES.map(function(engine) {
+      var value = engine.cmp[row.key];
+      var isBest = row.best && typeof value === 'number' && value === best;
+      var shown = value === null || value === undefined ? 'Нет данных' : value + (row.unit ? ' ' + row.unit : '');
+      return '<td' + (isBest ? ' class="best"' : '') + '>' + shown + '</td>';
+    }).join('');
+    return '<tr><td>' + row.label + '</td>' + cells + '</tr>';
+  }).join('');
+  table.innerHTML = head + '<tbody>' + body + '</tbody>';
+}
+function addFinderScore(scores, ids, points) {
+  ids.forEach(function(id) { scores[id] += points; });
+}
+function recommendEngine(event) {
+  event.preventDefault();
+  var use = document.getElementById('finderUse').value;
+  var weight = document.getElementById('finderWeight').value;
+  var priority = document.getElementById('finderPriority').value;
+  var start = document.getElementById('finderStart').value;
+  var scores = {};
+  ENGINES.forEach(function(engine) { scores[engine.id] = 0; });
+  var useScores = {
+    daily: [['mvl'], 5, ['mv1'], 3],
+    universal: [['mv1'], 5, ['rs185', 'mv2'], 2],
+    tandem: [['mv2', 'raptor'], 5, ['rs206'], 3],
+    trike: [['raptor'], 5, ['mv2', 'rs206'], 3]
+  };
+  var profile = useScores[use];
+  addFinderScore(scores, profile[0], profile[1]);
+  addFinderScore(scores, profile[2], profile[3]);
+  if (weight === 'light') { addFinderScore(scores, ['mvl'], 4); addFinderScore(scores, ['mv1'], 2); }
+  if (weight === 'medium') { addFinderScore(scores, ['mv1'], 4); addFinderScore(scores, ['rs185', 'mv2'], 2); }
+  if (weight === 'heavy') { addFinderScore(scores, ['raptor'], 5); addFinderScore(scores, ['mv2', 'rs206'], 4); }
+  if (priority === 'balanced') { addFinderScore(scores, ['mv1'], 3); addFinderScore(scores, ['mvl', 'mv2'], 1); }
+  if (priority === 'weight') { addFinderScore(scores, ['mv1'], 5); addFinderScore(scores, ['mv2', 'raptor'], 2); }
+  if (priority === 'thrust') { addFinderScore(scores, ['raptor'], 5); addFinderScore(scores, ['mv2'], 3); }
+  if (priority === 'rs') { addFinderScore(scores, ['rs206'], 5); addFinderScore(scores, ['rs185'], 4); }
+  if (start === 'flash') { addFinderScore(scores, ['rs206'], 4); addFinderScore(scores, ['mvl', 'mv1', 'mv2', 'raptor'], 2); }
+  if (start === 'manual') { addFinderScore(scores, ['rs185'], 3); addFinderScore(scores, ['mvl', 'mv1', 'mv2', 'raptor'], 1); }
+  var engine = ENGINES.slice().sort(function(a, b) { return scores[b.id] - scores[a.id]; })[0];
+  var useLabels = { daily: 'подходит для регулярных одиночных полётов', universal: 'даёт универсальный профиль применения', tandem: 'соответствует запросу на тандемный полёт', trike: 'соответствует сценарию использования с трайком' };
+  var details = [useLabels[use], engine.cmp.power + ' HP мощности'];
+  if (typeof engine.cmp.thrust === 'number') details.push(engine.cmp.thrust + ' кг опубликованной тяги');
+  if (typeof engine.cmp.weight === 'number') details.push(engine.cmp.weight + ' кг массы двигателя');
+  if (start !== 'any') details.push('доступный запуск: ' + engine.cmp.starter.toLowerCase());
+  var result = document.getElementById('finderResult');
+  result.innerHTML = '<div class="finder-kicker">Рекомендованная отправная точка</div><h3 class="finder-name">' + engine.name + '</h3><ul class="finder-reasons">' + details.map(function(detail) { return '<li>' + detail + '</li>'; }).join('') + '</ul><div class="finder-actions"><button type="button" class="btn btn-g btn-sm" onclick="openEngine(\'' + engine.id + '\')">СМОТРЕТЬ МОДЕЛЬ</button><button type="button" class="btn btn-o btn-sm" onclick="configureEngine(\'' + engine.id + '\')">В КОНФИГУРАТОР</button></div>';
+}
+function openEngine(id) {
+  switchPage('engines');
+  setTimeout(function() {
+    var panel = document.getElementById('specs-' + id);
+    var section = panel && panel.previousElementSibling;
+    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 80);
+}
+function configureEngine(id) {
+  buildSel.engine = id;
+  curBuildStep = 0;
+  switchPage('build');
+  initBuild();
+}
 // ── Parts catalog ──
 const TPL = [
   { n: 'Стартер', i: 'RF-001', c: 'starter', eur: 231 },
@@ -388,14 +469,10 @@ const CATO = ['all', 'piston', 'crankcase', 'carb', 'fuel', 'ignition', 'exhaust
 const BUILD = [
   {
     key: 'engine', title: 'Двигатель',
-    options: [
-      { id: 'mvl', name: 'MVL 125cc', desc: 'Ежедневное.', price: 145000, specs: { HP: '23' } },
-      { id: 'mv1', name: 'MV1 185cc', desc: 'Универсал.', price: 185000, specs: { HP: '25' } },
-      { id: 'mv2', name: 'MV2 204cc', desc: 'Монстр.', price: 265000, specs: { HP: '29' } },
-      { id: 'raptor', name: 'Raptor 250', desc: 'Тягач.', price: 220000, specs: { HP: '25' } },
-      { id: 'rs185', name: 'RS-185', desc: 'Новый RS.', price: 165000, specs: { HP: '26' } },
-      { id: 'rs206', name: 'RS-206', desc: 'Флагман.', price: 195000, specs: { HP: '29' } }
-    ]
+    options: ENGINES.map(function(engine) {
+      var prices = { mvl: 145000, mv1: 185000, mv2: 265000, raptor: 220000, rs185: 165000, rs206: 195000 };
+      return { id: engine.id, name: engine.name, desc: engine.badge, price: prices[engine.id], specs: { HP: String(engine.cmp.power) } };
+    })
   },
   {
     key: 'frame', title: 'Рама',
@@ -834,6 +911,7 @@ window.addEventListener('scroll', function() {
 }, { passive: true });
 // ── Init ──
 function init() {
+  renderEngineCompare();
   renderEngSel();
   renderCatFil();
   renderParts();
